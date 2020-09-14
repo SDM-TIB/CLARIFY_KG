@@ -6,32 +6,32 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugDisorderInteraction>
 	rml:logicalSource [ rml:source "/data/data/drug/drugs_indications.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_name}";
-		rr:class bmLC:DrugDisorderInteraction
+		rr:template "http://clarify2020.eu/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_name}";
+		rr:class clarify:DrugDisorderInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor1;
+		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{DrugId}" 
+			rr:template "http://clarify2020.eu/Drug/{DrugId}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor2;
+		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Disorder/{indication_name}" 
+			rr:template "http://clarify2020.eu/Disorder/{indication_name}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/DrugBank"
+			rr:template "http://clarify2020.eu/SourceName/DrugBank"
 		]
 	].
 		

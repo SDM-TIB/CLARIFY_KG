@@ -6,24 +6,24 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Enzyme>
 	rml:logicalSource [ rml:source "/data/data/drug/enzyme.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Enzyme/{Enzyme_name}";
-		rr:class bmLC:Enzyme
+		rr:template "http://clarify2020.eu/Enzyme/{Enzyme_name}";
+		rr:class clarify:Enzyme
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:enzymeLabel;
+		rr:predicate clarify:enzymeLabel;
 		rr:objectMap [
 			rml:reference "Enzyme_name";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:enzymeID;
+		rr:predicate clarify:enzymeID;
 		rr:objectMap [
 			rml:reference "Enzyme_ID";
 		]
@@ -31,29 +31,29 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/Protein/{Uni_ID}";
+			rr:template "http://clarify2020.eu/Protein/{Uni_ID}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:uniprotID;
+		rr:predicate clarify:uniprotID;
 		rr:objectMap [
 			rml:reference "Uni_ID";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:externalLink;
+		rr:predicate clarify:externalLink;
 		rr:objectMap [
 			rr:template "https://www.uniprot.org/uniprot/{Uni_ID}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:enzyme_isRelatedTo_gene;
+		rr:predicate clarify:enzyme_isRelatedTo_gene;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/Gene/{Gene_name}";
+			rr:template "http://clarify2020.eu/Gene/{Gene_name}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
 		]
@@ -64,18 +64,18 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{CUI}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{CUI}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "CUI" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].	

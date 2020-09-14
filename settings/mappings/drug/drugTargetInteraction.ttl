@@ -6,32 +6,32 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugTargetInteraction>
 	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
-		rr:class bmLC:DrugTargetInteraction
+		rr:template "http://clarify2020.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
+		rr:class clarify:DrugTargetInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor1;
+		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{Drug}" 
+			rr:template "http://clarify2020.eu/Drug/{Drug}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor2;
+		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
 			rr:parentTriplesMap <Target> 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/DrugBank"
+			rr:template "http://clarify2020.eu/SourceName/DrugBank"
 		]
 	].
 		
@@ -40,17 +40,17 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Target/{Protein ID}";
-		rr:class bmLC:Target
+		rr:template "http://clarify2020.eu/Target/{Protein ID}";
+		rr:class clarify:Target
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:targetID;
+		rr:predicate clarify:targetID;
 		rr:objectMap [
 			rml:reference "Protein ID"
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate bmLC:targetLabel;
+		rr:predicate clarify:targetLabel;
 		rr:objectMap [
 			rml:reference "Protein Name"
 		]
@@ -67,17 +67,17 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Protein/{Protein ID}";
-		rr:class bmLC:Protein
+		rr:template "http://clarify2020.eu/Protein/{Protein ID}";
+		rr:class clarify:Protein
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:proteinID;
+		rr:predicate clarify:proteinID;
 		rr:objectMap [
 			rml:reference "Protein ID"
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate bmLC:proteinLabel;
+		rr:predicate clarify:proteinLabel;
 		rr:objectMap [
 			rml:reference "Protein Name"
 		]
@@ -85,6 +85,6 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Protein/{Protein ID}"; 
+			rr:template "http://clarify2020.eu/Protein/{Protein ID}"; 
 		]
 	].	

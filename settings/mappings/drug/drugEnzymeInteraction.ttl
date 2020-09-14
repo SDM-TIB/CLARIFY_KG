@@ -6,31 +6,31 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugEnzymeInteraction>
 	rml:logicalSource [ rml:source "/data/data/drug/drug_enzyme_interaction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugEnzymeInteraction/{Drug_ID}_interactsWith_{Enzyme_name}";
-		rr:class bmLC:DrugEnzymeInteraction
+		rr:template "http://clarify2020.eu/DrugEnzymeInteraction/{Drug_ID}_interactsWith_{Enzyme_name}";
+		rr:class clarify:DrugEnzymeInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor1;
+		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{Drug_ID}" 
+			rr:template "http://clarify2020.eu/Drug/{Drug_ID}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor2;
+		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Enzyme/{Enzyme_name}" 
+			rr:template "http://clarify2020.eu/Enzyme/{Enzyme_name}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/KEGG"
+			rr:template "http://clarify2020.eu/SourceName/KEGG"
 		]
 	].

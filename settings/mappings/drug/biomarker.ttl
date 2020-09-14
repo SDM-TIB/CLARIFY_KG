@@ -6,24 +6,24 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Biomarker>
 	rml:logicalSource [ rml:source "/data/data/drug/biomarkers.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Biomarker/{biomarker}";
-		rr:class bmLC:Biomarker
+		rr:template "http://clarify2020.eu/Biomarker/{biomarker}";
+		rr:class clarify:Biomarker
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:biomarkerLabel;
+		rr:predicate clarify:biomarkerLabel;
 		rr:objectMap [ 
 			rml:reference "biomarker" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
 		]
@@ -34,18 +34,18 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{biomarker_CUI}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{biomarker_CUI}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "biomarker_CUI" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].

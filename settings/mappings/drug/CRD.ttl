@@ -6,31 +6,31 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugDrugInteraction>
 	rml:logicalSource [ rml:source "/data/data/drug/CRD.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
-		rr:class bmLC:DrugDrugInteraction
+		rr:template "http://clarify2020.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
+		rr:class clarify:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:affects;
+		rr:predicate clarify:affects;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{Drug1}" 
+			rr:template "http://clarify2020.eu/Drug/{Drug1}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:isAffected;
+		rr:predicate clarify:isAffected;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{Drug2}" 
+			rr:template "http://clarify2020.eu/Drug/{Drug2}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/DrugBank/metabolized_by_the_same_CYP_enzyme"
+			rr:template "http://clarify2020.eu/SourceName/DrugBank/metabolized_by_the_same_CYP_enzyme"
 		]
 	].

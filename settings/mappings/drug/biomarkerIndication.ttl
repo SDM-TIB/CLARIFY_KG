@@ -6,19 +6,19 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Biomarker>
 	rml:logicalSource [ rml:source "/data/data/drug/biomarkers_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Biomarker/{biomarker}";
+		rr:template "http://clarify2020.eu/Biomarker/{biomarker}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:biomarker_has_indication;
+		rr:predicate clarify:biomarker_has_indication;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/Drug/{drugID}";
+			rr:template "http://clarify2020.eu/Drug/{drugID}";
 		]
 	].
 	

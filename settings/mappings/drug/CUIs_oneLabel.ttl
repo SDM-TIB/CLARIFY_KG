@@ -6,31 +6,31 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Annotation>
 	rml:logicalSource [ rml:source "/data/data/drug/CUIs_oneLabel.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{Id}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{Id}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "Id" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annLabel;
+		rr:predicate clarify:annLabel;
 		rr:objectMap [ 
 			rml:reference "Label" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].

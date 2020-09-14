@@ -6,17 +6,17 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Drug>
 	rml:logicalSource [ rml:source "/data/data/drug/CUI_DrugBank.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Drug/{DrugBankID}";
+		rr:template "http://clarify2020.eu/Drug/{DrugBankID}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
 		]
@@ -27,18 +27,18 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{CUI_ID}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{CUI_ID}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "CUI_ID" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].

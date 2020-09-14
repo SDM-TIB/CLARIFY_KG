@@ -6,18 +6,18 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <AlzheimerDrug>
 	rml:logicalSource [ rml:source "/data/data/drug/ADdrugList.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Drug/{DrugBankID}";
-		rr:class bmLC:AlzheimerDrug
+		rr:template "http://clarify2020.eu/Drug/{DrugBankID}";
+		rr:class clarify:AlzheimerDrug
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:drugLabel;
+		rr:predicate clarify:drugLabel;
 		rr:objectMap [
 			rml:reference "DrugName";
 		]

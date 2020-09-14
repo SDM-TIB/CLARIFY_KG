@@ -6,24 +6,24 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Drug>
 	rml:logicalSource [ rml:source "/data/data/drug/drugs_dbpedia.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Drug/{DrugBankID}";
-		rr:class bmLC:Drug
+		rr:template "http://clarify2020.eu/Drug/{DrugBankID}";
+		rr:class clarify:Drug
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:drugLabel;
+		rr:predicate clarify:drugLabel;
 		rr:objectMap [
 			rml:reference "DrugName";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:drugBankID;
+		rr:predicate clarify:drugBankID;
 		rr:objectMap [
 			rml:reference "DrugBankID";
 		]
@@ -31,7 +31,7 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/Drug/{DrugName}";
+			rr:template "http://clarify2020.eu/Drug/{DrugName}";
 		]
 	];
 	rr:predicateObjectMap [
@@ -41,7 +41,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:externalLink;
+		rr:predicate clarify:externalLink;
 		rr:objectMap [
 			rr:template "https://www.drugbank.ca/drugs/{DrugBankID}";
 		]

@@ -6,42 +6,42 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Phenotype>
 	rml:logicalSource [ rml:source "/data/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Phenotype/{Toxicity}";
-		rr:class bmLC:Phenotype 	
+		rr:template "http://clarify2020.eu/Phenotype/{Toxicity}";
+		rr:class clarify:Phenotype 	
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:phenotypeLabel;
+		rr:predicate clarify:phenotypeLabel;
 		rr:objectMap [
 			rml:reference "Toxicity"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:toxicityType;
+		rr:predicate clarify:toxicityType;
 		rr:objectMap [
 			rml:reference "TYPE"
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation1>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasHPOAnnotation;
+		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation2>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasHPOAnnotation;
+		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation3>
 		]
@@ -52,19 +52,19 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{cui1}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{cui1}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "cui1" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].	
 
@@ -73,19 +73,19 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{cui2}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{cui2}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "cui2" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].
 
@@ -94,18 +94,18 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{cui3}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{cui3}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "cui3" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].	

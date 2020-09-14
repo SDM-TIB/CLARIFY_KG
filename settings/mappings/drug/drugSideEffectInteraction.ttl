@@ -6,27 +6,27 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugSideEffectInteraction>
 	rml:logicalSource [ rml:source "/data/data/drug/drugs_side_effects.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugSideEffectInteraction/{DrugID}_{name}";
-		rr:class bmLC:DrugSideEffectInteraction
+		rr:template "http://clarify2020.eu/DrugSideEffectInteraction/{DrugID}_{name}";
+		rr:class clarify:DrugSideEffectInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:dse_AvgFrequency;
+		rr:predicate clarify:dse_AvgFrequency;
 		rr:objectMap [
 			rml:reference "AvgFrequency";
 			rr:datatype xsd:float;
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/SIDER"
+			rr:template "http://clarify2020.eu/SourceName/SIDER"
 		]
 	].	
 
@@ -35,10 +35,10 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Drug/{DrugID}"
+		rr:template "http://clarify2020.eu/Drug/{DrugID}"
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:drug_isRelatedTo_dse;
+		rr:predicate clarify:drug_isRelatedTo_dse;
 		rr:objectMap [
 			rr:parentTriplesMap <DrugSideEffectInteraction>
 		]
@@ -49,10 +49,10 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Phenotype/{name}"
+		rr:template "http://clarify2020.eu/Phenotype/{name}"
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:sideEffect_isRelatedTo_dse;
+		rr:predicate clarify:sideEffect_isRelatedTo_dse;
 		rr:objectMap [
 			rr:parentTriplesMap <DrugSideEffectInteraction>
 		]

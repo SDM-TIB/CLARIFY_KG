@@ -6,15 +6,15 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <SymmetricDDI>
 	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/SymmetricDrugDrugInteraction/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
-		rr:class bmLC:SymmetricDrugDrugInteraction
+		rr:template "http://clarify2020.eu/SymmetricDrugDrugInteraction/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
+		rr:class clarify:SymmetricDrugDrugInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf;
@@ -28,31 +28,31 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
-		rr:class bmLC:DrugDrugInteraction
+		rr:template "http://clarify2020.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
+		rr:class clarify:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:precipitant_drug;
+		rr:predicate clarify:precipitant_drug;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{PrecipitantDrugID}" 
+			rr:template "http://clarify2020.eu/Drug/{PrecipitantDrugID}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:object_drug;
+		rr:predicate clarify:object_drug;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{ObjectDrugID}" 
+			rr:template "http://clarify2020.eu/Drug/{ObjectDrugID}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:effect;
+		rr:predicate clarify:effect;
 		rr:objectMap [
 			rr:parentTriplesMap <AdverseEffect>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/DrugBank"
+			rr:template "http://clarify2020.eu/SourceName/DrugBank"
 		]
 	].
 
@@ -61,17 +61,17 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/AdverseEvent/{Adverse_Event}";
-		rr:class bmLC:AdverseEvent
+		rr:template "http://clarify2020.eu/AdverseEvent/{Adverse_Event}";
+		rr:class clarify:AdverseEvent
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:impact;
+		rr:predicate clarify:impact;
 		rr:objectMap [
 			rml:reference "Impact";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
 		]
@@ -82,18 +82,18 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/Annotation/{CUI_AdverseEvent}";
-		rr:class bmLC:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{CUI_AdverseEvent}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "CUI_AdverseEvent" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].
