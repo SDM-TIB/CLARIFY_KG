@@ -8,13 +8,13 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<AlzheimerDrug>
+<ADDrug>
 	rml:logicalSource [ rml:source "/data/data/drug/ADdrugList.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/Drug/{DrugBankID}";
-		rr:class clarify:AlzheimerDrug
+		rr:class clarify:ADDrug
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:drugLabel;
