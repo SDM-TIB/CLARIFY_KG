@@ -1,0 +1,111 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+
+<Phenotype>
+	rml:logicalSource [ rml:source "/data/data/drug/toxicitiesAndTypes_processed.csv";
+						rml:referenceFormulation ql:CSV
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/Phenotype/{Toxicity}";
+		rr:class bmLC:Phenotype 	
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:phenotypeLabel;
+		rr:objectMap [
+			rml:reference "Toxicity"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:toxicityType;
+		rr:objectMap [
+			rml:reference "TYPE"
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate bmLC:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation1>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:hasHPOAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation2>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:hasHPOAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation3>
+		]
+	].	
+
+<Annotation1>
+	rml:logicalSource [ rml:source "/data/data/drug/toxicitiesAndTypes_processed.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/Annotation/{cui1}";
+		rr:class bmLC:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:annID;
+		rr:objectMap [ 
+			rml:reference "cui1" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:provenance;
+		rr:objectMap [
+			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+		]
+	].	
+
+<Annotation2>
+	rml:logicalSource [ rml:source "/data/data/drug/toxicitiesAndTypes_processed.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/Annotation/{cui2}";
+		rr:class bmLC:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:annID;
+		rr:objectMap [ 
+			rml:reference "cui2" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:provenance;
+		rr:objectMap [
+			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+		]
+	].
+
+<Annotation3>
+	rml:logicalSource [ rml:source "/data/data/drug/toxicitiesAndTypes_processed.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/Annotation/{cui3}";
+		rr:class bmLC:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:annID;
+		rr:objectMap [ 
+			rml:reference "cui3" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:provenance;
+		rr:objectMap [
+			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+		]
+	].	

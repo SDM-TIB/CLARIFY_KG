@@ -1,0 +1,99 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+
+<SymmetricDDI>
+	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/SymmetricDrugDrugInteraction/{PrecipitantDrugID}_hasSymmetricInteractionWith_{ObjectDrugID}";
+		rr:class bmLC:SymmetricDrugDrugInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdfs:subClassOf;
+		rr:objectMap [
+			rr:parentTriplesMap <#DrugDrugInteraction>
+		];
+	].	
+
+<DrugDrugInteraction>
+	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/DrugDrugInteraction/{PrecipitantDrugID}_interactsWith_{ObjectDrugID}";
+		rr:class bmLC:DrugDrugInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:precipitant_drug;
+		rr:objectMap [ 
+			rr:template "http://bigmedilytics.eu/Drug/{PrecipitantDrugID}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:object_drug;
+		rr:objectMap [ 
+			rr:template "http://bigmedilytics.eu/Drug/{ObjectDrugID}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:effect;
+		rr:objectMap [
+			rr:parentTriplesMap <AdverseEffect>
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate bmLC:provenance;
+		rr:objectMap [
+			rr:template "http://bigmedilytics.eu/SourceName/DrugBank"
+		]
+	].
+
+<AdverseEffect>
+	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/AdverseEvent/{Adverse_Event}";
+		rr:class bmLC:AdverseEvent
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:impact;
+		rr:objectMap [
+			rml:reference "Impact";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation>
+		]
+	].					
+
+<Annotation>
+	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://bigmedilytics.eu/Annotation/{CUI_AdverseEvent}";
+		rr:class bmLC:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_AdverseEvent" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate bmLC:provenance;
+		rr:objectMap [
+			rr:template "http://bigmedilytics.eu/SourceName/UMLS"
+		]
+	].
