@@ -8,7 +8,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_nonOncologycalTreatments.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_nonOncologycalTreatments_external.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

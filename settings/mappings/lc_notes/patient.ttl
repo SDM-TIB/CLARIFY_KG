@@ -25,7 +25,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:beingIn_hospitalHealthArea;
 		rr:objectMap [
-			rml:reference "hospitalHealthArea";
+			rml:reference "unique_area_of_public_health";
 		]
 	];	
 	rr:predicateObjectMap [
@@ -43,7 +43,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfCigarettesPerYear;
 		rr:objectMap [
-			rml:reference "smokingCigarettesPerYear";
+			rml:reference "smoking_CxY";
 		]
 	];
 	rr:predicateObjectMap [
@@ -51,11 +51,11 @@
 		rr:objectMap [
 			rml:reference "dead";
 		]
-	];	
+	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:ageAtDeath;
 		rr:objectMap [
-			rml:reference "ageOfDeath";
+			rml:reference "age_of_death";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -65,12 +65,6 @@
 		]
 	];							
 	rr:predicateObjectMap [
-		rr:predicate clarify:tumorType;
-		rr:objectMap [
-			rr:template "http://project-iasis.eu/TumorType/{tumorType}";
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:smoking;
 		rr:objectMap [
 			rml:reference "smoker";
@@ -79,25 +73,25 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_biomarker;
 		rr:objectMap [
-			rml:reference "biomarkers";
+			rml:reference "Mutated_biomarker";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioEgfr;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{bioEgfr}";
+			rr:template "http://project-iasis.eu/Biomarker/{Mutated_egfr}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioAlk;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{bioAlk}";
+			rr:template "http://project-iasis.eu/Biomarker/{Mutated_alk}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioRos1;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{bioRos1}";
+			rr:template "http://project-iasis.eu/Biomarker/{Mutated_Ros}";
 		]
 	]; 
 	rr:predicateObjectMap [
@@ -137,15 +131,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_familiarAntecedents;
-		rr:objectMap [
-			rml:reference "familialAntecedents";
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_brainMetastasis;
 		rr:objectMap [
-			rml:reference "brainMetastasis";
+			rml:reference "brain_metastasis";
 		]
 	];
 		rr:predicateObjectMap [
@@ -165,7 +153,420 @@
 		rr:objectMap [ 
 			rr:parentTriplesMap <Diagnosis>
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:city;
+		rr:objectMap [
+			rml:reference "city";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:startAge;
+		rr:objectMap [
+			rml:reference "startAge";		
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rml:reference "deathDate";
+			rr:datatype xsd:date;		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:death_cause;
+		rr:objectMap [
+			rml:reference "death_cause";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:other_death_cause;
+		rr:objectMap [
+			rml:reference "other_death_cause";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:firstDocumentDate;
+		rr:objectMap [
+			rml:reference "firstDocumentDate";
+			rr:datatype xsd:date;		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:lastDocumentDate;
+		rr:objectMap [
+			rml:reference "lastDocumentDate";
+			rr:datatype xsd:date;					
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:monthsInTheSystem;
+		rr:objectMap [
+			rml:reference "monthsInTheSystem";		
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:firstNoteDate;
+		rr:objectMap [
+			rml:reference "firstNoteDate";	
+			rr:datatype xsd:date;				
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:firstReportDate;
+		rr:objectMap [
+			rml:reference "firstReportDate";
+			rr:datatype xsd:date;					
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfNotes;
+		rr:objectMap [
+			rml:reference "numberOfNotes";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfReports;
+		rr:objectMap [
+			rml:reference "numberOfReports";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:af;
+		rr:objectMap [
+			rml:reference "af";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:clinical_trial;
+		rr:objectMap [
+			rml:reference "clinical_trial";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:FRCV;
+		rr:objectMap [
+			rml:reference "FRCV";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalDays;
+		rr:objectMap [
+			rml:reference "survivalDays";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:lastTumorStage;
+		rr:objectMap [
+			rr:template "http://project-iasis.eu/TumorStage/Stage{stage}";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_stage_at_dx;
+		rr:objectMap [
+			rml:reference "categorized_stage_at_dx";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_stage;
+		rr:objectMap [
+			rml:reference "categorized_stage";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:stage_IV_date;
+		rr:objectMap [
+			rml:reference "stage_IV_date";	
+			rr:datatype xsd:date;				
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_age_at_dx;
+		rr:objectMap [
+			rml:reference "categorized_age_at_dx";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_age_at_death;
+		rr:objectMap [
+			rml:reference "categorized_age_at_death";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_age_at_dx_over_70;
+		rr:objectMap [
+			rml:reference "categorized_age_at_dx_over_70";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_age_at_death_over_70;
+		rr:objectMap [
+			rml:reference "categorized_age_at_death_over_70";		
+		]
+	];																								
+	rr:predicateObjectMap [
+		rr:predicate clarify:survival;
+		rr:objectMap [
+			rml:reference "survival";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:survival_12m;
+		rr:objectMap [
+			rml:reference "survival_12m";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfComorbidities_beforedx_jkes;
+		rr:objectMap [
+			rml:reference "numberOfComorbidities_beforedx_jkes";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:comorbidities_beforedx_jkes;
+		rr:objectMap [
+			rml:reference "comorbidities_beforedx_jkes";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfdrugs_beforedx;
+		rr:objectMap [
+			rml:reference "numberOfdrugs_beforedx";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_numberOfdrugs_beforedx;
+		rr:objectMap [
+			rml:reference "categorized_numberOfdrugs_beforedx";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOftoxicities;
+		rr:objectMap [
+			rml:reference "numberOftoxicities";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOftoxicities_before2018;
+		rr:objectMap [
+			rml:reference "numberOftoxicities_before2018";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOftoxicities_after2018;
+		rr:objectMap [
+			rml:reference "numberOftoxicities_after2018";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:categorized_numberOftoxicities;
+		rr:objectMap [
+			rml:reference "categorized_numberOftoxicities";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:survival_3_months;
+		rr:objectMap [
+			rml:reference "survival_3_months";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_systemic_progression;
+		rr:objectMap [
+			rml:reference "has_systemic_progression";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:num_of_onco_lines;
+		rr:objectMap [
+			rml:reference "num_of_onco_lines";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:num_of_qt_lines;
+		rr:objectMap [
+			rml:reference "num_of_qt_lines";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:num_of_tki_lines;
+		rr:objectMap [
+			rml:reference "num_of_tki_lines";		
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:num_of_imm_lines;
+		rr:objectMap [
+			rml:reference "num_of_imm_lines";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:num_of_ant_lines;
+		rr:objectMap [
+			rml:reference "num_of_ant_lines";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatment_order;
+		rr:objectMap [
+			rml:reference "treatment_order";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:palliative_care;
+		rr:objectMap [
+			rml:reference "palliative_care";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:palliative_care_in_1mon_to_death;
+		rr:objectMap [
+			rml:reference "palliative_care_in_1mon_to_death";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:palliative_care_before_1mon_to_death;
+		rr:objectMap [
+			rml:reference "palliative_care_before_1mon_to_death";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:overtreated;
+		rr:objectMap [
+			rml:reference "overtreated";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalDays_from_progression;
+		rr:objectMap [
+			rml:reference "survivalDays_from_progression";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalMonths_from_progression;
+		rr:objectMap [
+			rml:reference "survivalMonths_from_progression";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalDays_from_1tto;
+		rr:objectMap [
+			rml:reference "survivalDays_from_1tto";		
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalMonths_from_1tto;
+		rr:objectMap [
+			rml:reference "survivalMonths_from_1tto";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalDays_from_2tto;
+		rr:objectMap [
+			rml:reference "survivalDays_from_2tto";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalMonths_from_2tto;
+		rr:objectMap [
+			rml:reference "survivalMonths_from_2tto";		
+		]
+	];																									
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalDays_from_3tto;
+		rr:objectMap [
+			rml:reference "survivalDays_from_3tto";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:survivalMonths_from_3tto;
+		rr:objectMap [
+			rml:reference "survivalMonths_from_3tto";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:dead_in_hospital_in_1mon_after_tto;
+		rr:objectMap [
+			rml:reference "dead_in_hospital_in_1mon_after_tto";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_stage_IV_date;
+		rr:objectMap [
+			rml:reference "has_stage_IV_date";	
+			rr:datatype xsd:date;				
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:manualDiagnosisDate;
+		rr:objectMap [
+			rml:reference "manualDiagnosisDate";
+			rr:datatype xsd:date;					
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:Mutated_Sensit;
+		rr:objectMap [
+			rml:reference "Mutated_Sensit";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:Mutated_Resist;
+		rr:objectMap [
+			rml:reference "Mutated_Resist";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:sensit_mutation_date;
+		rr:objectMap [
+			rml:reference "sensit_mutation_date";
+			rr:datatype xsd:date;					
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:resist_mutation_date;
+		rr:objectMap [
+			rml:reference "resist_mutation_date";
+			rr:datatype xsd:date;					
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_dx_to_sensit_days;
+		rr:objectMap [
+			rml:reference "time_from_dx_to_sensit_days";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_dx_to_resist_days;
+		rr:objectMap [
+			rml:reference "time_from_dx_to_resist_days";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_sensit_to_resist_days;
+		rr:objectMap [
+			rml:reference "time_from_sensit_to_resist_days";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_dx_to_sensit_mon;
+		rr:objectMap [
+			rml:reference "time_from_dx_to_sensit_mon";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_dx_to_resist_mon;
+		rr:objectMap [
+			rml:reference "time_from_dx_to_resist_mon";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:time_from_sensit_to_resist_mon;
+		rr:objectMap [
+			rml:reference "time_from_sensit_to_resist_mon";		
+		]
 	].
+															
 <Diagnosis>
 	rml:logicalSource [ rml:source "/data/data/lc_notes/patients.csv";
 						rml:referenceFormulation ql:CSV;
@@ -181,28 +582,22 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasDiagnosisTumorType;
-		rr:objectMap [
-			rr:template "http://project-iasis.eu/TumorType/{tumorType}";
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisDate;
 		rr:objectMap [
-			rml:reference "diagnosisDate";
-			rr:datatype xsd:date;		
+			rml:reference "manualDiagnosisDate";
+			rr:datatype xsd:date		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisAge;
 		rr:objectMap [ 
-			rml:reference "ageAtDiagnosis";
+			rml:reference "age_of_diagnosis";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisPerformanceStatus;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/PerformanceStatus/status{performanceStatusAtDiagnosis}";
+			rr:template "http://project-iasis.eu/PerformanceStatus/status{ps_at_diagnosis}";
 		]
 	].
 
