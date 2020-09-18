@@ -3,205 +3,204 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <http://tib.de/ontario/mapping#> .
-@prefix iasis: <http://project-iasis.eu/vocab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<#LCPatient>
+<LCPatient>
 	rml:logicalSource [ rml:source "/data/data/lc_notes/patients.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/LCPatient/{id}";
-		rr:class iasis:LCPatient
+		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:gender;
+		rr:predicate clarify:gender;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/Gender/{gender}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:beingIn_hospitalHealthArea;
+		rr:predicate clarify:beingIn_hospitalHealthArea;
 		rr:objectMap [
 			rml:reference "hospitalHealthArea";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:distanceToHospital;
+		rr:predicate clarify:distanceToHospital;
 		rr:objectMap [
 			rml:reference "distanceToHospital";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:radonRiskLevel;
+		rr:predicate clarify:radonRiskLevel;
 		rr:objectMap [
 			rml:reference "radonRisk";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:numberOfCigarettesPerYear;
+		rr:predicate clarify:numberOfCigarettesPerYear;
 		rr:objectMap [
 			rml:reference "smokingCigarettesPerYear";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:isDead;
+		rr:predicate clarify:isDead;
 		rr:objectMap [
 			rml:reference "dead";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:ageAtDeath;
+		rr:predicate clarify:ageAtDeath;
 		rr:objectMap [
 			rml:reference "ageOfDeath";
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate iasis:placeOfDeath;
+		rr:predicate clarify:placeOfDeath;
 		rr:objectMap [
 			rml:reference "deadLocation";
 		]
 	];							
 	rr:predicateObjectMap [
-		rr:predicate iasis:tumorType;
+		rr:predicate clarify:tumorType;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/TumorType/{tumorType}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:smoking;
+		rr:predicate clarify:smoking;
 		rr:objectMap [
 			rml:reference "smoker";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_biomarker;
+		rr:predicate clarify:existenceOf_biomarker;
 		rr:objectMap [
 			rml:reference "biomarkers";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_bioEgfr;
+		rr:predicate clarify:existenceOf_bioEgfr;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/Biomarker/{bioEgfr}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_bioAlk;
+		rr:predicate clarify:existenceOf_bioAlk;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/Biomarker/{bioAlk}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_bioRos1;
+		rr:predicate clarify:existenceOf_bioRos1;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/Biomarker/{bioRos1}";
 		]
 	]; 
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_chemotherapy;
+		rr:predicate clarify:existenceOf_chemotherapy;
 		rr:objectMap [
 			rml:reference "chemotherapy";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_tki;
+		rr:predicate clarify:existenceOf_tki;
 		rr:objectMap [
 			rml:reference "tki";
 		]
 	]; 
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_immunotherapy;
+		rr:predicate clarify:existenceOf_immunotherapy;
 		rr:objectMap [
 			rml:reference "immunotherapy";
 		]
 	]; 
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_antiangiogentic;
+		rr:predicate clarify:existenceOf_antiangiogentic;
 		rr:objectMap [
 			rml:reference "antiangiogenic";
 		]
 	]; 
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_radiationtherapy;
+		rr:predicate clarify:existenceOf_radiationtherapy;
 		rr:objectMap [
 			rml:reference "radiationtherapy";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_surgery;
+		rr:predicate clarify:existenceOf_surgery;
 		rr:objectMap [
 			rml:reference "surgery";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_familiarAntecedents;
+		rr:predicate clarify:existenceOf_familiarAntecedents;
 		rr:objectMap [
 			rml:reference "familialAntecedents";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_brainMetastasis;
+		rr:predicate clarify:existenceOf_brainMetastasis;
 		rr:objectMap [
 			rml:reference "brainMetastasis";
 		]
 	];
 		rr:predicateObjectMap [
-		rr:predicate iasis:survivalMonths;
+		rr:predicate clarify:survivalMonths;
 		rr:objectMap [
 			rml:reference "survivalMonths";
 		]
 	];
 		rr:predicateObjectMap [
-		rr:predicate iasis:patientCurrentStatus;
+		rr:predicate clarify:patientCurrentStatus;
 		rr:objectMap [
 			rml:reference "patientStatus";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosis;
+		rr:predicate clarify:hasDiagnosis;
 		rr:objectMap [ 
-			rr:parentTriplesMap <#Diagnosis>
+			rr:parentTriplesMap <Diagnosis>
 		]
 	].
-<#Diagnosis>
+<Diagnosis>
 	rml:logicalSource [ rml:source "/data/data/lc_notes/patients.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/Diagnosis/{id}";
-		rr:class iasis:Diagnosis;
+		rr:class clarify:Diagnosis;
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosisTumorStage;
+		rr:predicate clarify:hasDiagnosisTumorStage;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/TumorStage/Stage{stageAtDiagnosis}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosisTumorType;
+		rr:predicate clarify:hasDiagnosisTumorType;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/TumorType/{tumorType}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosisDate;
+		rr:predicate clarify:hasDiagnosisDate;
 		rr:objectMap [
 			rml:reference "diagnosisDate";
 			rr:datatype xsd:date;		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosisAge;
+		rr:predicate clarify:hasDiagnosisAge;
 		rr:objectMap [ 
 			rml:reference "ageAtDiagnosis";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasDiagnosisPerformanceStatus;
+		rr:predicate clarify:hasDiagnosisPerformanceStatus;
 		rr:objectMap [
 			rr:template "http://project-iasis.eu/PerformanceStatus/status{performanceStatusAtDiagnosis}";
 		]

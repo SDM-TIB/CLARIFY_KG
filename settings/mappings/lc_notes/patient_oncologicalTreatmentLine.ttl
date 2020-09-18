@@ -3,14 +3,12 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix base: <http://tib.de/ontario/mapping#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix iasis: <http://project-iasis.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<#LCPatient>
+<LCPatient>
 	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -18,107 +16,107 @@
 		rr:template "http://project-iasis.eu/LCPatient/{patient_id}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasOncologicalTreatmentLine;
+		rr:predicate clarify:hasOncologicalTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <#OncologicalTreatmentLine>
+			rr:parentTriplesMap <OncologicalTreatmentLine>
 		]
 	].
-<#OncologicalTreatmentLine>
+<OncologicalTreatmentLine>
 	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_oncologicalTreatmentLine.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://project-iasis.eu/OncologicalTreatmentLine/{patient_id}_{oncologicalTreatmentLine_id}";
-		rr:class iasis:OncologicalTreatmentLine;
+		rr:class clarify:OncologicalTreatmentLine;
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:treatmentType;
+		rr:predicate clarify:treatmentType;
 		rr:objectMap [
 			rml:reference "type";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:treatmentLineNumber;
+		rr:predicate clarify:treatmentLineNumber;
 		rr:objectMap [
 			rml:reference "lineNumber";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:treatmentInitDate;
+		rr:predicate clarify:treatmentInitDate;
 		rr:objectMap [
 			rml:reference "initDate";
 			rr:datatype xsd:date;			
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:treatmentFinishDate;
+		rr:predicate clarify:treatmentFinishDate;
 		rr:objectMap [
 			rml:reference "finishDate";
 			rr:datatype xsd:date;
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:treatmentDurationMonths;
+		rr:predicate clarify:treatmentDurationMonths;
 		rr:objectMap [
 			rml:reference "durationMonths";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_toxicity;
+		rr:predicate clarify:existenceOf_toxicity;
 		rr:objectMap [
 			rml:reference "toxicities";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_generalToxicity;
+		rr:predicate clarify:existenceOf_generalToxicity;
 		rr:objectMap [
 			rml:reference "toxGeneral";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_gastrointestinalToxicity;
+		rr:predicate clarify:existenceOf_gastrointestinalToxicity;
 		rr:objectMap [
 			rml:reference "toxGastro";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_endocrinaToxicity;
+		rr:predicate clarify:existenceOf_endocrinaToxicity;
 		rr:objectMap [
 			rml:reference "toxEndo";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_cutaneaToxicity;
+		rr:predicate clarify:existenceOf_cutaneaToxicity;
 		rr:objectMap [
 			rml:reference "toxCut";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_neumologicalToxicity;
+		rr:predicate clarify:existenceOf_neumologicalToxicity;
 		rr:objectMap [
 			rml:reference "toxNeumo";
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_analyticalToxicity;
+		rr:predicate clarify:existenceOf_analyticalToxicity;
 		rr:objectMap [
 			rml:reference "toxAnaly";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_neurologicalToxicity;
+		rr:predicate clarify:existenceOf_neurologicalToxicity;
 		rr:objectMap [
 			rml:reference "toxNeuro";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_otherToxicity;
+		rr:predicate clarify:existenceOf_otherToxicity;
 		rr:objectMap [
 			rml:reference "toxOther";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate iasis:existenceOf_brainMetastasis_inOncologicalTreatmentLine;
+		rr:predicate clarify:existenceOf_brainMetastasis_inOncologicalTreatmentLine;
 		rr:objectMap [
 			rml:reference "brainMetastasis";
 		]
