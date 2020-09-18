@@ -16,29 +16,8 @@
 		rr:template "http://project-iasis.eu/LCPatient/{patient_id}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasToxicityObservation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <ToxicityObservation>
-		]
-	].	
-<ToxicityObservation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/patient_toxicitiesType.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://project-iasis.eu/ToxicityObservation/{patient_id}_{toxicity_id}";
-		rr:class clarify:ToxicityObservation;
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasToxicity;
 		rr:objectMap [ 
-			rr:template "http://project-iasis.eu/Phenotype/{toxicity_concept}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasDate;
-		rr:objectMap [ 
-			rml:reference "date";
-			rr:datatype xsd:date;
+			rr:template "http://project-iasis.eu/Phenotype/{concept}"
 		]
 	].

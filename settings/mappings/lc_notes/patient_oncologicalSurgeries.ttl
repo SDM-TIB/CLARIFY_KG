@@ -18,7 +18,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOncologicalSurgery;
 		rr:objectMap [ 
-			rr:template "http://project-iasis.eu/OncologicalSurgery/{oncologicalSurgery_concept}"
+			rr:template "http://project-iasis.eu/OncologicalSurgery/{concept}"
 		]
 	].	
 

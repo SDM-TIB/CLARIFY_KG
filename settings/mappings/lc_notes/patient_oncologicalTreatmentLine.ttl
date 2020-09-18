@@ -92,9 +92,9 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_neumologicalToxicity;
+		rr:predicate clarify:existenceOf_pneumologicalToxicity;
 		rr:objectMap [
-			rml:reference "toxNeumo";
+			rml:reference "toxPneu";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -110,11 +110,41 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_otherToxicity;
+		rr:predicate clarify:existenceOf_astheniaToxicity;
 		rr:objectMap [
-			rml:reference "toxOther";
+			rml:reference "toxAst";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_allergyToxicity;
+		rr:objectMap [
+			rml:reference "toxAlerg";
 		]
 	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_liverToxicity;
+		rr:objectMap [
+			rml:reference "toxAnalyHep";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_kidneyToxicity;
+		rr:objectMap [
+			rml:reference "toxRen";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_otolaryngologyToxicity;
+		rr:objectMap [
+			rml:reference "toxOto";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_cardiologicalToxicity;
+		rr:objectMap [
+			rml:reference "toxCard";
+		]
+	];								
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_brainMetastasis_inOncologicalTreatmentLine;
 		rr:objectMap [
