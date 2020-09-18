@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Phenotype>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/toxicities.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_notes/toxicities_type.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -36,7 +36,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/toxicities.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_notes/toxicities_type.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
