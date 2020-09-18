@@ -37,7 +37,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:radonRiskLevel;
 		rr:objectMap [
-			rml:reference "radonRisk";
+			rml:reference "RandonRisk";
 		]
 	];
 	rr:predicateObjectMap [

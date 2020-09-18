@@ -13,52 +13,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Phenotype/{ENG_CUI_Name}";
+		rr:template "http://project-iasis.eu/Phenotype/{ENG_Name}";
 		rr:class clarify:Phenotype;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:toxicityLabel_ENG;
 		rr:objectMap [ 
-			rml:reference "ENG_CUI_Name" 
+			rml:reference "ENG_Name" 
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{DBpediaURL}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
-
-<Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_notes/toxicities_type.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel_SPA;
-		rr:objectMap [ 
-			rml:reference "name" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:provenance;
-		rr:objectMap [
-			rr:template "http://project-iasis.eu/SourceName/UMLS"
-		]
-	].						
+	].					
 
