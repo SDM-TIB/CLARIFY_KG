@@ -23,12 +23,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{DBpediaURL}";
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
