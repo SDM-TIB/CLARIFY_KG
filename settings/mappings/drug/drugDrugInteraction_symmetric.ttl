@@ -19,7 +19,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf;
 		rr:objectMap [
-			rr:parentTriplesMap <#DrugDrugInteraction>
+			rr:parentTriplesMap <DrugDrugInteraction>
 		];
 	].	
 
