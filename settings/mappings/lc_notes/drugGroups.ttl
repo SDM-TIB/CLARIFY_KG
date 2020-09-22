@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/DrugGroup/{name}";
+		rr:template "http://clarify2020.eu/DrugGroup/{name}";
 		rr:class clarify:DrugGroup;
 	];
 	rr:predicateObjectMap [

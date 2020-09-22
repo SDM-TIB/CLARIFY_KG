@@ -13,12 +13,12 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/LCPatient/{patient_id}";
+		rr:template "http://clarify2020.eu/LCPatient/{patient_id}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOncologicalSurgery;
 		rr:objectMap [ 
-			rr:template "http://project-iasis.eu/OncologicalSurgery/{concept}"
+			rr:template "http://clarify2020.eu/OncologicalSurgery/{concept}"
 		]
 	].	
 

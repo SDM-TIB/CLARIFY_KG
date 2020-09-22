@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Disorder/{ENG_CUI_Name}";
+		rr:template "http://clarify2020.eu/Disorder/{ENG_CUI_Name}";
 		rr:class clarify:Disorder;
 	];
 	rr:predicateObjectMap [
@@ -40,7 +40,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Annotation/{CUI_ID}";
+		rr:template "http://clarify2020.eu/Annotation/{CUI_ID}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
@@ -58,6 +58,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/SourceName/UMLS"
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].

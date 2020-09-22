@@ -13,11 +13,11 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Publication/{subject}";
-		rr:class iasis:Publication
+		rr:template "http://clarify2020.eu/Publication/{subject}";
+		rr:class clarify:Publication
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:pubmedID;
+		rr:predicate clarify:pubmedID;
 		rr:objectMap [ 
 			rml:reference "subject" 
 		]
@@ -28,17 +28,17 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Annotation/{object}";
-		rr:class iasis:Annotation
+		rr:template "http://clarify2020.eu/Annotation/{object}";
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "object" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:semanticType;
+		rr:predicate clarify:semanticType;
 		rr:objectMap [ 
 			rml:reference "semantic_types" 
 		]
@@ -49,24 +49,29 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/HAS_ANNOTATION/{subject}_HAS_ANNOTATION_{object}";
-		rr:class iasis:HAS_ANNOTATION
+		rr:template "http://clarify2020.eu/HAS_ANNOTATION/{subject}_{predicate}_{object}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:confidence;
+		rr:predicate rdf:type;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/vocab/{predicate}"
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:confidence;
 		rr:objectMap [ 
 			rml:reference "confidence" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasAnnotation;
+		rr:predicate clarify:hasAnnotation;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Annotation/{object}"
+			rr:template "http://clarify2020.eu/Annotation/{object}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:annotates;
+		rr:predicate clarify:annotates;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Publication/{subject}"
+			rr:template "http://clarify2020.eu/Publication/{subject}"
 		]
 	].	

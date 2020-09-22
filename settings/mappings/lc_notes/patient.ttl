@@ -13,13 +13,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/LCPatient/{id}";
+		rr:template "http://clarify2020.eu/LCPatient/{id}";
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:gender;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Gender/{gender}";
+			rr:template "http://clarify2020.eu/Gender/{gender}";
 		]
 	];
 	rr:predicateObjectMap [
@@ -79,19 +79,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioEgfr;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{Mutated_egfr}";
+			rr:template "http://clarify2020.eu/Biomarker/{Mutated_egfr}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioAlk;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{Mutated_alk}";
+			rr:template "http://clarify2020.eu/Biomarker/{Mutated_alk}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:existenceOf_bioRos1;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/Biomarker/{Mutated_Ros}";
+			rr:template "http://clarify2020.eu/Biomarker/{Mutated_Ros}";
 		]
 	]; 
 	rr:predicateObjectMap [
@@ -258,7 +258,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:lastTumorStage;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/TumorStage/Stage{stage}";		
+			rr:template "http://clarify2020.eu/TumorStage/Stage{stage}";		
 		]
 	];	
 	rr:predicateObjectMap [
@@ -553,19 +553,19 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://project-iasis.eu/Diagnosis/{id}";
+		rr:template "http://clarify2020.eu/Diagnosis/{id}";
 		rr:class clarify:Diagnosis;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisTumorStage;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/TumorStage/Stage{stageAtDiagnosis}";
+			rr:template "http://clarify2020.eu/TumorStage/Stage{stageAtDiagnosis}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisTumorStageCategory;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/TumorStageCategory/{categorized_stage_at_dx}";
+			rr:template "http://clarify2020.eu/TumorStageCategory/{categorized_stage_at_dx}";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -596,7 +596,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisPerformanceStatus;
 		rr:objectMap [
-			rr:template "http://project-iasis.eu/PerformanceStatus/status{ps_at_diagnosis}";
+			rr:template "http://clarify2020.eu/PerformanceStatus/status{ps_at_diagnosis}";
 		]
 	].
 
