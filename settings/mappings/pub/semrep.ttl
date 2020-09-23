@@ -34,18 +34,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_semanticType;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/Annotation/{subject_semtype}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_semanticType;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/Annotation/{object_semtype}"
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_publication;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/Publication/{pmid}"
