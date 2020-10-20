@@ -256,13 +256,13 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:lastTumorStage;
+		rr:predicate clarify:lastCancerStage;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorStage/Stage{stage}";		
+			rr:template "http://clarify2020.eu/CancerStage/Stage{stage}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:lastTumorStageCategory;
+		rr:predicate clarify:lastCancerStageCategory;
 		rr:objectMap [
 			rml:reference "categorized_stage";		
 		]
@@ -557,15 +557,15 @@
 		rr:class clarify:Diagnosis;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasDiagnosisTumorStage;
+		rr:predicate clarify:hasDiagnosisCancerStage;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorStage/Stage{stageAtDiagnosis}";
+			rr:template "http://clarify2020.eu/CancerStage/Stage{stageAtDiagnosis}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasDiagnosisTumorStageCategory;
+		rr:predicate clarify:hasDiagnosisCancerStageCategory;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorStageCategory/{categorized_stage_at_dx}";
+			rr:template "http://clarify2020.eu/CancerStageCategory/{categorized_stage_at_dx}";
 		]
 	];		
 	rr:predicateObjectMap [
