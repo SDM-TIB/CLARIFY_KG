@@ -1,0 +1,62 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/clinical_trial.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:involved_in;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ClinicalTrial>
+		]
+	].
+
+<ClinicalTrial>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/clinical_trial.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ClinicalTrial/{trial_name}";
+		rr:class clarify:ClinicalTrial;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:trialLabel;
+		rr:objectMap [
+			rml:reference "trial_name";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:trialIsObservational;
+		rr:objectMap [
+			rml:reference "observational_trial";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:drugBasedTrial;
+		rr:objectMap [
+			rml:reference "drug_trial";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:trialPhase;
+		rr:objectMap [
+			rml:reference "phase";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:directedTrial;
+		rr:objectMap [
+			rml:reference "directed";
+		]
+	].			
