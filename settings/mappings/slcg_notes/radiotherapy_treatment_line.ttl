@@ -9,31 +9,36 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasChemotherapyTreatmentLine;
+		rr:predicate clarify:hasRadiotherapyTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ChemotherapyTreatmentLine>
+			rr:parentTriplesMap <RadiotherapyTreatmentLine>
 		]
 	].
-
-<ChemotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/chemotherapy_treatment_line.csv";
+<RadiotherapyTreatmentLine>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ChemotherapyTreatmentLine/{EHR}_{treatment_line}";
-		rr:class clarify:ChemotherapyTreatmentLine
+		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{treatment_line}";
+		rr:class clarify:RadiotherapyTreatmentLine;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatmentLineNumber;
+		rr:objectMap [
+			rml:reference "treatment_line";
+		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:chemotherapyResponse;
+		rr:predicate clarify:radiotherapyArea;
 		rr:objectMap [
-			rml:reference "best_response";
+			rml:reference "radiated_area";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -47,10 +52,5 @@
 		rr:objectMap [
 			rml:reference "end_date";
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
-		rr:objectMap [
-			rml:reference "treatment_line";
-		]
-	].	
+	].
+

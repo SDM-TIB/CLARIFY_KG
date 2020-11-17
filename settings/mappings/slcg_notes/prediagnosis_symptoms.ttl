@@ -9,48 +9,43 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasChemotherapyTreatmentLine;
+		rr:predicate clarify:hasPrediagnosis;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ChemotherapyTreatmentLine>
+			rr:parentTriplesMap <Prediagnosis>
 		]
 	].
 
-<ChemotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/chemotherapy_treatment_line.csv";
+<Prediagnosis>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ChemotherapyTreatmentLine/{EHR}_{treatment_line}";
-		rr:class clarify:ChemotherapyTreatmentLine
+		rr:template "http://clarify2020.eu/Prediagnosis/{EHR}_{ID}";
+		rr:class clarify:Prediagnosis;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:fever;
+		rr:objectMap [
+			rml:reference "fever";
+		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:chemotherapyResponse;
+		rr:predicate clarify:weightLoss;
 		rr:objectMap [
-			rml:reference "best_response";
+			rml:reference "weightLoss";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatementLineStartDate;
+		rr:predicate clarify:sleepingDifficulty;
 		rr:objectMap [
-			rml:reference "start_date";
+			rml:reference "sleep";
+
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:treatementLineEndingDate;
-		rr:objectMap [
-			rml:reference "end_date";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
-		rr:objectMap [
-			rml:reference "treatment_line";
-		]
-	].	
+	].		

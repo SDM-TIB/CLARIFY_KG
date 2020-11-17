@@ -1,0 +1,74 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTumorHistology;
+		rr:objectMap [ 
+			rr:parentTriplesMap <TumorType>
+		]
+	].
+
+<TumorType>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TumorType/{type}";
+		rr:class clarify:TumorType;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:histology;
+		rr:objectMap [
+			rml:reference "";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:adenocarcinomaHistology;
+		rr:objectMap [
+			rml:reference "adeno_histology";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:smallCellCarcinomaType;
+		rr:objectMap [
+			rml:reference "small_cell_carcinom";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:carcinomaType;
+		rr:objectMap [
+			rml:reference "carcinom";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:mesotheliomaType;
+		rr:objectMap [
+			rml:reference "mesothelioma";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:histologyDegree;
+		rr:objectMap [
+			rml:reference "degree";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:description;
+		rr:objectMap [
+			rml:reference "description";		
+		]
+	].
