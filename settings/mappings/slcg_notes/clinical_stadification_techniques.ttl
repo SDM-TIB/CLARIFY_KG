@@ -95,10 +95,4 @@
 		rr:objectMap [
 			rml:reference "brain_ct";		
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:other;
-		rr:objectMap [
-			rml:reference "others";		
-		]
 	].

@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/biomarker_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,7 +23,7 @@
 	].	
 
 <Biomarker>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/biomarker_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -34,5 +34,11 @@
 		rr:predicate clarify:biomarkerResult;
 		rr:objectMap [
 			rml:reference "result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:biomarkerSpecification;
+		rr:objectMap [
+			rml:reference "specification";		
 		]
 	].	

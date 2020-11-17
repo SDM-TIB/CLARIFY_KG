@@ -83,11 +83,5 @@
 		rr:objectMap [
 			rml:reference "transthoracic_puncture";		
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:other;
-		rr:objectMap [
-			rml:reference "others";		
-		]
-	].	
+	].
 																

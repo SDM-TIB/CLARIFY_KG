@@ -1,0 +1,80 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/egfr_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBiomarker;
+		rr:objectMap [ 
+			rr:parentTriplesMap <Biomarker>
+		]
+	].	
+
+<Biomarker>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/egfr_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Biomarker/{description}";
+		rr:class clarify:Biomarker;
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:biomarkerNegativeResult;
+		rr:objectMap [
+			rml:reference "negative_result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_T790M_positive_result;
+		rr:objectMap [
+			rml:reference "T790Mpos_result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_T790M_negative_result;
+		rr:objectMap [
+			rml:reference "T790Mneg_result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_exon19_result;
+		rr:objectMap [
+			rml:reference "Exon19_result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_exon21_result;
+		rr:objectMap [
+			rml:reference "Exon21_result";		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_NOS_result;
+		rr:objectMap [
+			rml:reference "NOS_result";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:mutation_other_result;
+		rr:objectMap [
+			rml:reference "others_result";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:biomarkerSpecification;
+		rr:objectMap [
+			rml:reference "specification";		
+		]
+	].								

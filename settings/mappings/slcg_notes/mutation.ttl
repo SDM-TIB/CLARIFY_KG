@@ -20,7 +20,13 @@
 		rr:objectMap [ 
 			rr:parentTriplesMap <BiomarkerObservation>
 		]
-	].		
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBiomarker;
+		rr:objectMap [ 
+			rr:parentTriplesMap <Biomarker>
+		]
+	].			
 
 <BiomarkerObservation>
 	rml:logicalSource [ rml:source "/data/data/slcg_notes/mutation.csv";
