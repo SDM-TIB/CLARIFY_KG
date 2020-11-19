@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <ClinicalTrial>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/targets_clinical_trial_processed.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/targets_clinical_trial_processed.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
