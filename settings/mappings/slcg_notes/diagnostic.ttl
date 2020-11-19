@@ -23,7 +23,7 @@
 	].
 
 <Diagnosis>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/patients.csv";
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/diagnostic.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

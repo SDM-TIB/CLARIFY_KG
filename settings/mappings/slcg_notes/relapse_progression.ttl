@@ -31,13 +31,13 @@
 		rr:class clarify:ProgressionRelapseObservation
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:pregressionOrRelapse;
+		rr:predicate clarify:progressionOrRelapse;
 		rr:objectMap [
 			rml:reference "progression_or_relapse";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:pregressionType;
+		rr:predicate clarify:progressionType;
 		rr:objectMap [
 			rml:reference "type";
 		]

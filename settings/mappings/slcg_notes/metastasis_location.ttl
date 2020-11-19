@@ -85,7 +85,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:lymphNodeexistenceOf_pancreasMetastasissInvolvement;
+		rr:predicate clarify:existenceOf_pancreasMetastasis;
 		rr:objectMap [
 			rml:reference "pancreatic";		
 		]
