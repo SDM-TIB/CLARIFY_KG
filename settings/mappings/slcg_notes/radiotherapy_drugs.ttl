@@ -1,0 +1,57 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<RadiotherapyTreatmentLine>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/radiotherapy_drugs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{treatment_line}";
+		rr:class clarify:RadiotherapyTreatmentLine
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatmentLineDosage;
+		rr:objectMap [
+			rml:reference "dose";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatmentLineFractioning;
+		rr:objectMap [
+			rml:reference "fractioning";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:hasCUIAnnotation;
+		rr:objectMap [
+			rr:parentTriplesMap <Annotation>
+		]
+	].	
+
+<Annotation>
+	rml:logicalSource [ rml:source "/data/data/lc_notes/radiotherapy_drugs.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Annotation/{CUI}";
+		rr:class iasis:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:annID;
+		rr:objectMap [ 
+			rml:reference "CUI" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate iasis:provenance;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/SourceName/UMLS"
+		]
+	].					

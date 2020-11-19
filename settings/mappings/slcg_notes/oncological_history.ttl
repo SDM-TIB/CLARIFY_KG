@@ -58,6 +58,12 @@
 		rr:class clarify:FamilyHistory;
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:familyCancerType;
+		rr:objectMap [
+			rml:reference "family_cancer_antecedents";
+		]
+	];	
+	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfFamilyWithLC;
 		rr:objectMap [
 			rml:reference "number_of_family_members_cancer";

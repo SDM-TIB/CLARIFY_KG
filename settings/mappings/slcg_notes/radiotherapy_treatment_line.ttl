@@ -42,6 +42,18 @@
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:radiotherapyType;
+		rr:objectMap [
+			rml:reference "type";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:radiotherapyIntention;
+		rr:objectMap [
+			rml:reference "intention";		
+		]
+	];		
+	rr:predicateObjectMap [
 		rr:predicate clarify:treatementLineStartDate;
 		rr:objectMap [
 			rml:reference "start_date";

@@ -29,9 +29,15 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/ChemotherapyTreatmentLine/{EHR}_{treatment_line}";
 		rr:class clarify:ChemotherapyTreatmentLine
-	];	
+	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:chemotherapyResponse;
+		rr:predicate clarify:treatmentLineType;
+		rr:objectMap [
+			rml:reference "type";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineBestResponse;
 		rr:objectMap [
 			rml:reference "best_response";
 		]

@@ -16,21 +16,61 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasChemotherapyTreatmentLine;
+		rr:predicate clarify:hasOncologicalSurgery;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/ChemotherapyTreatmentLine/{EHR}_{treatment_line}"		
+			rr:parentTriplesMap <OncologicalSurgery>		
+		]
+	].	
+
+<OncologicalSurgery>
+	rml:logicalSource [ rml:source "/data/data/slcg_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/OncologicalSurgery/{EHR}_{treatment_line}";
+		rr:class clarify:OncologicalSurgery
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryPathologicalResponse;
+		rr:objectMap [
+			rml:reference "pathological_response";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryResectionGrade;
+		rr:objectMap [
+			rml:reference "resection_grade";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryPerioperativeDeath;
+		rr:objectMap [
+			rml:reference "perioperative_death";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:date;
+		rr:objectMap [
+			rml:reference "surgery_date";
+			rr:datatype xsd:date;
 		]
 	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgerySubType;
+		rr:objectMap [
+			rml:reference "surgery_subtype";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryClass;
+		rr:objectMap [
+			rml:reference "surgery_class";
+		]
+	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasStage;
 		rr:objectMap [ 
 			rr:parentTriplesMap <CancerStageTNM>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOncologicalSurgery;
-		rr:objectMap [ 
-			rr:parentTriplesMap <OncologicalSurgery>
 		]
 	].	
 
@@ -62,36 +102,3 @@
 	].	
 
 
-<OncologicalSurgery>
-	rml:logicalSource [ rml:source "/data/data/slcg_notes/surgery.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/OncologicalSurgery/{EHR}_{treatment_line}";
-		rr:class clarify:OncologicalSurgery
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryLabel;
-		rr:objectMap [
-			rml:reference "";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:date;
-		rr:objectMap [
-			rml:reference "surgery_date";
-			rr:datatype xsd:date;
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgerySubType;
-		rr:objectMap [
-			rml:reference "surgery_subtype";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryClass;
-		rr:objectMap [
-			rml:reference "surgery_class";
-		]
-	].

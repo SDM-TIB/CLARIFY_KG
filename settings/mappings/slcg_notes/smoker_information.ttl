@@ -31,6 +31,12 @@
 		rr:class clarify:SmokingHistory;
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfCigarettesPerYear;
+		rr:objectMap [
+			rml:reference "IPA";
+		]
+	];	
+	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfCigarettesPerDay;
 		rr:objectMap [
 			rml:reference "cigarettes_day";
