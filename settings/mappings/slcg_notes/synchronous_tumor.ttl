@@ -23,36 +23,7 @@
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:description;
-		rr:objectMap <CleaningFunction>
-	].
-
-<CleaningFunction>
-	fnml:functionValue [
-        rml:logicalSource [ rml:source "/data/data/slcg_notes/synchronous_tumor.csv";
-		rml:referenceFormulation ql:CSV 
-							];
-        rr:predicateObjectMap [
-         	rr:predicate fno:executes ;
-            rr:objectMap [ 
-            	rr:constant ex:replaceValue 
-        	]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate ex:value;
-            rr:objectMap [ 
-            	rml:reference "description" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate ex:value2;
-            rr:objectMap [ 
-            	rr:constant " " 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate ex:value3;
-            rr:objectMap [ 
-            	rr:constant "_" 
-            ]
-        ];        
-    ].									
+        rr:objectMap [ 
+            rml:reference "description" 
+        ]
+	].								
