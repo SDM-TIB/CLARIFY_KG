@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{HER}";
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMontoring;
@@ -27,7 +27,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/StatusEvolution/{HER}_{monitoring_date}";
+		rr:template "http://clarify2020.eu/StatusEvolution/{EHR}_{monitoring_date}";
 		rr:class clarify:StatusEvolution;
 	];
 	rr:predicateObjectMap [
