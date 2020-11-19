@@ -59,7 +59,7 @@
 		rr:class clarify:Biomarker;
 	];			
 	rr:predicateObjectMap [
-		rr:predicate iasis:hasCUIAnnotation;
+		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation>
 		]
@@ -71,16 +71,16 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/Annotation/{CUI}";
-		rr:class iasis:Annotation
+		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:annID;
+		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "CUI" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate iasis:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
