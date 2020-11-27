@@ -17,6 +17,12 @@
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:currentCancerType;
+		rr:objectMap [
+			rml:reference "type_cancer";
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate clarify:gender;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/Gender/{gender}";

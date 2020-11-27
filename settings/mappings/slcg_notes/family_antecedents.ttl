@@ -1,0 +1,62 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_familyWithCancer;
+		rr:objectMap [
+			rml:reference "has_family_cancer_antecedents";
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasFamilyHistory;
+		rr:objectMap [ 
+			rr:parentTriplesMap <FamilyHistory>
+		]
+	].	
+
+<FamilyHistory>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/FamilyHistory/{EHR}_{ID}";
+		rr:class clarify:FamilyHistory;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:familyCancerType;
+		rr:objectMap [
+			rml:reference "family_cancer_type";
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfFamilyWithLC;
+		rr:objectMap [
+			rml:reference "number_of_family_members_cancer";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:numberOfFamilyWithOtherCancers;
+		rr:objectMap [
+			rml:reference "number_of_family_members_others";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:familyType;
+		rr:objectMap [
+			rml:reference "relationship";
+		]
+	].	

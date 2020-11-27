@@ -16,15 +16,15 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:existenceOf_previousHistory;
+		rr:objectMap [
+			rml:reference "has_previous_cancers";
+		]
+	];			
+	rr:predicateObjectMap [
 		rr:predicate clarify:hasPatientHistory;
 		rr:objectMap [ 
 			rr:parentTriplesMap <PatientHistory>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyHistory;
-		rr:objectMap [ 
-			rr:parentTriplesMap <FamilyHistory>
 		]
 	].
 
@@ -33,7 +33,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PatientHistory/{ID}";
+		rr:template "http://clarify2020.eu/PatientHistory/{EHR}_{ID}";
 		rr:class clarify:PatientHistory;
 	];
 	rr:predicateObjectMap [
@@ -48,36 +48,3 @@
 			rml:reference "previous_cancer_type";
 		]
 	].			
-
-<FamilyHistory>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/oncological_history.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/FamilyHistory/{ID}";
-		rr:class clarify:FamilyHistory;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:familyCancerType;
-		rr:objectMap [
-			rml:reference "family_cancer_antecedents";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:numberOfFamilyWithLC;
-		rr:objectMap [
-			rml:reference "number_of_family_members_cancer";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:numberOfFamilyWithOtherCancers;
-		rr:objectMap [
-			rml:reference "number_of_family_members_others";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:familyType;
-		rr:objectMap [
-			rml:reference "relationship";
-		]
-	].	

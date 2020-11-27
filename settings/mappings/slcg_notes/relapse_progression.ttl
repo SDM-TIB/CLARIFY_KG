@@ -39,7 +39,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:progressionType;
 		rr:objectMap [
-			rml:reference "type";
+			rml:reference "progression_type";
 		]
 	];
 	rr:predicateObjectMap [
@@ -54,7 +54,13 @@
 			rml:reference "occurrence_date";
 			rr:datatype xsd:date
 		]
-	].
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatmentLineNumber;
+		rr:objectMap [
+			rml:reference "treatment_line";
+		]
+	].		
 
 
 					
