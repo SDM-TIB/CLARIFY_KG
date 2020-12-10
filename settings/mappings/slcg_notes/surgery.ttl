@@ -68,7 +68,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasStage;
+		rr:predicate clarify:hasStageTNM;
 		rr:objectMap [ 
 			rr:parentTriplesMap <CancerStageTNM>
 		]

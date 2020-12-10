@@ -33,7 +33,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:histology;
 		rr:objectMap [
-			rml:reference "";
+			rml:reference "type";
 		]
 	];	
 	rr:predicateObjectMap [

@@ -39,7 +39,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:previousCancer;
 		rr:objectMap [
-			rml:reference "previous_cancers";
+			rml:reference "previous_cancer_description";
 		]
 	];	
 	rr:predicateObjectMap [
