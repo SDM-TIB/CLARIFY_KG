@@ -42,4 +42,24 @@
 			rml:reference "date";
 			rr:datatype xsd:date		
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasDiagnosisStage;
+		rr:objectMap [ 
+			rr:parentTriplesMap <CancerStageCoded>;
+		]
 	].	
+
+<CancerStageCoded>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/diagnostic.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CancerStageCoded/{stage}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdfs:seeAlso;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/CancerStage/{stageMeaning}";
+		]
+	].			
