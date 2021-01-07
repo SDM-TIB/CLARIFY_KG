@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/drug/CUIs_oneLabel.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/CUIs_oneLabel.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

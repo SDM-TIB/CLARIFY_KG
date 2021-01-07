@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <TumorStage>
-	rml:logicalSource [ rml:source "/data/data/drug/stages_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/stages_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

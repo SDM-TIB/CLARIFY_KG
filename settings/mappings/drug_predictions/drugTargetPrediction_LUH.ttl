@@ -9,7 +9,7 @@
 @prefix bmLC: <http://bigmedilytics.eu/vocab/> .
 
 <DrugTargetPrediction>
-	rml:logicalSource [ rml:source "/data/data/drug_predictions/DrugTarget_prediction_LUH.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug_predictions/DrugTarget_prediction_LUH.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
