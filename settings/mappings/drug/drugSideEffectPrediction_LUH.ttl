@@ -6,42 +6,42 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix bmLC: <http://bigmedilytics.eu/vocab/> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugSideEffectPrediction>
 	rml:logicalSource [ rml:source "/data/data/drug_predictions/DrugPhenotype_prediction_LUH.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://bigmedilytics.eu/DrugSideEffectPrediction/{Drug}_interactsWith_{Phenotype}";
-		rr:class bmLC:DrugSideEffectPrediction
+		rr:template "http://clarify2020.eu/DrugSideEffectPrediction/{Drug}_interactsWith_{Phenotype}";
+		rr:class clarify:DrugSideEffectPrediction
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor1;
+		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Drug/{Drug}" 
+			rr:template "http://clarify2020.eu/Drug/{Drug}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:interactor2;
+		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
-			rr:template "http://bigmedilytics.eu/Phenotype/{Phenotype}" 
+			rr:template "http://clarify2020.eu/Phenotype/{Phenotype}" 
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:confidence;
+		rr:predicate clarify:confidence;
 		rr:objectMap [ 
 			rml:reference "Prob" 
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate bmLC:provenance;
+		rr:predicate clarify:provenance;
 		rr:objectMap [
-			rr:template "http://bigmedilytics.eu/SourceName/{SimilaritySource}"
+			rr:template "http://clarify2020.eu/SourceName/{SimilaritySource}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate bmLC:predictionMethod;
+		rr:predicate clarify:predictionMethod;
 		rr:objectMap [ 
 			rml:reference "Method" 
 		]
