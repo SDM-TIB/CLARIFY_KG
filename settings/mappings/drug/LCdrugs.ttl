@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LungCancerDrug>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/LCdrugList.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/LCdrugList.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

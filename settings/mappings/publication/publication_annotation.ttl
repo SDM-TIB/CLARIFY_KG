@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Publication>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/pub/Metamap_annotations_LC.csv";
+	rml:logicalSource [ rml:source "/data/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].					
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/pub/Metamap_annotations_LC.csv";
+	rml:logicalSource [ rml:source "/data/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -45,7 +45,7 @@
 	].
 
 <HasAnnotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/pub/Metamap_annotations_LC.csv";
+	rml:logicalSource [ rml:source "/data/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

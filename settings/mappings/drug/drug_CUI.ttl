@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Drug>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/CUI_DrugBank.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/CUI_DrugBank.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -23,7 +23,7 @@
 	].
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/CUI_DrugBank.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/CUI_DrugBank.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

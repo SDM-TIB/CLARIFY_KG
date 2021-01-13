@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <RadiotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/radiotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -36,7 +36,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/radiotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

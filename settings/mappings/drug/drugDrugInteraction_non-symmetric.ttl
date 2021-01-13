@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/Unsymmetric_DDI_corpus.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/Unsymmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

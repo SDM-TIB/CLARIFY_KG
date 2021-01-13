@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/performance_status.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,7 +23,7 @@
 	].
 
 <PerformanceStatus>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/slcg_notes/performance_status.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

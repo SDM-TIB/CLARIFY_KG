@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Biomarker>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/biomarkers.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/biomarkers.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -30,7 +30,7 @@
 	].
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/biomarkers.csv";
+	rml:logicalSource [ rml:source "/data/data/drug/biomarkers.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
