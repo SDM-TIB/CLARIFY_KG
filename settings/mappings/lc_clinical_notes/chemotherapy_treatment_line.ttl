@@ -31,15 +31,15 @@
 		rr:class clarify:ChemotherapyTreatmentLine
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineType;
+		rr:predicate clarify:hasChemoTreatmentLineType;
 		rr:objectMap [
-			rml:reference "type";
+			rr:template "http://clarify2020.eu/ChemoTreatmentLineType/{type}";
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatementLineBestResponse;
+		rr:predicate clarify:hasTreatementLineBestResponse;
 		rr:objectMap [
-			rml:reference "best_response";
+			rr:template "http://clarify2020.eu/TreatementLineBestResponse/{best_response}";
 		]
 	];
 	rr:predicateObjectMap [

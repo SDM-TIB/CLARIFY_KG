@@ -37,9 +37,9 @@
 		rr:class clarify:FamilyHistory;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:familyCancerType;
+		rr:predicate clarify:hasFamilyCancerType;
 		rr:objectMap [
-			rml:reference "family_cancer_type";
+			rr:template "http://clarify2020.eu/CancerType/{family_cancer_type}";
 		]
 	];	
 	rr:predicateObjectMap [

@@ -23,9 +23,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineMaintenance;
+		rr:predicate clarify:hasTreatmentLineMaintenance;
 		rr:objectMap [
-			rml:reference "maintenance";
+			rr:template "http://clarify2020.eu/Drug/{maintenance}";
 		]
 	];
 	rr:predicateObjectMap [
