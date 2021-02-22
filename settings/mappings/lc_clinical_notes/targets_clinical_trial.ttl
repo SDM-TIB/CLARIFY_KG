@@ -9,15 +9,15 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <ClinicalTrial>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/targets_clinical_trial_processed.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/targets_clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/ClinicalTrial/{trial_name}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:trialTargetLabel;
+		rr:predicate clarify:hasTrialTarget;
 		rr:objectMap [
-			rml:reference "target_name";
+			rr:template "http://clarify2020.eu/TrialTarget/{target_name}";
 		]
 	].			

@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{EHR}"; ## should be {EHR}_{treatment_line}
+		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{ID}"; ## should be {EHR}_{treatment_line}
 		rr:class clarify:RadiotherapyTreatmentLine
 	];	
 	rr:predicateObjectMap [

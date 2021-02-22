@@ -31,21 +31,21 @@
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResult_IHQ;
+		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rml:reference "ihq_result";		
+			rr:template "http://clarify2020.eu/BiomarkerIHQResult/{ihq_result}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResult_FISH;
+		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rml:reference "fish_result";		
+			rr:template "http://clarify2020.eu/BiomarkerFISHResult/{fish_result}";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarkerResult_RNA;
 		rr:objectMap [
-			rml:reference "rna_result";		
+			rr:template "http://clarify2020.eu/BiomarkerRNAResult/{rna_result}";		
 		]
 	];				
 	rr:predicateObjectMap [

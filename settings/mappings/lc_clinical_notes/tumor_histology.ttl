@@ -31,12 +31,6 @@
 		rr:class clarify:TumorType;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:histology;
-		rr:objectMap [
-			rml:reference "type";
-		]
-	];	
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasAdenocarcinomaHistology;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/AdenocarcinomaHistology/{adeno_histology}";		

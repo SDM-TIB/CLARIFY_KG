@@ -31,9 +31,9 @@
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResult;
+		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
-			rml:reference "result";		
+			rr:template "http://clarify2020.eu/BiomarkerResult/{result}";		
 		]
 	];	
 	rr:predicateObjectMap [

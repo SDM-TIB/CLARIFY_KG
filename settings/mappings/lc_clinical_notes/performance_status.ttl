@@ -16,19 +16,19 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasPerformanceStatus;
+		rr:predicate clarify:hasPerformanceStatusObservation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <PerformanceStatus>
+			rr:parentTriplesMap <PerformanceStatusObservation>
 		]
 	].
 
-<PerformanceStatus>
+<PerformanceStatusObservation>
 	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerformanceStatus/{EHR}_{ID}";
-		rr:class clarify:PerformanceStatus;
+		rr:template "http://clarify2020.eu/PerformanceStatusObservation/{EHR}_{ID}";
+		rr:class clarify:PerformanceStatusObservation;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:performanceStatusScale;
@@ -37,9 +37,9 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:performanceStatusValue;
+		rr:predicate clarify:hasValue;
 		rr:objectMap [
-			rml:reference "value";		
+			rr:template "http://clarify2020.eu/PerformanceStatus/{value}";		
 		]
 	];
 	rr:predicateObjectMap [

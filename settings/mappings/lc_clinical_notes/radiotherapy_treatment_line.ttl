@@ -57,12 +57,14 @@
 		rr:predicate clarify:treatementLineStartDate;
 		rr:objectMap [
 			rml:reference "start_date";
+			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatementLineEndingDate;
 		rr:objectMap [
 			rml:reference "end_date";
+			rr:datatype xsd:date
 		]
 	].
 

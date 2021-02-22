@@ -31,33 +31,33 @@
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerNegativeResult;
+		rr:predicate clarify:hasNegativeTestResult;
 		rr:objectMap [
-			rml:reference "negative_result";		
+			rr:template "http://clarify2020.eu/BiomarkerNegativeResult/{negative_result}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_T790M_positive_result;
+		rr:predicate clarify:has_mutation_T790M_positive_result;
 		rr:objectMap [
-			rml:reference "T790Mpos_result";		
+			rr:template "http://clarify2020.eu/T790PositiveResult/{T790Mpos_result}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_T790M_negative_result;
+		rr:predicate clarify:has_mutation_T790M_negative_result;
 		rr:objectMap [
-			rml:reference "T790Mneg_result";		
+			rr:template "http://clarify2020.eu/T790NegativeResult/{T790Mneg_result}";		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:mutation_exon19_result;
 		rr:objectMap [
-			rml:reference "Exon19_result";		
+			rr:template "http://clarify2020.eu/Exon19Result/{Exon19_result}";		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:mutation_exon21_result;
 		rr:objectMap [
-			rml:reference "Exon21_result";		
+			rr:template "http://clarify2020.eu/Exon21Result/{Exon21_result";		
 		]
 	];	
 	rr:predicateObjectMap [

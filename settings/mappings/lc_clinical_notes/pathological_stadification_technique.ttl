@@ -31,57 +31,63 @@
 		rr:class clarify:PathologicalStageClassification;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:biopsy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "biopsy";		
+			rr:template "http://clarify2020.eu/Procedure/{biopsy}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:broncoscopy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "broncoscopy";		
+			rr:template "http://clarify2020.eu/Procedure/{broncoscopy}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:ebus;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "endobronquial";		
+			rr:template "http://clarify2020.eu/Procedure/{endobronquial}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:laparoscopy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "laparoscopy";		
+			rr:template "http://clarify2020.eu/Procedure/{laparoscopy}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:fineNeedleAspiration;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "fine_needle_aspiration";		
+			rr:template "http://clarify2020.eu/Procedure/{fine_needle_aspiration}";		
 		]
 	];			
 	rr:predicateObjectMap [
-		rr:predicate clarify:bloodSample;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "blood_sample";		
+			rr:template "http://clarify2020.eu/Procedure/{blood_sample}";		
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:mediastinoscopy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "mediatinoscopy";
+			rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:transthoracicVats;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "thoracoscopy_vats";		
+			rr:template "http://clarify2020.eu/Procedure/{thoracoscopy_vats}";		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:transthoracicPuncture;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "transthoracic_puncture";		
+			rr:template "http://clarify2020.eu/Procedure/{transthoracic_puncture}";		
 		]
-	].
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:basedOn;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/Procedure/{others}";		
+		]
+	].	
 																

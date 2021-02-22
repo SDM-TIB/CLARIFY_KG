@@ -8,127 +8,112 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<CancerStageTNM>
+<LCPatient>
 	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CancerStageTNM/{EHR}_{ID}";
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:metastasized_to;
-		rr:objectMap [ 
-			rr:parentTriplesMap <MetastasisLocation>
-		]
-	].
-
-<MetastasisLocation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/MetastasisLocation/{EHR}_{ID}";
-		rr:class clarify:MetastasisLocation;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_extrathoracicLymphadenopathies;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "extrathoracic_lymphadenopaties";
+			rr:template "http://clarify2020.eu/MetastasisLocation/{extrathoracic_lymphadenopaties}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_thoracicLymphadenopathy;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "thoracic_lymphadenopaties";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{thoracic_lymphadenopaties}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_meningealCarcinomatosis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "meningeal_carcinomatosis";
+			rr:template "http://clarify2020.eu/MetastasisLocation/{meningeal_carcinomatosis}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_pericardialEffusion;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "pericardial_effusion";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{pericardial_effusion}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_pleuralEffusion;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "pleural_effusion";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_effusion}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_liverMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "liver";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{liver}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_boneMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "bone";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{bone}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_bilateralLymphangitis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "bilateral_lymphangitis";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{bilateral_lymphangitis}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_pleuralNodules;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "pleural_nodules";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_nodules}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_pancreasMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "pancreatic";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{pancreatic}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_peritoneumMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "peritoneal";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{peritoneal}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_lungMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "lung";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{lung}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_centralNervousSystemMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "central_nervous_system";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{central_nervous_system}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_subcutaneousMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "subcutaneous";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{subcutaneous}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_adrenalMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "adrenal";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{adrenal}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_softTissuesMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "soft_tissues";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{soft_tissues}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_otherMetastasis;
+		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rml:reference "others";		
+			rr:template "http://clarify2020.eu/MetastasisLocation/{others}";		
 		]
 	].													

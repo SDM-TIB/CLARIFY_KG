@@ -16,8 +16,8 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:progressionLocation;
+		rr:predicate clarify:hasProgressionLocation;
 		rr:objectMap [
-			rml:reference "location";
+			rr:template "http://clarify2020.eu/ProgressionLocation/{location}";
 		]
 	].

@@ -45,13 +45,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:smokingStartingDate;
 		rr:objectMap [
-			rml:reference "smoke_beginning";		
+			rml:reference "smoke_beginning";
+			rr:datatype xsd:date		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:smokingStopingDate;
 		rr:objectMap [
 			rml:reference "smoke_end";
+			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
@@ -75,13 +77,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:electronicSmokingStartingDate;
 		rr:objectMap [
-			rml:reference "electronic_cigarettes_beginning";		
+			rml:reference "electronic_cigarettes_beginning";
+			rr:datatype xsd:date		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:electronicSmokingStopingDate;
 		rr:objectMap [
-			rml:reference "electronic_cigarettes_end";		
+			rml:reference "electronic_cigarettes_end";
+			rr:datatype xsd:date		
 		]
 	];
 	rr:predicateObjectMap [
@@ -93,13 +97,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:rollingTobaccoSmokingStartingDate;
 		rr:objectMap [
-			rml:reference "rolling_tobacco_beginning";		
+			rml:reference "rolling_tobacco_beginning";
+			rr:datatype xsd:date
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:rollingTobaccoSmokingStopingDate;
 		rr:objectMap [
-			rml:reference "rolling_tobacco_end";		
+			rml:reference "rolling_tobacco_end";
+			rr:datatype xsd:date		
 		]
 	];	
 	rr:predicateObjectMap [

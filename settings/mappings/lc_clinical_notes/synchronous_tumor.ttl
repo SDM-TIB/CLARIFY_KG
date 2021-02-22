@@ -16,9 +16,9 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:synchronousTumor;
+		rr:predicate clarify:has_SynchronousTumor_OrNot;
 		rr:objectMap [
-			rml:reference "has_synchronous_tumor";
+			rr:template "http://clarify2020.eu/SynchronousTumor/{has_synchronous_tumor}";
 		]
 	];
 	rr:predicateObjectMap [

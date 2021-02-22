@@ -31,20 +31,20 @@
 		rr:class clarify:CancerStageTNM;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:tumorSize;
+		rr:predicate clarify:basedOn_TumorSize;
 		rr:objectMap [
-			rml:reference "t";
+			rr:template "http://clarify2020.eu/TumorSize/{t}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:lymphNodesInvolvement;
+		rr:predicate clarify:basedOn_LymphNodesInvolvement;
 		rr:objectMap [
-			rml:reference "n";		
+			rr:template "http://clarify2020.eu/LymphNodesInvolvement/{n}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:metastatisStage;
+		rr:predicate clarify:basedOn_MetastatisStage;
 		rr:objectMap [
-			rml:reference "m";
+			rr:template "http://clarify2020.eu/MetastatisStage/{m}";
 		]
 	].		

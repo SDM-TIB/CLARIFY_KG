@@ -31,21 +31,21 @@
 		rr:class clarify:Prediagnosis;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:fever;
+		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rml:reference "fever";
+			rr:template "http://clarify2020.eu/Fever/{fever}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:weightLoss;
+		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rml:reference "weightLoss";		
+			rr:template "http://clarify2020.eu/WeightLoss/{weightLoss}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:sleepingDifficulty;
+		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rml:reference "sleep";
+			rr:template "http://clarify2020.eu/Insomnia/{sleep}";
 
 		]
 	].		

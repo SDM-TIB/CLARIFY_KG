@@ -31,21 +31,21 @@
 		rr:class clarify:OncologicalSurgery
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryPathologicalResponse;
+		rr:predicate clarify:hasPathologicalResponse;
 		rr:objectMap [
-			rml:reference "pathological_response";
+			rr:template "http://clarify2020.eu/SurgeryPathologicalResponse/{pathological_response}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryResectionGrade;
+		rr:predicate clarify:hasResectionGrade;
 		rr:objectMap [
-			rml:reference "resection_grade";
+			rr:template "http://clarify2020.eu/SurgeryResectionGrade/{resection_grade}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryPerioperativeDeath;
+		rr:predicate clarify:has_PerioperativeDeath_orNot;
 		rr:objectMap [
-			rml:reference "perioperative_death";
+			rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -56,15 +56,15 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgerySubType;
+		rr:predicate clarify:hasSubType;
 		rr:objectMap [
-			rml:reference "surgery_subtype";
+			rr:template "http://clarify2020.eu/SurgerySubType/{surgery_subtype}";
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryClass;
+		rr:predicate clarify:hasClass;
 		rr:objectMap [
-			rml:reference "surgery_class";
+			rr:template "http://clarify2020.eu/SurgeryClass/{surgery_class}";
 		]
 	];
 	rr:predicateObjectMap [
@@ -81,24 +81,24 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/CancerStageTNM/{EHR}_{ID}";
 		rr:class clarify:CancerStageTNM;
-	];
+	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:tumorSize;
+		rr:predicate clarify:basedOn_TumorSize;
 		rr:objectMap [
-			rml:reference "stage_t";
+			rr:template "http://clarify2020.eu/TumorSize/{stage_t}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:lymphNodesInvolvement;
+		rr:predicate clarify:basedOn_LymphNodesInvolvement;
 		rr:objectMap [
-			rml:reference "stage_n";		
+			rr:template "http://clarify2020.eu/LymphNodesInvolvement/{stage_n}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:metastatisStage;
+		rr:predicate clarify:basedOn_MetastatisStage;
 		rr:objectMap [
-			rml:reference "stage_m";
+			rr:template "http://clarify2020.eu/MetastatisStage/{stage_m}";
 		]
-	].	
+	].			
 
 
