@@ -31,21 +31,21 @@
 		rr:class clarify:ProgressionRelapseObservation
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:progressionOrRelapse;
+		rr:predicate clarify:hasProgressionOrRelapse;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/ProgressionRelapse/{progression_or_relapse}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:progressionType;
+		rr:predicate clarify:hasProgressionType;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/ProgressionType/{progression_type}";
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:therapyType;
+		rr:predicate clarify:hasTherapyType;
 		rr:objectMap [
-			rml:reference "therapy_type";
+			rr:template "http://clarify2020.eu/TherapyType/{therapy_type}";
 		]
 	];
 	rr:predicateObjectMap [
@@ -56,9 +56,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
+		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rml:reference "treatment_line";
+			rr:template "http://clarify2020.eu/TherapyType/{treatment_line}";
 		]
 	].		
 

@@ -37,33 +37,33 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:adenocarcinomaHistology;
+		rr:predicate clarify:hasAdenocarcinomaHistology;
 		rr:objectMap [
-			rml:reference "adeno_histology";		
+			rr:template "http://clarify2020.eu/AdenocarcinomaHistology/{adeno_histology}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:smallCellCarcinomaType;
+		rr:predicate clarify:hasSmallCellCarcinomaType;
 		rr:objectMap [
-			rml:reference "small_cell_carcinom";
+			rr:template "http://clarify2020.eu/SmallCellCarcinomaType/{small_cell_carcinom}";
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:carcinomaType;
+		rr:predicate clarify:hasCarcinomaType;
 		rr:objectMap [
-			rml:reference "carcinom";
+			rr:template "http://clarify2020.eu/CarcinomaType/{carcinom}";
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:mesotheliomaType;
+		rr:predicate clarify:hasMesotheliomaType;
 		rr:objectMap [
-			rml:reference "mesothelioma";		
+			rr:template "http://clarify2020.eu/MesotheliomaType/{mesothelioma}";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:histologyDegree;
+		rr:predicate clarify:hasHistologyDegree;
 		rr:objectMap [
-			rml:reference "degree";		
+			rr:template "http://clarify2020.eu/HistologyDegree/{degree}";		
 		]
 	];
 	rr:predicateObjectMap [
