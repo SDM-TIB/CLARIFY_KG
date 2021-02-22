@@ -27,19 +27,19 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ProgressionRelapseObservation/{EHR}_{progression_or_relapse}";
+		rr:template "http://clarify2020.eu/ProgressionRelapseObservation/{ID}";
 		rr:class clarify:ProgressionRelapseObservation
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:progressionOrRelapse;
 		rr:objectMap [
-			rml:reference "progression_or_relapse";
+			rr:template "http://clarify2020.eu/ProgressionRelapse/{progression_or_relapse}"
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:progressionType;
 		rr:objectMap [
-			rml:reference "progression_type";
+			rr:template "http://clarify2020.eu/ProgressionType/{progression_type}";
 		]
 	];
 	rr:predicateObjectMap [
