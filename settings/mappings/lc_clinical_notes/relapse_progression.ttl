@@ -58,7 +58,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TherapyType/{treatment_line}";
+			rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
 		]
 	].		
 
