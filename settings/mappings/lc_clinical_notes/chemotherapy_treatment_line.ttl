@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
@@ -46,17 +47,19 @@
 		rr:predicate clarify:treatementLineStartDate;
 		rr:objectMap [
 			rml:reference "start_date";
+			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatementLineEndingDate;
 		rr:objectMap [
 			rml:reference "end_date";
+			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineNumber;
 		rr:objectMap [
-			rml:reference "treatment_line";
+			rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
 		]
 	].	

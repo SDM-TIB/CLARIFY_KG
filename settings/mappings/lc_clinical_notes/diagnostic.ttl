@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
@@ -31,9 +32,15 @@
 		rr:class clarify:Diagnosis;
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:hasDiagnosisStage;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/CancerStage/{stage}";
+		]
+	];	
+	rr:predicateObjectMap [
 		rr:predicate clarify:diagnosticTumorSize;
 		rr:objectMap [
-			rml:reference "tumor_size";
+			rr:template "http://clarify2020.eu/TumorSize/{tumor_size}";
 		]
 	];	
 	rr:predicateObjectMap [
@@ -44,23 +51,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasDiagnosisStage;
-		rr:objectMap [ 
-			rr:parentTriplesMap <CancerStageCoded>;
-		]
-	].	
-
-<CancerStageCoded>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/diagnosis_processed.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CancerStageCoded/{stage}";
-		rr:class clarify:CancerStageCoded
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdfs:seeAlso;
+		rr:predicate clarify:description;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CancerStage/{stageMeaning}";
+			rml:reference "description";
 		]
-	].			
+	].
+

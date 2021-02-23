@@ -6,6 +6,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
@@ -16,9 +17,9 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:existenceOf_familyWithCancer;
+		rr:predicate clarify:has_familyWithCancer_OrNot;
 		rr:objectMap [
-			rml:reference "has_family_cancer_antecedents";
+			rr:template "http://clarify2020.eu/FamilyWithCancer/{has_family_cancer_antecedents}";
 		]
 	];		
 	rr:predicateObjectMap [
@@ -57,6 +58,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:familyType;
 		rr:objectMap [
-			rml:reference "relationship";
+			rr:template "http://clarify2020.eu/FamilyType/{relationship}";
 		]
 	].	
