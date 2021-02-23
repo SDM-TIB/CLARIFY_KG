@@ -20,7 +20,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineCycle;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TreatmentLineCycle/{cycle}";
+			rr:parentTriplesMap <TreatmentLineCycle>
 		]
 	];
 	rr:predicateObjectMap [
@@ -61,4 +61,15 @@
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
-	].					
+	].
+
+<TreatmentLineCycle>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TreatmentLineCycle/{cycle}";
+		rr:class clarify:TreatmentLineCycle
+	].
+
+

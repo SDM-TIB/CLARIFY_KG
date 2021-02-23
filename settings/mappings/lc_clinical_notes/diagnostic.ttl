@@ -34,13 +34,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisStage;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/CancerStage/{stage}";
+			rr:parentTriplesMap <CancerStage>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:diagnosticTumorSize;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorSize/{tumor_size}";
+			rr:parentTriplesMap <TumorSize>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -57,3 +57,20 @@
 		]
 	].
 
+<CancerStage>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/diagnosis_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CancerStage/{stage}";
+		rr:class clarify:CancerStage;
+	].
+
+<TumorSize>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/diagnosis_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TumorSize/{tumor_size}";
+		rr:class clarify:TumorSize;
+	].	

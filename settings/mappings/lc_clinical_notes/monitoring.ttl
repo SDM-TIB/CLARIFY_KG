@@ -39,27 +39,28 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:patientCurrentStatus;
+		rr:predicate clarify:hasCurrentStatus;
 		rr:objectMap [
-			rml:reference "status_situation";		
+			rr:template "http://clarify2020.eu/CurrentStatus/{status_situation}";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:deathDate;
 		rr:objectMap [
 			rml:reference "death_date";
+			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:causeOfDeath;
+		rr:predicate clarify:hasCauseOfDeath;
 		rr:objectMap [
-			rml:reference "death_reason";		
+			rr:template "http://clarify2020.eu/CauseOfDeath/{death_reason}";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:placeOfDeath;
 		rr:objectMap [
-			rml:reference "place_death";		
+			rr:template "http://clarify2020.eu/CauseOfDeath/{place_death}";		
 		]
 	];
 	rr:predicateObjectMap [

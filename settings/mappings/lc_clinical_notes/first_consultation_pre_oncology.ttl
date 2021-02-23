@@ -39,50 +39,123 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:asymptomatic;
+		rr:predicate clarify:patient_is_asymptomatic;
 		rr:objectMap [
-			rml:reference "asymptomatic";
+			rr:parentTriplesMap <asymptomatic>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:cough;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "cough";		
+			rr:parentTriplesMap <cough>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:pain;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "pain";
+			rr:parentTriplesMap <pain>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:dyspnoea;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "dyspnoea";		
+			rr:parentTriplesMap <dyspnoea>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hemoptysis;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "hemoptysis";		
+			rr:parentTriplesMap <hemoptysis>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:asthenia;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "asthenia";		
+			rr:parentTriplesMap <asthenia>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:anorexia;
 		rr:objectMap [
-			rml:reference "anorexy";		
+			rr:parentTriplesMap <anorexy>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:weightLoss;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rml:reference "weightLoss";		
+			rr:parentTriplesMap <weightLoss>		
 		]
-	].								
+	].	
+
+<asymptomatic>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{asymptomatic}";
+		rr:class clarify:Phenotype;
+	].		
+
+<cough>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{cough}";
+		rr:class clarify:Phenotype;
+	].		
+
+<pain>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{pain}";
+		rr:class clarify:Phenotype;
+	].		
+
+<dyspnoea>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{dyspnoea}";
+		rr:class clarify:Phenotype;
+	].		
+
+<hemoptysis>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{hemoptysis}";
+		rr:class clarify:Phenotype;
+	].		
+
+<asthenia>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{asthenia}";
+		rr:class clarify:Phenotype;
+	].		
+
+<anorexia>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{anorexy}";
+		rr:class clarify:Phenotype;
+	].		
+
+<weightLoss>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{weightLoss}";
+		rr:class clarify:Phenotype;
+	].		
+																

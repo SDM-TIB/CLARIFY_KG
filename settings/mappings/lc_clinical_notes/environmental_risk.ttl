@@ -17,24 +17,9 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:exposed_to;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Carcinogen>
-		]
-	].
-
-<Carcinogen>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Carcinogen/{ID}";
-		rr:class clarify:Carcinogen;
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:occupation;
 		rr:objectMap [
-			rml:reference "occupation";
+			rr:parentTriplesMap <PatientOccupation>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -42,52 +27,136 @@
 		rr:objectMap [
 			rml:reference "years_in_occupation";		
 		]
-	];
+	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:mostProbable;
+		rr:predicate clarify:exposedTo_mostProbably;
 		rr:objectMap [
-			rml:reference "probable_carcinogen";
+			rr:parentTriplesMap <mostProbable>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:asbestos;
+		rr:predicate clarify:exposedTo_asbestos;
 		rr:objectMap [
-			rml:reference "asbestos_carcinogen";		
+			rr:parentTriplesMap <asbestos>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:arsenic;
+		rr:predicate clarify:exposedTo_arsenic;
 		rr:objectMap [
-			rml:reference "arsenic_carcinogen";		
+			rr:parentTriplesMap <arsenic>	
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:radon;
+		rr:predicate clarify:exposedTo_radon;
 		rr:objectMap [
-			rml:reference "radon_carcinogen";		
+			rr:parentTriplesMap <radon>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:silica;
+		rr:predicate clarify:exposedTo_silica;
 		rr:objectMap [
-			rml:reference "silice_carcinogen";		
+			rr:parentTriplesMap <silice>	
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:dieselSmoke;
+		rr:predicate clarify:exposedTo_dieselSmoke;
 		rr:objectMap [
-			rml:reference "smoke_carcinogen";		
+			rr:parentTriplesMap <smoke>	
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:asbestosExposure;
+		rr:predicate clarify:exposedTo_asbestosExposure;
 		rr:objectMap [
-			rml:reference "asbestos_exposition";		
+			rr:parentTriplesMap <asbestos_exposure>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:asbestosExposureType;
+		rr:predicate clarify:exposedTo_asbestosExposureType;
 		rr:objectMap [
-			rml:reference "asbestos_exposition_type";		
+			rr:parentTriplesMap <asbestos_exposure_type>	
 		]
-	].								
+	].	
+
+<PatientOccupation>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PatientOccupation/{occupation}";
+		rr:class clarify:PatientOccupation;
+	].
+
+<mostProbable>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{probable_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].	
+
+<asbestos>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{asbestos_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].	
+
+<arsenic>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{arsenic_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].	
+
+<radon>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{radon_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].	
+
+<silice>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{silice_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].	
+
+<smoke>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{smoke_carcinogen}";
+		rr:class clarify:Carcinogen;
+	].					
+
+<asbestos_exposure>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{asbestos_exposition}";
+		rr:class clarify:Carcinogen;
+	].
+
+<asbestos_exposure_type>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Carcinogen/{asbestos_exposition_type}";
+		rr:class clarify:Carcinogen;
+	].			
+
+
+

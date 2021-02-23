@@ -34,19 +34,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Fever/{fever}";
+			rr:template "http://clarify2020.eu/Symptom/{fever}";
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/WeightLoss/{weightLoss}";		
+			rr:template "http://clarify2020.eu/Symptom/{weightLoss}";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:symptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Insomnia/{sleep}";
+			rr:template "http://clarify2020.eu/Symptom/{sleep}";
 
 		]
 	].		

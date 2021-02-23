@@ -19,7 +19,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_familyWithCancer_OrNot;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/FamilyWithCancer/{has_family_cancer_antecedents}";
+			rr:parentTriplesMap <FamilyWithCancer>
 		]
 	];		
 	rr:predicateObjectMap [
@@ -40,7 +40,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasFamilyCancerType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CancerType/{family_cancer_type}";
+			rr:parentTriplesMap <CancerType>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -58,6 +58,34 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:familyType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/FamilyType/{relationship}";
+			rr:parentTriplesMap <FamilyType>
 		]
+	].
+
+<FamilyWithCancer>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/FamilyWithCancer/{has_family_cancer_antecedents}";
+		rr:class clarify:FamilyWithCancer;
+	].
+
+<CancerType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CancerType/{family_cancer_type}";
+		rr:class clarify:CancerType;
+	].
+
+<FamilyType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/FamilyType/{relationship}";
+		rr:class clarify:FamilyType;
 	].	
+				

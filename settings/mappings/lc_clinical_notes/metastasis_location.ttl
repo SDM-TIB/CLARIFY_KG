@@ -19,102 +19,255 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{extrathoracic_lymphadenopaties}";
+			rr:parentTriplesMap <extrathoracic_lymphadenopaties>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{thoracic_lymphadenopaties}";		
+			rr:parentTriplesMap <thoracic_lymphadenopaties>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{meningeal_carcinomatosis}";
+			rr:parentTriplesMap <meningeal_carcinomatosis>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{pericardial_effusion}";		
+			rr:parentTriplesMap <pericardial_effusion>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_effusion}";		
+			rr:parentTriplesMap <pleural_effusion>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{liver}";		
+			rr:parentTriplesMap <liver>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{bone}";		
+			rr:parentTriplesMap <bone>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{bilateral_lymphangitis}";		
+			rr:parentTriplesMap <bilateral_lymphangitis>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_nodules}";		
+			rr:parentTriplesMap <pleural_nodules>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{pancreatic}";		
+			rr:parentTriplesMap <pancreatic>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{peritoneal}";		
+			rr:parentTriplesMap <peritoneal>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{lung}";		
+			rr:parentTriplesMap <lung>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{central_nervous_system}";		
+			rr:parentTriplesMap <central_nervous_system>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{subcutaneous}";		
+			rr:parentTriplesMap <subcutaneous>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{adrenal}";		
+			rr:parentTriplesMap <adrenal>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{soft_tissues}";		
+			rr:parentTriplesMap <soft_tissues>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastasisLocation/{others}";		
+			rr:parentTriplesMap <others>		
 		]
+	].	
+
+<extrathoracic_lymphadenopaties>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{extrathoracic_lymphadenopaties}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<thoracic_lymphadenopaties>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{thoracic_lymphadenopaties}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<meningeal_carcinomatosis>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{meningeal_carcinomatosis}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<pericardial_effusion>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{pericardial_effusion}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<pleural_effusion>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_effusion}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<liver>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{liver}";	
+		rr:class clarify:MetastasisLocation;
+	].
+
+<bone>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{bone}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<bilateral_lymphangitis>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{bilateral_lymphangitis}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<pleural_nodules>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{pleural_nodules}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<pancreatic>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{pancreatic}";
+		rr:class clarify:MetastasisLocation;
+	].	
+
+<peritoneal>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{peritoneal}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<lung>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{lung}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<central_nervous_system>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{central_nervous_system}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<subcutaneous>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{subcutaneous}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<adrenal>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{adrenal}";
+		rr:class clarify:MetastasisLocation;
 	].													
+
+<soft_tissues>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{soft_tissues}";
+		rr:class clarify:MetastasisLocation;
+	].
+
+<others>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastasisLocation/{others}";
+		rr:class clarify:MetastasisLocation;
+	].

@@ -34,19 +34,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/BiomarkerIHQResult/{ihq_result}";		
+			rr:parentTriplesMap <BiomarkerIHQResult>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/BiomarkerFISHResult/{fish_result}";		
+			rr:parentTriplesMap <BiomarkerFISHResult>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarkerResult_RNA;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/BiomarkerRNAResult/{rna_result}";		
+			rr:parentTriplesMap <BiomarkerRNAResult>		
 		]
 	];				
 	rr:predicateObjectMap [
@@ -55,3 +55,37 @@
 			rml:reference "specification";		
 		]
 	].	
+
+<BiomarkerIHQResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerIHQResult/{ihq_result}";
+		rr:class clarify:BiomarkerIHQResult;
+	].	
+
+<BiomarkerFISHResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerFISHResult/{fish_result}";
+		rr:class clarify:BiomarkerIHQResult;
+	].		
+
+<BiomarkerRNAResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerRNAResult/{rna_result}";
+		rr:class clarify:BiomarkerRNAResult;
+	].
+
+
+
+
+
+
+

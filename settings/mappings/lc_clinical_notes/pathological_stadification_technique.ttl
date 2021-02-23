@@ -34,61 +34,151 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{biopsy}";		
+			rr:parentTriplesMap <biopsy>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{broncoscopy}";		
+			rr:parentTriplesMap <broncoscopy>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{endobronquial}";		
+			rr:parentTriplesMap <endoluminal_ultrasound>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{laparoscopy}";		
+			rr:parentTriplesMap <laparoscopy>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{fine_needle_aspiration}";		
+			rr:parentTriplesMap <fine_needle_aspiration>		
 		]
 	];			
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{blood_sample}";		
+			rr:parentTriplesMap <blood_sample>		
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
+			rr:parentTriplesMap <mediatinoscopy>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{thoracoscopy_vats}";		
+			rr:parentTriplesMap <transthoracicVats>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{transthoracic_puncture}";		
+			rr:parentTriplesMap <transthoracicPuncture>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Procedure/{others}";		
+			rr:parentTriplesMap <others>		
 		]
+	].
+
+<biopsy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{biopsy}";
+		rr:class clarify:Procedure;
+	].
+
+<broncoscopy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{broncoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<endoluminal_ultrasound>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{endobronquial}";
+		rr:class clarify:Procedure;
+	].
+
+<laparoscopy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{laparoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<fine_needle_aspiration>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{fine_needle_aspiration}";
+		rr:class clarify:Procedure;
+	].
+
+<blood_sample>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{blood_sample}";
+		rr:class clarify:Procedure;
 	].	
-																
+
+<mediatinoscopy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<transthoracicVats>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{thoracoscopy_vats}";
+		rr:class clarify:Procedure;
+	].
+
+<transthoracicPuncture>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{transthoracic_puncture}";
+		rr:class clarify:Procedure;
+	].		
+
+<others>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{others}";
+		rr:class clarify:Procedure;
+	].	
+					

@@ -34,31 +34,31 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasNegativeTestResult;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/BiomarkerNegativeResult/{negative_result}";		
+			rr:parentTriplesMap <BiomarkerNegativeResult>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_positive_result;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/T790PositiveResult/{T790Mpos_result}";		
+			rr:parentTriplesMap <T790PositiveResult>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_negative_result;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/T790NegativeResult/{T790Mneg_result}";		
+			rr:parentTriplesMap <T790NegativeResult>	
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:mutation_exon19_result;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Exon19Result/{Exon19_result}";		
+			rr:parentTriplesMap <Exon19Result>	
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:mutation_exon21_result;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Exon21Result/{Exon21_result";		
+			rr:parentTriplesMap <Exon21Result>	
 		]
 	];	
 	rr:predicateObjectMap [
@@ -78,4 +78,60 @@
 		rr:objectMap [
 			rml:reference "specification";		
 		]
-	].								
+	].	
+
+<BiomarkerNegativeResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerNegativeResult/{negative_result}";
+		rr:class clarify:BiomarkerNegativeResult;
+	].
+
+<T790PositiveResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/T790PositiveResult/{T790Mpos_result}";
+		rr:class clarify:T790PositiveResult;
+	].
+
+<T790NegativeResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/T790NegativeResult/{T790Mneg_result}";
+		rr:class clarify:T790NegativeResult;
+	].
+
+<Exon19Result>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Exon19Result/{Exon19_result}";
+		rr:class clarify:Exon19Result;
+	].
+
+<Exon21Result>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Exon21Result/{Exon21_result";
+		rr:class clarify:Exon21Result;
+	].
+
+<BiomarkerRNAResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerRNAResult/{rna_result}";
+		rr:class clarify:BiomarkerRNAResult;
+	].					
+
+
