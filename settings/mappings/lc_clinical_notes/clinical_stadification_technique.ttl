@@ -28,7 +28,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ClinicalStageClassification/{EHR}_{ID}";
+		rr:template "http://clarify2020.eu/ClinicalStageClassification/{ID}";
 		rr:class clarify:ClinicalStageClassification;
 	];
 	rr:predicateObjectMap [

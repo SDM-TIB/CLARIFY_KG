@@ -28,7 +28,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Prediagnosis/{EHR}_{ID}";
+		rr:template "http://clarify2020.eu/Prediagnosis/{ID}";
 		rr:class clarify:Prediagnosis;
 	];
 	rr:predicateObjectMap [
