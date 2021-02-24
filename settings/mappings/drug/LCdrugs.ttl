@@ -17,9 +17,18 @@
 		rr:class clarify:LungCancerDrug
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:drugLabel;
+		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rml:reference "DrugName";
+			rr:parentTriplesMap <LungCancerDrugName>
 		]
+	].	
+
+<LungCancerDrugName>
+	rml:logicalSource [ rml:source "/data/data/drug/LCdrugList.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Drug/{DrugName}";
+		rr:class clarify:LungCancerDrug
 	].
-	
+		
