@@ -32,8 +32,18 @@
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResult;
+		rr:predicate clarify:hasResult;
 		rr:objectMap [
-			rml:reference "result";		
+			rr:parentTriplesMap <BiomarkerResult>	
 		]
 	].	
+
+<BiomarkerResult>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/biomarker_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerResult/{result}";
+		rr:class clarify:BiomarkerResult;
+	].		
+	
