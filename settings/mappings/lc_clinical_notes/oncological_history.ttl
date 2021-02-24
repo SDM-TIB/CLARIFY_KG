@@ -19,13 +19,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_previousCancerHistory_OrNot;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/PatientCancerHistory/{has_previous_cancers}";
+			rr:parentTriplesMap <has_previous_cancers>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPreviousCancerType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/PreviousCancerType/{previous_cancer_type}";
+			rr:parentTriplesMap <previous_cancer_type>
 		]
 	];					
 	rr:predicateObjectMap [
@@ -34,4 +34,21 @@
 			rml:reference "previous_cancer_description";
 		]
 	].	
-		
+
+<has_previous_cancers>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/oncological_history.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PatientCancerHistory/{has_previous_cancers}";
+		rr:class clarify:PatientCancerHistory;
+	].
+
+<previous_cancer_type>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/oncological_history.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PreviousCancerType/{previous_cancer_type}";
+		rr:class clarify:PreviousCancerType;
+	].				

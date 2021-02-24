@@ -34,19 +34,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPathologicalResponse;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SurgeryPathologicalResponse/{pathological_response}";
+			rr:parentTriplesMap <SurgeryPathologicalResponse>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasResectionGrade;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SurgeryResectionGrade/{resection_grade}";
+			rr:parentTriplesMap <SurgeryResectionGrade>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_PerioperativeDeath_orNot;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
+			rr:parentTriplesMap <PerioperativeDeath>
 		]
 	];		
 	rr:predicateObjectMap [
@@ -59,13 +59,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSubType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SurgerySubType/{surgery_subtype}";
+			rr:parentTriplesMap <SurgerySubType>
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasClass;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SurgeryClass/{surgery_class}";
+			rr:parentTriplesMap <SurgeryClass>
 		]
 	];
 	rr:predicateObjectMap [
@@ -86,20 +86,99 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_TumorSize;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorSize/{stage_t}";
+			rr:parentTriplesMap <TumorSize>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_LymphNodesInvolvement;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/LymphNodesInvolvement/{stage_n}";		
+			rr:parentTriplesMap <LymphNodesInvolvement>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_MetastatisStage;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastatisStage/{stage_m}";
+			rr:parentTriplesMap <MetastatisStage>
 		]
 	].			
 
+<SurgeryPathologicalResponse>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SurgeryPathologicalResponse/{pathological_response}";
+		rr:class clarify:SurgeryPathologicalResponse;
+	].
 
+<SurgeryResectionGrade>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SurgeryResectionGrade/{resection_grade}";
+		rr:class clarify:SurgeryResectionGrade;
+	].
+
+<PerioperativeDeath>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
+		rr:class clarify:PerioperativeDeath;
+	].
+
+<PerioperativeDeath>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
+		rr:class clarify:PerioperativeDeath;
+	].
+
+<SurgerySubType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SurgerySubType/{surgery_subtype}";
+		rr:class clarify:SurgerySubType;
+	].
+
+<SurgeryClass>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SurgeryClass/{surgery_class}";
+		rr:class clarify:SurgeryClass;
+	].				
+
+<TumorSize>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TumorSize/{stage_t}";
+		rr:class clarify:TumorSize;
+	].
+
+<LymphNodesInvolvement>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LymphNodesInvolvement/{stage_n}";
+		rr:class clarify:LymphNodesInvolvement;
+	].
+
+<MetastatisStage>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastatisStage/{stage_m}";
+		rr:class clarify:MetastatisStage;
+	].		

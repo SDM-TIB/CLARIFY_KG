@@ -32,32 +32,64 @@
 		rr:class clarify:ClinicalTrial;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:trialLabel;
+		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rml:reference "trial_name";
+			rr:parentTriplesMap <observational_trial>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:trialIsObservational;
+		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rml:reference "observational_trial";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:drugBasedTrial;
-		rr:objectMap [
-			rml:reference "drug_trial";
+			rr:parentTriplesMap <drug_trial>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:trialPhase;
+		rr:predicate clarify:hasPhase;
 		rr:objectMap [
-			rml:reference "phase";
+			rr:parentTriplesMap <phase>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:directedTrial;
+		rr:predicate clarify:is_directed_OrNot;
 		rr:objectMap [
-			rml:reference "directed";
+			rr:parentTriplesMap <directed>
 		]
-	].			
+	].
+
+<observational_trial>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TrialType/{observational_trial}";
+		rr:class clarify:TrialType;
+	].
+
+<drug_trial>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TrialType/{drug_trial}";
+		rr:class clarify:TrialType;
+	].
+
+<phase>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TrialPhase/{phase}";
+		rr:class clarify:TrialPhase;
+	].
+
+<directed>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial_processed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TrialType/{directed}";
+		rr:class clarify:TrialType;
+	].	
+
+							

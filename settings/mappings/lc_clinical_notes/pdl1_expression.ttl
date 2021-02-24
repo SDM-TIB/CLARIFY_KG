@@ -36,22 +36,4 @@
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/BiomarkerResult/{result}";		
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResultReason;
-		rr:objectMap [
-			rml:reference "result_reason";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResultPositivity;
-		rr:objectMap [
-			rml:reference "positivity";		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerSpecification;
-		rr:objectMap [
-			rml:reference "specification";		
-		]
-	].	
+	].

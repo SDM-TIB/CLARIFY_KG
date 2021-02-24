@@ -19,7 +19,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_SynchronousTumor_OrNot;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SynchronousTumor/{has_synchronous_tumor}";
+			rr:parentTriplesMap <SynchronousTumor>
 		]
 	];
 	rr:predicateObjectMap [
@@ -27,4 +27,14 @@
         rr:objectMap [ 
             rml:reference "description" 
         ]
-	].								
+	].	
+
+<SynchronousTumor>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/synchronous_tumor.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SynchronousTumor/{has_synchronous_tumor}";
+		rr:class clarify:SynchronousTumor;
+	].	
+							

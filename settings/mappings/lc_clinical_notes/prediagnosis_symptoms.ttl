@@ -32,21 +32,49 @@
 		rr:class clarify:Prediagnosis;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:symptom;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Symptom/{fever}";
+			rr:parentTriplesMap <fever>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:symptom;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Symptom/{weightLoss}";		
+			rr:parentTriplesMap <weightLoss>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:symptom;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Symptom/{sleep}";
+			rr:parentTriplesMap <sleep>
 
 		]
-	].		
+	].
+
+<fever>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{fever}";
+		rr:class clarify:Phenotype;
+	].
+
+<weightLoss>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{weightLoss}";
+		rr:class clarify:Phenotype;
+	].
+
+<sleep>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Phenotype/{sleep}";
+		rr:class clarify:Phenotype;
+	].
+						

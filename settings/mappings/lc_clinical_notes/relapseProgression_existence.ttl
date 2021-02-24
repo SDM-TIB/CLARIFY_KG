@@ -19,6 +19,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionRelapse;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/ProgressionRelapse/Progressed_or_Relapsed"
+			rr:parentTriplesMap <ProgressionRelapse>
 		]
+	].
+
+<ProgressionRelapse>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapsedProgressed.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ProgressionRelapse/Progressed_or_Relapsed";
+		rr:class clarify:ProgressionRelapse;
 	].

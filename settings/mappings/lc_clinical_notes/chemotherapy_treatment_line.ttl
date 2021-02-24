@@ -32,13 +32,13 @@
 		rr:class clarify:ChemotherapyTreatmentLine
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasChemoTreatmentLineType;
+		rr:predicate clarify:hasType;
 		rr:objectMap [
 			rr:parentTriplesMap <ChemoTreatmentLineType>
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasTreatementLineBestResponse;
+		rr:predicate clarify:hasBestResponse;
 		rr:objectMap [
 			rr:parentTriplesMap <TreatementLineBestResponse>
 		]

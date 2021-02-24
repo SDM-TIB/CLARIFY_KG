@@ -32,15 +32,15 @@
 		rr:class clarify:PerformanceStatusObservation;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:performanceStatusScale;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "scale";
+			rr:parentTriplesMap <Scale>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasValue;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/PerformanceStatus/{value}";		
+			rr:parentTriplesMap <PerformanceStatus>		
 		]
 	];
 	rr:predicateObjectMap [
@@ -50,4 +50,23 @@
 			rr:datatype xsd:date;
 
 		]
-	].		
+	].	
+
+<Scale>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/performance_status.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Scale/{scale}";
+		rr:class clarify:Scale;
+	].
+
+<PerformanceStatus>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/performance_status.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PerformanceStatus/{value}";
+		rr:class clarify:PerformanceStatus;
+	].
+

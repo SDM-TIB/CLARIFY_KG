@@ -19,6 +19,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTrialTarget;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TrialTarget/{target_name}";
+			rr:parentTriplesMap <TrialTarget>
 		]
 	].			
+
+<TrialTarget>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/targets_clinical_trial.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TrialTarget/{target_name}";
+		rr:class clarify:TrialTarget;
+	].	

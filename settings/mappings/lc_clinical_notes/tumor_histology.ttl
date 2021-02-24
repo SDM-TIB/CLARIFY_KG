@@ -34,31 +34,31 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasAdenocarcinomaHistology;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/AdenocarcinomaHistology/{adeno_histology}";		
+			rr:parentTriplesMap <AdenocarcinomaHistology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSmallCellCarcinomaType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SmallCellCarcinomaType/{small_cell_carcinom}";
+			rr:parentTriplesMap <SmallCellCarcinomaType>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCarcinomaType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CarcinomaType/{carcinom}";
+			rr:parentTriplesMap <CarcinomaType>
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMesotheliomaType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MesotheliomaType/{mesothelioma}";		
+			rr:parentTriplesMap <MesotheliomaType>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHistologyDegree;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/HistologyDegree/{degree}";		
+			rr:parentTriplesMap <HistologyDegree>	
 		]
 	];
 	rr:predicateObjectMap [
@@ -67,3 +67,49 @@
 			rml:reference "description";		
 		]
 	].
+
+<AdenocarcinomaHistology>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/AdenocarcinomaHistology/{adeno_histology}";
+		rr:class clarify:AdenocarcinomaHistology;
+	].
+
+<SmallCellCarcinomaType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SmallCellCarcinomaType/{small_cell_carcinom}";
+		rr:class clarify:SmallCellCarcinomaType;
+	].
+
+<CarcinomaType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CarcinomaType/{carcinom}";
+		rr:class clarify:CarcinomaType;
+	].
+
+<MesotheliomaType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MesotheliomaType/{mesothelioma}";
+		rr:class clarify:MesotheliomaType;
+	].
+
+<HistologyDegree>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/HistologyDegree/{degree}";
+		rr:class clarify:HistologyDegree;
+	].
+

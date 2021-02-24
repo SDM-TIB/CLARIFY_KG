@@ -41,7 +41,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCurrentStatus;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CurrentStatus/{status_situation}";		
+			rr:parentTriplesMap <CurrentStatus>	
 		]
 	];
 	rr:predicateObjectMap [
@@ -54,13 +54,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCauseOfDeath;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CauseOfDeath/{death_reason}";		
+			rr:parentTriplesMap <CauseOfDeath>		
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:hasReasonOfDeath;
+		rr:objectMap [
+			rr:parentTriplesMap <ReasonOfDeath>	
+		]
+	];	
+	rr:predicateObjectMap [
 		rr:predicate clarify:placeOfDeath;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/CauseOfDeath/{place_death}";		
+			rr:parentTriplesMap <PlaceOfDeath>		
 		]
 	];
 	rr:predicateObjectMap [
@@ -69,3 +75,39 @@
 			rml:reference "second_neoplasm";		
 		]
 	].
+
+<CurrentStatus>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CurrentStatus/{status_situation}";
+		rr:class clarify:CurrentStatus;
+	].
+
+<CauseOfDeath>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CauseOfDeath/{death_cause}";
+		rr:class clarify:CauseOfDeath;
+	].
+
+<ReasonOfDeath>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ReasonOfDeath/{death_reason}";
+		rr:class clarify:ReasonOfDeath;
+	].
+
+<PlaceOfDeath>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/PlaceOfDeath/{place_death}";
+		rr:class clarify:PlaceOfDeath;
+	].				

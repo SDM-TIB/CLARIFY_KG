@@ -110,14 +110,33 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:livingWithSmoker;
+		rr:predicate clarify:livingWithSmoker_OrNot;
 		rr:objectMap [
-			rml:reference "lives_with_smokers";		
+			rr:parentTriplesMap <lives_with_smokers>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:livedWithSmoker;
+		rr:predicate clarify:livedWithSmoker_OrNot;
 		rr:objectMap [
-			rml:reference "has_lived_with_smokers";		
+			rr:parentTriplesMap <has_lived_with_smokers>		
 		]
-	].												
+	].
+
+<lives_with_smokers>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SmokerFamily/{lives_with_smokers}";
+		rr:class clarify:SmokerFamily;
+	].	
+
+<has_lived_with_smokers>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SmokerFamily/{has_lived_with_smokers}";
+		rr:class clarify:SmokerFamily;
+	].		
+											

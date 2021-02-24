@@ -34,18 +34,46 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_TumorSize;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TumorSize/{t}";
+			rr:parentTriplesMap <TumorSize>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_LymphNodesInvolvement;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/LymphNodesInvolvement/{n}";		
+			rr:parentTriplesMap <LymphNodesInvolvement>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_MetastatisStage;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/MetastatisStage/{m}";
+			rr:parentTriplesMap <MetastatisStage>
 		]
-	].		
+	].	
+
+<TumorSize>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TumorSize/{t}";
+		rr:class clarify:TumorSize;
+	].
+
+<LymphNodesInvolvement>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LymphNodesInvolvement/{n}";
+		rr:class clarify:LymphNodesInvolvement;
+	].
+
+<MetastatisStage>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/MetastatisStage/{m}";
+		rr:class clarify:MetastatisStage;
+	].	
+					

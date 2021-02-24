@@ -32,68 +32,158 @@
 		rr:class clarify:ClinicalStageClassification;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:fullBloodCount;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "fbc";
+			rr:parentTriplesMap <fbc>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:gammaScan;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "bone_gammagraphy";		
+			rr:parentTriplesMap <bone_gammagraphy>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:mediastinoscopy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "mediatinoscopy";
+			rr:parentTriplesMap <mediatinoscopy>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mediastinotomy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "mediatinostomy";		
+			rr:parentTriplesMap <mediatinostomy>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:petTAC;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "pet_tac";		
+			rr:parentTriplesMap <pet_tac>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:thoracicRX;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "rx_thorax";		
+			rr:parentTriplesMap <rx_thorax>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:brainMRI;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "brain_mri";		
+			rr:parentTriplesMap <brain_mri>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:mri;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "mri";		
+			rr:parentTriplesMap <mri>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:thoracoscopy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "torachoscopy";		
+			rr:parentTriplesMap <torachoscopy>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:thoracotomy;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "thoracotomy";		
+			rr:parentTriplesMap <thoracotomy>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:brainCT;
+		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rml:reference "brain_ct";		
+			rr:parentTriplesMap <brain_ct>		
 		]
 	].
+
+<fullBloodCount>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{fbc}";
+		rr:class clarify:Procedure;
+	].	
+
+<gammaScan>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{bone_gammagraphy}";
+		rr:class clarify:Procedure;
+	].
+
+<mediastinoscopy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<petTAC>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{pet_tac}";
+		rr:class clarify:Procedure;
+	].
+
+<thoracicRX>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{rx_thorax}";
+		rr:class clarify:Procedure;
+	].
+
+<brainMRI>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{brain_mri}";
+		rr:class clarify:Procedure;
+	].
+
+<mri>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{mri}";
+		rr:class clarify:Procedure;
+	].
+
+<thoracoscopy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{torachoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<thoracotomy>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{thoracotomy}";
+		rr:class clarify:Procedure;
+	].
+
+<brainCT>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{brain_ct}";
+		rr:class clarify:Procedure;
+	].									

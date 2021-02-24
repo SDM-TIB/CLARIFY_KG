@@ -24,15 +24,15 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:gender;
+		rr:predicate clarify:hasSex;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Gender/{gender}";
+			rr:parentTriplesMap <Sex>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasRace;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Race/{race}";
+			rr:parentTriplesMap <Race>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -44,15 +44,51 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:city;
+		rr:predicate clarify:locatedInCity;
 		rr:objectMap [
-			rml:reference "cityID";
+			rr:parentTriplesMap <City>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hospitalID;
+		rr:predicate clarify:locatedInHospital;
 		rr:objectMap [
-			rml:reference "hospitalID";
+			rr:parentTriplesMap <Hospital>
 		]
 	].
-	
+
+<Sex>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Sex/{gender}";
+		rr:class clarify:Sex;
+	].
+
+<Race>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Race/{race}";
+		rr:class clarify:Race;
+	].
+
+<City>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/City/{cityID}";
+		rr:class clarify:City;
+	].
+
+<Hospital>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Hospital/{hospitalID}";
+		rr:class clarify:Hospital;
+	].
+				

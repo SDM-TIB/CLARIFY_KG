@@ -19,6 +19,17 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionLocation;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/ProgressionLocation/{location}";
+			rr:parentTriplesMap <ProgressionLocation>
 		]
 	].
+
+<ProgressionLocation>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/progression_location.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ProgressionLocation/{location}";
+		rr:class clarify:ProgressionLocation;
+	].	
+
+	

@@ -32,21 +32,21 @@
 		rr:class clarify:ProgressionRelapseObservation
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionOrRelapse;
+		rr:predicate clarify:has_progression_or_relapse;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/ProgressionRelapse/{progression_or_relapse}"
+			rr:parentTriplesMap <ProgressionRelapse>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/ProgressionType/{progression_type}";
+			rr:parentTriplesMap <ProgressionType>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTherapyType;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TherapyType/{therapy_type}";
+			rr:parentTriplesMap <TherapyType>
 		]
 	];
 	rr:predicateObjectMap [
@@ -59,9 +59,42 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+			rr:parentTriplesMap <TreatmentLineNumber>
 		]
 	].		
 
+<ProgressionRelapse>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ProgressionRelapse/{progression_or_relapse}";
+		rr:class clarify:ProgressionOrRelapse;
+	].
 
-					
+<ProgressionType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/ProgressionType/{progression_type}";
+		rr:class clarify:ProgressionType;
+	].
+
+<TherapyType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TherapyType/{therapy_type}";
+		rr:class clarify:TherapyType;
+	].	
+	
+<TreatmentLineNumber>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:class clarify:TreatmentLineNumber;
+	].	
