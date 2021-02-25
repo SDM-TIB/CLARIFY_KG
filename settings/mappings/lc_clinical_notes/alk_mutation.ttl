@@ -44,7 +44,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerResult_RNA;
+		rr:predicate clarify:hasTestRNAResult;
 		rr:objectMap [
 			rr:parentTriplesMap <BiomarkerRNAResult>		
 		]
@@ -71,7 +71,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/BiomarkerFISHResult/{fish_result}";
-		rr:class clarify:BiomarkerIHQResult;
+		rr:class clarify:BiomarkerFISHResult;
 	].		
 
 <BiomarkerRNAResult>

@@ -75,7 +75,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:anorexia;
+		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
 			rr:parentTriplesMap <anorexy>		
 		]

@@ -49,6 +49,6 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PreviousCancerType/{previous_cancer_type}";
-		rr:class clarify:PreviousCancerType;
+		rr:template "http://clarify2020.eu/CancerType/{previous_cancer_type}";
+		rr:class clarify:CancerType;
 	].				

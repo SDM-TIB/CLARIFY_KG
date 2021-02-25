@@ -129,15 +129,6 @@
 		rr:class clarify:PerioperativeDeath;
 	].
 
-<PerioperativeDeath>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
-		rr:class clarify:PerioperativeDeath;
-	].
-
 <SurgerySubType>
 	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;

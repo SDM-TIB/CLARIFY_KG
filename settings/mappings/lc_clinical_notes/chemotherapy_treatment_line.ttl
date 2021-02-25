@@ -58,7 +58,7 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
+		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
 			rr:parentTriplesMap <TreatmentLineNumber>
 		]

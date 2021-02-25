@@ -39,17 +39,17 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:is_located_in;
 		rr:objectMap [
+			rr:parentTriplesMap <RadiotherapyLocation>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasType; 
+		rr:objectMap [
 			rr:parentTriplesMap <RadiotherapyTreatmentLineType>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
-		rr:objectMap [
-			rr:parentTriplesMap <TreatementLineBestResponse>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasIntention;
+		rr:predicate clarify:hasIntention; 
 		rr:objectMap [
 			rr:parentTriplesMap <RadiotherapyIntention>		
 		]
@@ -78,6 +78,15 @@
 		rr:class clarify:TreatmentLineNumber;
 	].	
 
+<RadiotherapyLocation>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/RadiotherapyLocation/{radiated_area}";
+		rr:class clarify:RadiotherapyLocation;
+	].
+
 <RadiotherapyTreatmentLineType>
 	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
@@ -85,15 +94,6 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLineType/{type}";
 		rr:class clarify:RadiotherapyTreatmentLineType;
-	].
-
-<TreatementLineBestResponse>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatementLineBestResponse/{best_response}";
-		rr:class clarify:TreatementLineBestResponse;
 	].
 
 <RadiotherapyIntention>

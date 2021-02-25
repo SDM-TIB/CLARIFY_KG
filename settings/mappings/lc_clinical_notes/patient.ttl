@@ -18,9 +18,9 @@
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:currentCancerType;
+		rr:predicate clarify:hasCurrentCancerType;
 		rr:objectMap [
-			rml:reference "type_cancer";
+			rr:parentTriplesMap <CancerType>
 		]
 	];
 	rr:predicateObjectMap [
@@ -56,8 +56,17 @@
 		]
 	].
 
+<CancerType>
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/CancerType/{type_cancer}";
+		rr:class clarify:CancerType;
+	].
+
 <Sex>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -66,7 +75,7 @@
 	].
 
 <Race>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -75,7 +84,7 @@
 	].
 
 <City>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -84,7 +93,7 @@
 	].
 
 <Hospital>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

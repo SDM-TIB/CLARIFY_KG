@@ -50,25 +50,25 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_exon19_result;
+		rr:predicate clarify:has_mutation_exon19_result;
 		rr:objectMap [
 			rr:parentTriplesMap <Exon19Result>	
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_exon21_result;
+		rr:predicate clarify:has_mutation_exon21_result;
 		rr:objectMap [
 			rr:parentTriplesMap <Exon21Result>	
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_NOS_result;
+		rr:predicate clarify:has_mutation_NOS_result;
 		rr:objectMap [
 			rml:reference "NOS_result";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:mutation_other_result;
+		rr:predicate clarify:has_mutation_other_result;
 		rr:objectMap [
 			rml:reference "others_result";		
 		]
@@ -81,7 +81,7 @@
 	].	
 
 <BiomarkerNegativeResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -90,7 +90,7 @@
 	].
 
 <T790PositiveResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -99,7 +99,7 @@
 	].
 
 <T790NegativeResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -108,7 +108,7 @@
 	].
 
 <Exon19Result>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -117,7 +117,7 @@
 	].
 
 <Exon21Result>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -126,7 +126,7 @@
 	].
 
 <BiomarkerRNAResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
