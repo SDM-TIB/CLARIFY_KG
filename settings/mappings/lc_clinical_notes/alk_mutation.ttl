@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].	
 
 <Biomarker>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -57,7 +57,7 @@
 	].	
 
 <BiomarkerIHQResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -66,7 +66,7 @@
 	].	
 
 <BiomarkerFISHResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -75,7 +75,7 @@
 	].		
 
 <BiomarkerRNAResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/alk_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

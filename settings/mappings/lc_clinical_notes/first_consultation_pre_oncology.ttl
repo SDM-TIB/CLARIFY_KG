@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <NonOncologicalConsultation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -88,7 +88,7 @@
 	].	
 
 <asymptomatic>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -97,7 +97,7 @@
 	].		
 
 <cough>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -106,7 +106,7 @@
 	].		
 
 <pain>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -115,7 +115,7 @@
 	].		
 
 <dyspnoea>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -124,7 +124,7 @@
 	].		
 
 <hemoptysis>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -133,7 +133,7 @@
 	].		
 
 <asthenia>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -142,7 +142,7 @@
 	].		
 
 <anorexia>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -151,7 +151,7 @@
 	].		
 
 <weightLoss>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

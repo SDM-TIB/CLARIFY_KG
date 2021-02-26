@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/oncological_history.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -36,7 +36,7 @@
 	].	
 
 <has_previous_cancers>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/oncological_history.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -45,7 +45,7 @@
 	].
 
 <previous_cancer_type>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/oncological_history.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

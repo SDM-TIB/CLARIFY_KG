@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <CancerStageTNM>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -51,7 +51,7 @@
 	].	
 
 <TumorSize>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -60,7 +60,7 @@
 	].
 
 <LymphNodesInvolvement>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -69,7 +69,7 @@
 	].
 
 <MetastatisStage>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

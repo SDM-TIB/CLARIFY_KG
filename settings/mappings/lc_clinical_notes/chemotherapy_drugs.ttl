@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <ChemotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -43,7 +43,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -64,7 +64,7 @@
 	].
 
 <TreatmentLineCycle>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -120,7 +120,7 @@
 	].	
 
 <extrathoracic_lymphadenopaties>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -129,7 +129,7 @@
 	].
 
 <thoracic_lymphadenopaties>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -138,7 +138,7 @@
 	].
 
 <meningeal_carcinomatosis>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -147,7 +147,7 @@
 	].
 
 <pericardial_effusion>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -156,7 +156,7 @@
 	].
 
 <pleural_effusion>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -165,7 +165,7 @@
 	].
 
 <liver>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -174,7 +174,7 @@
 	].
 
 <bone>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -183,7 +183,7 @@
 	].
 
 <bilateral_lymphangitis>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -192,7 +192,7 @@
 	].
 
 <pleural_nodules>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -201,7 +201,7 @@
 	].
 
 <pancreatic>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -210,7 +210,7 @@
 	].	
 
 <peritoneal>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -219,7 +219,7 @@
 	].
 
 <lung>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -228,7 +228,7 @@
 	].
 
 <central_nervous_system>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -237,7 +237,7 @@
 	].
 
 <subcutaneous>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -246,7 +246,7 @@
 	].
 
 <adrenal>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -255,7 +255,7 @@
 	].													
 
 <soft_tissues>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -264,7 +264,7 @@
 	].
 
 <others>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/metastasis_location.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <Prediagnosis>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -52,7 +52,7 @@
 	].
 
 <fever>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -61,7 +61,7 @@
 	].
 
 <weightLoss>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -70,7 +70,7 @@
 	].
 
 <sleep>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/prediagnosis_symptoms.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

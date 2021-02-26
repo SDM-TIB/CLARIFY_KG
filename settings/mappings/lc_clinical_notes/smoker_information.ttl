@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <SmokingHistory>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -123,7 +123,7 @@
 	].
 
 <lives_with_smokers>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -132,7 +132,7 @@
 	].	
 
 <has_lived_with_smokers>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/smoker_information.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

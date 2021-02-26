@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <ClinicalTrial>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/targets_clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/targets_clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].			
 
 <TrialTarget>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/targets_clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/targets_clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -78,7 +78,7 @@
 	].	
 
 <PatientOccupation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -87,7 +87,7 @@
 	].
 
 <mostProbable>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -96,7 +96,7 @@
 	].	
 
 <asbestos>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -105,7 +105,7 @@
 	].	
 
 <arsenic>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -114,7 +114,7 @@
 	].	
 
 <radon>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -123,7 +123,7 @@
 	].	
 
 <silice>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -132,7 +132,7 @@
 	].	
 
 <smoke>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -141,7 +141,7 @@
 	].					
 
 <asbestos_exposure>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -150,7 +150,7 @@
 	].
 
 <asbestos_exposure_type>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/environmental_risk.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/environmental_risk.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

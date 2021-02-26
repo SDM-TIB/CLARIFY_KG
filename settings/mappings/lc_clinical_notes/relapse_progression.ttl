@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <ProgressionRelapseObservation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -64,7 +64,7 @@
 	].		
 
 <ProgressionRelapse>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -73,7 +73,7 @@
 	].
 
 <ProgressionType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -82,7 +82,7 @@
 	].
 
 <TherapyType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -91,7 +91,7 @@
 	].	
 	
 <TreatmentLineNumber>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/relapse_progression.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

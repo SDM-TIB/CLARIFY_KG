@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <ClinicalStageClassification>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -99,7 +99,7 @@
 	].
 
 <fullBloodCount>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -108,7 +108,7 @@
 	].	
 
 <gammaScan>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -117,7 +117,7 @@
 	].
 
 <mediastinoscopy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -126,7 +126,7 @@
 	].
 
 <petTAC>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -135,7 +135,7 @@
 	].
 
 <thoracicRX>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -144,7 +144,7 @@
 	].
 
 <brainMRI>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -153,7 +153,7 @@
 	].
 
 <mri>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -162,7 +162,7 @@
 	].
 
 <thoracoscopy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -171,7 +171,7 @@
 	].
 
 <thoracotomy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -180,7 +180,7 @@
 	].
 
 <brainCT>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

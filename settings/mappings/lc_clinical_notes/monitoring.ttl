@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <StatusEvolution>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -77,7 +77,7 @@
 	].
 
 <CurrentStatus>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -86,7 +86,7 @@
 	].
 
 <CauseOfDeath>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -95,7 +95,7 @@
 	].
 
 <ReasonOfDeath>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -104,7 +104,7 @@
 	].
 
 <PlaceOfDeath>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/monitoring.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

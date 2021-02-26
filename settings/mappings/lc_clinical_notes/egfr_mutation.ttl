@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].	
 
 <Biomarker>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -81,7 +81,7 @@
 	].	
 
 <BiomarkerNegativeResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -90,7 +90,7 @@
 	].
 
 <T790PositiveResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -99,7 +99,7 @@
 	].
 
 <T790NegativeResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -108,7 +108,7 @@
 	].
 
 <Exon19Result>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -117,7 +117,7 @@
 	].
 
 <Exon21Result>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -126,7 +126,7 @@
 	].
 
 <BiomarkerRNAResult>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/egfr_mutation.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

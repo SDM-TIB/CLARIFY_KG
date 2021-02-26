@@ -16,7 +16,7 @@
 #################################
 
 <RadiotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -43,7 +43,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

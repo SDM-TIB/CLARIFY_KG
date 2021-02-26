@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <TumorType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -69,7 +69,7 @@
 	].
 
 <AdenocarcinomaHistology>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -78,7 +78,7 @@
 	].
 
 <SmallCellCarcinomaType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -87,7 +87,7 @@
 	].
 
 <CarcinomaType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -96,7 +96,7 @@
 	].
 
 <MesotheliomaType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -105,7 +105,7 @@
 	].
 
 <HistologyDegree>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

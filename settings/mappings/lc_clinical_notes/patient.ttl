@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -57,7 +57,7 @@
 	].
 
 <CancerType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -66,7 +66,7 @@
 	].
 
 <Sex>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -75,7 +75,7 @@
 	].
 
 <Race>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -84,7 +84,7 @@
 	].
 
 <City>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -93,7 +93,7 @@
 	].
 
 <Hospital>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/patient.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

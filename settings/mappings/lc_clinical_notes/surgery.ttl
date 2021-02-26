@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].	
 
 <OncologicalSurgery>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -76,7 +76,7 @@
 	].	
 
 <CancerStageTNM>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -103,7 +103,7 @@
 	].			
 
 <SurgeryPathologicalResponse>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -112,7 +112,7 @@
 	].
 
 <SurgeryResectionGrade>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -121,7 +121,7 @@
 	].
 
 <PerioperativeDeath>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -130,7 +130,7 @@
 	].
 
 <SurgerySubType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -139,7 +139,7 @@
 	].
 
 <SurgeryClass>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -148,7 +148,7 @@
 	].				
 
 <TumorSize>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -157,7 +157,7 @@
 	].
 
 <LymphNodesInvolvement>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -166,7 +166,7 @@
 	].
 
 <MetastatisStage>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

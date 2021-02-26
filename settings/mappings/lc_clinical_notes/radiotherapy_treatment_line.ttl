@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,7 +23,7 @@
 		]
 	].
 <RadiotherapyTreatmentLine>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -70,7 +70,7 @@
 	].
 
 <TreatmentLineNumber>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -79,7 +79,7 @@
 	].	
 
 <RadiotherapyLocation>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -88,7 +88,7 @@
 	].
 
 <RadiotherapyTreatmentLineType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -97,7 +97,7 @@
 	].
 
 <RadiotherapyIntention>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <ClinicalTrial>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -57,7 +57,7 @@
 	].
 
 <observational_trial>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -66,7 +66,7 @@
 	].
 
 <drug_trial>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -75,7 +75,7 @@
 	].
 
 <phase>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -84,7 +84,7 @@
 	].
 
 <directed>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <PathologicalStageClassification>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -93,7 +93,7 @@
 	].
 
 <biopsy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -102,7 +102,7 @@
 	].
 
 <broncoscopy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -111,7 +111,7 @@
 	].
 
 <endoluminal_ultrasound>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -120,7 +120,7 @@
 	].
 
 <laparoscopy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -129,7 +129,7 @@
 	].
 
 <fine_needle_aspiration>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -138,7 +138,7 @@
 	].
 
 <blood_sample>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -147,7 +147,7 @@
 	].	
 
 <mediatinoscopy>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -156,7 +156,7 @@
 	].
 
 <transthoracicVats>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -165,7 +165,7 @@
 	].
 
 <transthoracicPuncture>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -174,7 +174,7 @@
 	].		
 
 <others>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

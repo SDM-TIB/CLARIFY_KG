@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -30,7 +30,7 @@
 	].	
 
 <FamilyHistory>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -63,7 +63,7 @@
 	].
 
 <FamilyWithCancer>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -72,7 +72,7 @@
 	].
 
 <CancerType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -81,7 +81,7 @@
 	].
 
 <FamilyType>
-	rml:logicalSource [ rml:source "/data/data/lc_clinical_notes/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
