@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <AdverseEffect>
-	rml:logicalSource [ rml:source "/data/data/drug/adverse_impact.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/adverse_impact.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -31,7 +31,7 @@
 	].					
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/drug/adverse_impact.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/adverse_impact.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
