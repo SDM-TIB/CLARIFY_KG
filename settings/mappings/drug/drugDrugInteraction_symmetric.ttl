@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <SymmetricDDI>
-	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -25,7 +25,7 @@
 	].	
 
 <DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/data/data/drug/Symmetric_DDI_corpus.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

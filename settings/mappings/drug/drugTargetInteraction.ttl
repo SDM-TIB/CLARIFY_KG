@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugTargetInteraction>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -37,7 +37,7 @@
 	].
 		
 <Target>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -64,7 +64,7 @@
 	].
 
 <Protein>
-	rml:logicalSource [ rml:source "/data/data/drug/drugTargetInteraction.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [

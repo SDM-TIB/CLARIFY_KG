@@ -11,7 +11,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Phenotype>
-	rml:logicalSource [ rml:source "/data/data/drug/phenotype.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/phenotype.csv";
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
@@ -32,7 +32,7 @@
 	].
 
 <Annotation>
-	rml:logicalSource [ rml:source "/data/data/drug/phenotype.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/phenotype.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -53,7 +53,7 @@
 	].
 
 <HPOAnnotation>
-	rml:logicalSource [ rml:source "/data/data/drug/phenotype.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/phenotype.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
