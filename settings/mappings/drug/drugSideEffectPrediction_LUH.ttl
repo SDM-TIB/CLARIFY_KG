@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <DrugSideEffectPrediction>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug_predictions/DrugPhenotype_prediction_LUH.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/DrugPhenotype_prediction_LUH.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
