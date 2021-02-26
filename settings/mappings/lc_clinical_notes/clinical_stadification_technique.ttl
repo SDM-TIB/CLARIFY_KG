@@ -34,19 +34,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <fbc>
+			rr:parentTriplesMap <fullBloodCount>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <bone_gammagraphy>		
+			rr:parentTriplesMap <gammaScan>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <mediatinoscopy>
+			rr:parentTriplesMap <mediastinoscopy>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -58,19 +58,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <pet_tac>		
+			rr:parentTriplesMap <petTAC>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <rx_thorax>		
+			rr:parentTriplesMap <thoracicRX>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <brain_mri>		
+			rr:parentTriplesMap <brainMRI>		
 		]
 	];
 	rr:predicateObjectMap [
@@ -82,7 +82,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <torachoscopy>		
+			rr:parentTriplesMap <thoracoscopy>		
 		]
 	];	
 	rr:predicateObjectMap [
@@ -94,7 +94,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn;
 		rr:objectMap [
-			rr:parentTriplesMap <brain_ct>		
+			rr:parentTriplesMap <brainCT>		
 		]
 	].
 
@@ -122,6 +122,15 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
+		rr:class clarify:Procedure;
+	].
+
+<mediatinostomy>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_stadification_technique.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/Procedure/{mediatinostomy}";
 		rr:class clarify:Procedure;
 	].
 
