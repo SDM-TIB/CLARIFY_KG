@@ -34,6 +34,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/BiomarkerResult/{result}";		
+			rr:parentTriplesMap <BiomarkerResult>		
 		]
 	].
+
+<BiomarkerResult>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pdl1_expression.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
+		rr:class clarify:BiomarkerTestResult;
+	].	
