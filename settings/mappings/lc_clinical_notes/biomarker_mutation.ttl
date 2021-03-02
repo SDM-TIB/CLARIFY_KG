@@ -32,7 +32,7 @@
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasResult;
+		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
 			rr:parentTriplesMap <BiomarkerResult>	
 		]
@@ -43,7 +43,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerResult/{result}";
-		rr:class clarify:BiomarkerResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
+		rr:class clarify:BiomarkerTestResult;
 	].		
 	

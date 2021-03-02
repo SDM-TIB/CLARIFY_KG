@@ -85,8 +85,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerNegativeResult/{negative_result}";
-		rr:class clarify:BiomarkerNegativeResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{negative_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <T790PositiveResult>
@@ -94,8 +94,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/T790PositiveResult/{T790Mpos_result}";
-		rr:class clarify:T790PositiveResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{T790Mpos_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <T790NegativeResult>
@@ -103,8 +103,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/T790NegativeResult/{T790Mneg_result}";
-		rr:class clarify:T790NegativeResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{T790Mneg_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <Exon19Result>
@@ -112,8 +112,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Exon19Result/{Exon19_result}";
-		rr:class clarify:Exon19Result;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon19_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <Exon21Result>
@@ -121,8 +121,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Exon21Result/{Exon21_result";
-		rr:class clarify:Exon21Result;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon21_result";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <BiomarkerRNAResult>
@@ -130,8 +130,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerRNAResult/{rna_result}";
-		rr:class clarify:BiomarkerRNAResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{rna_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].					
 
 

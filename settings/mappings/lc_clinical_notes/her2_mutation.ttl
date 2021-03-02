@@ -61,8 +61,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerResult/{result}";
-		rr:class clarify:BiomarkerResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <BiomarkerIHQResult>
@@ -70,8 +70,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerIHQResult/{ihq_result}";
-		rr:class clarify:BiomarkerIHQResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{ihq_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
 
 <BiomarkerFISHResult>
@@ -79,6 +79,6 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerFISHResult/{fish_result}";
-		rr:class clarify:BiomarkerFISHResult;
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{fish_result}";
+		rr:class clarify:BiomarkerTestResult;
 	].
