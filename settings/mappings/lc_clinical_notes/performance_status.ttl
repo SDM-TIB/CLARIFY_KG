@@ -32,7 +32,7 @@
 		rr:class clarify:PerformanceStatusObservation;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn;
+		rr:predicate clarify:basedOn_Scale;
 		rr:objectMap [
 			rr:parentTriplesMap <Scale>
 		]
