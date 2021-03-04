@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Relation>
-	rml:logicalSource [ rml:source "/data/data/publication/Semrep_Annotations.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/publication/Semrep_Annotations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
