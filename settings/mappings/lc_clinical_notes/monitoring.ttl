@@ -70,9 +70,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:secondNeoplasm;
+		rr:predicate clarify:hasSecondNeoplasm;
 		rr:objectMap [
-			rml:reference "second_neoplasm";		
+			rr:parentTriplesMap <second_neoplasm>		
 		]
 	].
 
@@ -110,4 +110,13 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/PlaceOfDeath/{place_death}";
 		rr:class clarify:PlaceOfDeath;
-	].				
+	].	
+
+<second_neoplasm>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/SecondNeoplasm/{second_neoplasm}";
+		rr:class clarify:SecondNeoplasm;
+	].					

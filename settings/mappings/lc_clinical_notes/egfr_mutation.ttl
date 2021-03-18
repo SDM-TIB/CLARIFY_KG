@@ -64,13 +64,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_NOS_result;
 		rr:objectMap [
-			rml:reference "NOS_result";		
+			rr:parentTriplesMap <NOS_result>		
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_other_result;
 		rr:objectMap [
-			rml:reference "others_result";		
+			rr:parentTriplesMap <others_result>		
 		]
 	];
 	rr:predicateObjectMap [
@@ -121,9 +121,27 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon21_result";
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon21_result}";
 		rr:class clarify:BiomarkerTestResult;
 	].
+
+<NOS_result>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{NOS_result}";
+		rr:class clarify:BiomarkerTestResult;
+	].
+
+<others_result>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/BiomarkerTestResult/{others_result}";
+		rr:class clarify:BiomarkerTestResult;
+	].		
 			
 
 
