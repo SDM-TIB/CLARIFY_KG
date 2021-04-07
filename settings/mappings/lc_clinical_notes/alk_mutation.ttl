@@ -71,6 +71,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <ihq_Function> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -89,6 +91,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <fish_Function> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -107,6 +111,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <rna_Function> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
@@ -120,7 +126,9 @@
 		]
 	].
 
-#########
+#######################################
+############## Functions ##############
+#######################################
 
 <ihq_Function>
     fnml:functionValue [
@@ -143,6 +151,12 @@
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
                 rr:constant "result_alk_ihq" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -175,7 +189,13 @@
             rr:objectMap [ 
                 rr:constant "result_alk_fish" 
             ]
-        ];  
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
@@ -206,7 +226,13 @@
             rr:objectMap [ 
                 rr:constant "result_alk_rna" 
             ]
-        ];  
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 

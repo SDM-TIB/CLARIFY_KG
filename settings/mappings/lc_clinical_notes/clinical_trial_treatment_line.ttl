@@ -13,58 +13,86 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:involved_in;
+		rr:predicate clarify:hasClinicalTrialTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ClinicalTrial>
+			rr:parentTriplesMap <ClinicalTrialTreatmentLine>
 		]
 	].
-
-<ClinicalTrial>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+<ClinicalTrialTreatmentLine>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ClinicalTrial/{trial_name}";
-		rr:class clarify:ClinicalTrial;
+		rr:template "http://clarify2020.eu/ClinicalTrialTreatmentLine/{EHR}_{treatment_line}";
+		rr:class clarify:ClinicalTrialTreatmentLine;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
+		rr:predicate clarify:treatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <observational_sanitary_others>
+			rr:parentTriplesMap <TreatmentLineNumber>
 		]
 	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
-		rr:objectMap [
-			rr:parentTriplesMap <drug_trial>
-		]
-	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPhase;
 		rr:objectMap [
 			rr:parentTriplesMap <phase>
 		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasType;
+		rr:objectMap [
+			rr:parentTriplesMap <targeted_clinical_tr>
+		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:is_directed_OrNot;
+		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rr:parentTriplesMap <directed>
+			rr:parentTriplesMap <therapeutic_target>
 		]
 	].
 
-<observational_sanitary_others>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+<TreatmentLineNumber>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <observational_sanitary_others_Function> ;
-    rr:termType rr:IRI;
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:class clarify:TreatmentLineNumber;
+	].
+
+<phase>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <phase_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/TrialPhase";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "phase";		
+		]
+	].
+
+<targeted_clinical_tr>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <targeted_clinical_tr_Function> ;
+	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -75,16 +103,16 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "observational_sanitary_others";		
+			rml:reference "targeted_clinical_tr";		
 		]
 	].
 
-<drug_trial>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+<therapeutic_target>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <drug_trial_Function> ;
-    rr:termType rr:IRI;
+	rr:subjectMap <therapeutic_target_Function> ;
+	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -95,47 +123,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "drug_trial";		
-		]
-	].
-
-<participation_clinical_trial>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <participation_clinical_trial_Function> ;
-    rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/TrialParticipation";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "participation_clinical_trial";		
-		]
-	].
-
-<participation_trial_or_database>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <participation_trial_or_database_Function> ;
-    rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/TrialParticipation";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "participation_trial_or_database";		
+			rml:reference "therapeutic_target";		
 		]
 	].
 
@@ -143,9 +131,9 @@
 ############## Functions ##############
 #######################################
 
-<observational_sanitary_others_Function>
+<phase_Function>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -157,13 +145,50 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "clinical_trial" 
+                rr:constant "clinical_trial_treatment_line" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "observational_sanitary_others" 
+                rr:constant "phase" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/TrialPhase/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "phase" 
+            ]
+        ];                         
+    ].	
+
+<targeted_clinical_tr_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "clinical_trial_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "targeted_clinical_tr" 
             ]
         ]; 
         rr:predicateObjectMap [
@@ -175,14 +200,14 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "observational_sanitary_others" 
+                rml:reference "targeted_clinical_tr" 
             ]
         ];                         
     ].	
 
-<drug_trial_Function>
+<therapeutic_target_Function>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -194,13 +219,13 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "clinical_trial" 
+                rr:constant "clinical_trial_treatment_line" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "drug_trial" 
+                rr:constant "therapeutic_target" 
             ]
         ]; 
         rr:predicateObjectMap [
@@ -208,88 +233,15 @@
             rr:objectMap [ 
                 rr:constant "http://clarify2020.eu/TrialType/" 
             ]
-        ];  
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "drug_trial" 
-            ]
-        ];                         
-    ].	
-
-<participation_clinical_trial_Function>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "clinical_trial" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "participation_clinical_trial" 
-            ]
-        ];  
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TrialParticipation/" 
-            ]
         ]; 
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "participation_clinical_trial" 
+                rml:reference "therapeutic_target" 
             ]
         ];                         
     ].	
-
-<participation_trial_or_database_Function>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "clinical_trial" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "participation_trial_or_database" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TrialParticipation/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "participation_trial_or_database" 
-            ]
-        ];                         
-    ].	    
+    
 
 
 

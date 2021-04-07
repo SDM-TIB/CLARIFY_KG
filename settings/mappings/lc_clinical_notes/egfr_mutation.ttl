@@ -40,13 +40,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_positive_result;
 		rr:objectMap [
-			rr:parentTriplesMap <T790PositiveResult>
+			rr:parentTriplesMap <T790Result>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_negative_result;
 		rr:objectMap [
-			rr:parentTriplesMap <T790NegativeResult>	
+			rr:parentTriplesMap <T790MResult>	
 		]
 	];	
 	rr:predicateObjectMap [
@@ -74,74 +74,468 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerSpecification;
+		rr:predicate clarify:has_performed_study;
 		rr:objectMap [
-			rml:reference "specification";		
+			rr:parentTriplesMap <study_performed>		
 		]
-	].	
+	].
 
 <BiomarkerNegativeResult>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{negative_result}";
-		rr:class clarify:BiomarkerTestResult;
-	].
+	rr:subjectMap <result_egfr_negative_Function> ;
+	rr:termType rr:IRI;
 
-<T790PositiveResult>
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_negative";		
+		]
+	].	
+
+<T790Result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{T790Mpos_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <result_egfr_t790_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_t790";		
+		]
 	].
 
-<T790NegativeResult>
+<T790MResult>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{T790Mneg_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <result_egfr_t790m_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_t790m";		
+		]
 	].
 
 <Exon19Result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon19_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <result_egfr_exon19_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_exon19";		
+		]
 	].
 
 <Exon21Result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{Exon21_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <result_egfr_exon21_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_exon21";		
+		]
 	].
 
 <NOS_result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{NOS_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <result_egfr_nos_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_nos";		
+		]
 	].
 
 <others_result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{others_result}";
-		rr:class clarify:BiomarkerTestResult;
-	].		
-			
+	rr:subjectMap <result_egfr_others_Function> ;
+	rr:termType rr:IRI;
 
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_egfr_others";		
+		]
+	].	
 
+<study_performed>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <study_performed_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/PerformedStudyStatus";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "study_performed";		
+		]
+	].	
+
+#######################################
+############## Functions ##############
+#######################################
+
+<result_egfr_negative_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_negative" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_negative" 
+            ]
+        ];  
+    ].			
+
+<result_egfr_t790_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_t790" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_t790" 
+            ]
+        ];                         
+    ].	
+
+<result_egfr_t790m_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_t790m" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_t790m" 
+            ]
+        ];                         
+    ].
+
+<result_egfr_exon19_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_exon19" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_exon19" 
+            ]
+        ];                         
+    ].
+
+<result_egfr_exon21_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_exon21" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_exon21" 
+            ]
+        ];                         
+    ].
+
+<result_egfr_nos_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_nos" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_nos" 
+            ]
+        ];                         
+    ].
+
+<result_egfr_others_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_egfr_others" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_egfr_others" 
+            ]
+        ];                         
+    ].
+
+<study_performed_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "egfr_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "study_performed" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/PerformedStudyStatus" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "study_performed" 
+            ]
+        ];                         
+    ].

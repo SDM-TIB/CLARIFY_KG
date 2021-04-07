@@ -17,12 +17,38 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:hasComorbidityStatus;
+		rr:objectMap [ 
+			rr:parentTriplesMap <positive_negative>
+		] 
+	];
+	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidity;
 		rr:objectMap [ 
 			rr:parentTriplesMap <Disorder>
 		]
 	].
 
+<positive_negative>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <positive_negative_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/ComorbidityStatus";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "positive_negative";		
+		]
+	].
+	
 <Disorder>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
@@ -64,3 +90,44 @@
 			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].	
+
+#######################################
+############## Functions ##############
+#######################################
+
+<positive_negative_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "comorbidity" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "positive_negative" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/ComorbidityStatus/" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "positive_negative" 
+            ]
+        ];                         
+    ].

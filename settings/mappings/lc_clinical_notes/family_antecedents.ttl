@@ -38,15 +38,9 @@
 		rr:class clarify:FamilyHistory;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyCancerType;
-		rr:objectMap [
-			rr:parentTriplesMap <CancerType>
-		]
-	];	
-	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfFamilyWithLC;
 		rr:objectMap [
-			rml:reference "number_of_family_members_cancer";
+			rml:reference "number_family_members_lung_cancer";
 		]
 	];
 	rr:predicateObjectMap [
@@ -54,38 +48,67 @@
 		rr:objectMap [
 			rml:reference "number_of_family_members_others";
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:familyType;
-		rr:objectMap [
-			rr:parentTriplesMap <FamilyType>
-		]
 	].
 
 <FamilyWithCancer>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/FamilyWithCancer/{has_family_cancer_antecedents}";
-		rr:class clarify:FamilyWithCancer;
+	rr:subjectMap <FamilyWithCancer_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/FamilyWithCancer";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "has_family_cancer_antecedents";		
+		]
 	].
 
-<CancerType>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CancerType/{family_cancer_type}";
-		rr:class clarify:CancerType;
-	].
+#######################################
+############## Functions ##############
+#######################################
 
-<FamilyType>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/FamilyType/{relationship}";
-		rr:class clarify:FamilyType;
-	].	
+<FamilyWithCancer_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "has_family_cancer_antecedents" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/FamilyWithCancer/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "has_family_cancer_antecedents" 
+            ]
+        ];                         
+    ].
+	
 				
