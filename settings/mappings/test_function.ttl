@@ -35,7 +35,13 @@
 		rr:objectMap [
 			rml:reference "specification";		
 		]
-	].	
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:spanishTrabslation;
+        rr:objectMap [
+            rml:reference "";
+        ]
+    ].    	
 
 
 #########
