@@ -33,7 +33,14 @@
 						];
 	rr:subjectMap [
 		rr:constant "http://clarify2020.eu/Biomarker/ALK";
+		rr:termType rr:IRI;
 		rr:class clarify:Biomarker;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Biomarker";
+		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
@@ -74,8 +81,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "result_alk_ihq";
-			rr:datatype xsd:int;		
+			rml:reference "result_alk_ihq";		
 		]
 	].	
 
@@ -93,8 +99,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "result_alk_fish";
-			rr:datatype xsd:int;		
+			rml:reference "result_alk_fish";		
 		]
 	].			
 
@@ -112,8 +117,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "result_alk_rna";
-			rr:datatype xsd:int;		
+			rml:reference "result_alk_rna";		
 		]
 	].
 
