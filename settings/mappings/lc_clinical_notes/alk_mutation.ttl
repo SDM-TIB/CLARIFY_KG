@@ -28,7 +28,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Biomarker/{description}";
+		rr:template "http://clarify2020.eu/Biomarker/ALK";
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
@@ -52,7 +52,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarkerSpecification;
 		rr:objectMap [
-			rml:reference "specification";		
+			rml:reference "study_performed";		
 		]
 	].	
 
@@ -60,32 +60,153 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{ihq_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <ihq_Function> ;
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_alk_ihq";
+			rr:dataType xsd:int;		
+		]
 	].	
 
 <BiomarkerFISHResult>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{fish_result}";
-		rr:class clarify:BiomarkerTestResult;
-	].		
+	rr:subjectMap <fish_Function> ;
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_alk_fish";
+			rr:dataType xsd:int;		
+		]
+	].			
 
 <BiomarkerRNAResult>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{rna_result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <rna_Function> ;
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_alk_rna";
+			rr:dataType xsd:int;		
+		]
 	].
 
+#########
 
+<ihq_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant fun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate fun:tableName;
+            rr:objectMap [ 
+                rr:constant "alk_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate fun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_alk_ihq" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate fun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_alk_ihq" 
+            ]
+        ];                         
+    ].
 
+<fish_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant fun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate fun:tableName;
+            rr:objectMap [ 
+                rr:constant "alk_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate fun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_alk_fish" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate fun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_alk_fish" 
+            ]
+        ];                         
+    ].
 
+<rna_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant fun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate fun:tableName;
+            rr:objectMap [ 
+                rr:constant "alk_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate fun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_alk_rna" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate fun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_alk_rna" 
+            ]
+        ];                         
+    ].
 
 
 
