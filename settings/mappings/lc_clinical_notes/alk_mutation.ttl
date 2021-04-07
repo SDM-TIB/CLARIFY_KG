@@ -6,8 +6,12 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
+
 
 <LCPatient>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/alk_mutation.csv";
@@ -123,23 +127,23 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant fun:findSemantic 
+                rr:constant clarifyFun:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate fun:tableName;
+            rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
                 rr:constant "alk_mutation" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate fun:columnName;
+            rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
                 rr:constant "result_alk_ihq" 
             ]
         ];  
         rr:predicateObjectMap [
-            rr:predicate fun:columnValue;
+            rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "result_alk_ihq" 
             ]
@@ -154,23 +158,23 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant fun:findSemantic 
+                rr:constant clarifyFun:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate fun:tableName;
+            rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
                 rr:constant "alk_mutation" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate fun:columnName;
+            rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
                 rr:constant "result_alk_fish" 
             ]
         ];  
         rr:predicateObjectMap [
-            rr:predicate fun:columnValue;
+            rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "result_alk_fish" 
             ]
@@ -185,23 +189,23 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant fun:findSemantic 
+                rr:constant clarifyFun:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate fun:tableName;
+            rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
                 rr:constant "alk_mutation" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate fun:columnName;
+            rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
                 rr:constant "result_alk_rna" 
             ]
         ];  
         rr:predicateObjectMap [
-            rr:predicate fun:columnValue;
+            rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "result_alk_rna" 
             ]
