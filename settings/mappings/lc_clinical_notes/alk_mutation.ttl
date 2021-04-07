@@ -34,7 +34,6 @@
 	rr:subjectMap [
 		rr:constant "http://clarify2020.eu/Biomarker/ALK";
 		rr:termType rr:IRI;
-		rr:class clarify:Biomarker;
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
