@@ -28,28 +28,201 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Biomarker/{description}";
+		rr:template "http://clarify2020.eu/Biomarker/ROS1";
 		rr:class clarify:Biomarker;
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasTestResult;
+		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerResult>	
+			rr:parentTriplesMap <BiomarkerIHQResult>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:biomarkerSpecification;
+		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rml:reference "specification";		
+			rr:parentTriplesMap <BiomarkerFISHResult>		
 		]
-	].	
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_performed_study;
+		rr:objectMap [
+			rr:parentTriplesMap <study_performed>		
+		]
+	]
 
-<BiomarkerResult>
+<BiomarkerIHQResult>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
-		rr:class clarify:BiomarkerTestResult;
+	rr:subjectMap <BiomarkerIHQResult_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_ros1_ihq";		
+		]
 	].
+
+<BiomarkerFISHResult>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <BiomarkerFISHResult_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "result_ros1_fish";		
+		]
+	].
+
+<study_performed>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <study_performed_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/PerformedStudyStatus";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "study_performed";		
+		]
+	].	
+
+#######################################
+############## Functions ##############
+#######################################
+
+<BiomarkerIHQResult_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "ros1_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_ros1_ihq" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_ros1_ihq" 
+            ]
+        ];                         
+    ].
+
+<BiomarkerFISHResult_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "ros1_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result_ros1_fish" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/BiomarkerTestResult" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result_ros1_fish" 
+            ]
+        ];                         
+    ].
+
+<study_performed_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/ros1_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "ros1_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "study_performed" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/PerformedStudyStatus" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "study_performed" 
+            ]
+        ];                         
+    ].
+
 

@@ -96,89 +96,572 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{biopsy}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <biopsy_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "biopsy";		
+		]
 	].
 
 <broncoscopy>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{broncoscopy}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <broncoscopy_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "broncoscopy";		
+		]
 	].
 
 <endoluminal_ultrasound>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{endobronquial}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <endoluminal_ultrasound_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "endobronquial";		
+		]
 	].
 
 <laparoscopy>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{laparoscopy}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <laparoscopy_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "laparoscopy";		
+		]
 	].
 
 <fine_needle_aspiration>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{fine_needle_aspiration}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <fine_needle_aspiration_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "fine_needle_aspiration";		
+		]
 	].
 
 <blood_sample>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{blood_sample}";
-		rr:class clarify:Procedure;
-	].	
+	rr:subjectMap <blood_sample_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "blood_sample";		
+		]
+	].
 
 <mediatinoscopy>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{mediatinoscopy}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <mediatinoscopy_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "mediatinoscopy";		
+		]
 	].
 
 <transthoracicVats>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{thoracoscopy_vats}";
-		rr:class clarify:Procedure;
+	rr:subjectMap <transthoracicVats_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "thoracoscopy_vats";		
+		]
 	].
 
 <transthoracicPuncture>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{transthoracic_puncture}";
-		rr:class clarify:Procedure;
-	].		
+	rr:subjectMap <transthoracicPuncture_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "transthoracic_puncture";		
+		]
+	].
 
 <others>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Procedure/{others}";
-		rr:class clarify:Procedure;
-	].	
-					
+	rr:subjectMap <others_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Procedure";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "others";		
+		]
+	].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<biopsy_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "biopsy" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "biopsy" 
+            ]
+        ];                         
+    ].
+
+<broncoscopy_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "broncoscopy" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "broncoscopy" 
+            ]
+        ];                         
+    ].
+
+<endoluminal_ultrasound_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "endoluminal_ultrasound" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "endoluminal_ultrasound" 
+            ]
+        ];                         
+    ].
+
+<laparoscopy_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "laparoscopy" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "laparoscopy" 
+            ]
+        ];                         
+    ].
+
+<fine_needle_aspiration_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "fine_needle_aspiration" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "fine_needle_aspiration" 
+            ]
+        ];                         
+    ].
+
+<blood_sample_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "blood_sample" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "blood_sample" 
+            ]
+        ];                         
+    ].
+
+<mediatinoscopy_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "mediatinoscopy" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "mediatinoscopy" 
+            ]
+        ];                         
+    ].
+
+<transthoracicVats_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "transthoracicVats" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "transthoracicVats" 
+            ]
+        ];                         
+    ].
+
+<transthoracicPuncture_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "transthoracicPuncture" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "transthoracicPuncture" 
+            ]
+        ];                         
+    ].
+
+<others_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/pathological_stadification_technique.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "pathological_stadification_technique" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "others" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Procedure" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "others" 
+            ]
+        ];                         
+    ].

@@ -13,6 +13,7 @@
 #### 1. The attibute values of this table are not meaningful 
 #### 2. Also the treatmentLine number is missing in this table so the link to treatementLine would be missing in KG
 #### So this table is not included in the KG v3.0
+#### This table is included in V5.0 since the "treatment_line" exists in this version
 #################################
 
 <RadiotherapyTreatmentLine>
@@ -20,7 +21,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{ID}"; ## should be {EHR}_{treatment_line}
+		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLine/{EHR}_{treatment_line}";
 		rr:class clarify:RadiotherapyTreatmentLine
 	];	
 	rr:predicateObjectMap [

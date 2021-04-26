@@ -82,26 +82,175 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/RadiotherapyLocation/{radiated_area}";
-		rr:class clarify:RadiotherapyLocation;
-	].
+	rr:subjectMap <RadiotherapyLocation_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyLocation";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "radiated_area";		
+		]
+	]. 
+
 
 <RadiotherapyTreatmentLineType>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/RadiotherapyTreatmentLineType/{type}";
-		rr:class clarify:RadiotherapyTreatmentLineType;
-	].
+	rr:subjectMap <RadiotherapyTreatmentLineType_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyTreatmentLineType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "type";		
+		]
+	]. 
+
 
 <RadiotherapyIntention>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/RadiotherapyIntention/{intention}";
-		rr:class clarify:RadiotherapyIntention;
+	rr:subjectMap <RadiotherapyIntention_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyIntention";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "intention";		
+		]
 	].
 
+#######################################
+############## Functions ##############
+#######################################
+
+<RadiotherapyLocation_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "radiated_area" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/RadiotherapyLocation" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "radiated_area" 
+            ]
+        ];                         
+    ].
+
+<RadiotherapyTreatmentLineType_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "type" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/RadiotherapyTreatmentLineType" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "type" 
+            ]
+        ];                         
+    ].
+
+<RadiotherapyIntention_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "intention" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/RadiotherapyIntention" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "intention" 
+            ]
+        ];                         
+    ].    
