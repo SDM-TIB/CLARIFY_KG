@@ -74,15 +74,18 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
 						rml:referenceFormulation ql:CSV 
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI}";
-		rr:class clarify:Annotation
+	rr:subjectMap <UMLSFunction> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Annotation";		
+		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
+		rr:objectMap <FalconUMLS-Function> ;
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
@@ -130,4 +133,48 @@
                 rml:reference "positive_negative" 
             ]
         ];                         
+    ].
+
+#######
+
+<UMLSFunction>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant biofunmap:concat2 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate biofunmap:value1;
+            rr:objectMap [ 
+                rr:constant "http://www.BioFunMap.com/Annotation/" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate biofunmap:value2;
+            rr:objectMap <FalconUMLS-Function>
+        ];      
+    ].
+
+<FalconUMLS-Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant biofunmap:falcon_UMLS_CUI_function 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate biofunmap:value;
+            rr:objectMap [ 
+                rml:reference "name" 
+            ] 
+        ];    
     ].

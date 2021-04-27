@@ -26,42 +26,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineMaintenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Drug/{maintenance}";
+			rr:parentTriplesMap <Drug_maintenance>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDrug;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Drug/{drug}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
+			rr:parentTriplesMap <Drug>		
 		]
 	].	
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
-	].
 
 <TreatmentLineCycle>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
@@ -72,4 +45,122 @@
 		rr:class clarify:TreatmentLineCycle
 	].
 
+<Drug_maintenance>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <Drug_maintenance_Function> ;
+	rr:termType rr:IRI;
 
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Drug";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "maintenance";		
+		]
+	].	
+
+<Drug>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <Drug_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Drug";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "drug";		
+		]
+	].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<Drug_maintenance_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_drugs" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "maintenance" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Drug/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "maintenance" 
+            ]
+        ];                         
+    ].
+
+##############
+
+<Drug_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_drugs.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_drugs" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "drug" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Drug/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "drug" 
+            ]
+        ];                         
+    ].

@@ -9,16 +9,16 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comments.csv";
+<Hospital>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/hospital.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
-	];
+		rr:template "http://clarify2020.eu/Hospital/{organizationID}";
+	].
 	rr:predicateObjectMap [
-		rr:predicate clarify:comment;
-        rr:objectMap [ 
-            rml:reference "comment_text" 
-        ]
+		rr:predicate owl:sameAs;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/Hospital/{autonomous_community}";		
+		]
 	].

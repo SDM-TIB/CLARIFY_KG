@@ -48,32 +48,90 @@
 		rr:objectMap [
 			rr:parentTriplesMap <MetastatisStage>
 		]
+	]	
+	rr:predicateObjectMap [
+		rr:predicate clarify:basedOn_Version;
+		rr:objectMap [
+			rr:parentTriplesMap <TNM_version>
+		]
 	].	
 
 <TumorSize>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TumorSize/{t}";
-		rr:class clarify:TumorSize;
-	].
+	rr:subjectMap <TumorSize_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/TumorSize";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "t";		
+		]
+	]. 
 
 <LymphNodesInvolvement>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LymphNodesInvolvement/{n}";
-		rr:class clarify:LymphNodesInvolvement;
-	].
+	rr:subjectMap <LymphNodesInvolvement_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/LymphNodesInvolvement";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "n";		
+		]
+	]. 
 
 <MetastatisStage>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/MetastatisStage/{m}";
-		rr:class clarify:MetastatisStage;
-	].	
-					
+	rr:subjectMap <MetastatisStage_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/MetastatisStage";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "m";		
+		]
+	].
+
+<TNM_version>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <TNM_version_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Version";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "specify_tnm_version";		
+		]
+	].					

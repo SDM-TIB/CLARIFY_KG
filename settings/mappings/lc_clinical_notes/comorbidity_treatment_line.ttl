@@ -9,27 +9,19 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/progression_location.csv";
+	
+<Disorder>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/Disorder/{name}";
+		rr:class clarify:Disorder;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionLocation;
+		rr:predicate clarify:disorderLabel;
 		rr:objectMap [
-			rr:parentTriplesMap <ProgressionLocation>
+			rml:reference "name";
 		]
 	].
 
-<ProgressionLocation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/progression_location.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ProgressionLocation/{location}";
-		rr:class clarify:ProgressionLocation;
-	].	
-
-	
