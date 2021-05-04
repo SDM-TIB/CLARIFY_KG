@@ -8,3 +8,365 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/LCPatient/{her}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasMontoring;
+		rr:objectMap [ 
+			rr:parentTriplesMap <StatusEvolution>
+		]
+	].
+
+
+<StatusEvolution>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/StatusEvolution/{her}_{monitoring_iteration}";
+		rr:class clarify:StatusEvolution;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:performedMonitoring_OrNot;
+		rr:objectMap [ 
+			rr:parentTriplesMap <PerformedMonitoring>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:lastMonitoringDate;
+		rr:objectMap [
+			rml:reference "date_last_contact";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasCurrentStatus;
+		rr:objectMap [
+			rr:parentTriplesMap <CurrentStatus>	
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rml:reference "death_date";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasCauseOfDeath;
+		rr:objectMap [
+			rr:parentTriplesMap <CauseOfDeath>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasReasonOfDeath;
+		rr:objectMap [
+			rr:parentTriplesMap <ReasonOfDeath>	
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:placeOfDeath;
+		rr:objectMap [
+			rr:parentTriplesMap <PlaceOfDeath>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasSecondNeoplasm;
+		rr:objectMap [
+			rr:parentTriplesMap <second_neoplasm>		
+		]
+	].
+
+<PerformedMonitoring>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <PerformedMonitoring_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/PerformedMonitoring";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "monitoring_perfomed";		
+		]
+	].
+
+<CurrentStatus>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <CurrentStatus_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/CurrentStatus";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "situation";		
+		]
+	]. 
+
+<CauseOfDeath>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <CauseOfDeath_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/CauseOfDeath";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "death_cause";		
+		]
+	]. 
+
+<ReasonOfDeath>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <ReasonOfDeath_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/ReasonOfDeath";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "death_reason";		
+		]
+	]. 
+
+<second_neoplasm>
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <second_neoplasm_Function>
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/SecondNeoplasm";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "second_neoplasm_type";		
+		]
+	]. 				
+
+#######################################
+############## Functions ##############
+#######################################
+
+<PerformedMonitoring_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "monitoring_perfomed" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/PerformedMonitoring" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "monitoring_perfomed" 
+            ]
+        ];                         
+    ].
+<CauseOfDeath_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "situation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/CurrentStatus" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "situation" 
+            ]
+        ];                         
+    ].
+
+<CauseOfDeath_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "death_cause" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/CauseOfDeath" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "death_cause" 
+            ]
+        ];                         
+    ].
+
+<ReasonOfDeath_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "death_reason" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/ReasonOfDeath" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "death_reason" 
+            ]
+        ];                         
+    ].
+
+<second_neoplasm_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "second_neoplasm" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/SecondNeoplasm" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "second_neoplasm" 
+            ]
+        ];                         
+    ].

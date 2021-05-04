@@ -103,7 +103,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "targeted_clinical_tr";		
+			rml:reference "targeted_clinical_trial";		
 		]
 	].
 
@@ -188,7 +188,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "targeted_clinical_tr" 
+                rr:constant "targeted_clinical_trial" 
             ]
         ]; 
         rr:predicateObjectMap [
@@ -200,7 +200,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "targeted_clinical_tr" 
+                rml:reference "targeted_clinical_trial" 
             ]
         ];                         
     ].	

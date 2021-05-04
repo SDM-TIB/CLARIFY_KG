@@ -17,6 +17,12 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:total_number_of_metastasis;
+		rr:objectMap [
+			rml:reference "num_total_metastasis";
+		]
+	].
+	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
 			rr:parentTriplesMap <extrathoracic_lymphadenopaties>
