@@ -6,6 +6,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
@@ -14,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasFamilyHistory;
@@ -28,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/FamilyHistory/{EHR}_{treatment_line}";
+		rr:template "http://clarify2020.eu/FamilyHistory/{ehr}_{treatment_line}";
 		rr:class clarify:FamilyHistory;
 	];
 	rr:predicateObjectMap [

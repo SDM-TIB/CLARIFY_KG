@@ -6,6 +6,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
@@ -18,7 +21,7 @@
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidityStatus;
-		rr:objectMap [ 
+		rr:objectMap [
 			rr:parentTriplesMap <positive_negative>
 		] 
 	];
@@ -62,36 +65,6 @@
 		rr:objectMap [
 			rml:reference "name";
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap <UMLSFunction> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Annotation";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap <FalconUMLS-Function> ;
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
 	].	
 
 #######################################
@@ -106,75 +79,31 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarify:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
+            rr:predicate clarify:tableName;
             rr:objectMap [ 
                 rr:constant "comorbidity" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
+            rr:predicate clarify:columnName;
             rr:objectMap [ 
                 rr:constant "positive_negative" 
             ]
         ]; 
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
+            rr:predicate clarify:resource;
             rr:objectMap [ 
                 rr:constant "http://clarify2020.eu/ComorbidityStatus/" 
             ]
         ]; 
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
+            rr:predicate clarify:columnValue;
             rr:objectMap [ 
                 rml:reference "positive_negative" 
             ]
         ];                         
-    ].
-
-#######
-
-<UMLSFunction>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant biofunmap:concat2 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate biofunmap:value1;
-            rr:objectMap [ 
-                rr:constant "http://www.BioFunMap.com/Annotation/" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate biofunmap:value2;
-            rr:objectMap <FalconUMLS-Function>
-        ];      
-    ].
-
-<FalconUMLS-Function>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/comorbidity.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant biofunmap:falcon_UMLS_CUI_function 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate biofunmap:value;
-            rr:objectMap [ 
-                rml:reference "name" 
-            ] 
-        ];    
     ].

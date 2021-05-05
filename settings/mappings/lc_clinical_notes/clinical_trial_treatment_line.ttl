@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasClinicalTrialTreatmentLine;
@@ -30,7 +30,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ClinicalTrialTreatmentLine/{EHR}_{treatment_line}";
+		rr:template "http://clarify2020.eu/ClinicalTrialTreatmentLine/{ehr}_{treatment_line}";
 		rr:class clarify:ClinicalTrialTreatmentLine;
 	];
 	rr:predicateObjectMap [

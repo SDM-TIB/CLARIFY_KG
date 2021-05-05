@@ -6,6 +6,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
@@ -22,21 +25,6 @@
 			rr:parentTriplesMap <FamilyWithCancer>
 		]
 	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyHistory;
-		rr:objectMap [ 
-			rr:parentTriplesMap <FamilyHistory>
-		]
-	].	
-
-<FamilyHistory>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/family_antecedents.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/FamilyHistory/{ID}";
-		rr:class clarify:FamilyHistory;
-	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfFamilyWithLC;
 		rr:objectMap [

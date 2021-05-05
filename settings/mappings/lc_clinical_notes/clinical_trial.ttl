@@ -22,60 +22,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:involved_in;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ClinicalTrial>
-		]
-	].
-
-<ClinicalTrial>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ClinicalTrial/{trial_name}";
-		rr:class clarify:ClinicalTrial;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
-		rr:objectMap [
-			rr:parentTriplesMap <observational_sanitary_others>
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
-		rr:objectMap [
 			rr:parentTriplesMap <drug_trial>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasPhase;
-		rr:objectMap [
-			rr:parentTriplesMap <phase>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:is_directed_OrNot;
-		rr:objectMap [
-			rr:parentTriplesMap <directed>
-		]
-	].
-
-<observational_sanitary_others>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <observational_sanitary_others_Function> ;
-    rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/TrialType";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "observational_sanitary_others";		
 		]
 	].
 
@@ -97,7 +44,45 @@
 		rr:objectMap [
 			rml:reference "drug_trial";		
 		]
-	].
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <observational_sanitary_others>
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasPhase;
+        rr:objectMap [
+            rr:parentTriplesMap <participation_clinical_trial>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:is_directed_OrNot;
+        rr:objectMap [
+            rr:parentTriplesMap <participation_trial_or_database>
+        ]
+    ].
+
+<observational_sanitary_others>
+    rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <observational_sanitary_others_Function> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/TrialType";        
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "observational_sanitary_others";      
+        ]
+    ].
 
 <participation_clinical_trial>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/clinical_trial.csv";

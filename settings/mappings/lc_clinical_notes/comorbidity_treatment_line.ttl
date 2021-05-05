@@ -15,13 +15,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Disorder/{name}";
+		rr:template "http://clarify2020.eu/Disorder/{comorbidity}";
 		rr:class clarify:Disorder;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:disorderLabel;
 		rr:objectMap [
-			rml:reference "name";
+			rml:reference "comorbidity";
 		]
 	].
 
