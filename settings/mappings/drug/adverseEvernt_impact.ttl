@@ -22,31 +22,4 @@
 		rr:objectMap [
 			rml:reference "Impact";
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
 	].					
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/adverse_impact.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI_AdverseEvent}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_AdverseEvent" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
-	].

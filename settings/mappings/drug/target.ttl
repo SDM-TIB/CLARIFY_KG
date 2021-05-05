@@ -52,31 +52,4 @@
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/Gene/{Gene_name}";
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/target.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
 	].

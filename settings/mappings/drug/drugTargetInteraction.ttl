@@ -86,6 +86,6 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Protein/{Protein ID}"; 
+			rr:template "http://clarify2020.eu/Protein/{Protein Name}"; 
 		]
 	].	

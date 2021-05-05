@@ -30,7 +30,7 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
+		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation1>
 		]
@@ -40,36 +40,9 @@
 		rr:objectMap [
 			rr:parentTriplesMap <Annotation2>
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation3>
-		]
 	].	
 
 <Annotation1>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{cui1}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "cui1" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
-	].
-
-<Annotation2>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -90,7 +63,7 @@
 		]
 	].
 
-<Annotation3>
+<Annotation2>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];

@@ -22,38 +22,5 @@
 		rr:objectMap [ 
 			rml:reference "name" 
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "{Dbpedia_URL}";
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	].
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/indication_CUI.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{ID}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "ID" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
-		]
 	].
 

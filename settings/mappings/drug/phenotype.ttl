@@ -19,36 +19,9 @@
 		rr:class clarify:Phenotype 	
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
 			rr:parentTriplesMap <HPOAnnotation>
-		]
-	].
-
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/drug/phenotype.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
 		]
 	].
 
