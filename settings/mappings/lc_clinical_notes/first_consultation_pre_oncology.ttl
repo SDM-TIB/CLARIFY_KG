@@ -246,11 +246,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "weightLoss";		
+			rml:reference "weight_loss";		
 		]
 	].
 
-#######################################cough_Function
+#######################################c
 ############## Functions ##############
 #######################################
 
@@ -533,7 +533,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "weightLoss" 
+                rr:constant "weight_loss" 
             ]
         ]; 
         rr:predicateObjectMap [
@@ -545,7 +545,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "weightLoss" 
+                rml:reference "weight_loss" 
             ]
         ];  
     ].
