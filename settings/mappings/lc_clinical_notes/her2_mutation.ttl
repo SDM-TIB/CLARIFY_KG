@@ -63,7 +63,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerIHQResult_Function>
+	rr:subjectMap <BiomarkerIHQResult_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -83,7 +83,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerFISHResult_Function>
+	rr:subjectMap <BiomarkerFISHResult_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
