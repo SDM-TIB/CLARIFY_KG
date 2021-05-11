@@ -85,7 +85,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyLocation_Function>
+	rr:subjectMap <RadiotherapyLocation_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -106,7 +106,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyTreatmentLineType_Function>
+	rr:subjectMap <RadiotherapyTreatmentLineType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -127,7 +127,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyIntention_Function>
+	rr:subjectMap <RadiotherapyIntention_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

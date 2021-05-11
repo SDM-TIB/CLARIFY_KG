@@ -84,13 +84,19 @@
 		rr:objectMap [
 			rr:parentTriplesMap <second_neoplasm>		
 		]
-	].
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSecondNeoplasmType;
+        rr:objectMap [
+            rr:parentTriplesMap <second_neoplasm_type>       
+        ]
+    ].
 
 <PerformedMonitoring>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <PerformedMonitoring_Function>
+	rr:subjectMap <PerformedMonitoring_Function> ; 
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -110,7 +116,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CurrentStatus_Function>
+	rr:subjectMap <CurrentStatus_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -130,7 +136,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CauseOfDeath_Function>
+	rr:subjectMap <CauseOfDeath_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -150,7 +156,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ReasonOfDeath_Function>
+	rr:subjectMap <ReasonOfDeath_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -170,7 +176,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <second_neoplasm_Function>
+	rr:subjectMap <second_neoplasm_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -182,9 +188,29 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "second_neoplasm_type";		
+			rml:reference "second_neoplasm_presence";		
 		]
 	]. 				
+
+<second_neoplasm_type>
+    rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <second_neoplasm_type_Function> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SecondNeoplasmType";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "second_neoplasm_type";       
+        ]
+    ].  
 
 #######################################
 ############## Functions ##############
@@ -357,7 +383,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "second_neoplasm" 
+                rr:constant "second_neoplasm_presence" 
             ]
         ];
         rr:predicateObjectMap [
@@ -369,7 +395,44 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "second_neoplasm" 
+                rml:reference "second_neoplasm_presence" 
+            ]
+        ];                         
+    ].
+
+<second_neoplasm_type_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring_iterations" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "second_neoplasm_type" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/SecondNeoplasmType" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "second_neoplasm_type" 
             ]
         ];                         
     ].

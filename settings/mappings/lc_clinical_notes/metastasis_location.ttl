@@ -24,7 +24,7 @@
 		rr:objectMap [
 			rml:reference "num_total_metastasis";
 		]
-	].
+	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
@@ -132,7 +132,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <extrathoracic_lymphadenopaties_Function>
+	rr:subjectMap <extrathoracic_lymphadenopaties_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -152,7 +152,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <thoracic_lymphadenopaties_Function>
+	rr:subjectMap <thoracic_lymphadenopaties_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -172,7 +172,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function>
+	rr:subjectMap <meningeal_carcinomatosis_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -192,7 +192,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function>
+	rr:subjectMap <meningeal_carcinomatosis_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -212,7 +212,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_effusion_Function>
+	rr:subjectMap <pleural_effusion_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -232,7 +232,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <liver_Function>
+	rr:subjectMap <liver_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -252,7 +252,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bone_Function>
+	rr:subjectMap <bone_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -272,7 +272,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bilateral_lymphangitis_Function>
+	rr:subjectMap <bilateral_lymphangitis_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -292,7 +292,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_nodules_Function>
+	rr:subjectMap <pleural_nodules_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -312,7 +312,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pancreatic_Function>
+	rr:subjectMap <pancreatic_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -332,7 +332,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <peritoneal_Function>
+	rr:subjectMap <peritoneal_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -352,7 +352,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <lung_Function>
+	rr:subjectMap <lung_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -372,7 +372,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <central_nervous_system_Function>
+	rr:subjectMap <central_nervous_system_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -392,7 +392,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <subcutaneous_Function>
+	rr:subjectMap <subcutaneous_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -412,7 +412,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <adrenal_Function>
+	rr:subjectMap <adrenal_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -432,7 +432,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <soft_tissues_Function>
+	rr:subjectMap <soft_tissues_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -452,7 +452,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <others_Function>
+	rr:subjectMap <others_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

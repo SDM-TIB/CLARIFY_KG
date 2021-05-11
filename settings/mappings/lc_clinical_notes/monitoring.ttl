@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{HER}";
+		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:lastMonitoringDate;

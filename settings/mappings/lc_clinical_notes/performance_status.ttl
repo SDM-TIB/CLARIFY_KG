@@ -20,40 +20,26 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasPerformanceStatusObservation;
+		rr:predicate clarify:hasPerformanceStatus;
 		rr:objectMap [ 
-			rr:parentTriplesMap <PerformanceStatusObservation>
+			rr:parentTriplesMap <PerformanceStatus>
 		]
 	].
 
-<PerformanceStatusObservation>
+<PerformanceStatus>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerformanceStatusObservation/{ID}";
-		rr:class clarify:PerformanceStatusObservation;
+		rr:template "http://clarify2020.eu/PerformanceStatus/{value}";
+		rr:class clarify:PerformanceStatus;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_Scale;
 		rr:objectMap [
 			rr:parentTriplesMap <Scale>
 		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasValue;
-		rr:objectMap [
-			rr:parentTriplesMap <PerformanceStatus>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:date;
-		rr:objectMap [
-			rml:reference "date";
-			rr:datatype xsd:date;
-
-		]
-	].	
+	].
 
 <Scale>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/performance_status.csv";
@@ -64,12 +50,5 @@
 		rr:class clarify:Scale;
 	].
 
-<PerformanceStatus>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/performance_status.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerformanceStatus/{value}";
-		rr:class clarify:PerformanceStatus;
-	].
+
 

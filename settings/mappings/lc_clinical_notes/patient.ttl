@@ -41,7 +41,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:birthDate;
 		rr:objectMap [
-			rml:reference "birthDate";
+			rml:reference "birth_date";
 			rr:datatype xsd:date;
 
 		]
@@ -63,7 +63,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CancerType_Function>
+	rr:subjectMap <CancerType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -83,7 +83,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Sex_Function>
+	rr:subjectMap <Sex_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -103,7 +103,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Race_Function>
+	rr:subjectMap <Race_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -133,7 +133,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Hospital/{hospitalID}";
+		rr:template "http://clarify2020.eu/Hospital/{organization_id}";
 		rr:class clarify:Hospital;
 	].
 

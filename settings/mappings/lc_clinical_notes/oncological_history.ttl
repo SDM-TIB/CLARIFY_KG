@@ -42,7 +42,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <has_previous_cancers_Function>
+	rr:subjectMap <has_previous_cancers_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -62,7 +62,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <previous_cancer_type_Function>
+	rr:subjectMap <previous_cancer_type_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

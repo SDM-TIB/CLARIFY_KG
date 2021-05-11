@@ -18,7 +18,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/Hospital/{organizationID}";
-	].
+	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
