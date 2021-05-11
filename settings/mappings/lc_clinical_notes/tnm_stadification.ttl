@@ -51,7 +51,7 @@
 		rr:objectMap [
 			rr:parentTriplesMap <MetastatisStage>
 		]
-	]	
+	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_Version;
 		rr:objectMap [
@@ -63,7 +63,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TumorSize_Function>
+	rr:subjectMap <TumorSize_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -83,7 +83,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <LymphNodesInvolvement_Function>
+	rr:subjectMap <LymphNodesInvolvement_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -103,7 +103,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <MetastatisStage_Function>
+	rr:subjectMap <MetastatisStage_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -123,7 +123,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TNM_version_Function>
+	rr:subjectMap <TNM_version_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

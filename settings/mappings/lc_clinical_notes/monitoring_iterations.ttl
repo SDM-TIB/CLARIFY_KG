@@ -108,7 +108,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "monitoring_perfomed";		
+			rml:reference "monitoring_performed";		
 		]
 	].
 
@@ -236,7 +236,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "monitoring_perfomed" 
+                rr:constant "monitoring_performed" 
             ]
         ];
         rr:predicateObjectMap [
@@ -248,7 +248,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "monitoring_perfomed" 
+                rml:reference "monitoring_performed" 
             ]
         ];                         
     ].

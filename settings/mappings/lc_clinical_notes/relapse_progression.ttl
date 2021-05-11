@@ -20,22 +20,7 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionRelapseObservation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <ProgressionRelapseObservation>
-		]
-	].
-
-<ProgressionRelapseObservation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ProgressionRelapseObservation/{ID}";
-		rr:class clarify:ProgressionRelapseObservation
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:has_progression_or_relapse;
+		rr:predicate clarify:hasProgressionRelapse;
 		rr:objectMap [
 			rr:parentTriplesMap <ProgressionRelapse>
 		]
@@ -66,31 +51,11 @@
 		]
 	].		
 
-<ProgressionRelapse>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <ProgressionRelapse_Function>
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/ProgressionOrRelapse";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "progression_or_relapse";		
-		]
-	]. 
-
 <ProgressionType>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ProgressionType_Function>
+	rr:subjectMap <ProgressionType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -110,7 +75,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TherapyType_Function>
+	rr:subjectMap <TherapyType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

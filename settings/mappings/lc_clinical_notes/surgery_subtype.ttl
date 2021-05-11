@@ -17,20 +17,20 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/OncologicalSurgery/{HER}_{treatment_line}";
+		rr:template "http://clarify2020.eu/OncologicalSurgery/{ehr}_{treatment_line}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSubType;
 		rr:objectMap [
 			rr:parentTriplesMap <SurgerySubType>
 		]
-	];	
+	].	
 
 <SurgerySubType>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery_subtype.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgerySubType_Function>
+	rr:subjectMap <SurgerySubType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -42,7 +42,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "surgery_subtype";		
+			rml:reference "surgery_subytpe";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -59,7 +59,7 @@
 	].
 
 <SurgeryIteration>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery_subtype.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -73,7 +73,7 @@
 
 <SurgerySubType_Function>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery_subtype.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -103,7 +103,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "surgery_subtype" 
+                rml:reference "surgery_subytpe" 
             ]
         ];                         
     ].

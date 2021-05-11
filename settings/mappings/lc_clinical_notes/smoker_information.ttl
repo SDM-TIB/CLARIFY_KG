@@ -20,21 +20,6 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokingHistory;
-		rr:objectMap [ 
-			rr:parentTriplesMap <SmokingHistory>
-		]
-	].
-
-<SmokingHistory>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/SmokingHistory/{ID}";
-		rr:class clarify:SmokingHistory;
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfCigarettesPerYear;
 		rr:objectMap [
 			rml:reference "packs_year";
@@ -69,7 +54,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <lives_with_smokers_Function>
+	rr:subjectMap <lives_with_smokers_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -89,7 +74,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <has_lived_with_smokers_Function>
+	rr:subjectMap <has_lived_with_smokers_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

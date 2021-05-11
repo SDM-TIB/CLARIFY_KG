@@ -63,12 +63,6 @@
 		rr:objectMap [
 			rr:parentTriplesMap <HistologyDegree>	
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:description;
-		rr:objectMap [
-			rml:reference "description";		
-		]
 	].
 
 <AdenocarcinomaHistology>

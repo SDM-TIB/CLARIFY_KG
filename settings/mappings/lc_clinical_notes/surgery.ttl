@@ -72,34 +72,19 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasStageTNM;
-		rr:objectMap [ 
-			rr:parentTriplesMap <CancerStageTNM>
-		]
-	].	
-
-<CancerStageTNM>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CancerStageTNM/{ID}";
-		rr:class clarify:CancerStageTNM;
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_TumorSize;
+		rr:predicate clarify:cancerStageTNM_TumorSize;
 		rr:objectMap [
 			rr:parentTriplesMap <TumorSize>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_LymphNodesInvolvement;
+		rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
 		rr:objectMap [
 			rr:parentTriplesMap <LymphNodesInvolvement>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_MetastatisStage;
+		rr:predicate clarify:cancerStageTNM_MetastatisStage;
 		rr:objectMap [
 			rr:parentTriplesMap <MetastatisStage>
 		]
@@ -109,7 +94,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryPathologicalResponse_Function>
+	rr:subjectMap <SurgeryPathologicalResponse_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -129,7 +114,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryResectionDegree_Function>
+	rr:subjectMap <SurgeryResectionDegree_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -158,7 +143,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryType_Function>
+	rr:subjectMap <SurgeryType_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -178,7 +163,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryClass_Function>
+	rr:subjectMap <SurgeryClass_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -198,7 +183,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TumorSize_Function>
+	rr:subjectMap <TumorSize_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -218,7 +203,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <LymphNodesInvolvement_Function>
+	rr:subjectMap <LymphNodesInvolvement_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -238,7 +223,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <MetastatisStage_Function>
+	rr:subjectMap <MetastatisStage_Function> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
