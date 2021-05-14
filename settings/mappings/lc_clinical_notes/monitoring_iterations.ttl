@@ -74,12 +74,6 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:placeOfDeath;
-		rr:objectMap [
-			rr:parentTriplesMap <PlaceOfDeath>		
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:hasSecondNeoplasm;
 		rr:objectMap [
 			rr:parentTriplesMap <second_neoplasm>		
