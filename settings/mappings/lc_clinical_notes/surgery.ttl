@@ -19,6 +19,24 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_TumorSize;
+        rr:objectMap [
+            rr:parentTriplesMap <TumorSize>
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
+        rr:objectMap [
+            rr:parentTriplesMap <LymphNodesInvolvement>     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_MetastatisStage;
+        rr:objectMap [
+            rr:parentTriplesMap <MetastatisStage>
+        ]
+    ];  
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOncologicalSurgery;
 		rr:objectMap [
@@ -70,25 +88,8 @@
 		rr:objectMap [
 			rr:parentTriplesMap <SurgeryClass>
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:cancerStageTNM_TumorSize;
-		rr:objectMap [
-			rr:parentTriplesMap <TumorSize>
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
-		rr:objectMap [
-			rr:parentTriplesMap <LymphNodesInvolvement>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:cancerStageTNM_MetastatisStage;
-		rr:objectMap [
-			rr:parentTriplesMap <MetastatisStage>
-		]
-	].			
+	].
+		
 
 <SurgeryPathologicalResponse>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/surgery.csv";

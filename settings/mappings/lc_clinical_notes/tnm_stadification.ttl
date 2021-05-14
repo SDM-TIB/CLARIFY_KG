@@ -19,41 +19,26 @@
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_TumorSize;
+        rr:objectMap [
+            rr:parentTriplesMap <TumorSize>
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
+        rr:objectMap [
+            rr:parentTriplesMap <LymphNodesInvolvement>     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_MetastatisStage;
+        rr:objectMap [
+            rr:parentTriplesMap <MetastatisStage>
+        ]
+    ]; 	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasStageTNM;
-		rr:objectMap [ 
-			rr:parentTriplesMap <CancerStageTNM>
-		]
-	].
-
-<CancerStageTNM>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CancerStageTNM/{ID}";
-		rr:class clarify:CancerStageTNM;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_TumorSize;
-		rr:objectMap [
-			rr:parentTriplesMap <TumorSize>
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_LymphNodesInvolvement;
-		rr:objectMap [
-			rr:parentTriplesMap <LymphNodesInvolvement>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_MetastatisStage;
-		rr:objectMap [
-			rr:parentTriplesMap <MetastatisStage>
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_Version;
+		rr:predicate clarify:cancerStageTNM_Version;
 		rr:objectMap [
 			rr:parentTriplesMap <TNM_version>
 		]
@@ -138,3 +123,155 @@
 			rml:reference "specify_tnm_version";		
 		]
 	].					
+
+#######################################
+############## Functions ##############
+#######################################
+
+<TumorSize_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tnm_stadification" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "t" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/TumorSize/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "t" 
+            ]
+        ];  
+    ].	
+
+<LymphNodesInvolvement_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tnm_stadification" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "n" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/LymphNodesInvolvement/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "n" 
+            ]
+        ];  
+    ].	
+
+<MetastatisStage_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tnm_stadification" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "m" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/MetastatisStage/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "m" 
+            ]
+        ];  
+    ].	
+
+<TNM_version_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tnm_stadification" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "tnm_version" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/Version/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "tnm_version" 
+            ]
+        ];  
+    ].	

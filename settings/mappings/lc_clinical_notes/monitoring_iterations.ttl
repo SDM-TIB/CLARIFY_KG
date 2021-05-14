@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{her}";
+		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMontoring;
@@ -32,7 +32,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/StatusEvolution/{her}_{monitoring_iteration}";
+		rr:template "http://clarify2020.eu/StatusEvolution/{ehr}_{monitoring_iteration}";
 		rr:class clarify:StatusEvolution;
 	];
 	rr:predicateObjectMap [
@@ -242,7 +242,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/PerformedMonitoring" 
+                rr:constant "http://clarify2020.eu/PerformedMonitoring/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -252,7 +252,7 @@
             ]
         ];                         
     ].
-<CauseOfDeath_Function>
+<CurrentStatus_Function>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -278,7 +278,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/CurrentStatus" 
+                rr:constant "http://clarify2020.eu/CurrentStatus/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -315,7 +315,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/CauseOfDeath" 
+                rr:constant "http://clarify2020.eu/CauseOfDeath/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -352,7 +352,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/ReasonOfDeath" 
+                rr:constant "http://clarify2020.eu/ReasonOfDeath/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -389,7 +389,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SecondNeoplasm" 
+                rr:constant "http://clarify2020.eu/SecondNeoplasm/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -426,7 +426,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SecondNeoplasmType" 
+                rr:constant "http://clarify2020.eu/SecondNeoplasmType/" 
             ]
         ];   
         rr:predicateObjectMap [

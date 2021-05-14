@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarkerAnalysisDate;
@@ -101,33 +101,18 @@
 
 			
 <TreatmentLineNumber>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
-		rr:class clarify:TreatmentLineNumber;
-	].	
-
-<other_marker_result>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/studied_markers_therapy.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <other_marker_result_Function> ;
-	rr:termType rr:IRI;
-
+	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/BiomarkerTestResult";		
+			rr:template "http://clarify2020.eu/vocab/TreatmentLineNumber";		
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "other_marker_result";		
-		]
-	].
+	].	
 
 <egfr_result>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/studied_markers_therapy.csv";

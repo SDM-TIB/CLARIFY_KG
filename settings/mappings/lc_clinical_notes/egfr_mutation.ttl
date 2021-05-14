@@ -538,7 +538,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/PerformedStudyStatus" 
+                rr:constant "http://clarify2020.eu/PerformedStudyStatus/" 
             ]
         ];   
         rr:predicateObjectMap [

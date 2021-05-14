@@ -508,7 +508,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -545,7 +545,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -582,7 +582,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -619,7 +619,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -656,7 +656,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -693,7 +693,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -730,7 +730,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -767,7 +767,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -804,7 +804,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -841,7 +841,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -878,7 +878,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -915,7 +915,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -952,7 +952,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -989,7 +989,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -1026,7 +1026,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -1063,7 +1063,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -1100,7 +1100,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -1137,7 +1137,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastasisLocation" 
+                rr:constant "http://clarify2020.eu/MetastasisLocation/" 
             ]
         ];   
         rr:predicateObjectMap [

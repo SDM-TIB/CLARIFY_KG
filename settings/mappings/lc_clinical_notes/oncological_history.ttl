@@ -108,7 +108,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/PatientCancerHistory" 
+                rr:constant "http://clarify2020.eu/PatientCancerHistory/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -145,7 +145,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/CancerType" 
+                rr:constant "http://clarify2020.eu/CancerType/" 
             ]
         ];   
         rr:predicateObjectMap [
