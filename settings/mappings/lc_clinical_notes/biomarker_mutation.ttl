@@ -29,6 +29,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/Biomarker/{study_performed}";
+		rr:class clarify:Biomarker ;
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
@@ -43,5 +44,7 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
+		rr:class clarify:BiomarkerTestResult ;
+
 	].		
 	
