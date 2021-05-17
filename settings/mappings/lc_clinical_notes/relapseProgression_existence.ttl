@@ -20,7 +20,7 @@
 		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionRelapse;
+		rr:predicate clarify:hasProgressionOrRelapse;
 		rr:objectMap [ 
 			rr:parentTriplesMap <ProgressionRelapse>
 		]

@@ -79,29 +79,29 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarify:findSemantic 
+                rr:constant clarifyFun:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate clarify:tableName;
+            rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
                 rr:constant "comorbidity" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate clarify:columnName;
+            rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
                 rr:constant "positive_negative" 
             ]
         ]; 
         rr:predicateObjectMap [
-            rr:predicate clarify:resource;
+            rr:predicate clarifyFun:resource;
             rr:objectMap [ 
                 rr:constant "http://clarify2020.eu/ComorbidityStatus/" 
             ]
         ]; 
         rr:predicateObjectMap [
-            rr:predicate clarify:columnValue;
+            rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "positive_negative" 
             ]

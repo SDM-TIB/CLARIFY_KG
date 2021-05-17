@@ -51,6 +51,26 @@
 		]
 	].		
 
+<ProgressionRelapse>
+    rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <ProgressionRelapse_Function> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/ProgressionRelapse";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "progression_or_relapse";       
+        ]
+    ]. 
+    
 <ProgressionType>
 	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/relapse_progression.csv";
 						rml:referenceFormulation ql:CSV;
@@ -130,7 +150,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/ProgressionRelapse" 
+                rr:constant "http://clarify2020.eu/ProgressionRelapse/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -167,7 +187,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/ProgressionType" 
+                rr:constant "http://clarify2020.eu/ProgressionType/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -204,7 +224,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TherapyType" 
+                rr:constant "http://clarify2020.eu/TherapyType/" 
             ]
         ];   
         rr:predicateObjectMap [
