@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/AdverseEvent/{Adverse_Event}_{Impact}";
+		rr:template "http://clarify2020.eu/entity/{Adverse_Event}_{Impact}";
 		rr:class clarify:AdverseEvent
 	];
 	rr:predicateObjectMap [

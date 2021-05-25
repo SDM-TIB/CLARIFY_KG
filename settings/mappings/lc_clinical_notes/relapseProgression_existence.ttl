@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionOrRelapse;
@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/ProgressionRelapse/Progressed_or_Relapsed";
+		rr:constant "http://clarify2020.eu/entity/Progressed_or_Relapsed";
 		rr:termType rr:IRI;
 	];
 	rr:predicateObjectMap [

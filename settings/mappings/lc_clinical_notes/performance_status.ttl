@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPerformanceStatus;
@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerformanceStatus/{value}";
+		rr:template "http://clarify2020.eu/entity/{value}";
 		rr:class clarify:PerformanceStatus;
 	];
 	rr:predicateObjectMap [
@@ -46,7 +46,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Scale/{scale}";
+		rr:template "http://clarify2020.eu/entity/{scale}";
 		rr:class clarify:Scale;
 	].
 

@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/{predicate}/{subject_cui}_{predicate}_{object_cui}";
+		rr:template "http://clarify2020.eu/entity/{subject_cui}_{predicate}_{object_cui}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -24,18 +24,18 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_annotation;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Annotation/{subject_cui}"
+			rr:template "http://clarify2020.eu/entity/{subject_cui}"
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_annotation;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Annotation/{object_cui}"
+			rr:template "http://clarify2020.eu/entity/{object_cui}"
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_publication;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Publication/{pmid}"
+			rr:template "http://clarify2020.eu/entity/{pmid}"
 		]
 	].		

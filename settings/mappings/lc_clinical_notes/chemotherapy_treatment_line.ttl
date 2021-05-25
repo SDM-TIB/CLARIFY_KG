@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasChemotherapyTreatmentLine;
@@ -28,7 +28,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ChemotherapyTreatmentLine/{EHR}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
 		rr:class clarify:ChemotherapyTreatmentLine
 	];
 	rr:predicateObjectMap [
@@ -69,7 +69,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ChemoTreatmentLineType/{type}";
+		rr:template "http://clarify2020.eu/entity/{type}";
 		rr:class clarify:ChemoTreatmentLineType;
 	].
 
@@ -78,7 +78,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatementLineBestResponse/{best_response}";
+		rr:template "http://clarify2020.eu/entity/{best_response}";
 		rr:class clarify:TreatementLineBestResponse;
 	].
 
@@ -87,7 +87,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
 			

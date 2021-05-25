@@ -14,13 +14,13 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/DrugTargetInteraction/{Drug}_interactsWith_{Protein ID}";
+		rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Protein ID}";
 		rr:class clarify:DrugTargetInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Drug/{Drug}" 
+			rr:template "http://clarify2020.eu/entity/{Drug}" 
 		]
 	];
 	rr:predicateObjectMap [
@@ -32,7 +32,7 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/DrugBank"
+			rr:constant "http://clarify2020.eu/entity/DrugBank"
 		]
 	].
 		
@@ -41,7 +41,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Target/{Protein ID}";
+		rr:template "http://clarify2020.eu/entity/{Protein ID}";
 		rr:class clarify:Target
 	];
 	rr:predicateObjectMap [
@@ -68,7 +68,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Protein/{Protein ID}";
+		rr:template "http://clarify2020.eu/entity/{Protein ID}";
 		rr:class clarify:Protein
 	];
 	rr:predicateObjectMap [
@@ -86,6 +86,6 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Protein/{Protein Name}"; 
+			rr:template "http://clarify2020.eu/entity/{Protein Name}"; 
 		]
 	].	

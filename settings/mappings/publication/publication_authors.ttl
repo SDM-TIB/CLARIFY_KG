@@ -13,11 +13,11 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Publication/{pmid}";
+		rr:template "http://clarify2020.eu/entity/{pmid}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasAuthor;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Author/{author}" 
+			rr:template "http://clarify2020.eu/entity/{author}" 
 		]
 	].

@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTumorHistology;
@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TumorType/{type}";
+		rr:template "http://clarify2020.eu/entity/{type}";
 		rr:class clarify:TumorType;
 	];
 	rr:predicateObjectMap [
@@ -70,7 +70,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/AdenocarcinomaHistology/{adeno_histology}";
+		rr:template "http://clarify2020.eu/entity/{adeno_histology}";
 		rr:class clarify:AdenocarcinomaHistology;
 	].
 
@@ -79,7 +79,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/SmallCellCarcinomaType/{small_cell_carcinom}";
+		rr:template "http://clarify2020.eu/entity/{small_cell_carcinom}";
 		rr:class clarify:SmallCellCarcinomaType;
 	].
 
@@ -88,7 +88,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/CarcinomaType/{carcinom}";
+		rr:template "http://clarify2020.eu/entity/{carcinom}";
 		rr:class clarify:CarcinomaType;
 	].
 
@@ -97,7 +97,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/MesotheliomaType/{mesothelioma}";
+		rr:template "http://clarify2020.eu/entity/{mesothelioma}";
 		rr:class clarify:MesotheliomaType;
 	].
 
@@ -106,7 +106,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/HistologyDegree/{degree}";
+		rr:template "http://clarify2020.eu/entity/{degree}";
 		rr:class clarify:HistologyDegree;
 	].
 

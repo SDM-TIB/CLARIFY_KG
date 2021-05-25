@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_TumorSize;
@@ -49,7 +49,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/OncologicalSurgery/{HER}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{HER}_{treatment_line}";
 		rr:class clarify:OncologicalSurgery
 	];	
 	rr:predicateObjectMap [
@@ -270,7 +270,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SurgeryPathologicalResponse" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -307,7 +307,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SurgeryResectionDegree" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -344,7 +344,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SurgeryType" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -381,7 +381,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SurgeryClass" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -418,7 +418,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TumorSize" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -455,7 +455,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/LymphNodesInvolvement" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -492,7 +492,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/MetastatisStage" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [

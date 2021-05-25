@@ -13,12 +13,12 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TumorStage/Stage{stage}";
+		rr:template "http://clarify2020.eu/entity/Stage{stage}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:CancerStage_has_indication;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Drug/{drugID}";
+			rr:template "http://clarify2020.eu/entity/{drugID}";
 			]	
 	].
 

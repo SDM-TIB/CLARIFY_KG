@@ -14,19 +14,19 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/DrugTargetPrediction/{Drug}_interactsWith_{Target}";
+		rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Target}";
 		rr:class clarify:DrugTargetPrediction
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:interactor1;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Drug/{Drug}" 
+			rr:template "http://clarify2020.eu/entity/{Drug}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Target/{Target}" 
+			rr:template "http://clarify2020.eu/entity/{Target}" 
 		]
 	];
 	rr:predicateObjectMap [
@@ -38,7 +38,7 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/DrugBank"
+			rr:constant "http://clarify2020.eu/entity/DrugBank"
 		]
 	];
 	rr:predicateObjectMap [

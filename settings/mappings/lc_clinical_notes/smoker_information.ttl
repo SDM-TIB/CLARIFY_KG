@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfCigarettesPerYear;
@@ -120,7 +120,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SmokerFamily" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -157,7 +157,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/SmokerFamily" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [

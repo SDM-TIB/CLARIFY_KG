@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/Biomarker/ROS1";
+		rr:constant "http://clarify2020.eu/entity/ROS1";
         rr:termType rr:IRI;
     ];
     rr:predicateObjectMap [
@@ -149,7 +149,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -186,7 +186,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -223,7 +223,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/PerformedStudyStatus" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [

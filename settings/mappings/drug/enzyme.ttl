@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Enzyme/{Enzyme_name}";
+		rr:template "http://clarify2020.eu/entity/{Enzyme_name}";
 		rr:class clarify:Enzyme
 	];
 	rr:predicateObjectMap [
@@ -32,7 +32,7 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Protein/{Uni_ID}";
+			rr:template "http://clarify2020.eu/entity/{Uni_ID}";
 		]
 	];
 	rr:predicateObjectMap [
@@ -50,6 +50,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:enzyme_isRelatedTo_gene;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Gene/{Gene_name}";
+			rr:template "http://clarify2020.eu/entity/{Gene_name}";
 		]
 	].

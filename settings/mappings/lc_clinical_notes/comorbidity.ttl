@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidityStatus;
@@ -57,7 +57,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Disorder/{name}";
+		rr:template "http://clarify2020.eu/entity/{name}";
 		rr:class clarify:Disorder;
 	];
 	rr:predicateObjectMap [
@@ -97,7 +97,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/ComorbidityStatus/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ]; 
         rr:predicateObjectMap [

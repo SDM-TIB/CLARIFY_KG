@@ -17,12 +17,12 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Hospital/{organizationID}";
+		rr:template "http://clarify2020.eu/entity/{organizationID}";
 		rr:class clarify:Hospital
 	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Hospital/{autonomous_community}";		
+			rr:template "http://clarify2020.eu/entity/{autonomous_community}";		
 		]
 	].

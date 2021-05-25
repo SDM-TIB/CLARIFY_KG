@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Phenotype/{Toxicity}";
+		rr:template "http://clarify2020.eu/entity/{Toxicity}";
 		rr:class clarify:Phenotype 	
 	];
 	rr:predicateObjectMap [
@@ -47,7 +47,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{cui2}";
+		rr:template "http://clarify2020.eu/entity/{cui2}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
@@ -59,7 +59,7 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
+			rr:constant "http://clarify2020.eu/entity/UMLS"
 		]
 	].
 
@@ -68,7 +68,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{cui3}";
+		rr:template "http://clarify2020.eu/entity/{cui3}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
@@ -80,6 +80,6 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
+			rr:constant "http://clarify2020.eu/entity/UMLS"
 		]
 	].

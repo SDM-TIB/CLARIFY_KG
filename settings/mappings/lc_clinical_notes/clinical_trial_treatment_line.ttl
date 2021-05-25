@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
+		rr:template "http://clarify2020.eu/entity/{ehr}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasClinicalTrialTreatmentLine;
@@ -30,7 +30,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/ClinicalTrialTreatmentLine/{ehr}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{ehr}_{treatment_line}";
 		rr:class clarify:ClinicalTrialTreatmentLine;
 	];
 	rr:predicateObjectMap [
@@ -63,7 +63,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].
 
@@ -157,7 +157,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TrialPhase/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];   
         rr:predicateObjectMap [
@@ -194,7 +194,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TrialType/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -231,7 +231,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/TrialType/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ]; 
         rr:predicateObjectMap [

@@ -14,13 +14,13 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/DrugSideEffectInteraction/{drug_id}_{toxicity_Label}";
+		rr:template "http://clarify2020.eu/entity/{drug_id}_{toxicity_Label}";
 		rr:class clarify:DrugSideEffectInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/DrugBank"
+			rr:constant "http://clarify2020.eu/entity/DrugBank"
 		]
 	].	
 
@@ -29,7 +29,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Drug/{drug_id}"
+		rr:template "http://clarify2020.eu/entity/{drug_id}"
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:drug_isRelatedTo_dse;
@@ -43,7 +43,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Phenotype/{toxicity_Label}"
+		rr:template "http://clarify2020.eu/entity/{toxicity_Label}"
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:sideEffect_isRelatedTo_dse;

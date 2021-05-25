@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{EHR}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
@@ -28,7 +28,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Biomarker/{study_performed}";
+		rr:template "http://clarify2020.eu/entity/{study_performed}";
 		rr:class clarify:Biomarker ;
 	];	
 	rr:predicateObjectMap [
@@ -43,7 +43,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/BiomarkerTestResult/{result}";
+		rr:template "http://clarify2020.eu/entity/{result}";
 		rr:class clarify:BiomarkerTestResult ;
 
 	].		

@@ -14,24 +14,24 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/DrugDrugInteraction/{Drug1}_interactsWith_{Drug2}";
+		rr:template "http://clarify2020.eu/entity/{Drug1}_interactsWith_{Drug2}";
 		rr:class clarify:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:affects;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Drug/{Drug1}" 
+			rr:template "http://clarify2020.eu/entity/{Drug1}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:isAffected;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/Drug/{Drug2}" 
+			rr:template "http://clarify2020.eu/entity/{Drug2}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/DrugBank/metabolized_by_the_same_CYP_enzyme"
+			rr:constant "http://clarify2020.eu/entity/DrugBank/metabolized_by_the_same_CYP_enzyme"
 		]
 	].

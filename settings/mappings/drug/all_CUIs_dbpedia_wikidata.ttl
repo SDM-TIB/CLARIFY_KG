@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{CUI}";
+		rr:template "http://clarify2020.eu/entity/{CUI}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
@@ -32,7 +32,7 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/UMLS"
+			rr:constant "http://clarify2020.eu/entity/UMLS"
 		]
 	];
 	rr:predicateObjectMap [
@@ -76,13 +76,13 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rml:reference "{}" 
+			rml:reference "DBpedia_type" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/Wikidata"
+			rr:constant "http://clarify2020.eu/entity/Wikidata"
 		]
 	].
 
@@ -96,12 +96,12 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rml:reference "{}" 
+			rml:reference "Wikidata_type" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/Wikidata"
+			rr:constant "http://clarify2020.eu/entity/Wikidata"
 		]
 	].

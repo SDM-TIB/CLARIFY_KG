@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Drug/{DrugBankID}";
+		rr:template "http://clarify2020.eu/entity/{DrugBankID}";
 		rr:class clarify:Drug
 	];
 	rr:predicateObjectMap [
@@ -31,7 +31,7 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Drug/{DrugName}";
+			rr:template "http://clarify2020.eu/entity/{DrugName}";
 		]
 	];
 	rr:predicateObjectMap [

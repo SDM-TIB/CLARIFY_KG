@@ -15,7 +15,7 @@
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Phenotype/{Label}";
+		rr:template "http://clarify2020.eu/entity/{Label}";
 		rr:class clarify:Phenotype 	
 	];
 	rr:predicateObjectMap [
@@ -30,7 +30,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Annotation/{HPOid}";
+		rr:template "http://clarify2020.eu/entity/{HPOid}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
@@ -42,6 +42,6 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/SourceName/HPO"
+			rr:constant "http://clarify2020.eu/entity/HPO"
 		]
 	].	

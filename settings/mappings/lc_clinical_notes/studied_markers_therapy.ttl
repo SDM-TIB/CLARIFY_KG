@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/LCPatient/{ehr}";
+		rr:template "http://clarify2020.eu/entity/{ehr}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarkerAnalysisDate;
@@ -105,7 +105,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{treatment_line}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -364,7 +364,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -401,7 +401,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -438,7 +438,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -475,7 +475,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -512,7 +512,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -549,7 +549,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -586,7 +586,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -623,7 +623,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -660,7 +660,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -697,7 +697,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/BiomarkerTestResult/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [
@@ -734,7 +734,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/Biomarker/" 
+                rr:constant "http://clarify2020.eu/entity/" 
             ]
         ];  
         rr:predicateObjectMap [

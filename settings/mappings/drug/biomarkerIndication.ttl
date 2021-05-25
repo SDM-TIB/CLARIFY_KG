@@ -13,12 +13,12 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Biomarker/{biomarker}";
+		rr:template "http://clarify2020.eu/entity/{biomarker}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarker_has_indication;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/Drug/{drugID}";
+			rr:template "http://clarify2020.eu/entity/{drugID}";
 		]
 	].
 	
