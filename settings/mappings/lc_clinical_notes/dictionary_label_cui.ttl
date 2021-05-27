@@ -42,7 +42,7 @@
     ].
 
 <EntityLabels2>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/id_text_kg.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/id_cuis_kg.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -56,7 +56,7 @@
 	].	
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/id_text_kg.csv";
+	rml:logicalSource [ rml:source "/mnt/e/data/data/lc_clinical_notes/id_cuis_kg.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
