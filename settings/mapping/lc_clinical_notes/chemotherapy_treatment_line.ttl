@@ -1,0 +1,93 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasChemotherapyTreatmentLine;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ChemotherapyTreatmentLine>
+		]
+	].
+
+<ChemotherapyTreatmentLine>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
+		rr:class clarify:ChemotherapyTreatmentLine
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasType;
+		rr:objectMap [
+			rr:parentTriplesMap <ChemoTreatmentLineType>
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBestResponse;
+		rr:objectMap [
+			rr:parentTriplesMap <TreatementLineBestResponse>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineStartDate;
+		rr:objectMap [
+			rml:reference "start_date";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineEndingDate;
+		rr:objectMap [
+			rml:reference "end_date";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTreatmentLineNumber;
+		rr:objectMap [
+			rr:parentTriplesMap <TreatmentLineNumber>
+		]
+	].
+
+<ChemoTreatmentLineType>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{type}";
+		rr:class clarify:ChemoTreatmentLineType;
+	].
+
+<TreatementLineBestResponse>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{best_response}";
+		rr:class clarify:TreatementLineBestResponse;
+	].
+
+<TreatmentLineNumber>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{treatment_line}";
+		rr:class clarify:TreatmentLineNumber;
+	].	
+			
