@@ -63,6 +63,6 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/UMLS"
+			rr:costant "http://clarify2020.eu/entity/UMLS"
 		]
 	].					
