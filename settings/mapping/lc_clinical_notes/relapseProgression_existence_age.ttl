@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
+<LCPatient1>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/relapsedProgressed.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -40,3 +40,18 @@
 			rr:template "http://clarify2020.eu/vocab/ProgressionRelapse";
 		]
 	].	
+
+<LCPatient2>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/agePatient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasAge;
+		rr:objectMap [
+			rml:reference "AGE";
+			rr:datatype xsd:int;		
+		]
+	].
