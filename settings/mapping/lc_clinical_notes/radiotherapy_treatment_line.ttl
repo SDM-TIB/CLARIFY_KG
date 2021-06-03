@@ -30,11 +30,11 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{EHR}_RadiotherapyTL_{treatment_line}";
 		rr:class clarify:RadiotherapyTreatmentLine;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
+		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
 			rr:parentTriplesMap <TreatmentLineNumber>
 		]
@@ -77,7 +77,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
 

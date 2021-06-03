@@ -23,18 +23,21 @@
 		rr:predicate clarify:numberOfCigarettesPerYear;
 		rr:objectMap [
 			rml:reference "packs_year";
+			rr:datatype xsd:int;
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfCigarettesPerDay;
 		rr:objectMap [
 			rml:reference "cigarettes_day";
+			rr:datatype xsd:int;
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfYearsOfSmoking;
 		rr:objectMap [
-			rml:reference "years_active_smoker";		
+			rml:reference "years_active_smoker";
+			rr:datatype xsd:int;		
 		]
 	];
 	rr:predicateObjectMap [

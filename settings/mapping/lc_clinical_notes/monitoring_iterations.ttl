@@ -32,7 +32,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_{monitoring_iteration}";
+		rr:template "http://clarify2020.eu/entity/{ehr}_StatusEvolutionIteration_{monitoring_iteration}";
 		rr:class clarify:StatusEvolution;
 	];
 	rr:predicateObjectMap [
@@ -272,7 +272,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
+                rr:constant "http://clarify2020.eu/entity/CurrentStatus_" 
             ]
         ];   
         rr:predicateObjectMap [

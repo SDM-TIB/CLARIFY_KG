@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_{date_consultation}";
+		rr:template "http://clarify2020.eu/entity/{EHR}_NonOncologicalConsultationDate_{date_consultation}";
 		rr:class clarify:NonOncologicalConsultation;
 	];
 	rr:predicateObjectMap [

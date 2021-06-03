@@ -116,7 +116,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/{treatment_line}";
+		rr:template "http://clarify2020.eu/TreatmentLineNumber/TL_{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
 

@@ -17,19 +17,19 @@
 		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasChemotherapyTreatmentLine;
+		rr:predicate clarify:hasOncologicalTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ChemotherapyTreatmentLine>
+			rr:parentTriplesMap <OncologicalTreatmentLine>
 		]
 	].
 
-<ChemotherapyTreatmentLine>
+<OncologicalTreatmentLine>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
-		rr:class clarify:ChemotherapyTreatmentLine
+		rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalTL_{treatment_line}";
+		rr:class clarify:OncologicalTreatmentLine
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType;
@@ -41,6 +41,12 @@
 		rr:predicate clarify:hasBestResponse;
 		rr:objectMap [
 			rr:parentTriplesMap <TreatementLineBestResponse>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBestResponse;
+		rr:objectMap [
+			rr:parentTriplesMap <f1_schema>
 		]
 	];
 	rr:predicateObjectMap [
@@ -68,18 +74,60 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{type}";
-		rr:class clarify:ChemoTreatmentLineType;
+	rr:subjectMap <ChemoTreatmentLineType_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/ChemoTreatmentLineType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "type";		
+		]
 	].
 
 <TreatementLineBestResponse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{best_response}";
-		rr:class clarify:TreatementLineBestResponse;
+	rr:subjectMap <TreatementLineBestResponse_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/TreatementLineBestResponse";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "best_response";		
+		]
+	].
+
+<f1_schema>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <f1_schema_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Drug";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "f1_schema";		
+		]
 	].
 
 <TreatmentLineNumber>
@@ -87,7 +135,121 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
 			
+#######################################
+############## Functions ##############
+#######################################
+
+<ChemoTreatmentLineType_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "type" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "type" 
+            ]
+        ];                         
+    ].
+
+<ChemoTreatmentLineType_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "best_response" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "best_response" 
+            ]
+        ];                         
+    ].
+
+<ChemoTreatmentLineType_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "f1_schema" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "f1_schema" 
+            ]
+        ];                         
+    ].

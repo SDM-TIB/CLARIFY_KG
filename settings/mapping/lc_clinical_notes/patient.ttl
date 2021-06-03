@@ -27,7 +27,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasSex;
+		rr:predicate clarify:sex;
 		rr:objectMap [
 			rr:parentTriplesMap <Sex>
 		]

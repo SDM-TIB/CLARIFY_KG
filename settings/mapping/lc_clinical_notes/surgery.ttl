@@ -49,7 +49,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalSurgery_{treatment_line}";
 		rr:class clarify:OncologicalSurgery
 	];	
 	rr:predicateObjectMap [
@@ -136,7 +136,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/PerioperativeDeath/{perioperative_death}";
+		rr:template "http://clarify2020.eu/entity/{perioperative_death}";
 		rr:class clarify:PerioperativeDeath;
 	].
 

@@ -31,15 +31,9 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{ehr}_TL_{treatment_line}";
 		rr:class clarify:FamilyHistory;
 	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:treatmentLineNumber;
-		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber>
-		]
-	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasFamilyCancerType;
 		rr:objectMap [
@@ -51,15 +45,6 @@
 		rr:objectMap [
 			rr:parentTriplesMap <FamilyType>
 		]
-	].
-
-<TreatmentLineNumber>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{treatment_line}";
-		rr:class clarify:TreatmentLineNumber;
 	].
 
 <CancerType>

@@ -32,7 +32,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{ehr}_ComorbidityTL_{treatment_line}";
 		rr:class clarify:ComorbidityTreatmentLine
 	];
 	rr:predicateObjectMap [
@@ -53,7 +53,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].
 

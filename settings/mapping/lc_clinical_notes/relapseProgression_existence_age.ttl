@@ -49,7 +49,7 @@
 		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasAge;
+		rr:predicate clarify:age;
 		rr:objectMap [
 			rml:reference "AGE";
 			rr:datatype xsd:int;		

@@ -29,12 +29,14 @@
 		rr:predicate clarify:numberOfFamilyWithLC;
 		rr:objectMap [
 			rml:reference "number_family_members_lung_cancer";
+			rr:datatype xsd:int;
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:numberOfFamilyWithOtherCancers;
 		rr:objectMap [
 			rml:reference "number_of_family_members_others";
+			rr:datatype xsd:int;
 		]
 	].
 

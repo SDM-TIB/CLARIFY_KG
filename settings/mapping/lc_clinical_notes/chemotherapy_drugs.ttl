@@ -12,13 +12,13 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<ChemotherapyTreatmentLine>
+<OncologicalTreatmentLine>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_{treatment_line}";
-		rr:class clarify:ChemotherapyTreatmentLine
+		rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalTL_{treatment_line}";
+		rr:class clarify:OncologicalTreatmentLine
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineCycle;

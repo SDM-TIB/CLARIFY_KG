@@ -17,7 +17,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{ehr}_OncologicalSurgery_{treatment_line}";
+		rr:class clarify:OncologicalSurgery
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSubType;
@@ -63,7 +64,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{surgery_iteration}";
+		rr:template "http://clarify2020.eu/entity/SurgeryIteration_{surgery_iteration}";
 		rr:class clarify:SurgeryIteration;
 	].
 

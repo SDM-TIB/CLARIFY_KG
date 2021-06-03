@@ -31,7 +31,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{value}";
+		rr:template "http://clarify2020.eu/entity/PerformanceStatus_{value}";
 		rr:class clarify:PerformanceStatus;
 	];
 	rr:predicateObjectMap [
