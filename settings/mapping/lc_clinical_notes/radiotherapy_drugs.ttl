@@ -12,13 +12,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-#################################
-#### 1. The attibute values of this table are not meaningful 
-#### 2. Also the treatmentLine number is missing in this table so the link to treatementLine would be missing in KG
-#### So this table is not included in the KG v3.0
-#### This table is included in V5.0 since the "treatment_line" exists in this version
-#################################
-
 <RadiotherapyTreatmentLine>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
@@ -63,6 +56,6 @@
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
-			rr:costant "http://clarify2020.eu/entity/UMLS"
+			rr:template "http://clarify2020.eu/entity/UMLS"
 		]
 	].					
