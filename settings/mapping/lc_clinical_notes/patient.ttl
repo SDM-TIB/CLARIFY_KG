@@ -161,7 +161,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "type_patient" 
+                rr:constant "patient_type" 
             ]
         ];
         rr:predicateObjectMap [
