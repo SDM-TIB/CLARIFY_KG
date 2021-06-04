@@ -51,6 +51,12 @@
 		rr:objectMap [
 			rr:parentTriplesMap <has_lived_with_smokers>		
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasSmokingHabit;
+		rr:objectMap [
+			rr:parentTriplesMap <smoking_habit>		
+		]
 	].
 
 <lives_with_smokers>
@@ -90,6 +96,26 @@
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
 			rml:reference "has_lived_with_smokers";		
+		]
+	].
+
+<smoking_habit>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <smoking_habit> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/SmokingHabit";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "smoking_habit";		
 		]
 	].
 
@@ -167,6 +193,43 @@
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "has_lived_with_smokers" 
+            ]
+        ];                         
+    ].
+
+<smoking_habit>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "smoker_information" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "smoking_habit" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "smoking_habit" 
             ]
         ];                         
     ].	
