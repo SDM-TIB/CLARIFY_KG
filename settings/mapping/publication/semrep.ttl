@@ -36,6 +36,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_publication;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{pmid}"
+			rr:template "http://clarify2020.eu/entity/publication_{pmid}"
 		]
 	].		

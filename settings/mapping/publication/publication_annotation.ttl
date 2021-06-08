@@ -13,7 +13,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{subject}";
+		rr:template "http://clarify2020.eu/entity/publication_{subject}";
 		rr:class clarify:Publication
 	];
 	rr:predicateObjectMap [
@@ -72,6 +72,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:annotates;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{subject}"
+			rr:template "http://clarify2020.eu/entity/publication_{subject}"
 		]
 	].	
