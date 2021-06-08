@@ -36,18 +36,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:journal;
-		rr:objectMap [ 
-			rml:reference "journal" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:author;
-		rr:objectMap [ 
-			rml:reference "authors" 
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:rankingScore_SJR;
 		rr:objectMap [ 
 			rml:reference "journal_SJR";
