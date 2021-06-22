@@ -42,7 +42,7 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasComorbidity;
+		rr:predicate clarify:hasTreatmentLineSymptom;
 		rr:objectMap [
 			rr:parentTriplesMap <Disorder>		
 		]
