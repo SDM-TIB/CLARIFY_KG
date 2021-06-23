@@ -14,6 +14,20 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Label}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasCUIAnnotation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <Annotation>
+		]
+	].
+
+<Annotation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/UMLS_combined.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{CUI}";
 		rr:class clarify:Annotation
 	];
