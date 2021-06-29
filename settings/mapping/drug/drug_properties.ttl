@@ -8,27 +8,31 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LungCancerDrug>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/LCdrugList.csv";
+<DrugAbsorption>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_absorption.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{DrugBankID}";
-		rr:class clarify:LungCancerDrug
+		rr:template "http://clarify2020.eu/entity/{Drug_id}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
+		rr:predicate clarify:drugAbsorption;
 		rr:objectMap [
-			rr:parentTriplesMap <LungCancerDrugName>
+			rml:reference "Absorption";
 		]
-	].	
+	].
 
-<LungCancerDrugName>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/LCdrugList.csv";
+<DrugMechanismOfAction>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_mechanismOfAction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{DrugName}";
-		rr:class clarify:LungCancerDrug
+		rr:template "http://clarify2020.eu/entity/{Drug_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:drugsMechanismOfAction;
+		rr:objectMap [
+			rml:reference "Mechanism_of_action";
+		]
 	].
-		
+

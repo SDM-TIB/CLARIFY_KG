@@ -34,6 +34,12 @@
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{Adverse_Event}_{Impact}"
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:ddi_description;
+		rr:objectMap [
+			rml:reference "Interaction";
+		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;

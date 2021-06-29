@@ -51,6 +51,12 @@
 		]
 	];	
 	rr:predicateObjectMap [
+		rr:predicate clarify:ddi_description;
+		rr:objectMap [
+			rml:reference "Interaction";
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
 			rr:constant "http://clarify2020.eu/entity/DrugBank"

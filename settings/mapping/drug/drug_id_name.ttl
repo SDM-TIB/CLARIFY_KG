@@ -9,7 +9,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Drug>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_dbpedia.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugBank_id_name.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
