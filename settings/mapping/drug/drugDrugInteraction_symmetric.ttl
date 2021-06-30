@@ -14,7 +14,7 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_hasSymmetricInteractionWith_{AffectedDrugID}";
+		rr:template "http://clarify2020.eu/entity/{Drug1ID}_hasSymmetricInteractionWith_{Drug2ID}";
 		rr:class clarify:SymmetricDrugDrugInteraction
 	];
 	rr:predicateObjectMap [
@@ -29,19 +29,19 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_interactsWith_{AffectedDrugID}";
+		rr:template "http://clarify2020.eu/entity/{Drug1ID}_interactsWith_{Drug2ID}";
 		rr:class clarify:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:precipitant_drug;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{EffectorDrugID}" 
+			rr:template "http://clarify2020.eu/entity/{Drug1ID}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:object_drug;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{AffectedDrugID}" 
+			rr:template "http://clarify2020.eu/entity/{Drug2ID}" 
 		]
 	];
 	rr:predicateObjectMap [

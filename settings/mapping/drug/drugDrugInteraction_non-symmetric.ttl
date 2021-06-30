@@ -14,19 +14,19 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug1ID}_interactsWith_{Drug2ID}";
+		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_interactsWith_{AffectedDrugID}";
 		rr:class clarify:DrugDrugInteraction
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:precipitant_drug;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug1ID}" 
+			rr:template "http://clarify2020.eu/entity/{EffectorDrugID}" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:object_drug;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug2ID}" 
+			rr:template "http://clarify2020.eu/entity/{AffectedDrugID}" 
 		]
 	];
 	rr:predicateObjectMap [
