@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/UMLS_combined.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/UMLS_combined.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -81,7 +81,7 @@
 	].
 
 <Wikidata>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/UMLS_combined.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -101,7 +101,7 @@
 	].
 
 <DBpedia>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/UMLS_combined.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
