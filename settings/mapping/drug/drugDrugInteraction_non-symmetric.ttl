@@ -9,6 +9,27 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
+<NonSymmetricDDI>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_hasNonSymmetricInteractionWith_{AffectedDrugID}";
+		rr:class clarify:NonSymmetricDrugDrugInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdfs:subClassOf;
+		rr:objectMap [
+			rr:parentTriplesMap <DrugDrugInteraction>
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdfs:subClassOf;
+		rr:objectMap [
+			rr:parentTriplesMap <DrugDrugInteraction_CUI>
+		];
+	].
+
 <DrugDrugInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
