@@ -54,34 +54,6 @@
 		]
 	].
 
-<AdverseEvent>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Adverse events}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/vocab/AdverseEvent" 
-		]
-	].
-
-<Impact>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Impact}"
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/vocab/Impact" 
-		]
-	].
-
 <DrugDrugInteraction_CUI>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
@@ -172,33 +144,6 @@
 		rr:predicate clarify:annLabel;
 		rr:objectMap [ 
 			rml:reference "AffectedDrugLabel" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
-
-<Effect_Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI_AdverseEvent}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_AdverseEvent" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "Adverse events" 
 		]
 	];
 	rr:predicateObjectMap [
