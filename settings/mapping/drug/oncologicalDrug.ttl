@@ -9,12 +9,26 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
+<OncologicalDrug>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/oncologicalDrugs.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Name}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/vocab/OncologicalDrug"
+		]
+	].
+
 <Drug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{DrugName}";
+		rr:template "http://clarify2020.eu/entity/{Name}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -23,9 +37,15 @@
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate rdfs:subClassOf;
+		rr:objectMap [
+			rr:parentTriplesMap <OncologicalDrug>
+		];
+	];
+	rr:predicateObjectMap [
 		rr:predicate clarify:drugLabel;
 		rr:objectMap [
-			rml:reference "DrugName";
+			rml:reference "Name";
 		]
 	];
 	rr:predicateObjectMap [
@@ -47,6 +67,12 @@
 		rr:predicate clarify:annID;
 		rr:objectMap [ 
 			rml:reference "CUI" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annLabel;
+		rr:objectMap [ 
+			rml:reference "Name" 
 		]
 	];
 	rr:predicateObjectMap [
