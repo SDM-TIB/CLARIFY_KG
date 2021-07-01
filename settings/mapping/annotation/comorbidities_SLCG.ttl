@@ -49,7 +49,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:annLabel;
 		rr:objectMap [ 
-			rml:reference "Label" 
+			rml:reference "Comorbidity" 
 		]
 	];
 	rr:predicateObjectMap [
