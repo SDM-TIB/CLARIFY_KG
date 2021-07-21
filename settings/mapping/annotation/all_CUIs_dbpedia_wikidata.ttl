@@ -50,24 +50,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeID;
-		rr:objectMap [ 
-			rml:reference "Semantic_type_ids" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeLabel;
-		rr:objectMap [ 
-			rml:reference "Semantic_type_label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeGroup;
-		rr:objectMap [ 
-			rml:reference "Semantic_group" 
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
 			rr:parentTriplesMap <Wikidata>
@@ -77,6 +59,65 @@
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
 			rr:parentTriplesMap <DBpedia>
+		]
+	].
+
+<CUI_SemanticType>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/CUI_type.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{cui_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:semanticTypeID;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/entity/{type_id}";
+		]
+	].
+
+<SemanticType>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/Semantic_types.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:semanticTypeLabel;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Label}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:semanticTypeDefition;
+		rr:objectMap [ 
+			rml:reference "definition" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:semanticTypeGroupID;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SemanticGroup> ;
+			rr:joinCondition [
+				rr:parent "Id";
+				rr:child "SemanticTypeId";
+
+			];
+		];
+	].
+
+<SemanticGroup>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/semgroups.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:semanticTypeGroupLabel;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/entity/{Label}"
 		]
 	].
 
