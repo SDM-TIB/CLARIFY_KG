@@ -86,7 +86,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:semanticTypeLabel;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{Label}"
+			rml:reference "Label"
 		]
 	];
 	rr:predicateObjectMap [
@@ -117,7 +117,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:semanticTypeGroupLabel;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Label}"
+			rml:reference "Label"
 		]
 	].
 
