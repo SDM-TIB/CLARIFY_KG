@@ -9,47 +9,49 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Target>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/target.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Target_name}";
-		rr:class clarify:Target
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:targetLabel;
-		rr:objectMap [
-			rml:reference "Target_name";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:targetID;
-		rr:objectMap [
-			rml:reference "Target_ID";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{Uni_ID}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:uniprotID;
-		rr:objectMap [
-			rml:reference "Uni_ID";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:externalLink;
-		rr:objectMap [
-			rr:template "https://www.uniprot.org/uniprot/{Uni_ID}";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:target_isRelatedTo_gene;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/Gene_{Gene_name}";
-		]
-	].
+<Target_target>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/target.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Target_name}";
+        rr:class clarify:Target
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:uniprotID;
+        rr:objectMap [
+        rml:reference "Uni_ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:target_isRelatedTo_gene;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/Gene_{Gene_name}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Uni_ID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:externalLink;
+        rr:objectMap [
+        rr:template  "https://www.uniprot.org/uniprot/{Uni_ID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:targetLabel;
+        rr:objectMap [
+        rml:reference "Target_name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:targetID;
+        rr:objectMap [
+        rml:reference "Target_ID"
+        ]
+    ].
+

@@ -9,42 +9,43 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugTargetPrediction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/DrugTarget_prediction_LUH.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Target}";
-		rr:class clarify:DrugTargetPrediction
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor1;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor2;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Target}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:confidence;
-		rr:objectMap [ 
-			rml:reference "Prob" 
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:predictionMethod;
-		rr:objectMap [ 
-			rml:reference "Method" 
-		]
-	].	
-		
+<DrugTargetPrediction_drugTargetPrediction_LUH>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/DrugTarget_prediction_LUH.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Target}";
+        rr:class clarify:DrugTargetPrediction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor2;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Target}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor1;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Drug}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:predictionMethod;
+        rr:objectMap [
+        rml:reference "Method"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:confidence;
+        rr:objectMap [
+        rml:reference "Prob"
+        ]
+    ].
+

@@ -12,49 +12,51 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
+<Annotation_comorbidities_SLCG>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/vocab/Annotation"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annLabel;
+        rr:objectMap [
+        rml:reference "Comorbidity"
+        ]
+    ].
 
-<EntityLabels2>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Comorbidity}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
-		]
-	].	
+<EntityLabels2_comorbidities_SLCG>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Comorbidity}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_comorbidities_SLCG>;
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Annotation"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "Comorbidity" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].

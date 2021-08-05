@@ -9,29 +9,31 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Effect_Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Adverse_events.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "Label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].				
+<Effect_Annotation_adverseEvernt>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Adverse_events.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annLabel;
+        rr:objectMap [
+        rml:reference "Label"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ].
+

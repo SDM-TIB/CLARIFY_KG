@@ -8,70 +8,74 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Publication>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/publication_{subject}";
-		rr:class clarify:Publication
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:pubmedID;
-		rr:objectMap [ 
-			rml:reference "subject" 
-		]
-	].					
+<Publication_publication_annotation>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/publication_{subject}";
+        rr:class clarify:Publication
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:pubmedID;
+        rr:objectMap [
+        rml:reference "subject"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{object}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "object" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticType;
-		rr:objectMap [ 
-			rml:reference "semantic_types" 
-		]
-	].
+<HasAnnotation_publication_annotation>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{subject}_{predicate}_{object}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:confidence;
+        rr:objectMap [
+        rml:reference "confidence"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasAnnotation;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{object}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/vocab/{predicate}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annotates;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/publication_{subject}"
+        ]
+    ].
 
-<HasAnnotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{subject}_{predicate}_{object}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/vocab/{predicate}"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:confidence;
-		rr:objectMap [ 
-			rml:reference "confidence" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasAnnotation;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{object}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annotates;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/publication_{subject}"
-		]
-	].	
+<Annotation_publication_annotation>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{object}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "object"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticType;
+        rr:objectMap [
+        rml:reference "semantic_types"
+        ]
+    ].
+

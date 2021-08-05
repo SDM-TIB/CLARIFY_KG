@@ -9,140 +9,145 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<NonSymmetricDDI>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_hasNonSymmetricInteractionWith_{AffectedDrugID}_with_{Adverse events}_effect";
-		rr:class clarify:NonSymmetricDrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdfs:subClassOf;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugDrugInteraction>
-		];
-	].
+<Drug1_Annotation_drugDrugInteraction_non-symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI_1}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annLabel;
+        rr:objectMap [
+        rml:reference "EffectorDrugLabel"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI_1"
+        ]
+    ].
 
-<DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_interactsWith_{AffectedDrugID}_with_{Adverse events}_effect";
-		rr:class clarify:DrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:precipitant_drug;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{EffectorDrugID}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:object_drug;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{AffectedDrugID}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:effect;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{Adverse events}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:impact;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{Impact}"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:precipitant_drug_cui;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{CUI_1}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:object_drug_cui;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{CUI_2}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:effect_cui;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{CUI_AdverseEvent}"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:impact;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{Impact}"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:ddi_description;
-		rr:objectMap [
-			rml:reference "Interaction";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank"
-		]
-	].
+<NonSymmetricDDI_drugDrugInteraction_non-symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_hasNonSymmetricInteractionWith_{AffectedDrugID}_with_{Adverse events}_effect";
+        rr:class clarify:NonSymmetricDrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugDrugInteraction_drugDrugInteraction_non-symmetric>;
+        ]
+    ].
 
-<Drug1_Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI_1}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_1" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "EffectorDrugLabel" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
+<Drug2_Annotation_drugDrugInteraction_non-symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI_2}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annLabel;
+        rr:objectMap [
+        rml:reference "AffectedDrugLabel"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI_2"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ].
 
-<Drug2_Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI_2}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI_2" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "AffectedDrugLabel" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
+<DrugDrugInteraction_drugDrugInteraction_non-symmetric>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Unsymmetric_DDI_corpus.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EffectorDrugID}_interactsWith_{AffectedDrugID}_with_{Adverse events}_effect";
+        rr:class clarify:DrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:ddi_description;
+        rr:objectMap [
+        rml:reference "Interaction"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:impact;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Impact}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:precipitant_drug;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{EffectorDrugID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:precipitant_drug_cui;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{CUI_1}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:effect_cui;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{CUI_AdverseEvent}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:effect;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Adverse events}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:object_drug;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{AffectedDrugID}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:object_drug_cui;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{CUI_2}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:impact;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Impact}"
+        ]
+    ].
+

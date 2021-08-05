@@ -9,154 +9,161 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Annotation_label>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Label}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
-		]
-	].
+<Annotation_label_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Label}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_all_CUIs_dbpedia_wikidata>;
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annLabel;
-		rr:objectMap [ 
-			rml:reference "Label" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Wikidata>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:parentTriplesMap <DBpedia>
-		]
-	].
+<SemanticGroup_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/semgroups.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticTypeGroupLabel;
+        rr:objectMap [
+        rml:reference "Label"
+        ]
+    ].
 
-<CUI_SemanticType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/CUI_type.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{cui_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeID;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{type_id}";
-		]
-	].
+<SemanticType_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/Semantic_types.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticTypeGroupID;
+        rr:objectMap [
+        	rr:parentTriplesMap <SemanticGroup_all_CUIs_dbpedia_wikidata>;
+        rr:joinCondition [
+            rr:child "SemanticTypeId";
+            rr:parent "Id";
+        ]
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticTypeDefition;
+        rr:objectMap [
+        rml:reference "definition"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticTypeLabel;
+        rr:objectMap [
+        rml:reference "Label"
+        ]
+    ].
 
-<SemanticType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/Semantic_types.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeLabel;
-		rr:objectMap [
-			rml:reference "Label"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeDefition;
-		rr:objectMap [ 
-			rml:reference "definition" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeGroupID;
-		rr:objectMap [ 
-			rr:parentTriplesMap <SemanticGroup> ;
-			rr:joinCondition [
-				rr:parent "Id";
-				rr:child "SemanticTypeId";
+<CUI_SemanticType_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/CUI_type.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{cui_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:semanticTypeID;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{type_id}"
+        ]
+    ].
 
-			];
-		];
-	].
+<Annotation_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:parentTriplesMap <DBpedia_all_CUIs_dbpedia_wikidata>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annLabel;
+        rr:objectMap [
+        rml:reference "Label"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:parentTriplesMap <Wikidata_all_CUIs_dbpedia_wikidata>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ].
 
-<SemanticGroup>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/semgroups.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:semanticTypeGroupLabel;
-		rr:objectMap [ 
-			rml:reference "Label"
-		]
-	].
+<DBpedia_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "{DBpedia}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rml:reference "DBpedia_type"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DBpedia"
+        ]
+    ].
 
-<Wikidata>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "{Wikidata}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rml:reference "Wikidata_type" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/Wikidata"
-		]
-	].
+<Wikidata_all_CUIs_dbpedia_wikidata>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "{Wikidata}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/Wikidata"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rml:reference "Wikidata_type"
+        ]
+    ].
 
-<DBpedia>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "{DBpedia}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rml:reference "DBpedia_type" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DBpedia"
-		]
-	].

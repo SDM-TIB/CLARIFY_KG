@@ -9,18 +9,19 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Disorder>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/indication_CUI.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{name}";
-		rr:class clarify:Disorder
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:disorderLabel;
-		rr:objectMap [ 
-			rml:reference "name" 
-		]
-	].
+<Disorder_indication_CUI>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/indication_CUI.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{name}";
+        rr:class clarify:Disorder
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:disorderLabel;
+        rr:objectMap [
+        rml:reference "name"
+        ]
+    ].
 

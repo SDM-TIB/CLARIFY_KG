@@ -9,44 +9,47 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Drug>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{DrugName}";
-		rr:class clarify:NonOncologicalDrug
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:drugLabel;
-		rr:objectMap [
-			rml:reference "DrugName";
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
-		]
-	].
+<Annotation_nonOncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "CUI"
+        ]
+    ].
 
-<Annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "CUI" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
+<Drug_nonOncologicalDrug>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{DrugName}";
+        rr:class clarify:NonOncologicalDrug
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:drugLabel;
+        rr:objectMap [
+        rml:reference "DrugName"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCUIAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation_nonOncologicalDrug>;
+        ]
+    ].
+

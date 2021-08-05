@@ -9,83 +9,87 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugTargetInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Protein ID}";
-		rr:class clarify:DrugTargetInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor1;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor2;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Target> 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank"
-		]
-	].
-		
-<Target>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Protein ID}";
-		rr:class clarify:Target
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:targetID;
-		rr:objectMap [
-			rml:reference "Protein ID"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:targetLabel;
-		rr:objectMap [
-			rml:reference "Protein Name"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Protein>
-		]
-	].
+<Target_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Protein ID}";
+        rr:class clarify:Target
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:parentTriplesMap <Protein_drugTargetInteraction>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:targetID;
+        rr:objectMap [
+        rml:reference "Protein ID"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:targetLabel;
+        rr:objectMap [
+        rml:reference "Protein Name"
+        ]
+    ].
 
-<Protein>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Protein ID}";
-		rr:class clarify:Protein
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:proteinID;
-		rr:objectMap [
-			rml:reference "Protein ID"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:proteinLabel;
-		rr:objectMap [
-			rml:reference "Protein Name"
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate owl:sameAs;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Protein Name}"; 
-		]
-	].	
+<DrugTargetInteraction_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Protein ID}";
+        rr:class clarify:DrugTargetInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor2;
+        rr:objectMap [
+        rr:parentTriplesMap <Target_drugTargetInteraction>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor1;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Drug}"
+        ]
+    ].
+
+<Protein_drugTargetInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Protein ID}";
+        rr:class clarify:Protein
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:proteinLabel;
+        rr:objectMap [
+        rml:reference "Protein Name"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Protein Name}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:proteinID;
+        rr:objectMap [
+        rml:reference "Protein ID"
+        ]
+    ].
+

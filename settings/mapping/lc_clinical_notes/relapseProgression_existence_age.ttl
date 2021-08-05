@@ -12,46 +12,50 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient1>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/relapsedProgressed.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionOrRelapse;
-		rr:objectMap [ 
-			rr:parentTriplesMap <ProgressionRelapse>
-		]
-	].
+<LCPatient2_relapseProgression_existence_age>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/agePatient.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:age;
+        rr:objectMap [
+        rml:reference "AGE"
+        ]
+    ].
 
-<ProgressionRelapse>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/relapsedProgressed.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/entity/Progressed_or_Relapsed";
-		rr:termType rr:IRI;
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/ProgressionRelapse";
-		]
-	].	
+<ProgressionRelapse_relapseProgression_existence_age>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/relapsedProgressed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:constant "http://clarify2020.eu/entity/Progressed_or_Relapsed";
+        rr:termType rr:IRI
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/vocab/ProgressionRelapse"
+        ]
+    ].
 
-<LCPatient2>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/agePatient.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:age;
-		rr:objectMap [
-			rml:reference "AGE";
-			rr:datatype xsd:int;		
-		]
-	].
+<LCPatient1_relapseProgression_existence_age>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/relapsedProgressed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasProgressionOrRelapse;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/Progressed_or_Relapsed";
+            rr:termType rr:IRI
+        ]
+    ].
+

@@ -8,78 +8,73 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Publication>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/publication_LC.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/publication_{pmid}";
-		rr:class clarify:Publication
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:title;
-		rr:objectMap [ 
-			rml:reference "title" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:pubmedID;
-		rr:objectMap [ 
-			rml:reference "pmid" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:year;
-		rr:objectMap [ 
-			rml:reference "year";
-			rr:datatype xsd:integer; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:rankingScore_SJR;
-		rr:objectMap [ 
-			rml:reference "journal_SJR";
-			rr:datatype xsd:float; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:rankingScore_hIndex;
-		rr:objectMap [ 
-			rml:reference "journal_hIndex";
-			rr:datatype xsd:integer; 
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:publicationType;
-		rr:objectMap [ 
-			rml:reference "PublicationTypes" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:authorAffiliation;
-		rr:objectMap [ 
-			rml:reference "Affiliations" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:citedBy;
-		rr:objectMap [ 
-			rml:reference "citedByCount";
-			rr:datatype xsd:float; 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:citedByLink;
-		rr:objectMap [ 
-			rml:reference "citedByLink" ;
-			rr:termType rr:IRI; 
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:publication_isRelatedTo_Disease;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/LungCancer"; 
-		]
-	].	
-
+<Publication_publications>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/publication_LC.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/publication_{pmid}";
+        rr:class clarify:Publication
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:citedBy;
+        rr:objectMap [
+        rml:reference "citedByCount"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:publicationType;
+        rr:objectMap [
+        rml:reference "PublicationTypes"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:authorAffiliation;
+        rr:objectMap [
+        rml:reference "Affiliations"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:title;
+        rr:objectMap [
+        rml:reference "title"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:publication_isRelatedTo_Disease;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/LungCancer"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:year;
+        rr:objectMap [
+        rml:reference "year"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:citedByLink;
+        rr:objectMap [
+        rml:reference "citedByLink"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:rankingScore_hIndex;
+        rr:objectMap [
+        rml:reference "journal_hIndex"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:pubmedID;
+        rr:objectMap [
+        rml:reference "pmid"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:rankingScore_SJR;
+        rr:objectMap [
+        rml:reference "journal_SJR"
+        ]
+    ].
 

@@ -9,31 +9,31 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugDisorderInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_indications.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{DrugId}_isPrescribedFor_{indication_name}";
-		rr:class clarify:DrugDisorderInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor1;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{DrugId}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:interactor2;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{indication_name}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank"
-		]
-	].
-		
+<DrugDisorderInteraction_drugDisorder>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_indications.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{DrugId}_isPrescribedFor_{indication_name}";
+        rr:class clarify:DrugDisorderInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor1;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{DrugId}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:interactor2;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{indication_name}"
+        ]
+    ].
 

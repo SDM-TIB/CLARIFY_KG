@@ -9,31 +9,33 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugAbsorption>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_absorption.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:drugAbsorption;
-		rr:objectMap [
-			rml:reference "Absorption";
-		]
-	].
+<DrugAbsorption_drug_properties>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_absorption.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Drug_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:drugAbsorption;
+        rr:objectMap [
+        rml:reference "Absorption"
+        ]
+    ].
 
-<DrugMechanismOfAction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_mechanismOfAction.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug_id}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:drugsMechanismOfAction;
-		rr:objectMap [
-			rml:reference "Mechanism_of_action";
-		]
-	].
+<DrugMechanismOfAction_drug_properties>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_mechanismOfAction.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Drug_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:drugsMechanismOfAction;
+        rr:objectMap [
+        rml:reference "Mechanism_of_action"
+        ]
+    ].
 

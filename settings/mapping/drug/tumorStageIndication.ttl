@@ -8,18 +8,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<TumorStage>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/stages_drugs.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/Stage{stage}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:CancerStage_has_indication;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{drugID}";
-			]	
-	].
-
+<TumorStage_tumorStageIndication>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/stages_drugs.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/Stage{stage}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:CancerStage_has_indication;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{drugID}"
+        ]
+    ].
 

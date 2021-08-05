@@ -9,45 +9,49 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugSideEffectInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{drug_id}_{toxicity_Label}";
-		rr:class clarify:DrugSideEffectInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank"
-		]
-	].	
+<Drug_drugToxicityInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:drug_isRelatedTo_dse;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugSideEffectInteraction_drugToxicityInteraction>;
+        ]
+    ].
 
-<Drug>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{drug_id}"
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:drug_isRelatedTo_dse;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
-		]
-	].
+<Phenotype_drugToxicityInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{toxicity_Label}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:sideEffect_isRelatedTo_dse;
+        rr:objectMap [
+        rr:parentTriplesMap <DrugSideEffectInteraction_drugToxicityInteraction>;
+        ]
+    ].
 
-<Phenotype>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{toxicity_Label}"
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:sideEffect_isRelatedTo_dse;
-		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
-		]
-	].	
+<DrugSideEffectInteraction_drugToxicityInteraction>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug_id}_{toxicity_Label}";
+        rr:class clarify:DrugSideEffectInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank"
+        ]
+    ].
+

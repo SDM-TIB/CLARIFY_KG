@@ -8,16 +8,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Publication>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/publication_LC_authors.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/publication_{pmid}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasAuthor;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{author}" 
-		]
-	].
+<Publication_publication_authors>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/publication_LC_authors.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/publication_{pmid}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasAuthor;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{author}"
+        ]
+    ].
+

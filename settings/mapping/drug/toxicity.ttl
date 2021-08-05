@@ -9,77 +9,81 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Phenotype>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Toxicity}";
-		rr:class clarify:Phenotype 	
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:phenotypeLabel;
-		rr:objectMap [
-			rml:reference "Toxicity"
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:toxicityType;
-		rr:objectMap [
-			rml:reference "TYPE"
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation1>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <Annotation2>
-		]
-	].	
+<Annotation1_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{cui2}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "cui2"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ].
 
-<Annotation1>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{cui2}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "cui2" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
+<Phenotype_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Toxicity}";
+        rr:class clarify:Phenotype
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasHPOAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation2_toxicity>;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:phenotypeLabel;
+        rr:objectMap [
+        rml:reference "Toxicity"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:toxicityType;
+        rr:objectMap [
+        rml:reference "TYPE"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasHPOAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <Annotation1_toxicity>;
+        ]
+    ].
 
-<Annotation2>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{cui3}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "cui3" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UMLS"
-		]
-	].
+<Annotation2_toxicity>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{cui3}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "cui3"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/UMLS"
+        ]
+    ].
+

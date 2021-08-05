@@ -9,29 +9,31 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugDrugInteraction>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/NCRD.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Drug1}_interactsWith_{Drug2}";
-		rr:class clarify:DrugDrugInteraction
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:affects;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug1}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:isAffected;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/entity/{Drug2}" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/DrugBank/not_metabolized_by_the_same_CYP_enzyme"
-		]
-	].
+<DrugDrugInteraction_NCRD>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/NCRD.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Drug1}_interactsWith_{Drug2}";
+        rr:class clarify:DrugDrugInteraction
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:affects;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Drug1}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAffected;
+        rr:objectMap [
+        rr:template  "http://clarify2020.eu/entity/{Drug2}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/DrugBank/not_metabolized_by_the_same_CYP_enzyme"
+        ]
+    ].
+

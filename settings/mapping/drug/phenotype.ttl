@@ -10,38 +10,41 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Phenotype>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
-						rml:referenceFormulation ql:CSV
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Label}";
-		rr:class clarify:Phenotype 	
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasHPOAnnotation;
-		rr:objectMap [
-			rr:parentTriplesMap <HPOAnnotation>
-		]
-	].
+<HPOAnnotation_phenotype>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{HPOid}";
+        rr:class clarify:Annotation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:has_provenance;
+        rr:objectMap [
+        rr:constant "http://clarify2020.eu/entity/HPO"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:annID;
+        rr:objectMap [
+        rml:reference "HPOid"
+        ]
+    ].
 
-<HPOAnnotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{HPOid}";
-		rr:class clarify:Annotation
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:annID;
-		rr:objectMap [ 
-			rml:reference "HPOid" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/HPO"
-		]
-	].	
+<Phenotype_phenotype>
+    a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
+                rml:referenceFormulation ql:CSV
+                ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{Label}";
+        rr:class clarify:Phenotype
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasHPOAnnotation;
+        rr:objectMap [
+        rr:parentTriplesMap <HPOAnnotation_phenotype>;
+        ]
+    ].
+
