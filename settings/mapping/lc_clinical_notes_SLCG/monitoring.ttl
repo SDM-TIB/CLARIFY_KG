@@ -12,31 +12,18 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-
-<EntityLabels2_comorbidityTreatmentLine_dictionary_label_cui>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/id_cuis_kg.csv";
+<LCPatient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{TEXT_ID}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasCUIAnnotation;
-		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation_comorbidityTreatmentLine_dictionary_label_cui>
+		rr:predicate clarify:lastMonitoringDate;
+		rr:objectMap [
+			rml:reference "date_last_contact";
+			rr:datatype xsd:date
 		]
 	].	
-
-<Annotation_comorbidityTreatmentLine_dictionary_label_cui>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/id_cuis_kg.csv";
-						rml:referenceFormulation ql:CSV 
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{FINAL_CUI}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Annotation"
-		]
-	].

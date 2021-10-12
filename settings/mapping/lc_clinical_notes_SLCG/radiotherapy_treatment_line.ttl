@@ -1,0 +1,260 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasRadiotherapyTreatmentLine;
+		rr:objectMap [ 
+			rr:parentTriplesMap <RadiotherapyTreatmentLine>
+		]
+	].
+<RadiotherapyTreatmentLine>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}_RadiotherapyTL_{treatment_line}";
+		rr:class clarify:RadiotherapyTreatmentLine;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTreatmentLineNumber;
+		rr:objectMap [
+			rr:parentTriplesMap <TreatmentLineNumber>
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:is_located_in;
+		rr:objectMap [
+			rr:parentTriplesMap <RadiotherapyLocation>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasType; 
+		rr:objectMap [
+			rr:parentTriplesMap <RadiotherapyTreatmentLineType>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasIntention; 
+		rr:objectMap [
+			rr:parentTriplesMap <RadiotherapyIntention>		
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineStartDate;
+		rr:objectMap [
+			rml:reference "start_date";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineEndingDate;
+		rr:objectMap [
+			rml:reference "end_date";
+			rr:datatype xsd:date
+		]
+	].
+
+<TreatmentLineNumber>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
+		rr:class clarify:TreatmentLineNumber;
+	].	
+
+<RadiotherapyLocation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <RadiotherapyLocation_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyLocation";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "radiated_area";		
+		]
+	]. 
+
+
+<RadiotherapyTreatmentLineType>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <RadiotherapyTreatmentLineType_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyTreatmentLineType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "type";		
+		]
+	]. 
+
+
+<RadiotherapyIntention>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <RadiotherapyIntention_Function> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/RadiotherapyIntention";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "intention";		
+		]
+	].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<RadiotherapyLocation_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "radiated_area" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "radiated_area" 
+            ]
+        ];                         
+    ].
+
+<RadiotherapyTreatmentLineType_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "type" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "type" 
+            ]
+        ];                         
+    ].
+
+<RadiotherapyIntention_Function>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "radiotherapy_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "intention" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "intention" 
+            ]
+        ];                         
+    ].    
