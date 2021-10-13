@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_tumor_histology>
+<LCPatient_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,91 +23,382 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTumorHistology;
 		rr:objectMap [ 
-			rr:parentTriplesMap <TumorType_tumor_histology>
+			rr:parentTriplesMap <TumorHistology_lc_clinical_notes_SLCG_tumor_histology>
 		]
 	].
 
-<TumorType_tumor_histology>
+<TumorHistology_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{type}";
-		rr:class clarify:TumorType;
+	rr:subjectMap <TumorType_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/TumorType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "type";		
+		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasAdenocarcinomaHistology;
 		rr:objectMap [
-			rr:parentTriplesMap <AdenocarcinomaHistology_tumor_histology>		
+			rr:parentTriplesMap <AdenocarcinomaHistology_lc_clinical_notes_SLCG_tumor_histology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSmallCellCarcinomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <SmallCellCarcinomaType_tumor_histology>
+			rr:parentTriplesMap <SmallCellCarcinomaType_lc_clinical_notes_SLCG_tumor_histology>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCarcinomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <CarcinomaType_tumor_histology>
+			rr:parentTriplesMap <CarcinomaType_lc_clinical_notes_SLCG_tumor_histology>
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMesotheliomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <MesotheliomaType_tumor_histology>		
+			rr:parentTriplesMap <MesotheliomaType_lc_clinical_notes_SLCG_tumor_histology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHistologyDegree;
 		rr:objectMap [
-			rr:parentTriplesMap <HistologyDegree_tumor_histology>	
+			rr:parentTriplesMap <HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>	
 		]
 	].
 
-<AdenocarcinomaHistology_tumor_histology>
+<AdenocarcinomaHistology_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{adeno_histology}";
-		rr:class clarify:AdenocarcinomaHistology;
+	rr:subjectMap <AdenocarcinomaHistology_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/AdenocarcinomaHistology";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "adeno_histology";		
+		]
 	].
 
-<SmallCellCarcinomaType_tumor_histology>
+<SmallCellCarcinomaType_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{small_cell_carcinom}";
-		rr:class clarify:SmallCellCarcinomaType;
+	rr:subjectMap <SmallCellCarcinomaType_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/SmallCellCarcinomaType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "small_cell_carcinom";		
+		]
 	].
 
-<CarcinomaType_tumor_histology>
+<CarcinomaType_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{carcinom}";
-		rr:class clarify:CarcinomaType;
+	rr:subjectMap <CarcinomaType_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/CarcinomaType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "carcinom";		
+		]
 	].
 
-<MesotheliomaType_tumor_histology>
+<MesotheliomaType_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{mesothelioma}";
-		rr:class clarify:MesotheliomaType;
+	rr:subjectMap <MesotheliomaType_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/MesotheliomaType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "mesothelioma";		
+		]
 	].
 
-<HistologyDegree_tumor_histology>
+<HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{degree}";
-		rr:class clarify:HistologyDegree;
+	rr:subjectMap <HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/HistologyDegree";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "degree";		
+		]
 	].
 
+#######################################
+############## Functions ##############
+#######################################
+
+<TumorType_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "type" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "type" 
+            ]
+        ];                         
+    ].
+
+<AdenocarcinomaHistology_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "adeno_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "adeno_histology" 
+            ]
+        ];                         
+    ].
+
+<SmallCellCarcinomaType_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "small_cell_carcinom" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "small_cell_carcinom" 
+            ]
+        ];                         
+    ].
+
+<CarcinomaType_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "carcinom" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "carcinom" 
+            ]
+        ];                         
+    ].
+
+<MesotheliomaType_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "mesothelioma" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "mesothelioma" 
+            ]
+        ];                         
+    ].
+
+<HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "degree" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "degree" 
+            ]
+        ];                         
+    ].

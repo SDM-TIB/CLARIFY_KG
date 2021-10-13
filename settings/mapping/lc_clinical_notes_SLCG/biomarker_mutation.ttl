@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_biomarker_mutation>
+<LCPatient_lc_clinical_notes_SLCG_biomarker_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/biomarker_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -20,11 +20,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker_biomarker_mutation>
+			rr:parentTriplesMap <Biomarker_lc_clinical_notes_SLCG_biomarker_mutation>
 		]
 	].	
 
-<Biomarker_biomarker_mutation>
+<Biomarker_lc_clinical_notes_SLCG_biomarker_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/biomarker_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -35,11 +35,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerResult_biomarker_mutation>	
+			rr:parentTriplesMap <BiomarkerResult_lc_clinical_notes_SLCG_biomarker_mutation>	
 		]
 	].	
 
-<BiomarkerResult_biomarker_mutation>
+<BiomarkerResult_lc_clinical_notes_SLCG_biomarker_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/biomarker_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];

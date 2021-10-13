@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<OncologicalTreatmentLine_chemotherapy_drugs>
+<OncologicalTreatmentLine_lc_clinical_notes_SLCG_chemotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,23 +23,23 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineCycle;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineCycle_chemotherapy_drugs>
+			rr:parentTriplesMap <TreatmentLineCycle_lc_clinical_notes_SLCG_chemotherapy_drugs>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineMaintenance;
 		rr:objectMap [
-			rr:parentTriplesMap <Drug_maintenance_chemotherapy_drugs>		
+			rr:parentTriplesMap <Drug_maintenance_lc_clinical_notes_SLCG_chemotherapy_drugs>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDrug;
 		rr:objectMap [
-			rr:parentTriplesMap <Drug_chemotherapy_drugs>		
+			rr:parentTriplesMap <Drug_lc_clinical_notes_SLCG_chemotherapy_drugs>		
 		]
 	].	
 
-<TreatmentLineCycle_chemotherapy_drugs>
+<TreatmentLineCycle_lc_clinical_notes_SLCG_chemotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -48,11 +48,11 @@
 		rr:class clarify:TreatmentLineCycle
 	].
 
-<Drug_maintenance_chemotherapy_drugs>
+<Drug_maintenance_lc_clinical_notes_SLCG_chemotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Drug_maintenance_Function_chemotherapy_drugs> ;
+	rr:subjectMap <Drug_maintenance_Function_lc_clinical_notes_SLCG_chemotherapy_drugs> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -68,11 +68,11 @@
 		]
 	].	
 
-<Drug_chemotherapy_drugs>
+<Drug_lc_clinical_notes_SLCG_chemotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Drug_Function_chemotherapy_drugs> ;
+	rr:subjectMap <Drug_Function_lc_clinical_notes_SLCG_chemotherapy_drugs> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -92,7 +92,7 @@
 ############## Functions ##############
 #######################################
 
-<Drug_maintenance_Function_chemotherapy_drugs>
+<Drug_maintenance_Function_lc_clinical_notes_SLCG_chemotherapy_drugs>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
         rml:referenceFormulation ql:CSV 
@@ -131,7 +131,7 @@
 
 ##############
 
-<Drug_Function_chemotherapy_drugs>
+<Drug_Function_lc_clinical_notes_SLCG_chemotherapy_drugs>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
         rml:referenceFormulation ql:CSV 

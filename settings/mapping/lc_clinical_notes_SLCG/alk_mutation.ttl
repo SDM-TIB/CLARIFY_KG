@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 
-<LCPatient_alk_mutation>
+<LCPatient_lc_clinical_notes_SLCG_alk_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -24,11 +24,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker_alk_mutation>
+			rr:parentTriplesMap <Biomarker_lc_clinical_notes_SLCG_alk_mutation>
 		]
 	].	
 
-<Biomarker_alk_mutation>
+<Biomarker_lc_clinical_notes_SLCG_alk_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -45,19 +45,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerIHQResult_alk_mutation>		
+			rr:parentTriplesMap <BiomarkerIHQResult_lc_clinical_notes_SLCG_alk_mutation>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerFISHResult_alk_mutation>		
+			rr:parentTriplesMap <BiomarkerFISHResult_lc_clinical_notes_SLCG_alk_mutation>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestRNAResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerRNAResult_alk_mutation>		
+			rr:parentTriplesMap <BiomarkerRNAResult_lc_clinical_notes_SLCG_alk_mutation>		
 		]
 	];				
 	rr:predicateObjectMap [
@@ -67,11 +67,11 @@
 		]
 	].	
 
-<BiomarkerIHQResult_alk_mutation>
+<BiomarkerIHQResult_lc_clinical_notes_SLCG_alk_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ihq_Function_alk_mutation> ;
+	rr:subjectMap <ihq_Function_lc_clinical_notes_SLCG_alk_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -87,11 +87,11 @@
 		]
 	].	
 
-<BiomarkerFISHResult_alk_mutation>
+<BiomarkerFISHResult_lc_clinical_notes_SLCG_alk_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <fish_Function_alk_mutation> ;
+	rr:subjectMap <fish_Function_lc_clinical_notes_SLCG_alk_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -107,11 +107,11 @@
 		]
 	].			
 
-<BiomarkerRNAResult_alk_mutation>
+<BiomarkerRNAResult_lc_clinical_notes_SLCG_alk_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <rna_Function_alk_mutation> ;
+	rr:subjectMap <rna_Function_lc_clinical_notes_SLCG_alk_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -131,7 +131,7 @@
 ############## Functions ##############
 #######################################
 
-<ihq_Function_alk_mutation>
+<ihq_Function_lc_clinical_notes_SLCG_alk_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
         rml:referenceFormulation ql:CSV 
@@ -168,7 +168,7 @@
         ];                         
     ].
 
-<fish_Function_alk_mutation>
+<fish_Function_lc_clinical_notes_SLCG_alk_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
         rml:referenceFormulation ql:CSV 
@@ -205,7 +205,7 @@
         ];                         
     ].
 
-<rna_Function_alk_mutation>
+<rna_Function_lc_clinical_notes_SLCG_alk_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
         rml:referenceFormulation ql:CSV 

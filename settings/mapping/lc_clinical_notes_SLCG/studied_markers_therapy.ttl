@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_studied_markers_therapy>
+<LCPatient_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -30,78 +30,78 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_studied_markers_therapy>
+			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasStudiedBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <marker_studied_studied_markers_therapy>
+			rr:parentTriplesMap <marker_lc_clinical_notes_SLCG_studied_studied_markers_therapy>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <egfr_result_studied_markers_therapy>
+			rr:parentTriplesMap <egfr_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <alk_result_studied_markers_therapy>
+			rr:parentTriplesMap <alk_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <kras_result_studied_markers_therapy>
+			rr:parentTriplesMap <kras_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ros1_result_studied_markers_therapy>
+			rr:parentTriplesMap <ros1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ntkr_result_studied_markers_therapy>
+			rr:parentTriplesMap <ntkr_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <fgfr1_result_studied_markers_therapy>
+			rr:parentTriplesMap <fgfr1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <pdl1_result_studied_markers_therapy>
+			rr:parentTriplesMap <pdl1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <her2_result_studied_markers_therapy>
+			rr:parentTriplesMap <her2_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ret_result_studied_markers_therapy>
+			rr:parentTriplesMap <ret_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarkerTestResult;
 		rr:objectMap [ 
-			rr:parentTriplesMap <met_result_studied_markers_therapy>
+			rr:parentTriplesMap <met_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 		]
 	].
 
 			
-<TreatmentLineNumber_studied_markers_therapy>
+<TreatmentLineNumber_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -115,11 +115,11 @@
 		]
 	].	
 
-<egfr_result_studied_markers_therapy>
+<egfr_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <egfr_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <egfr_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -135,11 +135,11 @@
 		]
 	].
 
-<alk_result_studied_markers_therapy>
+<alk_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <alk_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <alk_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -155,11 +155,11 @@
 		]
 	].
 
-<kras_result_studied_markers_therapy>
+<kras_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <kras_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <kras_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -175,11 +175,11 @@
 		]
 	].
 
-<ros1_result_studied_markers_therapy>
+<ros1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ros1_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <ros1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -195,11 +195,11 @@
 		]
 	].
 
-<ntkr_result_studied_markers_therapy>
+<ntkr_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ntkr_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <ntkr_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -215,11 +215,11 @@
 		]
 	].
 
-<fgfr1_result_studied_markers_therapy>
+<fgfr1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <fgfr1_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <fgfr1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -235,11 +235,11 @@
 		]
 	].
 
-<pdl1_result_studied_markers_therapy>
+<pdl1_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pdl1_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <pdl1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -255,11 +255,11 @@
 		]
 	].
 
-<her2_result_studied_markers_therapy>
+<her2_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <her2_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <her2_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -275,11 +275,11 @@
 		]
 	].
 
-<ret_result_studied_markers_therapy>
+<ret_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ret_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <ret_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -295,11 +295,11 @@
 		]
 	].
 
-<met_result_studied_markers_therapy>
+<met_result_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <met_result_Function_studied_markers_therapy> ;
+	rr:subjectMap <met_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -315,11 +315,11 @@
 		]
 	].
 
-<marker_studied_studied_markers_therapy>
+<marker_studied_lc_clinical_notes_SLCG_studied_markers_therapy>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <marker_studied_Function_studied_markers_therapy> ;
+	rr:subjectMap <marker_studied_Function_lc_clinical_notes_SLCG_studied_markers_therapy> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -339,7 +339,7 @@
 ############## Functions ##############
 #######################################
 
-<egfr_result_Function_studied_markers_therapy>
+<egfr_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -376,7 +376,7 @@
         ];                         
     ].
 
-<alk_result_Function_studied_markers_therapy>
+<alk_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -413,7 +413,7 @@
         ];                         
     ].
 
-<kras_result_Function_studied_markers_therapy>
+<kras_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -450,7 +450,7 @@
         ];                         
     ].
 
-<ros1_result_Function_studied_markers_therapy>
+<ros1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -487,7 +487,7 @@
         ];                         
     ].
 
-<ntkr_result_Function_studied_markers_therapy>
+<ntkr_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -524,7 +524,7 @@
         ];                         
     ].
 
-<fgfr1_result_Function_studied_markers_therapy>
+<fgfr1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -561,7 +561,7 @@
         ];                         
     ].
 
-<pdl1_result_Function_studied_markers_therapy>
+<pdl1_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -598,7 +598,7 @@
         ];                         
     ].
 
-<her2_result_Function_studied_markers_therapy>
+<her2_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -635,7 +635,7 @@
         ];                         
     ].
 
-<ret_result_Function_studied_markers_therapy>
+<ret_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -672,7 +672,7 @@
         ];                         
     ].
 
-<met_result_Function_studied_markers_therapy>
+<met_result_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 
@@ -709,7 +709,7 @@
         ];                         
     ].
 
-<marker_studied_Function_studied_markers_therapy>
+<marker_studied_Function_lc_clinical_notes_SLCG_studied_markers_therapy>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/studied_markers_therapy.csv";
         rml:referenceFormulation ql:CSV 

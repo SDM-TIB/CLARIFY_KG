@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_lc_clinical_notes_SLCG_pdl1_expression>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
+<LCPatient_lc_clinical_notes_HUPHM_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -21,38 +21,35 @@
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasBiomarker;
+		rr:predicate clarify:hasPerformanceStatus;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker_lc_clinical_notes_SLCG_pdl1_expression>
-		]
-	].	
-
-<Biomarker_lc_clinical_notes_SLCG_pdl1_expression>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/entity/PDL1";
-		rr:termType rr:IRI;
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Biomarker";
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTestResult;
-		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerResult_lc_clinical_notes_SLCG_pdl1_expression>		
+			rr:parentTriplesMap <PerformanceStatus_lc_clinical_notes_HUPHM_performance_status>
 		]
 	].
 
-<BiomarkerResult_lc_clinical_notes_SLCG_pdl1_expression>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
+<PerformanceStatus_lc_clinical_notes_HUPHM_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{result}";
-		rr:class clarify:BiomarkerTestResult;
-	].	
+		rr:template "http://clarify2020.eu/entity/PerformanceStatus_{value}";
+		rr:class clarify:PerformanceStatus;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:basedOn_Scale;
+		rr:objectMap [
+			rr:parentTriplesMap <Scale_lc_clinical_notes_HUPHM_performance_status>
+		]
+	].
+
+<Scale_lc_clinical_notes_HUPHM_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{scale}";
+		rr:class clarify:Scale;
+	].
+
+
+

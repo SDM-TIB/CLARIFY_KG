@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient1_relapseProgression_existence_age>
+<LCPatient1_lc_clinical_notes_SLCG_relapseProgression_existence_age>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapsedProgressed.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionOrRelapse;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ProgressionRelapse_relapseProgression_existence_age>
+			rr:parentTriplesMap <ProgressionRelapse_lc_clinical_notes_SLCG_relapseProgression_existence_age>
 		]
 	].
 
-<ProgressionRelapse_relapseProgression_existence_age>
+<ProgressionRelapse_lc_clinical_notes_SLCG_relapseProgression_existence_age>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapsedProgressed.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -42,7 +42,7 @@
 		]
 	].	
 
-<LCPatient2_relapseProgression_existence_age>
+<LCPatient2_lc_clinical_notes_SLCG_relapseProgression_existence_age>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/agePatient.csv";
 						rml:referenceFormulation ql:CSV;
 						];

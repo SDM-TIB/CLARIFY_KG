@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 	
-<LCPatient_comorbidity_treatment_line>
+<LCPatient_lc_clinical_notes_SLCG_comorbidity_treatment_line>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -24,11 +24,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidityTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ComorbidityTreatmentLine_comorbidity_treatment_line>
+			rr:parentTriplesMap <ComorbidityTreatmentLine_lc_clinical_notes_SLCG_comorbidity_treatment_line>
 		]
 	].
 
-<ComorbidityTreatmentLine_comorbidity_treatment_line>
+<ComorbidityTreatmentLine_lc_clinical_notes_SLCG_comorbidity_treatment_line>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -39,17 +39,17 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_comorbidity_treatment_line>		
+			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_comorbidity_treatment_line>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <Disorder_comorbidity_treatment_line>		
+			rr:parentTriplesMap <Disorder_lc_clinical_notes_SLCG_comorbidity_treatment_line>		
 		]
 	].	
 
-<TreatmentLineNumber_comorbidity_treatment_line>
+<TreatmentLineNumber_lc_clinical_notes_SLCG_comorbidity_treatment_line>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -58,11 +58,11 @@
 		rr:class clarify:TreatmentLineNumber;
 	].
 
-<Disorder_comorbidity_treatment_line>
+<Disorder_lc_clinical_notes_SLCG_comorbidity_treatment_line>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <comorbidity_Function_comorbidity_treatment_line> ;
+	rr:subjectMap <comorbidity_Function_lc_clinical_notes_SLCG_comorbidity_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -82,7 +82,7 @@
 ############## Functions ##############
 #######################################
 
-<comorbidity_Function_comorbidity_treatment_line>
+<comorbidity_Function_lc_clinical_notes_SLCG_comorbidity_treatment_line>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity_treatment_line.csv";
         rml:referenceFormulation ql:CSV 

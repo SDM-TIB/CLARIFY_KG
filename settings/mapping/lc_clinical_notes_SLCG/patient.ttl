@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_patient>
+<LCPatient_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -21,21 +21,27 @@
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SLCG"
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate clarify:hasCurrentCancerType;
 		rr:objectMap [
-			rr:parentTriplesMap <CancerType_patient>
+			rr:parentTriplesMap <CancerType_lc_clinical_notes_SLCG_patient>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:sex;
 		rr:objectMap [
-			rr:parentTriplesMap <Sex_patient>
+			rr:parentTriplesMap <Sex_lc_clinical_notes_SLCG_patient>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasRace;
 		rr:objectMap [
-			rr:parentTriplesMap <Race_patient>
+			rr:parentTriplesMap <Race_lc_clinical_notes_SLCG_patient>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -49,21 +55,21 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:locatedInCity;
 		rr:objectMap [
-			rr:parentTriplesMap <City_patient>
+			rr:parentTriplesMap <City_lc_clinical_notes_SLCG_patient>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:locatedInHospital;
 		rr:objectMap [
-			rr:parentTriplesMap <Hospital_patient>
+			rr:parentTriplesMap <Hospital_lc_clinical_notes_SLCG_patient>
 		]
 	].
 
-<CancerType_patient>
+<CancerType_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CancerType_Function_patient> ;
+	rr:subjectMap <CancerType_Function_lc_clinical_notes_SLCG_patient> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -79,11 +85,11 @@
 		]
 	].
 
-<Sex_patient>
+<Sex_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Sex_Function_patient> ;
+	rr:subjectMap <Sex_Function_lc_clinical_notes_SLCG_patient> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -99,11 +105,11 @@
 		]
 	].
 
-<Race_patient>
+<Race_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Race_Function_patient> ;
+	rr:subjectMap <Race_Functionv_patient> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -119,7 +125,7 @@
 		]
 	].
 
-<City_patient>
+<City_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -128,7 +134,7 @@
 		rr:class clarify:City;
 	].
 
-<Hospital_patient>
+<Hospital_lc_clinical_notes_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -141,7 +147,7 @@
 ############## Functions ##############
 #######################################
 
-<CancerType_Function_patient>
+<CancerType_Function_lc_clinical_notes_SLCG_patient>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
         rml:referenceFormulation ql:CSV 
@@ -178,7 +184,7 @@
         ];                         
     ].			
 
-<Sex_Function_patient>
+<Sex_Function_lc_clinical_notes_SLCG_patient>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
         rml:referenceFormulation ql:CSV 
@@ -215,7 +221,7 @@
         ];                         
     ].	
 
-<Race_Function_patient>
+<Race_Function_lc_clinical_notes_SLCG_patient>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
         rml:referenceFormulation ql:CSV 

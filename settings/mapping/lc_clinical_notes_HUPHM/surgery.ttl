@@ -364,7 +364,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [

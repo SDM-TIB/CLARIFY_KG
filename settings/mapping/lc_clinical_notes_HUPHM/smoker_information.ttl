@@ -12,135 +12,111 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<LCPatient_lc_clinical_notes_HUPHM_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}";
-		rr:class clarify:LCPatient
+        rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasRadiotherapyTreatmentLine;
-		rr:objectMap [ 
-			rr:parentTriplesMap <RadiotherapyTreatmentLine_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-		]
-	].
-<RadiotherapyTreatmentLine_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_RadiotherapyTL_{treatment_line}";
-		rr:class clarify:RadiotherapyTreatmentLine;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTreatmentLineNumber;
+		rr:predicate clarify:numberOfCigarettesPerYear;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+			rml:reference "packs_year";
+			rr:datatype xsd:int;
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:is_located_in;
+		rr:predicate clarify:numberOfCigarettesPerDay;
 		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyLocation_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType; 
-		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyTreatmentLineType_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasIntention; 
-		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyIntention_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
-		]
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:treatementLineStartDate;
-		rr:objectMap [
-			rml:reference "start_date";
-			rr:datatype xsd:date
+			rml:reference "cigarettes_day";
+			rr:datatype xsd:int;
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:treatementLineEndingDate;
+		rr:predicate clarify:numberOfYearsOfSmoking;
 		rr:objectMap [
-			rml:reference "end_date";
-			rr:datatype xsd:date
+			rml:reference "years_active_smoker";
+			rr:datatype xsd:int;		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:livingWithSmoker_OrNot;
+		rr:objectMap [
+			rr:parentTriplesMap <lives_with_smokers_lc_clinical_notes_HUPHM_smoker_information>		
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:livedWithSmoker_OrNot;
+		rr:objectMap [
+			rr:parentTriplesMap <has_lived_with_smokers_lc_clinical_notes_HUPHM_smoker_information>		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasSmokingHabit;
+		rr:objectMap [
+			rr:parentTriplesMap <smoking_habit_lc_clinical_notes_HUPHM_smoker_information>		
 		]
 	].
 
-<TreatmentLineNumber_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<lives_with_smokers_lc_clinical_notes_HUPHM_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
-		rr:class clarify:TreatmentLineNumber;
-	].	
-
-<RadiotherapyLocation_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <RadiotherapyLocation_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <lives_with_smokers_Function_lc_clinical_notes_HUPHM_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyLocation";		
+			rr:template "http://clarify2020.eu/vocab/SmokerFamily";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "radiated_area";		
+			rml:reference "lives_with_smokers";		
 		]
 	]. 
 
-
-<RadiotherapyTreatmentLineType_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<has_lived_with_smokers_lc_clinical_notes_HUPHM_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyTreatmentLineType_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <has_lived_with_smokers_Function_lc_clinical_notes_HUPHM_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyTreatmentLineType";		
+			rr:template "http://clarify2020.eu/vocab/SmokerFamily";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "type";		
+			rml:reference "has_lived_with_smokers";		
 		]
-	]. 
+	].
 
-
-<RadiotherapyIntention_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<smoking_habit_lc_clinical_notes_HUPHM_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyIntention_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <smoking_habit_lc_clinical_notes_HUPHM_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyIntention";		
+			rr:template "http://clarify2020.eu/vocab/SmokingHabit";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "intention";		
+			rml:reference "smoking_habit";		
 		]
 	].
 
@@ -148,9 +124,9 @@
 ############## Functions ##############
 #######################################
 
-<RadiotherapyLocation_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<lives_with_smokers_Function_lc_clinical_notes_HUPHM_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -162,13 +138,13 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
+                rr:constant "smoker_information" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "radiated_area" 
+                rr:constant "lives_with_smokers" 
             ]
         ];
         rr:predicateObjectMap [
@@ -180,14 +156,14 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "radiated_area" 
+                rml:reference "lives_with_smokers" 
             ]
         ];                         
     ].
 
-<RadiotherapyTreatmentLineType_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<has_lived_with_smokers_Function_lc_clinical_notes_HUPHM_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -199,13 +175,13 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
+                rr:constant "smoker_information" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "type" 
+                rr:constant "has_lived_with_smokers" 
             ]
         ];
         rr:predicateObjectMap [
@@ -217,32 +193,32 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "type" 
+                rml:reference "has_lived_with_smokers" 
             ]
         ];                         
     ].
 
-<RadiotherapyIntention_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<smoking_habit_lc_clinical_notes_HUPHM_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
+                rr:constant "smoker_information" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "intention" 
+                rr:constant "smoking_habit" 
             ]
         ];
         rr:predicateObjectMap [
@@ -254,7 +230,8 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "intention" 
+                rml:reference "smoking_habit" 
             ]
         ];                         
-    ].    
+    ].	
+											

@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_family_antecedents>
+<LCPatient_lc_clinical_notes_SLCG_family_antecedents>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,7 +23,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_familyWithCancer_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <FamilyWithCancer_family_antecedents>
+			rr:parentTriplesMap <FamilyWithCancer_lc_clinical_notes_SLCG_family_antecedents>
 		]
 	];		
 	rr:predicateObjectMap [
@@ -41,11 +41,11 @@
 		]
 	].
 
-<FamilyWithCancer_family_antecedents>
+<FamilyWithCancer_lc_clinical_notes_SLCG_family_antecedents>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <FamilyWithCancer_Function_family_antecedents> ;
+	rr:subjectMap <FamilyWithCancer_Function_lc_clinical_notes_SLCG_family_antecedents> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -65,7 +65,7 @@
 ############## Functions ##############
 #######################################
 
-<FamilyWithCancer_Function_family_antecedents>
+<FamilyWithCancer_Function_lc_clinical_notes_SLCG_family_antecedents>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents.csv";
         rml:referenceFormulation ql:CSV 

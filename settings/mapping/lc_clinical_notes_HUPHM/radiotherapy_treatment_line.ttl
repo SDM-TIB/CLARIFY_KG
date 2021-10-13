@@ -12,8 +12,11 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+###################### TreatmentLineNumber is missing so cannot integrate this dataset now!
+############################################################################################
+
+<LCPatient_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,11 +26,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasRadiotherapyTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <RadiotherapyTreatmentLine_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+			rr:parentTriplesMap <RadiotherapyTreatmentLine_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
 		]
 	].
-<RadiotherapyTreatmentLine_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<RadiotherapyTreatmentLine_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -37,25 +40,25 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:is_located_in;
 		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyLocation_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
+			rr:parentTriplesMap <RadiotherapyLocation_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType; 
 		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyTreatmentLineType_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
+			rr:parentTriplesMap <RadiotherapyTreatmentLineType_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasIntention; 
 		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyIntention_lc_clinical_notes_SLCG_radiotherapy_treatment_line>		
+			rr:parentTriplesMap <RadiotherapyIntention_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
 		]
 	];		
 	rr:predicateObjectMap [
@@ -73,8 +76,8 @@
 		]
 	].
 
-<TreatmentLineNumber_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<TreatmentLineNumber_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -82,11 +85,11 @@
 		rr:class clarify:TreatmentLineNumber;
 	].	
 
-<RadiotherapyLocation_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<RadiotherapyLocation_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyLocation_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <RadiotherapyLocation_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -103,11 +106,11 @@
 	]. 
 
 
-<RadiotherapyTreatmentLineType_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<RadiotherapyTreatmentLineType_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyTreatmentLineType_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <RadiotherapyTreatmentLineType_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -124,11 +127,11 @@
 	]. 
 
 
-<RadiotherapyIntention_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+<RadiotherapyIntention_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <RadiotherapyIntention_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line> ;
+	rr:subjectMap <RadiotherapyIntention_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -148,9 +151,9 @@
 ############## Functions ##############
 #######################################
 
-<RadiotherapyLocation_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<RadiotherapyLocation_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -185,9 +188,9 @@
         ];                         
     ].
 
-<RadiotherapyTreatmentLineType_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<RadiotherapyTreatmentLineType_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -222,9 +225,9 @@
         ];                         
     ].
 
-<RadiotherapyIntention_Function_lc_clinical_notes_SLCG_radiotherapy_treatment_line>
+<RadiotherapyIntention_Function_lc_clinical_notes_HUPHM_radiotherapy_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/radiotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

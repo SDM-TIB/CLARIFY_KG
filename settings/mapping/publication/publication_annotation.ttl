@@ -8,7 +8,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Publication>
+<Publication_publication_annotation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -23,7 +23,7 @@
 		]
 	].					
 
-<Annotation>
+<Annotation_publication_annotation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -44,7 +44,7 @@
 		]
 	].
 
-<HasAnnotation>
+<HasAnnotation_publication_annotation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Metamap_annotations_LC.csv";
 						rml:referenceFormulation ql:CSV 
 						];

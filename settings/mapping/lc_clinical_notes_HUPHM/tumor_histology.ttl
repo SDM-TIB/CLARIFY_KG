@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_lc_clinical_notes_SLCG_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
+<LCPatient_lc_clinical_notes_HUPHM_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -21,90 +21,84 @@
 		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasComorbidityStatus;
-		rr:objectMap [
-			rr:parentTriplesMap <positive_negative_lc_clinical_notes_SLCG_comorbidity>
-		] 
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasComorbidity;
+		rr:predicate clarify:hasTumorHistology;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Disorder_lc_clinical_notes_SLCG_comorbidity>
+			rr:parentTriplesMap <TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
 		]
 	].
 
-<positive_negative_lc_clinical_notes_SLCG_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
+<TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <positive_negative_Function_lc_clinical_notes_SLCG_comorbidity> ;
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{type}";
+        rr:class clarify:TumorType;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTumorCategory;
+        rr:objectMap [ 
+            rr:parentTriplesMap <TumorTypeCategory_lc_clinical_notes_HUPHM_tumor_histology>
+        ]
+    ].
+
+<TumorTypeCategory_lc_clinical_notes_HUPHM_tumor_histology>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+	rr:subjectMap <TumorTypeCategory_Function_lc_clinical_notes_HUPHM_tumor_histology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/ComorbidityStatus";		
+			rr:template "http://clarify2020.eu/vocab/TumorTypeCategory";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "positive_negative";		
+			rml:reference "type";		
 		]
 	].
-	
-<Disorder_lc_clinical_notes_SLCG_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{name}";
-		rr:class clarify:Disorder;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:disorderLabel;
-		rr:objectMap [
-			rml:reference "name";
-		]
-	].	
 
 #######################################
 ############## Functions ##############
 #######################################
 
-<positive_negative_Function_lc_clinical_notes_SLCG_comorbidity>
+<TumorTypeCategory_Function_lc_clinical_notes_HUPHM_tumor_histology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "comorbidity" 
+                rr:constant "tumor_histology" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "positive_negative" 
+                rr:constant "type" 
             ]
-        ]; 
+        ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
                 rr:constant "http://clarify2020.eu/entity/" 
             ]
-        ]; 
+        ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "positive_negative" 
+                rml:reference "type" 
             ]
         ];                         
     ].

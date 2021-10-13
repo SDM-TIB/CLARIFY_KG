@@ -8,7 +8,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<PublicationType>
+<PublicationType_publication_types>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/p_types.csv";
 						rml:referenceFormulation ql:CSV 
 						];

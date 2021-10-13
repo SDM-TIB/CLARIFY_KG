@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_monitoring>
+<LCPatient_lc_clinical_notes_HUPHM_monitoring>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMontoring;
 		rr:objectMap [ 
-			rr:parentTriplesMap <StatusEvolution_monitoring>
+			rr:parentTriplesMap <StatusEvolution_lc_clinical_notes_HUPHM_monitoring>
 		]
 	].
 
 
-<StatusEvolution_monitoring>
+<StatusEvolution_lc_clinical_notes_HUPHM_monitoring>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -46,7 +46,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCurrentStatus;
 		rr:objectMap [
-			rr:parentTriplesMap <CurrentStatus_monitoring>	
+			rr:parentTriplesMap <CurrentStatus_lc_clinical_notes_HUPHM_monitoring>	
 		]
 	];
 	rr:predicateObjectMap [
@@ -59,11 +59,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCauseOfDeath;
 		rr:objectMap [
-			rr:parentTriplesMap <CauseOfDeath_monitoring>		
+			rr:parentTriplesMap <CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>		
 		]
 	].
 
-<CurrentStatus_monitoring>
+<CurrentStatus_lc_clinical_notes_HUPHM_monitoring>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -78,11 +78,11 @@
 		]
 	].
 
-<CauseOfDeath_monitoring>
+<CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CauseOfDeath_Function_monitoring> ;
+	rr:subjectMap <CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -102,7 +102,7 @@
 ############## Functions ##############
 #######################################
 
-<CauseOfDeath_Function_monitoring>
+<CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
         rml:referenceFormulation ql:CSV 

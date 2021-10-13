@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_metastasis_location_progression_relapse>
+<LCPatient_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,113 +23,113 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_metastasis_location_progression_relapse>
+			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <extrathoracic_lymphadenopaties_metastasis_location_progression_relapse>
+			rr:parentTriplesMap <extrathoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <thoracic_lymphadenopaties_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <thoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <meningeal_carcinomatosis_metastasis_location_progression_relapse>
+			rr:parentTriplesMap <meningeal_carcinomatosis_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pericardial_effusion_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <pericardial_effusion_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pleural_effusion_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <pleural_effusion_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <liver_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <liver_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <bone_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <bone_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <bilateral_lymphangitis_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <bilateral_lymphangitis_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pleural_nodules_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <pleural_nodules_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pancreatic_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <pancreatic_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <peritoneal_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <peritoneal_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <lung_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <lung_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <central_nervous_system_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <central_nervous_system_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <subcutaneous_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <subcutaneous_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <adrenal_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <adrenal_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <soft_tissues_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <soft_tissues_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <others_metastasis_location_progression_relapse>		
+			rr:parentTriplesMap <others_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>		
 		]
 	].	
 
-<TreatmentLineNumber_metastasis_location_progression_relapse>
+<TreatmentLineNumber_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -138,11 +138,11 @@
 		rr:class clarify:TreatmentLineNumber;
 	].
 
-<extrathoracic_lymphadenopaties_metastasis_location_progression_relapse>
+<extrathoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <extrathoracic_lymphadenopaties_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <extrathoracic_lymphadenopaties_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -158,11 +158,11 @@
 		]
 	].
 
-<thoracic_lymphadenopaties_metastasis_location_progression_relapse>
+<thoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <thoracic_lymphadenopaties_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <thoracic_lymphadenopaties_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -178,11 +178,11 @@
 		]
 	].
 
-<meningeal_carcinomatosis_metastasis_location_progression_relapse>
+<meningeal_carcinomatosis_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <meningeal_carcinomatosis_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -198,11 +198,11 @@
 		]
 	].
 
-<pericardial_effusion_metastasis_location_progression_relapse>
+<pericardial_effusion_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <meningeal_carcinomatosis_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -218,11 +218,11 @@
 		]
 	].
 
-<pleural_effusion_metastasis_location_progression_relapse>
+<pleural_effusion_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_effusion_Function_metastasis_location_progression_relapse> ; 
+	rr:subjectMap <pleural_effusion_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ; 
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -238,11 +238,11 @@
 		]
 	].
 
-<liver_metastasis_location_progression_relapse>
+<liver_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <liver_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <liver_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -258,11 +258,11 @@
 		]
 	].
 
-<bone_metastasis_location_progression_relapse>
+<bone_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bone_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <bone_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -278,11 +278,11 @@
 		]
 	].
 
-<bilateral_lymphangitis_metastasis_location_progression_relapse>
+<bilateral_lymphangitis_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bilateral_lymphangitis_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <bilateral_lymphangitis_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -298,11 +298,11 @@
 		]
 	].
 
-<pleural_nodules_metastasis_location_progression_relapse>
+<pleural_nodules_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_nodules_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <pleural_nodules_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -318,11 +318,11 @@
 		]
 	].
 
-<pancreatic_metastasis_location_progression_relapse>
+<pancreatic_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pancreatic_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <pancreatic_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -338,11 +338,11 @@
 		]
 	].
 
-<peritoneal_metastasis_location_progression_relapse>
+<peritoneal_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <peritoneal_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <peritoneal_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -358,11 +358,11 @@
 		]
 	].
 
-<lung_metastasis_location_progression_relapse>
+<lung_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <lung_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <lung_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -378,11 +378,11 @@
 		]
 	].
 
-<central_nervous_system_metastasis_location_progression_relapse>
+<central_nervous_system_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <central_nervous_system_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <central_nervous_system_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -398,11 +398,11 @@
 		]
 	]. 
 
-<subcutaneous_metastasis_location_progression_relapse>
+<subcutaneous_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <subcutaneous_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <subcutaneous_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -418,11 +418,11 @@
 		]
 	]. 
 
-<adrenal_metastasis_location_progression_relapse>
+<adrenal_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <adrenal_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <adrenal_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -438,11 +438,11 @@
 		]
 	]. 												
 
-<soft_tissues_metastasis_location_progression_relapse>
+<soft_tissues_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <soft_tissues_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <soft_tissues_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -458,11 +458,11 @@
 		]
 	]. 
 
-<others_metastasis_location_progression_relapse>
+<others_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <others_Function_metastasis_location_progression_relapse> ;
+	rr:subjectMap <others_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -483,7 +483,7 @@
 ############## Functions ##############
 #######################################
 
-<extrathoracic_lymphadenopaties_Function_metastasis_location_progression_relapse>
+<extrathoracic_lymphadenopaties_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -520,7 +520,7 @@
         ];                         
     ].
 
-<thoracic_lymphadenopaties_Function_metastasis_location_progression_relapse>
+<thoracic_lymphadenopaties_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -557,7 +557,7 @@
         ];                         
     ].
 
-<meningeal_carcinomatosis_Function_metastasis_location_progression_relapse>
+<meningeal_carcinomatosis_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -594,7 +594,7 @@
         ];                         
     ].
 
-<pericardial_effusion_Function_metastasis_location_progression_relapse>
+<pericardial_effusion_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -631,7 +631,7 @@
         ];                         
     ].
 
-<pleural_effusion_Function_metastasis_location_progression_relapse>
+<pleural_effusion_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -668,7 +668,7 @@
         ];                         
     ].
 
-<liver_Function_metastasis_location_progression_relapse>
+<liver_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -705,7 +705,7 @@
         ];                         
     ].
 
-<bone_Function_metastasis_location_progression_relapse>
+<bone_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -742,7 +742,7 @@
         ];                         
     ].
 
-<bilateral_lymphangitis_Function_metastasis_location_progression_relapse>
+<bilateral_lymphangitis_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -779,7 +779,7 @@
         ];                         
     ].
 
-<pleural_nodules_Function_metastasis_location_progression_relapse>
+<pleural_nodules_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -816,7 +816,7 @@
         ];                         
     ].
 
-<pleural_nodules_Function_metastasis_location_progression_relapse>
+<pleural_nodules_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -853,7 +853,7 @@
         ];                         
     ].
 
-<pancreatic_Function_metastasis_location_progression_relapse>
+<pancreatic_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -890,7 +890,7 @@
         ];                         
     ].
 
-<peritoneal_Function_metastasis_location_progression_relapse>
+<peritoneal_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -927,7 +927,7 @@
         ];                         
     ].
 
-<lung_Function_metastasis_location_progression_relapse>
+<lung_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -964,7 +964,7 @@
         ];                         
     ].
 
-<central_nervous_system_Function_metastasis_location_progression_relapse>
+<central_nervous_system_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -1001,7 +1001,7 @@
         ];                         
     ].
 
-<subcutaneous_Function_metastasis_location_progression_relapse>
+<subcutaneous_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -1038,7 +1038,7 @@
         ];                         
     ].
 
-<adrenal_Function_metastasis_location_progression_relapse>
+<adrenal_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -1075,7 +1075,7 @@
         ];                         
     ].
 
-<soft_tissues_Function_metastasis_location_progression_relapse>
+<soft_tissues_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 
@@ -1112,7 +1112,7 @@
         ];                         
     ].
 
-<others_Function_metastasis_location_progression_relapse>
+<others_Function_lc_clinical_notes_SLCG_metastasis_location_progression_relapse>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location_progression_relapse.csv";
         rml:referenceFormulation ql:CSV 

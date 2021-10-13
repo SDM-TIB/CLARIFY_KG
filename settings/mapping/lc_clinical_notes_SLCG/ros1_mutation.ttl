@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_ros1_mutation>
+<LCPatient_lc_clinical_notes_SLCG_ros1_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker_ros1_mutation>
+			rr:parentTriplesMap <Biomarker_lc_clinical_notes_SLCG_ros1_mutation>
 		]
 	].	
 
-<Biomarker_ros1_mutation>
+<Biomarker_lc_clinical_notes_SLCG_ros1_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -44,27 +44,27 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerIHQResult_ros1_mutation>		
+			rr:parentTriplesMap <BiomarkerIHQResult_lc_clinical_notes_SLCG_ros1_mutation>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerFISHResult_ros1_mutation>		
+			rr:parentTriplesMap <BiomarkerFISHResult_lc_clinical_notes_SLCG_ros1_mutation>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_performed_study;
 		rr:objectMap [
-			rr:parentTriplesMap <study_performed_ros1_mutation>		
+			rr:parentTriplesMap <study_performed_lc_clinical_notes_SLCG_ros1_mutation>		
 		]
 	].
 
-<BiomarkerIHQResult_ros1_mutation>
+<BiomarkerIHQResult_lc_clinical_notes_SLCG_ros1_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerIHQResult_Function_ros1_mutation> ;
+	rr:subjectMap <BiomarkerIHQResult_Function_lc_clinical_notes_SLCG_ros1_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -80,11 +80,11 @@
 		]
 	].
 
-<BiomarkerFISHResult_ros1_mutation>
+<BiomarkerFISHResult_lc_clinical_notes_SLCG_ros1_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerFISHResult_Function_ros1_mutation> ;
+	rr:subjectMap <BiomarkerFISHResult_Function_lc_clinical_notes_SLCG_ros1_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -100,11 +100,11 @@
 		]
 	].
 
-<study_performed_ros1_mutation>
+<study_performed_lc_clinical_notes_SLCG_ros1_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <study_performed_Function_ros1_mutation> ;
+	rr:subjectMap <study_performed_Function_lc_clinical_notes_SLCG_ros1_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -124,7 +124,7 @@
 ############## Functions ##############
 #######################################
 
-<BiomarkerIHQResult_Function_ros1_mutation>
+<BiomarkerIHQResult_Function_lc_clinical_notes_SLCG_ros1_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
         rml:referenceFormulation ql:CSV 
@@ -161,7 +161,7 @@
         ];                         
     ].
 
-<BiomarkerFISHResult_Function_ros1_mutation>
+<BiomarkerFISHResult_Function_lc_clinical_notes_SLCG_ros1_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
         rml:referenceFormulation ql:CSV 
@@ -198,7 +198,7 @@
         ];                         
     ].
 
-<study_performed_Function_ros1_mutation>
+<study_performed_Function_lc_clinical_notes_SLCG_ros1_mutation>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
         rml:referenceFormulation ql:CSV 

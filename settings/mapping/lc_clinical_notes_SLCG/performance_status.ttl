@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_performance_status>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
+<LCPatient_lc_clinical_notes_SLCG_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPerformanceStatus;
 		rr:objectMap [ 
-			rr:parentTriplesMap <PerformanceStatus_performance_status>
+			rr:parentTriplesMap <PerformanceStatus_lc_clinical_notes_SLCG_performance_status>
 		]
 	].
 
-<PerformanceStatus_performance_status>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
+<PerformanceStatus_lc_clinical_notes_SLCG_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -38,18 +38,68 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_Scale;
 		rr:objectMap [
-			rr:parentTriplesMap <Scale_performance_status>
+			rr:parentTriplesMap <Scale_lc_clinical_notes_SLCG_performance_status>
 		]
 	].
 
-<Scale_performance_status>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
+<Scale_lc_clinical_notes_SLCG_performance_status>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{scale}";
-		rr:class clarify:Scale;
+	rr:subjectMap <Scale_Function_lc_clinical_notes_SLCG_performance_status> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Scale";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "scale";		
+		]
 	].
 
+#######################################
+############## Functions ##############
+#######################################
 
+<Scale_Function_lc_clinical_notes_SLCG_performance_status>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "performance_status" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "scale" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "scale" 
+            ]
+        ];                         
+    ].
 

@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_diagnosis>
+<LCPatient_lc_clinical_notes_HUPHM_diagnosis>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosis;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Diagnosis_diagnosis>
+			rr:parentTriplesMap <Diagnosis_lc_clinical_notes_HUPHM_diagnosis>
 		]
 	].
 
-<Diagnosis_diagnosis>
+<Diagnosis_lc_clinical_notes_HUPHM_diagnosis>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -38,17 +38,17 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisStage;
 		rr:objectMap [ 
-			rr:parentTriplesMap <CancerStage_diagnosis>
+			rr:parentTriplesMap <CancerStage_lc_clinical_notes_HUPHM_diagnosis>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_SynchronousTumor_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <SynchronousTumor_diagnosis>
+			rr:parentTriplesMap <SynchronousTumor_lc_clinical_notes_HUPHM_diagnosis>
 		]
 	].
 
-<CancerStage_diagnosis>
+<CancerStage_lc_clinical_notes_HUPHM_diagnosis>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -62,11 +62,11 @@
 		]
 	].
 
-<SynchronousTumor_diagnosis>
+<SynchronousTumor_lc_clinical_notes_HUPHM_diagnosis>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SynchronousTumor_Function_diagnosis> ;
+	rr:subjectMap <SynchronousTumor_Function_lc_clinical_notes_HUPHM_diagnosis> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -86,7 +86,7 @@
 ############## Functions ##############
 #######################################
 
-<SynchronousTumor_Function_diagnosis>
+<SynchronousTumor_Function_lc_clinical_notes_HUPHM_diagnosis>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
         rml:referenceFormulation ql:CSV 

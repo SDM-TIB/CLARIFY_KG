@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_monitoring_iterations>
+<LCPatient_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMontoring;
 		rr:objectMap [ 
-			rr:parentTriplesMap <StatusEvolution_monitoring_iterations>
+			rr:parentTriplesMap <StatusEvolution_lc_clinical_notes_SLCG_monitoring_iterations>
 		]
 	].
 
 
-<StatusEvolution_monitoring_iterations>
+<StatusEvolution_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -39,7 +39,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:performedMonitoring_OrNot;
 		rr:objectMap [ 
-			rr:parentTriplesMap <PerformedMonitoring_monitoring_iterations>
+			rr:parentTriplesMap <PerformedMonitoring_lc_clinical_notes_SLCG_monitoring_iterations>
 		]
 	];
 	rr:predicateObjectMap [
@@ -52,7 +52,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCurrentStatus;
 		rr:objectMap [
-			rr:parentTriplesMap <CurrentStatus_monitoring_iterations>	
+			rr:parentTriplesMap <CurrentStatus_lc_clinical_notes_SLCG_monitoring_iterations>	
 		]
 	];
 	rr:predicateObjectMap [
@@ -65,33 +65,33 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCauseOfDeath;
 		rr:objectMap [
-			rr:parentTriplesMap <CauseOfDeath_monitoring_iterations>		
+			rr:parentTriplesMap <CauseOfDeath_lc_clinical_notes_SLCG_monitoring_iterations>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasReasonOfDeath;
 		rr:objectMap [
-			rr:parentTriplesMap <ReasonOfDeath_monitoring_iterations>	
+			rr:parentTriplesMap <ReasonOfDeathv_monitoring_iterations>	
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSecondNeoplasm;
 		rr:objectMap [
-			rr:parentTriplesMap <second_neoplasm_monitoring_iterations>		
+			rr:parentTriplesMap <second_neoplasm_lc_clinical_notes_SLCG_monitoring_iterations>		
 		]
 	];
     rr:predicateObjectMap [
         rr:predicate clarify:hasSecondNeoplasmType;
         rr:objectMap [
-            rr:parentTriplesMap <second_neoplasm_type_monitoring_iterations>       
+            rr:parentTriplesMap <second_neoplasm_type_lc_clinical_notes_SLCG_monitoring_iterations>       
         ]
     ].
 
-<PerformedMonitoring_monitoring_iterations>
+<PerformedMonitoring_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <PerformedMonitoring_Function_monitoring_iterations> ; 
+	rr:subjectMap <PerformedMonitoring_Function_lc_clinical_notes_SLCG_monitoring_iterations> ; 
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -107,11 +107,11 @@
 		]
 	].
 
-<CurrentStatus_monitoring_iterations>
+<CurrentStatus_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CurrentStatus_Function_monitoring_iterations> ;
+	rr:subjectMap <CurrentStatus_Function_lc_clinical_notes_SLCG_monitoring_iterations> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -127,11 +127,11 @@
 		]
 	]. 
 
-<CauseOfDeath_monitoring_iterations>
+<CauseOfDeath_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CauseOfDeath_Function_monitoring_iterations> ;
+	rr:subjectMap <CauseOfDeath_Function_lc_clinical_notes_SLCG_monitoring_iterations> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -147,11 +147,11 @@
 		]
 	]. 
 
-<ReasonOfDeath_monitoring_iterations>
+<ReasonOfDeath_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <ReasonOfDeath_Function_monitoring_iterations> ;
+	rr:subjectMap <ReasonOfDeath_Function_lc_clinical_notes_SLCG_monitoring_iterations> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -167,11 +167,11 @@
 		]
 	]. 
 
-<second_neoplasm_monitoring_iterations>
+<second_neoplasm_lc_clinical_notes_SLCG_monitoring_iterations>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <second_neoplasm_Function_monitoring_iterations> ;
+	rr:subjectMap <second_neoplasm_Function_lc_clinical_notes_SLCG_monitoring_iterations> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -187,11 +187,11 @@
 		]
 	]. 				
 
-<second_neoplasm_type_monitoring_iterations>
+<second_neoplasm_type_lc_clinical_notes_SLCG_monitoring_iterations>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <second_neoplasm_type_Function_monitoring_iterations> ;
+    rr:subjectMap <second_neoplasm_type_Function_lc_clinical_notes_SLCG_monitoring_iterations> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -211,7 +211,7 @@
 ############## Functions ##############
 #######################################
 
-<PerformedMonitoring_Function_monitoring_iterations>
+<PerformedMonitoring_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -247,7 +247,7 @@
             ]
         ];                         
     ].
-<CurrentStatus_Function_monitoring_iterations>
+<CurrentStatus_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -284,7 +284,7 @@
         ];                         
     ].
 
-<CauseOfDeath_Function_monitoring_iterations>
+<CauseOfDeath_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -321,7 +321,7 @@
         ];                         
     ].
 
-<ReasonOfDeath_Function_monitoring_iterations>
+<ReasonOfDeath_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -358,7 +358,7 @@
         ];                         
     ].
 
-<second_neoplasm_Function_monitoring_iterations>
+<second_neoplasm_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 
@@ -395,7 +395,7 @@
         ];                         
     ].
 
-<second_neoplasm_type_Function_monitoring_iterations>
+<second_neoplasm_type_Function_lc_clinical_notes_SLCG_monitoring_iterations>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/monitoring_iterations.csv";
         rml:referenceFormulation ql:CSV 

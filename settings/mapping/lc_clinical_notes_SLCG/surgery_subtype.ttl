@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<OncologicalSurgery_surgery_subtype>
+<OncologicalSurgery_lc_clinical_notes_SLCG_surgery_subtype>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery_subtype.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,15 +23,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSubType;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgerySubType_surgery_subtype>
+			rr:parentTriplesMap <SurgerySubType_lc_clinical_notes_SLCG_surgery_subtype>
 		]
 	].	
 
-<SurgerySubType_surgery_subtype>
+<SurgerySubType_lc_clinical_notes_SLCG_surgery_subtype>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery_subtype.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgerySubType_Function_surgery_subtype> ;
+	rr:subjectMap <SurgerySubType_Function_lc_clinical_notes_SLCG_surgery_subtype> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -49,7 +49,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSurgeryIteration;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgeryIteration_surgery_subtype>
+			rr:parentTriplesMap <SurgeryIteration_lc_clinical_notes_SLCG_surgery_subtype>
 		]
 	];	
 	rr:predicateObjectMap [
@@ -59,7 +59,7 @@
 		]
 	].
 
-<SurgeryIteration_surgery_subtype>
+<SurgeryIteration_lc_clinical_notes_SLCG_surgery_subtype>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery_subtype.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -72,7 +72,7 @@
 ############## Functions ##############
 #######################################
 
-<SurgerySubType_Function_surgery_subtype>
+<SurgerySubType_Function_lc_clinical_notes_SLCG_surgery_subtype>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery_subtype.csv";
         rml:referenceFormulation ql:CSV 

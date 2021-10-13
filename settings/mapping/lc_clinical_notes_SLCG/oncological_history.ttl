@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_oncological_history>
+<LCPatient_lc_clinical_notes_SLCG_oncological_history>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,13 +23,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_previousCancerHistory_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <has_previous_cancers_oncological_history>
+			rr:parentTriplesMap <has_previous_cancers_lc_clinical_notes_SLCG_oncological_history>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPreviousCancerType;
 		rr:objectMap [
-			rr:parentTriplesMap <previous_cancer_type_oncological_history>
+			rr:parentTriplesMap <previous_cancer_type_lc_clinical_notes_SLCG_oncological_history>
 		]
 	];					
 	rr:predicateObjectMap [
@@ -39,11 +39,11 @@
 		]
 	].	
 
-<has_previous_cancers_oncological_history>
+<has_previous_cancers_lc_clinical_notes_SLCG_oncological_history>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <has_previous_cancers_Function_oncological_history> ;
+	rr:subjectMap <has_previous_cancers_Function_lc_clinical_notes_SLCG_oncological_history> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -59,11 +59,11 @@
 		]
 	].
 
-<previous_cancer_type_oncological_history>
+<previous_cancer_type_lc_clinical_notes_SLCG_oncological_history>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/oncological_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <previous_cancer_type_Function_oncological_history> ;
+	rr:subjectMap <previous_cancer_type_Function_lc_clinical_notes_SLCG_oncological_history> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -83,7 +83,7 @@
 ############## Functions ##############
 #######################################
 
-<has_previous_cancers_Function_oncological_history>
+<has_previous_cancers_Function_lc_clinical_notes_SLCG_oncological_history>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/oncological_history.csv";
         rml:referenceFormulation ql:CSV 
@@ -120,7 +120,7 @@
         ];                         
     ].
 
-<previous_cancer_type_Function_oncological_history>
+<previous_cancer_type_Function_lc_clinical_notes_SLCG_oncological_history>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/oncological_history.csv";
         rml:referenceFormulation ql:CSV 
