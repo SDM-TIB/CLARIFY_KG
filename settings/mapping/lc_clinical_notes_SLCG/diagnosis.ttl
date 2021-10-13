@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+<LCPatient_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosis;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Diagnosis>
+			rr:parentTriplesMap <Diagnosis_diagnosis>
 		]
 	].
 
-<Diagnosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+<Diagnosis_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -38,21 +38,21 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDiagnosisStage;
 		rr:objectMap [ 
-			rr:parentTriplesMap <CancerStage>
+			rr:parentTriplesMap <CancerStage_diagnosis>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_SynchronousTumor_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <SynchronousTumor>
+			rr:parentTriplesMap <SynchronousTumor_diagnosis>
 		]
 	].
 
-<CancerStage>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+<CancerStage_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <stage_Function> ;
+	rr:subjectMap <stage_Function_diagnosis> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -68,11 +68,11 @@
 		]
 	].
 
-<SynchronousTumor>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+<SynchronousTumor_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SynchronousTumor_Function> ;
+	rr:subjectMap <SynchronousTumor_Function_diagnosis> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -92,9 +92,9 @@
 ############## Functions ##############
 #######################################
 
-<stage_Function>
+<stage_Function_diagnosis>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -129,9 +129,9 @@
         ];                         
     ].
 
-<SynchronousTumor_Function>
+<SynchronousTumor_Function_diagnosis>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/diagnosis.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<LCPatient_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -29,111 +29,111 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <extrathoracic_lymphadenopaties>
+			rr:parentTriplesMap <extrathoracic_lymphadenopaties_metastasis_location>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <thoracic_lymphadenopaties>		
+			rr:parentTriplesMap <thoracic_lymphadenopaties_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <meningeal_carcinomatosis>
+			rr:parentTriplesMap <meningeal_carcinomatosis_metastasis_location>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pericardial_effusion>		
+			rr:parentTriplesMap <pericardial_effusion_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pleural_effusion>		
+			rr:parentTriplesMap <pleural_effusion_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <liver>		
+			rr:parentTriplesMap <liver_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <bone>		
+			rr:parentTriplesMap <bone_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <bilateral_lymphangitis>		
+			rr:parentTriplesMap <bilateral_lymphangitis_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pleural_nodules>		
+			rr:parentTriplesMap <pleural_nodules_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <pancreatic>		
+			rr:parentTriplesMap <pancreatic_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <peritoneal>		
+			rr:parentTriplesMap <peritoneal_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <lung>		
+			rr:parentTriplesMap <lung_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <central_nervous_system>		
+			rr:parentTriplesMap <central_nervous_system_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <subcutaneous>		
+			rr:parentTriplesMap <subcutaneous_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <adrenal>		
+			rr:parentTriplesMap <adrenal_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <soft_tissues>		
+			rr:parentTriplesMap <soft_tissues_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_cancer_metastasized_to;
 		rr:objectMap [
-			rr:parentTriplesMap <others>		
+			rr:parentTriplesMap <others_metastasis_location>		
 		]
 	].	
 
-<extrathoracic_lymphadenopaties>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<extrathoracic_lymphadenopaties_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <extrathoracic_lymphadenopaties_Function> ;
+	rr:subjectMap <extrathoracic_lymphadenopaties_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -149,11 +149,11 @@
 		]
 	].
 
-<thoracic_lymphadenopaties>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<thoracic_lymphadenopaties_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <thoracic_lymphadenopaties_Function> ;
+	rr:subjectMap <thoracic_lymphadenopaties_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -169,11 +169,11 @@
 		]
 	].
 
-<meningeal_carcinomatosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<meningeal_carcinomatosis_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function> ;
+	rr:subjectMap <meningeal_carcinomatosis_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -189,11 +189,11 @@
 		]
 	].
 
-<pericardial_effusion>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<pericardial_effusion_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <meningeal_carcinomatosis_Function> ;
+	rr:subjectMap <meningeal_carcinomatosis_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -209,11 +209,11 @@
 		]
 	].
 
-<pleural_effusion>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<pleural_effusion_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_effusion_Function> ;
+	rr:subjectMap <pleural_effusion_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -229,11 +229,11 @@
 		]
 	].
 
-<liver>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<liver_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <liver_Function> ;
+	rr:subjectMap <liver_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -249,11 +249,11 @@
 		]
 	].
 
-<bone>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<bone_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bone_Function> ;
+	rr:subjectMap <bone_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -269,11 +269,11 @@
 		]
 	].
 
-<bilateral_lymphangitis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<bilateral_lymphangitis_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <bilateral_lymphangitis_Function> ;
+	rr:subjectMap <bilateral_lymphangitis_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -289,11 +289,11 @@
 		]
 	].
 
-<pleural_nodules>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<pleural_nodules_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pleural_nodules_Function> ;
+	rr:subjectMap <pleural_nodules_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -309,11 +309,11 @@
 		]
 	].
 
-<pancreatic>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<pancreatic_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pancreatic_Function> ;
+	rr:subjectMap <pancreatic_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -329,11 +329,11 @@
 		]
 	].
 
-<peritoneal>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<peritoneal_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <peritoneal_Function> ;
+	rr:subjectMap <peritoneal_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -349,11 +349,11 @@
 		]
 	].
 
-<lung>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<lung_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <lung_Function> ;
+	rr:subjectMap <lung_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -369,11 +369,11 @@
 		]
 	].
 
-<central_nervous_system>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<central_nervous_system_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <central_nervous_system_Function> ;
+	rr:subjectMap <central_nervous_system_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -389,11 +389,11 @@
 		]
 	]. 
 
-<subcutaneous>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<subcutaneous_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <subcutaneous_Function> ;
+	rr:subjectMap <subcutaneous_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -409,11 +409,11 @@
 		]
 	]. 
 
-<adrenal>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<adrenal_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <adrenal_Function> ;
+	rr:subjectMap <adrenal_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -429,11 +429,11 @@
 		]
 	]. 												
 
-<soft_tissues>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<soft_tissues_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <soft_tissues_Function> ;
+	rr:subjectMap <soft_tissues_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -449,11 +449,11 @@
 		]
 	]. 
 
-<others>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+<others_metastasis_location>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <others_Function> ;
+	rr:subjectMap <others_Function_metastasis_location> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -474,9 +474,9 @@
 ############## Functions ##############
 #######################################
 
-<extrathoracic_lymphadenopaties_Function>
+<extrathoracic_lymphadenopaties_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -511,9 +511,9 @@
         ];                         
     ].
 
-<thoracic_lymphadenopaties_Function>
+<thoracic_lymphadenopaties_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -548,9 +548,9 @@
         ];                         
     ].
 
-<meningeal_carcinomatosis_Function>
+<meningeal_carcinomatosis_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -585,9 +585,9 @@
         ];                         
     ].
 
-<pericardial_effusion_Function>
+<pericardial_effusion_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -622,9 +622,9 @@
         ];                         
     ].
 
-<pleural_effusion_Function>
+<pleural_effusion_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -659,9 +659,9 @@
         ];                         
     ].
 
-<liver_Function>
+<liver_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -696,9 +696,9 @@
         ];                         
     ].
 
-<bone_Function>
+<bone_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -733,9 +733,9 @@
         ];                         
     ].
 
-<bilateral_lymphangitis_Function>
+<bilateral_lymphangitis_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -770,9 +770,9 @@
         ];                         
     ].
 
-<pleural_nodules_Function>
+<pleural_nodules_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -807,9 +807,9 @@
         ];                         
     ].
 
-<pleural_nodules_Function>
+<pleural_nodules_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -844,9 +844,9 @@
         ];                         
     ].
 
-<pancreatic_Function>
+<pancreatic_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -881,9 +881,9 @@
         ];                         
     ].
 
-<peritoneal_Function>
+<peritoneal_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -918,9 +918,9 @@
         ];                         
     ].
 
-<lung_Function>
+<lung_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -955,9 +955,9 @@
         ];                         
     ].
 
-<central_nervous_system_Function>
+<central_nervous_system_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -992,9 +992,9 @@
         ];                         
     ].
 
-<subcutaneous_Function>
+<subcutaneous_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -1029,9 +1029,9 @@
         ];                         
     ].
 
-<adrenal_Function>
+<adrenal_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -1066,9 +1066,9 @@
         ];                         
     ].
 
-<soft_tissues_Function>
+<soft_tissues_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -1103,9 +1103,9 @@
         ];                         
     ].
 
-<others_Function>
+<others_Function_metastasis_location>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/metastasis_location.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/metastasis_location.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

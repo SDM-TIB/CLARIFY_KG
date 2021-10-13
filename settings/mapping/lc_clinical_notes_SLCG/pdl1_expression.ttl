@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/pdl1_expression.csv";
+<LCPatient_pdl1_expression>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker>
+			rr:parentTriplesMap <Biomarker_pdl1_expression>
 		]
 	].	
 
-<Biomarker>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/pdl1_expression.csv";
+<Biomarker_pdl1_expression>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -44,12 +44,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerResult>		
+			rr:parentTriplesMap <BiomarkerResult_pdl1_expression>		
 		]
 	].
 
-<BiomarkerResult>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/pdl1_expression.csv";
+<BiomarkerResult_pdl1_expression>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/pdl1_expression.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

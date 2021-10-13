@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+<LCPatient_tnm_stadification>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,33 +23,33 @@
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_TumorSize;
         rr:objectMap [
-            rr:parentTriplesMap <TumorSize>
+            rr:parentTriplesMap <TumorSize_tnm_stadification>
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
         rr:objectMap [
-            rr:parentTriplesMap <LymphNodesInvolvement>     
+            rr:parentTriplesMap <LymphNodesInvolvement_tnm_stadification>     
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_MetastatisStage;
         rr:objectMap [
-            rr:parentTriplesMap <MetastatisStage>
+            rr:parentTriplesMap <MetastatisStage_tnm_stadification>
         ]
     ]; 	
 	rr:predicateObjectMap [
 		rr:predicate clarify:cancerStageTNM_Version;
 		rr:objectMap [
-			rr:parentTriplesMap <TNM_version>
+			rr:parentTriplesMap <TNM_version_tnm_stadification>
 		]
 	].	
 
-<TumorSize>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+<TumorSize_tnm_stadification>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TumorSize_Function> ;
+	rr:subjectMap <TumorSize_Function_tnm_stadification> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -65,11 +65,11 @@
 		]
 	]. 
 
-<LymphNodesInvolvement>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+<LymphNodesInvolvement_tnm_stadification>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <LymphNodesInvolvement_Function> ;
+	rr:subjectMap <LymphNodesInvolvement_Function_tnm_stadification> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -85,11 +85,11 @@
 		]
 	]. 
 
-<MetastatisStage>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+<MetastatisStage_tnm_stadification>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <MetastatisStage_Function> ;
+	rr:subjectMap <MetastatisStage_Function_tnm_stadification> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -105,11 +105,11 @@
 		]
 	].
 
-<TNM_version>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+<TNM_version_tnm_stadification>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TNM_version_Function> ;
+	rr:subjectMap <TNM_version_Function_tnm_stadification> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -129,9 +129,9 @@
 ############## Functions ##############
 #######################################
 
-<TumorSize_Function>
+<TumorSize_Function_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -166,9 +166,9 @@
         ];  
     ].	
 
-<LymphNodesInvolvement_Function>
+<LymphNodesInvolvement_Function_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -203,9 +203,9 @@
         ];  
     ].	
 
-<MetastatisStage_Function>
+<MetastatisStage_Function_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -240,9 +240,9 @@
         ];  
     ].	
 
-<TNM_version_Function>
+<TNM_version_Function_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

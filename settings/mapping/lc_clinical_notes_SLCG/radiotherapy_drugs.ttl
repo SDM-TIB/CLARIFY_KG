@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<RadiotherapyTreatmentLine>
+<RadiotherapyTreatmentLine_radiotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -35,11 +35,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [
-			rr:parentTriplesMap <Annotation>
+			rr:parentTriplesMap <Annotation_radiotherapy_drugs>
 		]
 	].	
 
-<Annotation>
+<Annotation_radiotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/radiotherapy_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];

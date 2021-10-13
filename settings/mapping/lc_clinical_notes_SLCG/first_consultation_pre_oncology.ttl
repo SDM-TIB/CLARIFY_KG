@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<LCPatient_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasNonOncologicalConsultation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <NonOncologicalConsultation>
+			rr:parentTriplesMap <NonOncologicalConsultation_first_consultation_pre_oncology>
 		]
 	].
 
-<NonOncologicalConsultation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<NonOncologicalConsultation_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -45,57 +45,57 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:patient_is_asymptomatic;
 		rr:objectMap [
-			rr:parentTriplesMap <asymptomatic>
+			rr:parentTriplesMap <asymptomatic_first_consultation_pre_oncology>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <cough>		
+			rr:parentTriplesMap <cough_first_consultation_pre_oncology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <pain>
+			rr:parentTriplesMap <pain_first_consultation_pre_oncology>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <dyspnoea>		
+			rr:parentTriplesMap <dyspnoea_first_consultation_pre_oncology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <hemoptysis>		
+			rr:parentTriplesMap <hemoptysis_first_consultation_pre_oncology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <asthenia>		
+			rr:parentTriplesMap <asthenia_first_consultation_pre_oncology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <anorexia>		
+			rr:parentTriplesMap <anorexia_first_consultation_pre_oncology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSymptom;
 		rr:objectMap [
-			rr:parentTriplesMap <weightLoss>		
+			rr:parentTriplesMap <weightLoss_first_consultation_pre_oncology>		
 		]
 	].	
 
-<asymptomatic>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<asymptomatic_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];		
-	rr:subjectMap <asymptomatic_Function> ;
+	rr:subjectMap <asymptomatic_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -111,11 +111,11 @@
 		]
 	].
 
-<cough>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<cough_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <cough_Function> ;
+	rr:subjectMap <cough_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -131,11 +131,11 @@
 		]
 	].		
 
-<pain>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<pain_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <pain_Function> ;
+	rr:subjectMap <pain_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -151,11 +151,11 @@
 		]
 	].	
 
-<dyspnoea>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<dyspnoea_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <dyspnoea_Function> ;
+	rr:subjectMap <dyspnoea_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -171,11 +171,11 @@
 		]
 	].		
 
-<hemoptysis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<hemoptysis_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <hemoptysis_Function> ;
+	rr:subjectMap <hemoptysis_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -191,11 +191,11 @@
 		]
 	].		
 
-<asthenia>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<asthenia_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <asthenia_Function> ;
+	rr:subjectMap <asthenia_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -211,11 +211,11 @@
 		]
 	].		
 
-<anorexia>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<anorexia_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];	
-	rr:subjectMap <anorexia_Function> ;
+	rr:subjectMap <anorexia_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -231,11 +231,11 @@
 		]
 	].		
 
-<weightLoss>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+<weightLoss_first_consultation_pre_oncology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
 						rml:referenceFormulation ql:CSV;
 						];	
-	rr:subjectMap <weightLoss_Function> ;
+	rr:subjectMap <weightLoss_Function_first_consultation_pre_oncology> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -255,9 +255,9 @@
 ############## Functions ##############
 #######################################
 
-<asymptomatic_Function>
+<asymptomatic_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -292,9 +292,9 @@
         ];  
     ].	
 
-<cough_Function>
+<cough_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -329,9 +329,9 @@
         ];  
     ].
 
-<pain_Function>
+<pain_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -366,9 +366,9 @@
         ];  
     ].
 
-<dyspnoea_Function>
+<dyspnoea_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -403,9 +403,9 @@
         ];  
     ].
 
-<hemoptysis_Function>
+<hemoptysis_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -440,9 +440,9 @@
         ];  
     ].
 
-<asthenia_Function>
+<asthenia_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -477,9 +477,9 @@
         ];  
     ].
 
-<anorexia_Function>
+<anorexia_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -514,9 +514,9 @@
         ];  
     ].
 
-<weightLoss_Function>
+<weightLoss_Function_first_consultation_pre_oncology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/First_consultation_pre_oncology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

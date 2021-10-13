@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+<LCPatient_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -44,27 +44,27 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:livingWithSmoker_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <lives_with_smokers>		
+			rr:parentTriplesMap <lives_with_smokers_smoker_information>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:livedWithSmoker_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <has_lived_with_smokers>		
+			rr:parentTriplesMap <has_lived_with_smokers_smoker_information>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSmokingHabit;
 		rr:objectMap [
-			rr:parentTriplesMap <smoking_habit>		
+			rr:parentTriplesMap <smoking_habit_smoker_information>		
 		]
 	].
 
-<lives_with_smokers>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+<lives_with_smokers_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <lives_with_smokers_Function> ;
+	rr:subjectMap <lives_with_smokers_Function_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -80,11 +80,11 @@
 		]
 	]. 
 
-<has_lived_with_smokers>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+<has_lived_with_smokers_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <has_lived_with_smokers_Function> ;
+	rr:subjectMap <has_lived_with_smokers_Function_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -100,11 +100,11 @@
 		]
 	].
 
-<smoking_habit>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+<smoking_habit_smoker_information>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <smoking_habit> ;
+	rr:subjectMap <smoking_habit_smoker_information> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -124,9 +124,9 @@
 ############## Functions ##############
 #######################################
 
-<lives_with_smokers_Function>
+<lives_with_smokers_Function_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -161,9 +161,9 @@
         ];                         
     ].
 
-<has_lived_with_smokers_Function>
+<has_lived_with_smokers_Function_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -198,9 +198,9 @@
         ];                         
     ].
 
-<smoking_habit>
+<smoking_habit_smoker_information>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/smoker_information.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

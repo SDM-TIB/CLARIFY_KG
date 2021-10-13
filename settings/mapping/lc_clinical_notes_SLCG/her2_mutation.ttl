@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+<LCPatient_her2_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker>
+			rr:parentTriplesMap <Biomarker_her2_mutation>
 		]
 	].	
 
-<Biomarker>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+<Biomarker_her2_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -44,27 +44,27 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerIHQResult>		
+			rr:parentTriplesMap <BiomarkerIHQResult_her2_mutation>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestFISHResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerFISHResult>		
+			rr:parentTriplesMap <BiomarkerFISHResult_her2_mutation>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_performed_study;
 		rr:objectMap [
-			rr:parentTriplesMap <study_performed>		
+			rr:parentTriplesMap <study_performed_her2_mutation>		
 		]
 	].
 
-<BiomarkerIHQResult>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+<BiomarkerIHQResult_her2_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerIHQResult_Function> ;
+	rr:subjectMap <BiomarkerIHQResult_Function_her2_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -80,11 +80,11 @@
 		]
 	].
 
-<BiomarkerFISHResult>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+<BiomarkerFISHResult_her2_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <BiomarkerFISHResult_Function> ;
+	rr:subjectMap <BiomarkerFISHResult_Function_her2_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -100,11 +100,11 @@
 		]
 	].
 
-<study_performed>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+<study_performed_her2_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <study_performed_Function> ;
+	rr:subjectMap <study_performed_Function_her2_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -124,9 +124,9 @@
 ############## Functions ##############
 #######################################
 
-<BiomarkerIHQResult_Function>
+<BiomarkerIHQResult_Function_her2_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -161,9 +161,9 @@
         ];                         
     ].
 
-<BiomarkerFISHResult_Function>
+<BiomarkerFISHResult_Function_her2_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -198,9 +198,9 @@
         ];                         
     ].
 
-<study_performed_Function>
+<study_performed_Function_her2_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/her2_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

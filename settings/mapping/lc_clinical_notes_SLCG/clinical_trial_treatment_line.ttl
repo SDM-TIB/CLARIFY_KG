@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<LCPatient_clinical_trial_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasClinicalTrialTreatmentLine;
 		rr:objectMap [ 
-			rr:parentTriplesMap <ClinicalTrialTreatmentLine>
+			rr:parentTriplesMap <ClinicalTrialTreatmentLine_clinical_trial_treatment_line>
 		]
 	].
-<ClinicalTrialTreatmentLine>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<ClinicalTrialTreatmentLine_clinical_trial_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -37,30 +37,30 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineNumber;
 		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber>
+			rr:parentTriplesMap <TreatmentLineNumber_clinical_trial_treatment_line>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPhase;
 		rr:objectMap [
-			rr:parentTriplesMap <phase>
+			rr:parentTriplesMap <phase_clinical_trial_treatment_line>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rr:parentTriplesMap <targeted_clinical_tr>
+			rr:parentTriplesMap <targeted_clinical_tr_treatment_line>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rr:parentTriplesMap <therapeutic_target>
+			rr:parentTriplesMap <therapeutic_target_treatment_line>
 		]
 	].
 
-<TreatmentLineNumber>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<TreatmentLineNumber_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -68,11 +68,11 @@
 		rr:class clarify:TreatmentLineNumber;
 	].
 
-<phase>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<phase_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <phase_Function> ;
+	rr:subjectMap <phase_Function_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -88,11 +88,11 @@
 		]
 	].
 
-<targeted_clinical_tr>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<targeted_clinical_tr_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <targeted_clinical_tr_Function> ;
+	rr:subjectMap <targeted_clinical_tr_Function_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -108,11 +108,11 @@
 		]
 	].
 
-<therapeutic_target>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+<therapeutic_target_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <therapeutic_target_Function> ;
+	rr:subjectMap <therapeutic_target_Function_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -132,9 +132,9 @@
 ############## Functions ##############
 #######################################
 
-<phase_Function>
+<phase_Function_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -169,9 +169,9 @@
         ];                         
     ].	
 
-<targeted_clinical_tr_Function>
+<targeted_clinical_tr_Function_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -206,9 +206,9 @@
         ];                         
     ].	
 
-<therapeutic_target_Function>
+<therapeutic_target_Function_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/clinical_trial_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/clinical_trial_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

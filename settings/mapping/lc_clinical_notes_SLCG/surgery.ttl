@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<LCPatient_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,30 +23,30 @@
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_TumorSize;
         rr:objectMap [
-            rr:parentTriplesMap <TumorSize>
+            rr:parentTriplesMap <TumorSize_surgery>
         ]
     ];  
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_LymphNodesInvolvement;
         rr:objectMap [
-            rr:parentTriplesMap <LymphNodesInvolvement>     
+            rr:parentTriplesMap <LymphNodesInvolvement_surgery>     
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_MetastatisStage;
         rr:objectMap [
-            rr:parentTriplesMap <MetastatisStage>
+            rr:parentTriplesMap <MetastatisStage_surgery>
         ]
     ];  
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOncologicalSurgery;
 		rr:objectMap [
-			rr:parentTriplesMap <OncologicalSurgery>		
+			rr:parentTriplesMap <OncologicalSurgery_surgery>		
 		]
 	].	
 
-<OncologicalSurgery>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<OncologicalSurgery_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -56,19 +56,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPathologicalResponse;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgeryPathologicalResponse>
+			rr:parentTriplesMap <SurgeryPathologicalResponse_surgery>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasResectionGrade;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgeryResectionDegree>
+			rr:parentTriplesMap <SurgeryResectionDegree_surgery>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_PerioperativeDeath_orNot;
 		rr:objectMap [
-			rr:parentTriplesMap <PerioperativeDeath>
+			rr:parentTriplesMap <PerioperativeDeath_surgery>
 		]
 	];		
 	rr:predicateObjectMap [
@@ -81,22 +81,22 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgeryType>
+			rr:parentTriplesMap <SurgeryType_surgery>
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasClass;
 		rr:objectMap [
-			rr:parentTriplesMap <SurgeryClass>
+			rr:parentTriplesMap <SurgeryClass_surgery>
 		]
 	].
 		
 
-<SurgeryPathologicalResponse>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<SurgeryPathologicalResponse_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryPathologicalResponse_Function> ;
+	rr:subjectMap <SurgeryPathologicalResponse_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -112,11 +112,11 @@
 		]
 	].
 
-<SurgeryResectionDegree>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<SurgeryResectionDegree_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryResectionDegree_Function> ;
+	rr:subjectMap <SurgeryResectionDegree_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -132,8 +132,8 @@
 		]
 	].
 
-<PerioperativeDeath>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<PerioperativeDeath_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -141,11 +141,11 @@
 		rr:class clarify:PerioperativeDeath;
 	].
 
-<SurgeryType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<SurgeryType_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryType_Function> ;
+	rr:subjectMap <SurgeryType_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -161,11 +161,11 @@
 		]
 	].
 
-<SurgeryClass>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<SurgeryClass_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <SurgeryClass_Function> ;
+	rr:subjectMap <SurgeryClass_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -181,11 +181,11 @@
 		]
 	].			
 
-<TumorSize>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<TumorSize_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <TumorSize_Function> ;
+	rr:subjectMap <TumorSize_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -201,11 +201,11 @@
 		]
 	].
 
-<LymphNodesInvolvement>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<LymphNodesInvolvement_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <LymphNodesInvolvement_Function> ;
+	rr:subjectMap <LymphNodesInvolvement_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -221,11 +221,11 @@
 		]
 	].
 
-<MetastatisStage>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+<MetastatisStage_surgery>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <MetastatisStage_Function> ;
+	rr:subjectMap <MetastatisStage_Function_surgery> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -245,9 +245,9 @@
 ############## Functions ##############
 #######################################
 
-<SurgeryPathologicalResponse_Function>
+<SurgeryPathologicalResponse_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -282,9 +282,9 @@
         ];                         
     ].
 
-<SurgeryResectionDegree_Function>
+<SurgeryResectionDegree_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -319,9 +319,9 @@
         ];                         
     ].
 
-<SurgeryType_Function>
+<SurgeryType_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -356,9 +356,9 @@
         ];                         
     ].
 
-<SurgeryClass_Function>
+<SurgeryClass_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -393,9 +393,9 @@
         ];                         
     ].
 
-<TumorSize_Function>
+<TumorSize_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -430,9 +430,9 @@
         ];                         
     ].
 
-<LymphNodesInvolvement_Function>
+<LymphNodesInvolvement_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -467,9 +467,9 @@
         ];                         
     ].
 
-<MetastatisStage_Function>
+<MetastatisStage_Function_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/surgery.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

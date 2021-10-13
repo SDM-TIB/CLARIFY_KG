@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<LCPatient_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTumorHistology;
 		rr:objectMap [ 
-			rr:parentTriplesMap <TumorType>
+			rr:parentTriplesMap <TumorType_tumor_histology>
 		]
 	].
 
-<TumorType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<TumorType_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -38,36 +38,36 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasAdenocarcinomaHistology;
 		rr:objectMap [
-			rr:parentTriplesMap <AdenocarcinomaHistology>		
+			rr:parentTriplesMap <AdenocarcinomaHistology_tumor_histology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasSmallCellCarcinomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <SmallCellCarcinomaType>
+			rr:parentTriplesMap <SmallCellCarcinomaType_tumor_histology>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCarcinomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <CarcinomaType>
+			rr:parentTriplesMap <CarcinomaType_tumor_histology>
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasMesotheliomaType;
 		rr:objectMap [
-			rr:parentTriplesMap <MesotheliomaType>		
+			rr:parentTriplesMap <MesotheliomaType_tumor_histology>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHistologyDegree;
 		rr:objectMap [
-			rr:parentTriplesMap <HistologyDegree>	
+			rr:parentTriplesMap <HistologyDegree_tumor_histology>	
 		]
 	].
 
-<AdenocarcinomaHistology>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<AdenocarcinomaHistology_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -75,8 +75,8 @@
 		rr:class clarify:AdenocarcinomaHistology;
 	].
 
-<SmallCellCarcinomaType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<SmallCellCarcinomaType_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -84,8 +84,8 @@
 		rr:class clarify:SmallCellCarcinomaType;
 	].
 
-<CarcinomaType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<CarcinomaType_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -93,8 +93,8 @@
 		rr:class clarify:CarcinomaType;
 	].
 
-<MesotheliomaType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<MesotheliomaType_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -102,8 +102,8 @@
 		rr:class clarify:MesotheliomaType;
 	].
 
-<HistologyDegree>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/tumor_histology.csv";
+<HistologyDegree_tumor_histology>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+<LCPatient_family_antecedents_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasFamilyHistory;
 		rr:objectMap [ 
-			rr:parentTriplesMap <FamilyHistory>
+			rr:parentTriplesMap <FamilyHistory_family_antecedents_treatment_line>
 		]
 	].	
 
-<FamilyHistory>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+<FamilyHistory_family_antecedents_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -38,27 +38,27 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasFamilyCancerType;
 		rr:objectMap [
-			rr:parentTriplesMap <CancerType>
+			rr:parentTriplesMap <CancerType_family_antecedents_treatment_line>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:familyType;
 		rr:objectMap [
-			rr:parentTriplesMap <FamilyType>
+			rr:parentTriplesMap <FamilyType_family_antecedents_treatment_line>
 		]
 	];
     rr:predicateObjectMap [
         rr:predicate clarify:familyRelationDegree;
         rr:objectMap [
-            rr:parentTriplesMap <FamilyDegree>
+            rr:parentTriplesMap <FamilyDegree_family_antecedents_treatment_line>
         ]
     ].
 
-<CancerType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+<CancerType_family_antecedents_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <cancer_type_Function> ;
+	rr:subjectMap <cancer_type_Function_family_antecedents_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -74,11 +74,11 @@
 		]
 	].
 
-<FamilyType>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+<FamilyType_family_antecedents_treatment_line>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];	
-	rr:subjectMap <family_member_Function> ;
+	rr:subjectMap <family_member_Function_family_antecedents_treatment_line> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -94,11 +94,11 @@
 		]
 	].
 
-<FamilyDegree>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+<FamilyDegree_family_antecedents_treatment_line>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
                         rml:referenceFormulation ql:CSV;
                         ];  
-    rr:subjectMap <family_degree_Function> ;
+    rr:subjectMap <family_degree_Function_family_antecedents_treatment_line> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -118,9 +118,9 @@
 ############## Functions ##############
 #######################################
 
-<cancer_type_Function>
+<cancer_type_Function_family_antecedents_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -155,9 +155,9 @@
         ];                         
     ].	
 
-<family_member_Function>
+<family_member_Function_family_antecedents_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -192,9 +192,9 @@
         ];                         
     ].
 
-<family_degree_Function>
+<family_degree_Function_family_antecedents_treatment_line>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/family_antecedents_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

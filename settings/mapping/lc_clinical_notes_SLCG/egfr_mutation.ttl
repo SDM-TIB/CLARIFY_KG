@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<LCPatient_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,12 +23,12 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasBiomarker;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Biomarker>
+			rr:parentTriplesMap <Biomarker_egfr_mutation>
 		]
 	].	
 
-<Biomarker>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<Biomarker_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -44,57 +44,57 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasNegativeTestResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerNegativeResult>		
+			rr:parentTriplesMap <BiomarkerNegativeResult_egfr_mutation>		
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_positive_result;
 		rr:objectMap [
-			rr:parentTriplesMap <T790Result>
+			rr:parentTriplesMap <T790Result_egfr_mutation>
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_T790M_negative_result;
 		rr:objectMap [
-			rr:parentTriplesMap <T790MResult>	
+			rr:parentTriplesMap <T790MResult_egfr_mutation>	
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_exon19_result;
 		rr:objectMap [
-			rr:parentTriplesMap <Exon19Result>	
+			rr:parentTriplesMap <Exon19Result_egfr_mutation>	
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_mutation_exon21_result;
 		rr:objectMap [
-			rr:parentTriplesMap <Exon21Result>	
+			rr:parentTriplesMap <Exon21Result_egfr_mutation>	
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_NOS_result;
 		rr:objectMap [
-			rr:parentTriplesMap <NOS_result>		
+			rr:parentTriplesMap <NOS_result_egfr_mutation>		
 		]
 	];		
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_other_result;
 		rr:objectMap [
-			rr:parentTriplesMap <others_result>		
+			rr:parentTriplesMap <others_result_egfr_mutation>		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_performed_study;
 		rr:objectMap [
-			rr:parentTriplesMap <study_performed>		
+			rr:parentTriplesMap <study_performed_egfr_mutation>		
 		]
 	].
 
-<BiomarkerNegativeResult>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<BiomarkerNegativeResult_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_negative_Function> ;
+	rr:subjectMap <result_egfr_negative_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -110,11 +110,11 @@
 		]
 	].	
 
-<T790Result>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<T790Result_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_t790_Function> ;
+	rr:subjectMap <result_egfr_t790_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -130,11 +130,11 @@
 		]
 	].
 
-<T790MResult>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<T790MResult_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_t790m_Function> ;
+	rr:subjectMap <result_egfr_t790m_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -150,11 +150,11 @@
 		]
 	].
 
-<Exon19Result>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<Exon19Result_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_exon19_Function> ;
+	rr:subjectMap <result_egfr_exon19_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -170,11 +170,11 @@
 		]
 	].
 
-<Exon21Result>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<Exon21Result_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_exon21_Function> ;
+	rr:subjectMap <result_egfr_exon21_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -190,11 +190,11 @@
 		]
 	].
 
-<NOS_result>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<NOS_result_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_nos_Function> ;
+	rr:subjectMap <result_egfr_nos_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -210,11 +210,11 @@
 		]
 	].
 
-<others_result>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<others_result_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <result_egfr_others_Function> ;
+	rr:subjectMap <result_egfr_others_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -230,11 +230,11 @@
 		]
 	].	
 
-<study_performed>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+<study_performed_egfr_mutation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <study_performed_Function> ;
+	rr:subjectMap <study_performed_Function_egfr_mutation> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -254,9 +254,9 @@
 ############## Functions ##############
 #######################################
 
-<result_egfr_negative_Function>
+<result_egfr_negative_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -291,9 +291,9 @@
         ];  
     ].			
 
-<result_egfr_t790_Function>
+<result_egfr_t790_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -328,9 +328,9 @@
         ];                         
     ].	
 
-<result_egfr_t790m_Function>
+<result_egfr_t790m_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -365,9 +365,9 @@
         ];                         
     ].
 
-<result_egfr_exon19_Function>
+<result_egfr_exon19_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -402,9 +402,9 @@
         ];                         
     ].
 
-<result_egfr_exon21_Function>
+<result_egfr_exon21_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -439,9 +439,9 @@
         ];                         
     ].
 
-<result_egfr_nos_Function>
+<result_egfr_nos_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -476,9 +476,9 @@
         ];                         
     ].
 
-<result_egfr_others_Function>
+<result_egfr_others_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -513,9 +513,9 @@
         ];                         
     ].
 
-<study_performed_Function>
+<study_performed_Function_egfr_mutation>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/egfr_mutation.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/egfr_mutation.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

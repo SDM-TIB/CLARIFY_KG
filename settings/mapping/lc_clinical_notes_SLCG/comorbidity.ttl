@@ -12,8 +12,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/comorbidity.csv";
+<LCPatient_comorbidity>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,21 +23,21 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidityStatus;
 		rr:objectMap [
-			rr:parentTriplesMap <positive_negative>
+			rr:parentTriplesMap <positive_negative_comorbidity>
 		] 
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasComorbidity;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Disorder>
+			rr:parentTriplesMap <Disorder_comorbidity>
 		]
 	].
 
-<positive_negative>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/comorbidity.csv";
+<positive_negative_comorbidity>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <positive_negative_Function> ;
+	rr:subjectMap <positive_negative_Function_comorbidity> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -53,8 +53,8 @@
 		]
 	].
 	
-<Disorder>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/comorbidity.csv";
+<Disorder_comorbidity>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -72,9 +72,9 @@
 ############## Functions ##############
 #######################################
 
-<positive_negative_Function>
+<positive_negative_Function_comorbidity>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/comorbidity.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/comorbidity.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

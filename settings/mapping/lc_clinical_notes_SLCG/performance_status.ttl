@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient>
+<LCPatient_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPerformanceStatus;
 		rr:objectMap [ 
-			rr:parentTriplesMap <PerformanceStatus>
+			rr:parentTriplesMap <PerformanceStatus_performance_status>
 		]
 	].
 
-<PerformanceStatus>
+<PerformanceStatus_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -38,11 +38,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_Scale;
 		rr:objectMap [
-			rr:parentTriplesMap <Scale>
+			rr:parentTriplesMap <Scale_performance_status>
 		]
 	].
 
-<Scale>
+<Scale_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
