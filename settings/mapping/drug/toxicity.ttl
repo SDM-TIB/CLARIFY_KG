@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Phenotype>
+<Phenotype_drug_toxicity>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV
 						];
@@ -32,17 +32,17 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
-			rr:parentTriplesMap <Annotation1>
+			rr:parentTriplesMap <Annotation1_drug_toxicity>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
-			rr:parentTriplesMap <Annotation2>
+			rr:parentTriplesMap <Annotation2_drug_toxicity>
 		]
 	].	
 
-<Annotation1>
+<Annotation1_drug_toxicity>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -63,7 +63,7 @@
 		]
 	].
 
-<Annotation2>
+<Annotation2_drug_toxicity>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/toxicitiesAndTypes_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];

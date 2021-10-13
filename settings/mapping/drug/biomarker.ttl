@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Biomarker>
+<Biomarker_drug_biomarker>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/biomarkers.csv";
 						rml:referenceFormulation ql:CSV 
 						];

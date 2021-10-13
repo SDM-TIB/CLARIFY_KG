@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<SymmetricDDI>
+<SymmetricDDI_drug_drugDrugInteraction_symmetric>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -20,11 +20,11 @@
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf;
 		rr:objectMap [
-			rr:parentTriplesMap <DrugDrugInteraction>
+			rr:parentTriplesMap <DrugDrugInteraction_drug_drugDrugInteraction_symmetric>
 		];
 	].	
 
-<DrugDrugInteraction>
+<DrugDrugInteraction_drug_drugDrugInteraction_symmetric>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -93,7 +93,7 @@
 		]
 	].
 
-<Drug1_Annotation>
+<Drug1_Annotation_drug_drugDrugInteraction_symmetric>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -120,7 +120,7 @@
 		]
 	].
 
-<Drug2_Annotation>
+<Drug2_Annotation_drug_drugDrugInteraction_symmetric>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Symmetric_DDI_corpus.csv";
 						rml:referenceFormulation ql:CSV 
 						];

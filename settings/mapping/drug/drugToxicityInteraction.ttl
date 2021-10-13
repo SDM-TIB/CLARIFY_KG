@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugSideEffectInteraction>
+<DrugSideEffectInteraction_drug_drugToxicityInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -24,7 +24,7 @@
 		]
 	].	
 
-<Drug>
+<Drug_drug_drugToxicityInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -34,11 +34,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:drug_isRelatedTo_dse;
 		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
+			rr:parentTriplesMap <DrugSideEffectInteraction_drug_drugToxicityInteraction>
 		]
 	].
 
-<Phenotype>
+<Phenotype_drug_drugToxicityInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_toxicities_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -48,6 +48,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:sideEffect_isRelatedTo_dse;
 		rr:objectMap [
-			rr:parentTriplesMap <DrugSideEffectInteraction>
+			rr:parentTriplesMap <DrugSideEffectInteraction_drug_drugToxicityInteraction>
 		]
 	].	

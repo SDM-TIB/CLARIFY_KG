@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 
-<EntityLabels2_comorbidities_SLCG>
+<EntityLabels2_annotation_comorbidities_SLCG>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation_comorbidities_SLCG>
+			rr:parentTriplesMap <Annotation_annotation_comorbidities_SLCG>
 		]
 	].	
 
-<Annotation_comorbidities_SLCG>
+<Annotation_annotation_comorbidities_SLCG>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/comorbidities_SLCG.csv";
 						rml:referenceFormulation ql:CSV 
 						];

@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 
-<EntityLabels1_dictionary_label_cui>
+<EntityLabels1_annotation_dictionary_label_cui>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,15 +23,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <UMLS1_dictionary_label_cui>
+			rr:parentTriplesMap <UMLS1_dictionary_label_cui_annotation_dictionary_label_cui>
 		]
 	].	
 
-<UMLS1_dictionary_label_cui>
+<UMLS1_annotation_dictionary_label_cui>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
                         rml:referenceFormulation ql:CSV
                         ];
-    rr:subjectMap <ConcatFunction1_dictionary_label_cui> ;
+    rr:subjectMap <ConcatFunction1_annotation_dictionary_label_cui> ;
     rr:termType rr:IRI ;
 
     rr:predicateObjectMap [
@@ -45,7 +45,7 @@
 ############## Functions ##############
 #######################################
 
-<ConcatFunction1_dictionary_label_cui>
+<ConcatFunction1_annotation_dictionary_label_cui>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
         rml:referenceFormulation ql:CSV 
@@ -64,11 +64,11 @@
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:value2;
-            rr:objectMap <UMLS-Function1_dictionary_label_cui>
+            rr:objectMap <UMLS-Function1_annotation_dictionary_label_cui>
         ];      
     ].
     
-<UMLS-Function1_dictionary_label_cui>
+<UMLS-Function1_annotation_dictionary_label_cui>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
         rml:referenceFormulation ql:CSV 

@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugTargetInteraction>
+<DrugTargetInteraction_drug_drugTargetInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -26,7 +26,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:interactor2;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Target> 
+			rr:parentTriplesMap <Target_drug_drugTargetInteraction> 
 		]
 	];
 	rr:predicateObjectMap [
@@ -36,7 +36,7 @@
 		]
 	].
 		
-<Target>
+<Target_drug_drugTargetInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -59,11 +59,11 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Protein>
+			rr:parentTriplesMap <Protein_drug_drugTargetInteraction>
 		]
 	].
 
-<Protein>
+<Protein_drug_drugTargetInteraction>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugTargetInteraction.csv";
 						rml:referenceFormulation ql:CSV 
 						];

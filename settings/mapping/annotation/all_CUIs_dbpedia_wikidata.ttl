@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Annotation_label_all_CUIs_dbpedia_wikidata>
+<Annotation_label_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -19,11 +19,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation_all_CUIs_dbpedia_wikidata>
+			rr:parentTriplesMap <Annotation_annotation_all_CUIs_dbpedia_wikidata>
 		]
 	].
 
-<Annotation_all_CUIs_dbpedia_wikidata>
+<Annotation_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -52,17 +52,17 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Wikidata_all_CUIs_dbpedia_wikidata>
+			rr:parentTriplesMap <Wikidata_annotation_all_CUIs_dbpedia_wikidata>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [ 
-			rr:parentTriplesMap <DBpedia_all_CUIs_dbpedia_wikidata>
+			rr:parentTriplesMap <DBpedia_annotation_all_CUIs_dbpedia_wikidata>
 		]
 	].
 
-<CUI_SemanticType_all_CUIs_dbpedia_wikidata>
+<CUI_SemanticType_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/CUI_type.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -76,7 +76,7 @@
 		]
 	].
 
-<SemanticType_all_CUIs_dbpedia_wikidata>
+<SemanticType_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/Semantic_types.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -98,7 +98,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:semanticTypeGroupID;
 		rr:objectMap [ 
-			rr:parentTriplesMap <SemanticGroup_all_CUIs_dbpedia_wikidata> ;
+			rr:parentTriplesMap <SemanticGroup_annotation_all_CUIs_dbpedia_wikidata> ;
 			rr:joinCondition [
 				rr:parent "Id";
 				rr:child "SemanticTypeId";
@@ -107,7 +107,7 @@
 		];
 	].
 
-<SemanticGroup_all_CUIs_dbpedia_wikidata>
+<SemanticGroup_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/semgroups.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -121,7 +121,7 @@
 		]
 	].
 
-<Wikidata_all_CUIs_dbpedia_wikidata>
+<Wikidata_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -141,7 +141,7 @@
 		]
 	].
 
-<DBpedia_all_CUIs_dbpedia_wikidata>
+<DBpedia_annotation_all_CUIs_dbpedia_wikidata>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/UMLS_combined.csv";
 						rml:referenceFormulation ql:CSV 
 						];

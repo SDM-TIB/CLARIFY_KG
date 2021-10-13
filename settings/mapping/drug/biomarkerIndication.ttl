@@ -8,7 +8,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Biomarker>
+<Biomarker_drug_biomarkerIndication>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/biomarkers_drugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];

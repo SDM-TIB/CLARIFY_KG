@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Effect_Annotation>
+<Effect_Annotation_drug_adverseEvernt>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Adverse_events.csv";
 						rml:referenceFormulation ql:CSV 
 						];

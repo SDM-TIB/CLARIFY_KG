@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 
-<EntityLabels2_comorbidityTreatmentLine_dictionary_label_cui>
+<EntityLabels2_annotation_comorbidityTreatmentLine_dictionary_label_cui>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/id_cuis_kg.csv";
 						rml:referenceFormulation ql:CSV;
 						];
@@ -23,11 +23,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation_comorbidityTreatmentLine_dictionary_label_cui>
+			rr:parentTriplesMap <Annotation_annotation_comorbidityTreatmentLine_dictionary_label_cui>
 		]
 	].	
 
-<Annotation_comorbidityTreatmentLine_dictionary_label_cui>
+<Annotation_annotation_comorbidityTreatmentLine_dictionary_label_cui>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/id_cuis_kg.csv";
 						rml:referenceFormulation ql:CSV 
 						];

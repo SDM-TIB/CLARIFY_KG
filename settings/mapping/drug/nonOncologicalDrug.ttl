@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Drug>
+<Drug_drug_nonOncologicalDrug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -26,11 +26,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
+			rr:parentTriplesMap <Annotation_drug_nonOncologicalDrug>
 		]
 	].
 
-<Annotation>
+<Annotation_drug_nonOncologicalDrug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/Non-oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];

@@ -10,7 +10,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Phenotype>
+<Phenotype_drug_phenotype>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
 						rml:referenceFormulation ql:CSV
 						];
@@ -21,11 +21,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasHPOAnnotation;
 		rr:objectMap [
-			rr:parentTriplesMap <HPOAnnotation>
+			rr:parentTriplesMap <HPOAnnotation_drug_phenotype>
 		]
 	].
 
-<HPOAnnotation>
+<HPOAnnotation_drug_phenotype>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/phenotype.csv";
 						rml:referenceFormulation ql:CSV 
 						];

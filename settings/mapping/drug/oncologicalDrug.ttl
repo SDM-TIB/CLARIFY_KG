@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<OncologicalDrug>
+<OncologicalDrug_drug_oncologicalDrug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -23,7 +23,7 @@
 		]
 	].
 
-<Drug>
+<Drug_drug_oncologicalDrug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -39,7 +39,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf;
 		rr:objectMap [
-			rr:parentTriplesMap <OncologicalDrug>
+			rr:parentTriplesMap <OncologicalDrug_drug_oncologicalDrug>
 		];
 	];
 	rr:predicateObjectMap [
@@ -51,11 +51,11 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation>
+			rr:parentTriplesMap <Annotation_drug_oncologicalDrug>
 		]
 	].
 
-<Annotation>
+<Annotation_drug_oncologicalDrug>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/oncologicalDrugs.csv";
 						rml:referenceFormulation ql:CSV 
 						];

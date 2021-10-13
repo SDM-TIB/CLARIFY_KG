@@ -9,7 +9,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<DrugDisorderInteraction>
+<DrugDisorderInteraction_drug_drugDisorder>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/drugs_indications.csv";
 						rml:referenceFormulation ql:CSV 
 						];
