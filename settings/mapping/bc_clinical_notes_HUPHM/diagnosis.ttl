@@ -12,117 +12,101 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_lc_clinical_notes_HUPHM_monitoring>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+<BCPatient_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}";
-        rr:class clarify:LCPatient
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:BCPatient
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasMontoring;
+		rr:predicate clarify:hasDiagnosis;
 		rr:objectMap [ 
-			rr:parentTriplesMap <StatusEvolution_lc_clinical_notes_HUPHM_monitoring>
+			rr:parentTriplesMap <Diagnosis_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
 		]
 	].
 
-
-<StatusEvolution_lc_clinical_notes_HUPHM_monitoring>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+<Diagnosis_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_StatusEvolutionIteration_{monitoring_iteration}";
-		rr:class clarify:StatusEvolution;
+		rr:template "http://clarify2020.eu/entity/{EHR}_DiagnosisDate_{date}";
+		rr:class clarify:Diagnosis;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:lastMonitoringDate;
-		rr:objectMap [
-			rml:reference "date_last_contact";
-			rr:datatype xsd:date
+		rr:predicate clarify:hasDiagnosisStage;
+		rr:objectMap [ 
+			rr:parentTriplesMap <CancerStage_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasCurrentStatus;
+		rr:predicate clarify:has_SynchronousTumor_OrNot;
 		rr:objectMap [
-			rr:parentTriplesMap <CurrentStatus_lc_clinical_notes_HUPHM_monitoring>	
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:deathDate;
-		rr:objectMap [
-			rml:reference "date_death";
-			rr:datatype xsd:date
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasCauseOfDeath;
-		rr:objectMap [
-			rr:parentTriplesMap <CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>		
+			rr:parentTriplesMap <SynchronousTumor_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
 		]
 	].
 
-<CurrentStatus_lc_clinical_notes_HUPHM_monitoring>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+<CancerStage_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{status}";
-        rr:class clarify:StatusEvolution;
+        rr:template "http://clarify2020.eu/entity/{stage}";
     ];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/CurrentStatus";		
+			rr:template "http://clarify2020.eu/vocab/CancerStage";		
 		]
 	].
 
-<CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+<SynchronousTumor_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring> ;
+	rr:subjectMap <SynchronousTumor_Function_bc_clinical_notes_HUPHM_HUPHM_diagnosis> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/CauseOfDeath";		
+			rr:template "http://clarify2020.eu/vocab/SynchronousTumor";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "death_cause";		
+			rml:reference "syncrhonous_tumours";		
 		]
-	].  
+	].
 
 #######################################
 ############## Functions ##############
 #######################################
 
-<CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring>
+<SynchronousTumor_Function_bc_clinical_notes_HUPHM_HUPHM_diagnosis>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/diagnosis.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_HUPHM 
+                rr:constant clarifyFun:findSemantic 
             ]
         ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "LC_monitoring" 
+                rr:constant "diagnosis" 
             ]
         ];
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "death_cause" 
+                rr:constant "synchronous_tumours" 
             ]
         ];
         rr:predicateObjectMap [
@@ -134,7 +118,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "death_cause" 
+                rml:reference "syncrhonous_tumours" 
             ]
         ];                         
     ].

@@ -116,7 +116,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "LC_monitoring" 
+                rr:constant "BC_monitoring" 
             ]
         ];
         rr:predicateObjectMap [
