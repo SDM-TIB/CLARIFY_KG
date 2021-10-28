@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <BCPatient_bc_clinical_notes_HUPHM_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes/comorbidity.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -34,7 +34,7 @@
 	].
 
 <positive_negative_bc_clinical_notes_HUPHM_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes/comorbidity.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <positive_negative_Function_bc_clinical_notes_HUPHM_comorbidity> ;
@@ -54,7 +54,7 @@
 	].
 	
 <Disorder_bc_clinical_notes_HUPHM_comorbidity>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes/comorbidity.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <Comorbidity_name_Function_bc_clinical_notes_HUPHM_comorbidity> ;
@@ -79,7 +79,7 @@
 
 <positive_negative_Function_bc_clinical_notes_HUPHM_comorbidity>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes/comorbidity.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -116,7 +116,7 @@
 
 <Comorbidity_name_Function_bc_clinical_notes_HUPHM_comorbidity>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes/comorbidity.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

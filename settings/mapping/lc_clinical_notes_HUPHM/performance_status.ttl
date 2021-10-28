@@ -48,7 +48,12 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{scale}";
-		rr:class clarify:Scale;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Scale";		
+		]
 	].
 
 

@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}";
+		rr:template "http://clarify2020.eu/entity/{EHR}";
         rr:class clarify:BCPatient
 	];	
     rr:predicateObjectMap [
@@ -84,7 +84,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}_{family_member}_TL_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/{EHR}_{family_member}";
 		rr:class clarify:FamilyHistory;
 	];
 	rr:predicateObjectMap [

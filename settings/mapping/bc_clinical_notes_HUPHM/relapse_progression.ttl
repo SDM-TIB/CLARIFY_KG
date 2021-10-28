@@ -99,15 +99,6 @@
 			rml:reference "therapy_type";		
 		]
 	]. 	
-	
-<TreatmentLineNumber_bc_clinical_notes_HUPHM_relapse_progression>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/relapse_progression.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/TL_{treatment_line}";
-		rr:class clarify:TreatmentLineNumber;
-	].	
 
 #######################################
 ############## Functions ##############

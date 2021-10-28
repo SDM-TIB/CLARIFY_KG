@@ -135,7 +135,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{menarcheAge }";
+        rr:template "http://clarify2020.eu/entity/{menarcheAge}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
