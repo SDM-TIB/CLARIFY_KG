@@ -50,18 +50,6 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:publicationType;
-		rr:objectMap [ 
-			rml:reference "PublicationTypes" 
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:authorAffiliation;
-		rr:objectMap [ 
-			rml:reference "Affiliations" 
-		]
-	];
-	rr:predicateObjectMap [
 		rr:predicate clarify:citedBy;
 		rr:objectMap [ 
 			rml:reference "citedByCount";
