@@ -13,6 +13,48 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 ########################################################################################
+############################ TIB Cancer Patient IDs ####################################
+########################################################################################
+
+<LCPatient_annotation_patient_ids_HUPHM_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/all_patients_PRIMARY_ids.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/CancerPatient_{TIB_CancerPatient_ID}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/TIB"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:primaryID;
+		rr:objectMap [
+			rr:parentTriplesMap <LCPatient_annotation_patient_ids_SLCG_patient>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:primaryID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{LC_SLCG_EHR}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:primaryID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{LC_HUPHM_EHR}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:primaryID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}";
+		]
+	].
+
+########################################################################################
 ########################### Lung Cancer Patient IDs ####################################
 ########################################################################################
 
@@ -21,7 +63,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_HUPHM}";
+		rr:template "http://clarify2020.eu/entity/LCPatient_HUPHM_{id_HUPHM}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
@@ -74,31 +116,55 @@
 		]
 	].
 
+<LCPatient_annotation_patient_ids_KronoHealth_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/LungCancerIDs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/LCPatient_KH_{id_KH}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/KronoHealth"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:parentTriplesMap <LCPatient_annotation_patient_ids_lc_category>
+		] 
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Date of death}"
+		]
+	].
+
 <LCPatient_annotation_patient_ids_SLCG_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/LungCancerIDs.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_SLCG}";
+		rr:template "http://clarify2020.eu/entity/LCPatient_SLCG_{id_SLCG}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
 			rr:constant "http://clarify2020.eu/entity/SLCG"
 		]
-	].
-
-<LCPatient_annotation_patient_ids_KronoHealth_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/LungCancerIDs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_KH}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
+		rr:predicate clarify:belongsTo;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/KronoHealth"
+			rr:parentTriplesMap <LCPatient_annotation_patient_ids_lc_category>
+		] 
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Date of death}"
 		]
 	].
 
@@ -111,7 +177,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_HUPHM}";
+		rr:template "http://clarify2020.eu/entity/BCPatient_HUPHM_{id_HUPHM}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
@@ -138,6 +204,26 @@
 		]
 	].
 
+<BCPatient_annotation_patient_ids_KronoHealth_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/BreastCancerIDs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/BCPatient_KH_{id_KH}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/KronoHealth"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:parentTriplesMap <BCPatient_annotation_patient_ids_bc_category>
+		] 
+	].
+
 <BCPatient_annotation_patient_ids_bc_category>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/BreastCancerIDs.csv";
 						rml:referenceFormulation ql:CSV;
@@ -158,21 +244,6 @@
 		]
 	].
 
-<BCPatient_annotation_patient_ids_KronoHealth_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/BreastCancerIDs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_KH}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/KronoHealth"
-		]
-	].
-
-
 
 ########################################################################################
 ######################### Lymphoma Cancer Patient IDs ##################################
@@ -183,7 +254,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_HUPHM}";
+		rr:template "http://clarify2020.eu/entity/LymphCPatient_HUPHM_{id_HUPHM}";
 	];
 	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
@@ -195,6 +266,26 @@
 		rr:predicate owl:sameAs;
 		rr:objectMap [
 			rr:parentTriplesMap <LymphCPatient_annotation_patient_ids_KronoHealth_patient>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:parentTriplesMap <LymphCPatient_annotation_patient_ids_lymphc_category>
+		] 
+	].
+
+<LymphCPatient_annotation_patient_ids_KronoHealth_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/LymphomaCancerIDs.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/LymphCPatient_KH_{id_KH}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/KronoHealth"
 		]
 	];
 	rr:predicateObjectMap [
@@ -221,19 +312,5 @@
 		rr:predicate clarify:categoryDescription;
 		rr:objectMap [
 			rml:reference "category_description"
-		]
-	].
-
-<LymphCPatient_annotation_patient_ids_KronoHealth_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/LymphomaCancerIDs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_KH}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate prov:has_provenance;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/KronoHealth"
 		]
 	].
