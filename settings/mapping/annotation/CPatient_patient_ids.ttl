@@ -1,0 +1,282 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<CPatient_annotation_patient_ids_SLCG_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct LC_SLCG_EHR FROM `lc_slcg_patient_ids` 
+			WHERE LC_SLCG_EHR NOT IN 
+			(SELECT DISTINCT id_SLCG FROM `lungcancerids`)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{LC_SLCG_EHR}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_SLCG_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{LC_SLCG_EHR}"
+		]
+	].
+
+<CPatient_annotation_patient_ids_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct LC_HUPHM_EHR FROM `lc_huphm_patient_ids` 
+			WHERE LC_HUPHM_EHR NOT IN 
+			(SELECT DISTINCT id_HUPHM FROM `lungcancerids`)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{LC_HUPHM_EHR}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{LC_HUPHM_EHR}"
+		]
+	].
+
+<CPatient_annotation_LC_patient_ids_KH_and_SLCG_and_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct * FROM `lungcancerids`""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_SLCG}_{id_HUPHM}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_KH_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_KH}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_SLCG_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_SLCG}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{category}";
+		] 
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Date of death}"
+		]
+	].
+
+<LCPatient_annotation_LC_patient_ids_lc_category>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct category, category_description, Sex FROM `lungcancerids`""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{category}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/PatientCategory"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:categoryDescription;
+		rr:objectMap [
+			rml:reference "category_description"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:sex;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Sex}";
+		]
+	].
+
+<CPatient_annotation_only_BCpatient_ids_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct BC_HUPHM_EHR FROM `bc_huphm_patient_ids` 
+			WHERE BC_HUPHM_EHR NOT IN 
+			(SELECT DISTINCT LC_HUPHM_EHR FROM `lc_huphm_patient_ids`)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}";
+		rr:class clarify:BCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_BC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+		]
+	].
+
+<CPatient_annotation_LC_and_BC_patient_ids_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct BC_HUPHM_EHR FROM `bc_huphm_patient_ids` 
+			WHERE BC_HUPHM_EHR IN 
+			(SELECT DISTINCT LC_HUPHM_EHR FROM `lc_huphm_patient_ids`)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}";
+		rr:class clarify:CPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_BC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+		]
+	].
+
+<CPatient_annotation_BC_patient_ids_KH_and_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct * FROM `breastcancerids`""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_HUPHM}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_BC_KH_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_KH}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_BC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{category}";
+		] 
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Date of death}"
+		]
+	].
+
+<LCPatient_annotation_BC_patient_ids_lc_category>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT DIstinct category, category_description, Sex, Stage, Treatment, Diagnosis FROM `breastcancerids`""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{category}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/PatientCategory"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:categoryDescription;
+		rr:objectMap [
+			rml:reference "category_description"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:sex;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Sex}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasDiagnosisStage;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Stage}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTreatment;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Treatment}";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasDiagnosisDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Diagnosis}";
+		]
+	].
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "CLARIFY_Patient_IDs";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "sam";
+  d2rq:password "sam123$" .
