@@ -279,4 +279,4 @@
   d2rq:jdbcDSN "CLARIFY_Patient_IDs";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "remote";
-  d2rq:password "Remote@321" .
+  d2rq:password "" .
