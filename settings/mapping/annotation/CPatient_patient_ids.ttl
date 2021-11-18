@@ -13,11 +13,14 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
+########################################################################
+############## LC patients that ONLY belong to SLCG ####################
+########################################################################
 <CPatient_annotation_patient_ids_SLCG_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DIstinct LC_SLCG_EHR FROM `lc_slcg_patient_ids` 
+    	rml:query """SELECT Distinct LC_SLCG_EHR FROM `lc_slcg_patient_ids` 
 			WHERE LC_SLCG_EHR NOT IN 
 			(SELECT DISTINCT id_SLCG FROM `lungcancerids`)""";
 		];
@@ -38,11 +41,14 @@
 		]
 	].
 
+########################################################################
+############# LC patients that ONLY belong to HUPHM ####################
+########################################################################
 <CPatient_annotation_patient_ids_HUPHM_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DIstinct LC_HUPHM_EHR FROM `lc_huphm_patient_ids` 
+    	rml:query """SELECT Distinct LC_HUPHM_EHR FROM `lc_huphm_patient_ids` 
 			WHERE LC_HUPHM_EHR NOT IN 
 			(SELECT DISTINCT id_HUPHM FROM `lungcancerids`)""";
 		];
@@ -63,11 +69,14 @@
 		]
 	].
 
+########################################################################
+###### LC patients that belong to all three SLCG, HUPHM, and KH ########
+########################################################################
 <CPatient_annotation_LC_patient_ids_KH_and_SLCG_and_HUPHM_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DIstinct * FROM `lungcancerids`""";
+    	rml:query """SELECT Distinct * FROM `lungcancerids`""";
 		];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_SLCG}_{id_HUPHM}";
@@ -110,11 +119,14 @@
 		]
 	].
 
+########################################################################
+################ LC patients category descriptions #####################
+########################################################################
 <LCPatient_annotation_LC_patient_ids_lc_category>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT DIstinct category, category_description, Sex FROM `lungcancerids`""";
+    	rml:query """SELECT Distinct category, category_description, Sex FROM `lungcancerids`""";
 		];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{category}";
@@ -138,6 +150,41 @@
 		]
 	].
 
+########################################################################
+######### LC patients that belong to both SLCG and HUPHM ###############
+########################################################################
+<CPatient_annotation_LC_patient_ids_SLCG_and_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT Distinct * FROM `lc_huphm_slcg_ids_november`""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_SLCG}_{id_HUPHM}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_SLCG_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_SLCG}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+		]
+	].
+
+########################################################################
+################### HUPHM patients that are only BC ####################
+########################################################################
 <CPatient_annotation_only_BCpatient_ids_HUPHM_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
@@ -163,6 +210,9 @@
 		]
 	].
 
+########################################################################
+################ HUPHM patients that are both LC and BC ################
+########################################################################
 <CPatient_annotation_LC_and_BC_patient_ids_HUPHM_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
@@ -188,6 +238,9 @@
 		]
 	].
 
+########################################################################
+##### BC patients that belong to all three SLCG, HUPHM, and KH #########
+########################################################################
 <CPatient_annotation_BC_patient_ids_KH_and_HUPHM_patient>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
@@ -229,6 +282,9 @@
 		]
 	].
 
+########################################################################
+################ BC patients category descriptions #####################
+########################################################################
 <LCPatient_annotation_BC_patient_ids_lc_category>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
@@ -275,6 +331,7 @@
 		]
 	].
 
+################ RDB information #####################
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "CLARIFY_Patient_IDs";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
