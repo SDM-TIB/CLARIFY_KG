@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_lc_clinical_notes_HUPHM_diagnosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -28,7 +28,7 @@
 	].
 
 <Diagnosis_lc_clinical_notes_HUPHM_diagnosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -49,7 +49,7 @@
 	].
 
 <CancerStage_lc_clinical_notes_HUPHM_diagnosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
     rr:subjectMap [
@@ -63,7 +63,7 @@
 	].
 
 <SynchronousTumor_lc_clinical_notes_HUPHM_diagnosis>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/diagnosis.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <SynchronousTumor_Function_lc_clinical_notes_HUPHM_diagnosis> ;
@@ -88,7 +88,7 @@
 
 <SynchronousTumor_Function_lc_clinical_notes_HUPHM_diagnosis>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes/diagnosis.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/diagnosis.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

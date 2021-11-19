@@ -109,7 +109,7 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Race_Functionv_patient> ;
+	rr:subjectMap <Race_Function_lc_clinical_notes_SLCG_patient> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [

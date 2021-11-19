@@ -27,22 +27,8 @@
 		]
 	].
 
-<TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{type}";
-        rr:class clarify:TumorType;
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasTumorCategory;
-        rr:objectMap [ 
-            rr:parentTriplesMap <TumorTypeCategory_lc_clinical_notes_HUPHM_tumor_histology>
-        ]
-    ].
 
-<TumorTypeCategory_lc_clinical_notes_HUPHM_tumor_histology>
+<TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
@@ -52,7 +38,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/TumorTypeCategory";		
+			rr:template "http://clarify2020.eu/vocab/TumorType";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -80,7 +66,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "tumor_histology" 
+                rr:constant "LC_tumor_histology" 
             ]
         ];
         rr:predicateObjectMap [

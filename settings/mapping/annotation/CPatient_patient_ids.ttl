@@ -160,7 +160,7 @@
     	rml:query """SELECT Distinct * FROM `lc_huphm_slcg_ids_november`""";
 		];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_SLCG}_{id_HUPHM}";
+		rr:template "http://clarify2020.eu/entity/{id_SLCG}_{id_HUPHM}";
 		rr:class clarify:LCPatient;
 	];
 	rr:predicateObjectMap [
@@ -239,7 +239,7 @@
 	].
 
 ########################################################################
-##### BC patients that belong to all three SLCG, HUPHM, and KH #########
+######## BC patients that belong to all two HUPHM and and KH ###########
 ########################################################################
 <CPatient_annotation_BC_patient_ids_KH_and_HUPHM_patient>
 	rml:logicalSource [ 

@@ -28,16 +28,62 @@
 	].
 
 <TumorHistology_bc_clinical_notes_HUPHM_tumor_histology>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tumor_histology.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{type}";
-    ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/TumorType";        
-        ]
-    ].
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tumor_histology.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+	rr:subjectMap <TumorTypeCategory_Function_bc_clinical_notes_HUPHM_tumor_histology> ;
+	rr:termType rr:IRI;
 
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/TumorType";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "type";		
+		]
+	].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<TumorTypeCategory_Function_bc_clinical_notes_HUPHM_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "BC_tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "type" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "type" 
+            ]
+        ];                         
+    ].
