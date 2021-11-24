@@ -31,14 +31,14 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/her2_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/entity/HER2";
-        rr:termType rr:IRI;
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_HER2";
+        rr:class clarify:BiomarkerObservation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate clarify:Biomarker;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Biomarker";
+            rr:constant "http://clarify2020.eu/entity/HER2";
         ]
     ];  			
 	rr:predicateObjectMap [

@@ -31,16 +31,16 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/ros1_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:constant "http://clarify2020.eu/entity/ROS1";
-        rr:termType rr:IRI;
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_ROS1";
+        rr:class clarify:BiomarkerObservation
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
+        rr:predicate clarify:Biomarker;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Biomarker";
+            rr:constant "http://clarify2020.eu/entity/ROS1";
         ]
-    ];  
+    ];   
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestIHQResult;
 		rr:objectMap [
