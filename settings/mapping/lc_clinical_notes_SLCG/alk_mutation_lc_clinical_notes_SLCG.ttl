@@ -37,7 +37,7 @@
         rr:class clarify:BiomarkerObservation
     ];
 	rr:predicateObjectMap [
-		rr:predicate clarify:Biomarker;
+		rr:predicate clarify:biomarker;
 		rr:objectMap [
 			rr:constant "http://clarify2020.eu/entity/AlK";
 		]
