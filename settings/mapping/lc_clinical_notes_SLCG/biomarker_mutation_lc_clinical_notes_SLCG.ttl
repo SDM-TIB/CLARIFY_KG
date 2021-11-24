@@ -30,8 +30,14 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}_{study_performed}";
-		rr:class clarify:Biomarker ;
-	];	
+		rr:class clarify:BiomarkerObservation ;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:biomarker;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/AlK";
+		]
+	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
