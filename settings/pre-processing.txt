@@ -1,0 +1,7 @@
+
+#######################################################
+############ Pre-processing: on csv data ##############
+#######################################################
+
+1. For the two records in SLCG with family_member="Padre o hermano" and "Madre y tia", an extra record is added. 
+So the four records' values for family_member are "Padre", "Hermano", "Madre", and "Tia" respectively.
