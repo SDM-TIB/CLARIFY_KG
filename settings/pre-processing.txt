@@ -8,9 +8,9 @@
 > egrep "Padre o hermano" family_antecedents_treatment_line.csv > new_record_1.csv
 > egrep "Madre y tia" family_antecedents_treatment_line.csv > new_record_2.csv
 > sed 's/Padre o hermano/Hermano/g' new_record_1.csv > to_be_added_record_1.csv
-> sed 's/Madre y tia/Madre/g' new_record_2.csv > to_be_added_record_2.csv
+> sed 's/Madre y tia/Tia/g' new_record_2.csv > to_be_added_record_2.csv
 > sed 's/Padre o hermano/Padre/g' family_antecedents_treatment_line.csv > family_antecedents_treatment_line_modified_1.csv
-> sed 's/Madre y tia/Tia/g' family_antecedents_treatment_line_modified_1.csv > family_antecedents_treatment_line_modified_2.csv
+> sed 's/Madre y tia/Madre/g' family_antecedents_treatment_line_modified_1.csv > family_antecedents_treatment_line_modified_2.csv
 > rm family_antecedents_treatment_line.csv
 > cat family_antecedents_treatment_line_modified_2.csv to_be_added_record_1.csv to_be_added_record_2.csv > family_antecedents_treatment_line.csv
 > rm family_antecedents_treatment_line_modified_1.csv
