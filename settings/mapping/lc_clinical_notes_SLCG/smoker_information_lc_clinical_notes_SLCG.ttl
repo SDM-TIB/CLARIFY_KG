@@ -42,13 +42,13 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:livingWithSmoker_OrNot;
+		rr:predicate clarify:hasSmokingHabit;
 		rr:objectMap [
 			rr:parentTriplesMap <lives_with_smokers_lc_clinical_notes_SLCG_smoker_information>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:livedWithSmoker_OrNot;
+		rr:predicate clarify:hasSmokingHabit;
 		rr:objectMap [
 			rr:parentTriplesMap <has_lived_with_smokers_lc_clinical_notes_SLCG_smoker_information>		
 		]
@@ -67,12 +67,12 @@
 	rr:subjectMap <lives_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
 	rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SmokerFamily";		
-		]
-	];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SmokingHabit";     
+        ]
+    ];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
@@ -87,12 +87,12 @@
 	rr:subjectMap <has_lived_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
 	rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SmokerFamily";		
-		]
-	];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SmokingHabit";     
+        ]
+    ];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
