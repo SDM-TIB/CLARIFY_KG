@@ -104,15 +104,21 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
 						rml:referenceFormulation ql:CSV;
 						];	
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{family_member}";
-	];
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/FamilyType";		
-		]
-	].
+    rr:subjectMap <FamilyType_Function_bc_clinical_notes_HUPHM_family_antecedents> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/FamilyType";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "family_member";      
+        ]
+    ].
 
 <FamilyDegree_bc_clinical_notes_HUPHM_family_antecedents>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
@@ -208,6 +214,43 @@
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "N1" 
+            ]
+        ];                         
+    ].
+
+<FamilyType_Function_bc_clinical_notes_HUPHM_family_antecedents>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "family_member" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "family_member" 
             ]
         ];                         
     ].
