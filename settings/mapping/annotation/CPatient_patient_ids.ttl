@@ -31,7 +31,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
@@ -59,7 +59,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
@@ -166,7 +166,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
@@ -200,7 +200,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
@@ -239,7 +239,7 @@
 	].
 
 ########################################################################
-######## BC patients that belong to all two HUPHM and and KH ###########
+######## BC patients that belong to all two HUPHM and KH ###########
 ########################################################################
 <CPatient_annotation_BC_patient_ids_KH_and_HUPHM_patient>
 	rml:logicalSource [ 
@@ -249,12 +249,12 @@
 		];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_HUPHM}";
-		rr:class clarify:LCPatient;
+		rr:class clarify:BCPatient;
 	];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
