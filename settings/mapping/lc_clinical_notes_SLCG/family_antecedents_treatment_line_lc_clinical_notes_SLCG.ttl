@@ -56,7 +56,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:familyRelationDegree;
         rr:objectMap [
-            rr:parentTriplesMap <FamilyDegree_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
+            rr:parentTriplesMap <FamilyDegree_newCategory_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
         ]
     ].
 
