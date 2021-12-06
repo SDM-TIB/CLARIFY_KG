@@ -85,7 +85,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/vocab/CPatient"
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
 		]
 	];
 	rr:predicateObjectMap [
