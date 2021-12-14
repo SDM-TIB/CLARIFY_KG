@@ -19,3 +19,11 @@
 > rm new_record_2.csv
 
 So the four records' values for family_member are "Padre", "Hermano", "Madre", and "Tia" respectively
+
+
+#######################################################
+########## Database of Patient Identifiers ############
+#######################################################
+The identifiers related to tables that are created based 
+on the provided data are required to be updated each time 
+that the data sources are updated by UPM.
