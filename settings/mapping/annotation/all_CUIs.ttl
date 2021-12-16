@@ -24,7 +24,6 @@
     rr:template "http://clarify2020.eu/entity/{CUI}_{source}";
     rr:class clarify:AnnotationDefinition;
   ];
-  
   rr:predicateObjectMap [
     rr:predicate clarify:hasCUI;
     rr:objectMap [
@@ -98,9 +97,8 @@
     ];
   rr:subjectMap [
     rr:template "http://clarify2020.eu/entity/{TypeId}_{CUI_Group}";
-    rr:class clarify:TypeGroup;
+    rr:class clarify:SemanticTypeGroup;
   ];
-  
   rr:predicateObjectMap [
     rr:predicate clarify:hasType;
     rr:objectMap [
@@ -125,7 +123,6 @@
     rr:template "http://clarify2020.eu/entity/{CUI}";
     rr:class clarify:Annotation;
   ];
-
   rr:predicateObjectMap [
     rr:predicate clarify:annotationFrequency;
     rr:objectMap [
@@ -133,7 +130,6 @@
       rr:datatype xsd:int
     ]
   ];
-  
   rr:predicateObjectMap [
     rr:predicate clarify:annLabel;
     rr:objectMap [
