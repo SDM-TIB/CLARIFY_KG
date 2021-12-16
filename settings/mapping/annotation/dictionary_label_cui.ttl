@@ -13,8 +13,8 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 
-<EntityLabels1_annotation_dictionary_label_cui>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
+<EntityLabel_annotation_dictionary_label_cui>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/dictionary_labels_cui.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -23,66 +23,22 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <UMLS1_dictionary_label_cui_annotation_dictionary_label_cui>
+			rr:parentTriplesMap <EntityAnnotation_annotation_dictionary_label_cui>
 		]
 	].	
 
-<UMLS1_annotation_dictionary_label_cui>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
-                        rml:referenceFormulation ql:CSV
+<EntityAnnotation_annotation_dictionary_label_cui>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/dictionary_labels_cui.csv";
+                        rml:referenceFormulation ql:CSV 
                         ];
-    rr:subjectMap <ConcatFunction1_annotation_dictionary_label_cui> ;
-    rr:termType rr:IRI ;
-
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{CUI}";
+    ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Annotation";
+            rr:constant "http://clarify2020.eu/vocav/Annotation"
         ]
     ].
 
-#######################################
-############## Functions ##############
-#######################################
 
-<ConcatFunction1_annotation_dictionary_label_cui>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:concat2 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:value1;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:value2;
-            rr:objectMap <UMLS-Function1_annotation_dictionary_label_cui>
-        ];      
-    ].
-    
-<UMLS-Function1_annotation_dictionary_label_cui>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/labels_unique.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:falcon_UMLS_CUI_function 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:value;
-            rr:objectMap [ 
-                rml:reference "Label" 
-            ] 
-        ];    
-    ].
