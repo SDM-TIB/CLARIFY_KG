@@ -50,7 +50,7 @@
       rml:query """Select DISTINCT CUI, TypeId  FROM CUI_types""";
     ];
   rr:subjectMap [
-    rr:template "http://clarify2020.eu/entity/{CUI}_{TypeID}";
+    rr:template "http://clarify2020.eu/entity/{CUI}_{TypeId}";
     rr:class clarify:AnnotationType;
   ];
   rr:predicateObjectMap [
