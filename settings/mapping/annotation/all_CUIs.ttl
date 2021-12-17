@@ -18,7 +18,7 @@
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """Select DISTINCT *  FROM cui_defintions""";
+      rml:query """Select DISTINCT CUI, definition, source  FROM cui_defintions""";
     ];
   rr:subjectMap [
     rr:template "http://clarify2020.eu/entity/{CUI}_{source}";
@@ -70,7 +70,7 @@
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """Select DISTINCT Id, Label  FROM Semantic_types""";
+      rml:query """Select DISTINCT Id, Label, definition FROM Semantic_types""";
     ];
   rr:subjectMap [
     rr:template "http://clarify2020.eu/entity/{Id}";
@@ -137,11 +137,11 @@
     ]
   ].
 
-<AnnotationCUIClarify>
+<AnnotationCUIClarify_CUI>
   rml:logicalSource [ 
       rml:source <RDB_source>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """Select DISTINCT CUI, Label, freq  FROM oneLabel""";
+      rml:query """Select DISTINCT CUI, Label FROM oneLabel""";
     ];
   rr:subjectMap [
     rr:template "http://clarify2020.eu/entity/{Label}";
