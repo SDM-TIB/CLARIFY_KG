@@ -33,7 +33,7 @@
   rr:predicateObjectMap [
     rr:predicate clarify:definition;
     rr:objectMap [
-      rr:reference "definition"
+      rml:reference "definition"
     ]
   ];
   rr:predicateObjectMap [
@@ -79,13 +79,13 @@
   rr:predicateObjectMap [
     rr:predicate clarify:semanticTypeLabel;
     rr:objectMap [
-      rr:reference "Label"
+      rml:reference "Label"
     ]
   ];
   rr:predicateObjectMap [
     rr:predicate clarify:definition;
     rr:objectMap [
-      rr:reference "definition"
+      rml:reference "definition"
     ]
   ].
 
@@ -108,7 +108,7 @@
   rr:predicateObjectMap [
     rr:predicate clarify:typeGroup;
     rr:objectMap [
-      rr:reference "CUI_Group"
+      rml:reference "CUI_Group"
     ]
   ].
    
@@ -126,14 +126,14 @@
   rr:predicateObjectMap [
     rr:predicate clarify:annotationFrequency;
     rr:objectMap [
-      rr:reference "freq";
+      rml:reference "freq";
       rr:datatype xsd:int
     ]
   ];
   rr:predicateObjectMap [
     rr:predicate clarify:annLabel;
     rr:objectMap [
-      rr:reference "Label"
+      rml:reference "Label"
     ]
   ].
 
