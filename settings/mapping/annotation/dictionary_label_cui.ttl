@@ -37,7 +37,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocav/Annotation"
+            rr:constant "http://clarify2020.eu/vocab/Annotation"
         ]
     ].
 
