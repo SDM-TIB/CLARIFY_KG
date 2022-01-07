@@ -65,7 +65,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_LC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{LC_HUPHM_EHR}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{LC_HUPHM_EHR}"
 		]
 	].
 
@@ -103,7 +103,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_LC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{id_HUPHM}"
 		]
 	];
 	rr:predicateObjectMap [
@@ -178,7 +178,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_LC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{id_HUPHM}"
 		]
 	].
 
@@ -206,7 +206,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_BC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{BC_HUPHM_EHR}"
 		]
 	].
 
@@ -228,13 +228,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_LC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{BC_HUPHM_EHR}"
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_BC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{BC_HUPHM_EHR}"
 		]
 	].
 
@@ -266,7 +266,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:has_BC_HUPHM_ID;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{id_HUPHM}"
+			rr:template "http://clarify2020.eu/entity/HUPHM_{id_HUPHM}"
 		]
 	];
 	rr:predicateObjectMap [
