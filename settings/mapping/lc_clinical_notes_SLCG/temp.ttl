@@ -18,30 +18,29 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}";
-        rr:class clarify:LCPatient
+		rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasPerformanceStatus;
 		rr:objectMap [ 
 			rr:parentTriplesMap <PerformanceStatus_lc_clinical_notes_SLCG_performance_status>
 		]
-	].	
+	].
 
 <PerformanceStatus_lc_clinical_notes_SLCG_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/PerformanceStatus_{value}";
-        rr:class clarify:PerformanceStatus
-    ]; 	
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/PerformanceStatus_{value}";
+		rr:class clarify:PerformanceStatus;
+	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:basedOn_Scale;
 		rr:objectMap [
-			rr:parentTriplesMap <Scale_lc_clinical_notes_SLCG_performance_status>		
+			rr:parentTriplesMap <Scale_lc_clinical_notes_SLCG_performance_status>
 		]
-	].	
-
+	].
 
 <Scale_lc_clinical_notes_SLCG_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/performance_status.csv";
@@ -53,7 +52,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Scale";		
+			rr:constant "http://clarify2020.eu/vocab/Scale";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -61,7 +60,7 @@
 		rr:objectMap [
 			rml:reference "scale";		
 		]
-	].		
+	].
 
 #######################################
 ############## Functions ##############
@@ -89,17 +88,18 @@
             rr:objectMap [ 
                 rr:constant "scale" 
             ]
-        ]; 
+        ];  
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
                 rr:constant "http://clarify2020.eu/entity/" 
             ]
-        ];   
+        ]; 
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "scale" 
             ]
-        ];  
-    ].			
+        ];                         
+    ].
+
