@@ -35,23 +35,82 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:biomarker;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/AlK";
+			rr:template "http://clarify2020.eu/entity/{study_performed}";
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTestResult;
 		rr:objectMap [
-			rr:parentTriplesMap <BiomarkerResult_lc_clinical_notes_SLCG_biomarker_mutation>	
+			rr:parentTriplesMap <BiomarkerResult_lc_clinical_notes_SLCG_biomarker_mutation>	;
+      		rr:joinCondition [
+        		rr:child "study_performed";
+        		rr:parent "study_performed";
+      		];
 		]
 	].	
-
 <BiomarkerResult_lc_clinical_notes_SLCG_biomarker_mutation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/biomarker_mutation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{result}";
-		rr:class clarify:BiomarkerTestResult ;
+	rr:subjectMap <BiomarkerResult_Function_lc_clinical_notes_SLCG_biomarker_mutation> ;
+	rr:termType rr:IRI ;	
 
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/BiomarkerTestResult";
+		]
 	].		
-	
+
+#######################################
+############## Functions ##############
+#######################################
+
+<BiomarkerResult_Function_lc_clinical_notes_SLCG_biomarker_mutation>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/alk_mutation.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findBiomarkerTestResult 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "biomarker_mutation" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "result" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:conditionColumn;
+            rr:objectMap [ 
+                rml:reference "study_performed" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "result" 
+            ]
+        ];                 
+    ].
+
+
+
+
+
+
