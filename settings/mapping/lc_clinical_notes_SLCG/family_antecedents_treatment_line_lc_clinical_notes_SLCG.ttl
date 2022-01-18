@@ -211,7 +211,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_STRING_OUTPUT 
+                rr:constant clarifyFun:findSemanticStringOutput 
             ]
         ];   
         rr:predicateObjectMap [
@@ -242,7 +242,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_STRING_OUTPUT 
+                rr:constant clarifyFun:findSemanticStringOutput 
             ]
         ];   
         rr:predicateObjectMap [
