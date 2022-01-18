@@ -13,25 +13,25 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{ehr}";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}";
         rr:class clarify:LCPatient
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyHistory;
-		rr:objectMap [ 
-			rr:parentTriplesMap <FamilyHistory_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-		]
-	].	
+    ];      
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasFamilyHistory;
+        rr:objectMap [ 
+            rr:parentTriplesMap <FamilyHistory_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
+        ]
+    ].  
 
 <FamilyHistory_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <FamilyHistory_ID_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <FamilyHistory_ID_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
     rr:termType rr:IRI;
     
     rr:predicateObjectMap [
@@ -40,18 +40,18 @@
             rr:constant "http://clarify2020.eu/vocab/FamilyHistory";       
         ]
     ];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyCancerType;
-		rr:objectMap [
-			rr:parentTriplesMap <CancerType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:familyType;
-		rr:objectMap [
-			rr:parentTriplesMap <FamilyType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-		]
-	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasFamilyCancerType;
+        rr:objectMap [
+            rr:parentTriplesMap <CancerType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:familyType;
+        rr:objectMap [
+            rr:parentTriplesMap <FamilyType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:familyRelationDegree;
         rr:objectMap [
@@ -72,44 +72,44 @@
     ].
 
 <CancerType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <cancer_type_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
-	rr:termType rr:IRI;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <cancer_type_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
+    rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/CancerType";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "cancer_type";		
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/vocab/CancerType";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "cancer_type";        
+        ]
+    ].
 
 <FamilyType_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];	
-	rr:subjectMap <family_member_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
-	rr:termType rr:IRI;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];  
+    rr:subjectMap <family_member_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line> ;
+    rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/FamilyType";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "family_member";		
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/vocab/FamilyType";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "family_member";      
+        ]
+    ].
 
 <FamilyDegree_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/family_antecedents_treatment_line.csv";
@@ -176,29 +176,29 @@
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:;
+            rr:predicate clarifyFun:value1;
             rr:objectMap [ 
                 rml:reference "ehr" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:;
+            rr:predicate clarifyFun:value2;
             rr:objectMap [ 
                 rr:constant "_" 
             ]
         ];
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:;
+            rr:predicate clarifyFun:value3;
             rr:objectMap <family_member_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
         ];
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:;
+            rr:predicate clarifyFun:value4;
             rr:objectMap [ 
                 rr:constant "_" 
             ]
         ]; 
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:;
+            rr:predicate clarifyFun:value5;
             rr:objectMap <cancer_type_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
         ];                          
     ].
@@ -238,7 +238,7 @@
                 rml:reference "cancer_type" 
             ]
         ];                         
-    ].	
+    ].  
 
 <family_member_Function_lc_clinical_notes_SLCG_family_antecedents_treatment_line>
     fnml:functionValue [
