@@ -89,7 +89,13 @@
 		rr:objectMap [
 			rr:parentTriplesMap <weightLoss_lc_clinical_notes_SLCG_first_consultation_pre_oncology>		
 		]
-	].	
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSymptom;
+        rr:objectMap [
+            rr:parentTriplesMap <weightLoss_last_3_months_lc_clinical_notes_SLCG_first_consultation_pre_oncology>     
+        ]
+    ].	
 
 <asymptomatic_lc_clinical_notes_SLCG_first_consultation_pre_oncology>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
@@ -250,6 +256,26 @@
 			rml:reference "weight_loss";		
 		]
 	].
+
+<weightLoss_last_3_months_lc_clinical_notes_SLCG_first_consultation_pre_oncology>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];  
+    rr:subjectMap <weightLoss_last_3_months_Function_lc_clinical_notes_SLCG_first_consultation_pre_oncology> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Phenotype";        
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "weight_loss_last_3_months";        
+        ]
+    ].
 
 #######################################c
 ############## Functions ##############
@@ -550,3 +576,41 @@
             ]
         ];  
     ].
+
+<weightLoss_last_3_months_Function_lc_clinical_notes_SLCG_first_consultation_pre_oncology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/First_consultation_pre_oncology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "first_consultation_pre_oncology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "weight_loss_last_3_months" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "weight_loss_last_3_months" 
+            ]
+        ];  
+    ].
+    

@@ -91,13 +91,13 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "oncological_history" 
+                rr:constant "LC_oncological_history" 
             ]
         ];
         rr:predicateObjectMap [
@@ -128,13 +128,13 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "oncological_history" 
+                rr:constant "LC_oncological_history" 
             ]
         ];
         rr:predicateObjectMap [

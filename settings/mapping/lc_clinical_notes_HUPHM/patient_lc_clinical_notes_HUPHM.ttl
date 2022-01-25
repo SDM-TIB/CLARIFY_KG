@@ -89,19 +89,13 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Sex_Function_lc_clinical_notes_HUPHM_patient> ;
-	rr:termType rr:IRI;
-
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{gender}";
+    ];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/vocab/Sex";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "gender";		
 		]
 	].
 
@@ -109,19 +103,13 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Race_Function_lc_clinical_notes_HUPHM_patient> ;
-	rr:termType rr:IRI;
-
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{race}";
+    ];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/vocab/Race";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "race";		
 		]
 	].
 
@@ -155,7 +143,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM 
             ]
         ];   
         rr:predicateObjectMap [
@@ -184,76 +172,4 @@
         ];                         
     ].			
 
-<Sex_Function_lc_clinical_notes_HUPHM_patient>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "patient" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "gender" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "gender" 
-            ]
-        ];                         
-    ].	
 
-<Race_Function_lc_clinical_notes_HUPHM_patient>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "patient" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "race" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "race" 
-            ]
-        ];                         
-    ].	

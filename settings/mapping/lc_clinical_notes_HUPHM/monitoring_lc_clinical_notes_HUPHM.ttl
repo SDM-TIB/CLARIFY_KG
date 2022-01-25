@@ -61,6 +61,12 @@
 		rr:objectMap [
 			rr:parentTriplesMap <CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>		
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasCauseOfDeath;
+		rr:objectMap [
+			rr:parentTriplesMap <NonCancer_CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>		
+		]
 	].
 
 <CurrentStatus_lc_clinical_notes_HUPHM_monitoring>
@@ -69,7 +75,6 @@
 						];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{status}";
-        rr:class clarify:StatusEvolution;
     ];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
@@ -97,6 +102,20 @@
 			rml:reference "death_cause";		
 		]
 	].  
+
+<NonCancer_CauseOfDeath_lc_clinical_notes_HUPHM_monitoring>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{noncancer_cause}";
+    ];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/CauseOfDeath";		
+		]
+	].
 
 #######################################
 ############## Functions ##############
