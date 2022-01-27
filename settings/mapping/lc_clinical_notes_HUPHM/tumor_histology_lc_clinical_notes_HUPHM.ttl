@@ -46,7 +46,45 @@
 		rr:objectMap [
 			rml:reference "type";		
 		]
-	].
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:subType;
+        rr:objectMap [
+            rml:reference "subtype";        
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:primaryTumorSize;
+        rr:objectMap [
+            rml:reference "primary_tumor_size";        
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasHistologyDegree;
+        rr:objectMap [
+            rr:parentTriplesMap <HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>    
+        ]
+    ].
+
+<HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/HistologyDegree";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "degree";     
+        ]
+    ].
 
 #######################################
 ############## Functions ##############
@@ -85,6 +123,43 @@
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "type" 
+            ]
+        ];                         
+    ].
+
+<HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "LC_tumor_histology" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "degree" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "degree" 
             ]
         ];                         
     ].

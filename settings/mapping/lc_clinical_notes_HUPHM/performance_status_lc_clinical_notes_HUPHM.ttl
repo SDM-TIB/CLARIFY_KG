@@ -28,33 +28,130 @@
 	].
 
 <PerformanceStatus_lc_clinical_notes_HUPHM_performance_status>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/PerformanceStatus_{value}";
-		rr:class clarify:PerformanceStatus;
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:basedOn_Scale;
-		rr:objectMap [
-			rr:parentTriplesMap <Scale_lc_clinical_notes_HUPHM_performance_status>
-		]
-	].
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <PerformanceStatus_Function_lc_clinical_notes_HUPHM_performance_status> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/PerformanceStatus";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "value";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:basedOn_Scale;
+        rr:objectMap [
+            rr:parentTriplesMap <Scale_lc_clinical_notes_HUPHM_performance_status>       
+        ]
+    ].  
+
 
 <Scale_lc_clinical_notes_HUPHM_performance_status>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{scale}";
-	];
+	rr:subjectMap <Scale_Function_lc_clinical_notes_HUPHM_performance_status> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/vocab/Scale";		
 		]
-	].
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "scale";		
+		]
+	].		
+
+#######################################
+############## Functions ##############
+#######################################
+
+<PerformanceStatus_Function_lc_clinical_notes_HUPHM_performance_status>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "performance_status" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "value" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "value" 
+            ]
+        ];  
+    ].
+
+<Scale_Function_lc_clinical_notes_HUPHM_performance_status>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/performance_status.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "performance_status" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "scale" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "scale" 
+            ]
+        ];  
+    ].			
+
 
 
 
