@@ -107,16 +107,21 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{noncancer_cause}";
-    ];
+	rr:subjectMap <NonCancer_CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/vocab/CauseOfDeath";		
 		]
-	].
-
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "noncancer_cause";		
+		]
+	]. 
 #######################################
 ############## Functions ##############
 #######################################
@@ -154,6 +159,43 @@
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
                 rml:reference "death_cause" 
+            ]
+        ];                         
+    ].
+
+<NonCancer_CauseOfDeath_Function_lc_clinical_notes_HUPHM_monitoring>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/monitoring.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "monitoring" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "noncancer_cause" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "noncancer_cause" 
             ]
         ];                         
     ].
