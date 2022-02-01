@@ -14,9 +14,9 @@
 @prefix clarify: <http://clarify2020.eu/vocab/>  .
 @base <http://clarify2020.eu/vocab/> .
 
-<AnnotationDefinitionClarify>
+<AnnotationDefinitionClarify_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT CUI, definition, source  FROM cui_defintions""";
     ];
@@ -43,9 +43,9 @@
     ]
   ].
 
-<CUITypeClarify>
+<CUITypeClarify_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT CUI, TypeId  FROM CUI_types""";
     ];
@@ -66,9 +66,9 @@
     ]
   ].
 
-<SemanticTypesClarify>
+<SemanticTypesClarify_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT Id, Label, definition FROM Semantic_types""";
     ];
@@ -89,9 +89,9 @@
     ]
   ].
 
- <TypeGroupClarify>
+ <TypeGroupClarify_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT TypeId, CUI_Group  FROM CUI_types""";
     ];
@@ -113,9 +113,9 @@
   ].
    
 
-<AnnotationCUIClarify>
+<AnnotationCUIClarify_freq_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT CUI, Label, freq  FROM oneLabel""";
     ];
@@ -137,15 +137,15 @@
     ]
   ].
 
-<AnnotationCUIClarify_CUI>
+<AnnotationCUIClarify_CUI_label_all_CUIs>
   rml:logicalSource [ 
-      rml:source <RDB_source>;
+      rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
       rml:query """Select DISTINCT CUI, Label FROM oneLabel""";
     ];
-  rr:subjectMap [
-    rr:template "http://clarify2020.eu/entity/{Label}";
-  ];
+  rr:subjectMap <AnnotationCUIClarify_label_function_all_CUIs> ;
+  rr:termType rr:IRI;
+
   rr:predicateObjectMap [
     rr:predicate clarify:hasCUIAnnotation;
     rr:objectMap [
@@ -153,7 +153,35 @@
     ]
   ].
 
-<RDB_source> a d2rq:Database;
+#######################################
+############## Functions ##############
+#######################################
+
+<AnnotationCUIClarify_label_function_all_CUIs>
+    fnml:functionValue [
+      rml:logicalSource [ 
+        rml:source <RDB_source_all_CUIs>;
+        rr:tableName "oneLabel";
+        ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:replace_unwanted_characters 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value1;
+            rr:objectMap [ 
+                rr:constant "Label" 
+            ]
+        ];                          
+    ].
+
+#########################################
+################ RDB ####################
+#########################################
+
+<RDB_source_all_CUIs> a d2rq:Database;
   d2rq:jdbcDSN "UMLS_nov21";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
