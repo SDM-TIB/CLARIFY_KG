@@ -44,12 +44,6 @@
 			rml:reference "occurrence_date";
 			rr:datatype xsd:date
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTreatmentLineNumber;
-		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_HUPHM_relapse_progression>
-		]
 	].		
 
 <ProgressionRelapse_lc_clinical_notes_HUPHM_relapse_progression>
@@ -112,14 +106,6 @@
 		]
 	]. 	
 	
-<TreatmentLineNumber_lc_clinical_notes_HUPHM_relapse_progression>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/relapse_progression.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/TL_{treatment_line}";
-		rr:class clarify:TreatmentLineNumber;
-	].	
 
 #######################################
 ############## Functions ##############
