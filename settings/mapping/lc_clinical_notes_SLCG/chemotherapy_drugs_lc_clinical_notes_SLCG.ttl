@@ -28,16 +28,28 @@
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineMaintenance;
-		rr:objectMap [
-			rr:parentTriplesMap <Drug_maintenance_lc_clinical_notes_SLCG_chemotherapy_drugs>		
-		]
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Drug/{maintenance_drug}";     
+        ]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasDrug;
-		rr:objectMap [
-			rr:parentTriplesMap <Drug_lc_clinical_notes_SLCG_chemotherapy_drugs>		
-		]
-	].	
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Drug/{schema_d1}";     
+        ]
+	];	
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Drug/{schema_d2}";     
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Drug/{schema_d3}";     
+        ]
+    ].  
 
 <TreatmentLineCycle_lc_clinical_notes_SLCG_chemotherapy_drugs>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
@@ -48,122 +60,5 @@
 		rr:class clarify:TreatmentLineCycle
 	].
 
-<Drug_maintenance_lc_clinical_notes_SLCG_chemotherapy_drugs>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <Drug_maintenance_Function_lc_clinical_notes_SLCG_chemotherapy_drugs> ;
-	rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Drug";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "maintenance";		
-		]
-	].	
 
-<Drug_lc_clinical_notes_SLCG_chemotherapy_drugs>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <Drug_Function_lc_clinical_notes_SLCG_chemotherapy_drugs> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Drug";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "drug";		
-		]
-	].
-
-#######################################
-############## Functions ##############
-#######################################
-
-<Drug_maintenance_Function_lc_clinical_notes_SLCG_chemotherapy_drugs>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "chemotherapy_drugs" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "maintenance" 
-            ]
-        ]; 
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];  
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "maintenance" 
-            ]
-        ];                         
-    ].
-
-##############
-
-<Drug_Function_lc_clinical_notes_SLCG_chemotherapy_drugs>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "chemotherapy_drugs" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "drug" 
-            ]
-        ]; 
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];  
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "drug" 
-            ]
-        ];                         
-    ].
