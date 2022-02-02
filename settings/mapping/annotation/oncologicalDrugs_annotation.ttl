@@ -25,7 +25,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <Annotation_drug_oncologicalDrug>
+			rr:parentTriplesMap <Annotation_lc_clinical_notes_oncologicalDrugs_annotation>
 		]
 	].
 

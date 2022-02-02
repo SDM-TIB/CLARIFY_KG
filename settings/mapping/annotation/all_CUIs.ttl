@@ -158,7 +158,7 @@
 #########################################
 
 <RDB_source_all_CUIs> a d2rq:Database;
-  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDSN "UMLS_CLARIFY";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
   d2rq:password "" .

@@ -49,7 +49,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:value1;
             rr:objectMap [ 
-                rr:constant "Label" 
+                rml:reference "Label" 
             ]
         ];                          
     ].
