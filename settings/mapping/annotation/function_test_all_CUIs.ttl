@@ -18,7 +18,7 @@
   rml:logicalSource [ 
       rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """Select DISTINCT CUI, Label FROM oneLabel""";
+      rml:query """Select DISTINCT CUI, Label FROM oneLabel_test""";
     ];
   rr:subjectMap <AnnotationCUIClarify_label_function_all_CUIs> ;
   rr:termType rr:IRI;
@@ -38,7 +38,7 @@
     fnml:functionValue [
       rml:logicalSource [ 
         rml:source <RDB_source_all_CUIs>;
-        rr:tableName "oneLabel";
+        rr:tableName "oneLabel_test";
         ];
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
@@ -59,7 +59,7 @@
 #########################################
 
 <RDB_source_all_CUIs> a d2rq:Database;
-  d2rq:jdbcDSN "UMLS_nov21";
+  d2rq:jdbcDSN "UMLS_CLARIFY";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
   d2rq:password "" .
