@@ -16,7 +16,7 @@
 		rr:template "http://clarify2020.eu/entity/Stage{stage}";
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:CancerStage_has_indication;
+		rr:predicate clarify:cancerStage_has_indication;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{drugID}";
 			]	

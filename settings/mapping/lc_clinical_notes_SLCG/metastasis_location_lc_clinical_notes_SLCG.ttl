@@ -27,103 +27,103 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_extrathoracic_lymphadenopaties;
 		rr:objectMap [
 			rr:parentTriplesMap <extrathoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location>
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_thoracic_lymphadenopaties;
 		rr:objectMap [
 			rr:parentTriplesMap <thoracic_lymphadenopaties_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_meningeal_carcinomatosis;
 		rr:objectMap [
 			rr:parentTriplesMap <meningeal_carcinomatosis_lc_clinical_notes_SLCG_metastasis_location>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_pericardial_effusion;
 		rr:objectMap [
 			rr:parentTriplesMap <pericardial_effusion_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_pleural_effusion;
 		rr:objectMap [
 			rr:parentTriplesMap <pleural_effusion_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_liver;
 		rr:objectMap [
 			rr:parentTriplesMap <liver_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_bone;
 		rr:objectMap [
 			rr:parentTriplesMap <bone_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_bilateral;
 		rr:objectMap [
 			rr:parentTriplesMap <bilateral_lymphangitis_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_pleural_nodules;
 		rr:objectMap [
 			rr:parentTriplesMap <pleural_nodules_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_pancreatic;
 		rr:objectMap [
 			rr:parentTriplesMap <pancreatic_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_peritoneal;
 		rr:objectMap [
 			rr:parentTriplesMap <peritoneal_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_lung;
 		rr:objectMap [
 			rr:parentTriplesMap <lung_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_central_nervous_system;
 		rr:objectMap [
 			rr:parentTriplesMap <central_nervous_system_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_subcutaneous;
 		rr:objectMap [
 			rr:parentTriplesMap <subcutaneous_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_adrenal;
 		rr:objectMap [
 			rr:parentTriplesMap <adrenal_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_soft_tissues;
 		rr:objectMap [
 			rr:parentTriplesMap <soft_tissues_lc_clinical_notes_SLCG_metastasis_location>		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:has_cancer_metastasized_to;
+		rr:predicate clarify:has_cancer_metastasized_to_other_locations;
 		rr:objectMap [
 			rr:parentTriplesMap <others_lc_clinical_notes_SLCG_metastasis_location>		
 		]
