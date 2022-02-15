@@ -232,7 +232,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:tableName;
             rr:objectMap [ 
-                rr:constant "family_antecedents" 
+                rr:constant "BC_family_antecedents" 
             ]
         ];
         rr:predicateObjectMap [
