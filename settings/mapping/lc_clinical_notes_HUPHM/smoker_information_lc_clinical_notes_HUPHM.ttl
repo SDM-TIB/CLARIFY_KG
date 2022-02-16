@@ -42,13 +42,13 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokingHabit;
+		rr:predicate clarify:hasSmokeEnvironment;
 		rr:objectMap [
 			rr:parentTriplesMap <lives_with_smokers_lc_clinical_notes_HUPHM_smoker_information>		
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokingHabit;
+		rr:predicate clarify:hasSmokeEnvironment;
 		rr:objectMap [
 			rr:parentTriplesMap <has_lived_with_smokers_lc_clinical_notes_HUPHM_smoker_information>		
 		]
@@ -70,7 +70,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SmokingHabit";		
+			rr:template "http://clarify2020.eu/vocab/SmokeEnvironment";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -90,7 +90,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SmokingHabit";		
+			rr:template "http://clarify2020.eu/vocab/SmokeEnvironment";		
 		]
 	];
 	rr:predicateObjectMap [
