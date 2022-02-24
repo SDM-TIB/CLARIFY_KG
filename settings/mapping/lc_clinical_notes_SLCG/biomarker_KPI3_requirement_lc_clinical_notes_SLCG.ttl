@@ -51,7 +51,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/ALKNegativePatient"
 		]
 	].
 
@@ -94,7 +94,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/HER2NegativePatient"
 		]
 	].
 
@@ -136,7 +136,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/EGFRNegativePatient"
 		]
 	].
 
@@ -178,7 +178,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/PDL1NegativePatient"
 		]
 	].
 
@@ -220,7 +220,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/ROS1NegativePatient"
 		]
 	].
 
@@ -247,14 +247,14 @@
 
 #################### Negative KRAS, HER2Muut, BRAF, RET, FGFR1 #######################
 
-<SLCG_LCPatient_Negative_Bio1>
+<SLCG_LCPatient_Negative_KRAS>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
 	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
 			WHERE EHR NOT IN
 			(SELECT distinct EHR FROM `biomarker_mutation` 
-			WHERE study_performed!="MET" and result!=0.0)""";
+			WHERE study_performed="KRAS" and result!=0.0)""";
 		];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}";
@@ -262,7 +262,102 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/KRASNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_BRAF>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="BRAF" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BRAFNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_HER2Mut>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="HER2Mut" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/HER2NegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_RET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="RET" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/RETNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_FGFR1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="FGFR1" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/FGFR1NegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_NTKR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="NTKR" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/NTKRNegativePatient"
 		]
 	].
 
@@ -289,7 +384,7 @@
 
 #################### Negative MET #######################
 
-<SLCG_LCPatient_Negative_Bio2>
+<SLCG_LCPatient_Negative_MET>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
 	    rr:sqlVersion rr:SQL2008;
@@ -304,7 +399,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+			rr:constant "http://clarify2020.eu/vocab/METNegativePatient"
 		]
 	].
 
