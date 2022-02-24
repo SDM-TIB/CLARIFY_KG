@@ -34,6 +34,27 @@
 		]
 	].
 
+#################### Negative ALK #######################
+
+<SLCG_LCPatient_Negative_ALK>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `alk_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `alk_mutation`
+			WHERE `result_alk_ihq`=1.0 or `result_alk_fish`=1.0 or `result_alk_rna`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
+
 
 ########################################################################
 ############## SLCG LC patients  with HER2 ####################
@@ -56,8 +77,26 @@
 		]
 	].
 
+#################### Negative HER2 #######################
 
-	
+<SLCG_LCPatient_Negative_HER2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `her2_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR from `her2_mutation` 
+			WHERE `result_her2_ihq`=1.0 or `result_her2_fish`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
 
 ########################################################################
 ############## SLCG LC patients  with EGFR ####################
@@ -77,6 +116,27 @@
 		rr:predicate clarify:hasBio;
 		rr:objectMap [
 			rr:constant "http://clarify2020.eu/entity/EGFR"
+		]
+	].
+
+#################### Negative EGFR #######################
+
+<SLCG_LCPatient_Negative_EGFR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `egfr_mutation` 
+			WHERE EHR NOT IN
+			(SELECT DISTINCT EHR from `egfr_mutation`
+			WHERE `result_egfr_t790m`=1.0 or `result_egfr_t790`=1.0 or `result_egfr_exon19`=1.0 or `result_egfr_exon21`=1.0 or `result_egfr_nos`=1.0 or `result_egfr_others`=1.0 or `result_egfr_exon20`=1.0 or `specify_result_egfr_exon20`=1.0 or `specify_result_egfr_others`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
 		]
 	].
 
@@ -101,6 +161,26 @@
 		]
 	].
 
+#################### Negative PDL1 #######################
+
+<SLCG_LCPatient_Negative_PDL1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `pdl1_expression` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `pdl1_expression` 
+			WHERE result=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
 
 ########################################################################
 ############## SLCG LC patients  with ROS1 ####################
@@ -123,9 +203,30 @@
 		]
 	].
 
-########################################################################
-############## SLCG LC patients  with KRAS, HER2Muut, BRAF, RET, FGFR1 ####################
-########################################################################
+#################### Negative ROS1 #######################
+
+<SLCG_LCPatient_Negative_ROS1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `ros1_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR from `ros1_mutation` 
+			WHERE `result_ros1_ihq`=1.0 or `result_ros1_fish`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
+
+##########################################################################################
+############## SLCG LC patients with KRAS, HER2Muut, BRAF, RET, FGFR1 ####################
+##########################################################################################
 <SLCG_LCPatient_Bio1>
 	rml:logicalSource [ 
 	    rml:source <RDB_source>;
@@ -144,8 +245,29 @@
 		]
 	]. 
 
+#################### Negative KRAS, HER2Muut, BRAF, RET, FGFR1 #######################
+
+<SLCG_LCPatient_Negative_Bio1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed!="MET" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
+
 ########################################################################
-############## SLCG LC patients  with MET ####################
+############## SLCG LC patients with MET ####################
 ########################################################################
 <SLCG_LCPatient_Bio2>
 	rml:logicalSource [ 
@@ -165,8 +287,31 @@
 		]
 	]. 
 
+#################### Negative MET #######################
+
+<SLCG_LCPatient_Negative_Bio2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="MET" and result!=3.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BiomarkerNegativePatient"
+		]
+	].
+
+#################################
+
 <RDB_source> a d2rq:Database;
   d2rq:jdbcDSN "SLCG_UPM_v5.0";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
-  d2rq:username "vidal";
-  d2rq:password "vidal2020" .
+  d2rq:username "";
+  d2rq:password "" .
