@@ -69,4 +69,17 @@
 		rr:objectMap [ 
 			rr:parentTriplesMap <Relations_Publication_wp2>
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/WP2_UCL"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:predictionMethod;
+		rr:objectMap [ 
+			rr:constant "MedDistant19";
+			rr:termType	rr:Literal; 
+		]
 	].
