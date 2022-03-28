@@ -16,7 +16,7 @@
 						rml:iterator "$.relations.source" 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/publication_{pmid}";
+		rr:template "http://clarify2020.eu/entity/publication_{articleids[*].pubmed}";
 		rr:class clarify:Publication
 	];
 	rr:predicateObjectMap [
@@ -28,13 +28,13 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:pubmedID;
 		rr:objectMap [ 
-			rml:reference "articleids.pubmed" 
+			rml:reference "articleids[*].pubmed" 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:doi;
 		rr:objectMap [ 
-			rml:reference "articleids.doi" 
+			rml:reference "articleids[*].doi" 
 		]
 	].
 
