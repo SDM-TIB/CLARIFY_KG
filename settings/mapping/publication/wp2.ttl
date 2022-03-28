@@ -34,7 +34,8 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:doi;
 		rr:objectMap [ 
-			rml:reference "articleids[*].doi" 
+			rml:reference "articleids[*].doi"
+			rr:termType rr:IRI; 
 		]
 	].
 
