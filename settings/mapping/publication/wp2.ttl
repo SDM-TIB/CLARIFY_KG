@@ -35,7 +35,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:doi;
 		rr:objectMap [ 
-			rml:reference "articleids[*].doi";
+			rr:template "https://doi.org/{articleids[*].doi}";
 			rr:termType rr:IRI;
 		]
 	].
