@@ -28,13 +28,15 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:pubmedID;
 		rr:objectMap [ 
-			rml:reference "articleids[*].pubmed" 
+			rr:template "https://pubmed.ncbi.nlm.nih.gov/{articleids[*].pubmed}";
+			rr:termType rr:IRI; 
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:doi;
 		rr:objectMap [ 
-			rml:reference "articleids[*].doi"
+			rml:reference "articleids[*].doi";
+			rr:termType rr:IRI;
 		]
 	].
 
