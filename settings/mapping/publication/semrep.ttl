@@ -38,4 +38,17 @@
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/publication_{pmid}"
 		]
-	].		
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/WP4_TIB"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:predictionMethod;
+		rr:objectMap [ 
+			rr:constant "SemRep";
+			rr:termType	rr:Literal; 
+		]
+	].			
