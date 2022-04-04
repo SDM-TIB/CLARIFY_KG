@@ -51,4 +51,4 @@
 			rr:constant "SemRep";
 			rr:termType	rr:Literal; 
 		]
-	].			
+	].		

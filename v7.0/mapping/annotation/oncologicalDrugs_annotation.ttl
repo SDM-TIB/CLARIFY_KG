@@ -1,0 +1,63 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<OncologicalDrugs_lc_clinical_notes_oncologicalDrugs_annotation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{ENG_CUI_Name}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/vocab/OncologicalDrug"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasCUIAnnotation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <Annotation_lc_clinical_notes_oncologicalDrugs_annotation>
+		]
+	].
+
+<Annotation_lc_clinical_notes_oncologicalDrugs_annotation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{CUI_ID}";
+		rr:class clarify:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annID;
+		rr:objectMap [ 
+			rml:reference "CUI_ID" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annLabel;
+		rr:objectMap [ 
+			rml:reference "ENG_CUI_Name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annLabel_SPA;
+		rr:objectMap [ 
+			rml:reference "provided_name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/UMLS"
+		]
+	].
