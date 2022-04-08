@@ -144,7 +144,7 @@
             ]
         ];   
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:value1;
+            rr:predicate clarifyFun:value;
             rr:objectMap [ 
                 rml:reference "predicate" 
             ]
