@@ -8,18 +8,19 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Relation_publication_seprep>
+<Relation_publication_annotation_seprep>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Semrep_Annotations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{subject_cui}_{predicate}_{object_cui}";
 	];
+	rr:subjectMap <Relation_publication_annotation_function_seprep> ;
+	rr:termType rr:IRI;
+
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
-		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/vocab/{predicate}"
-		]
+		rr:objectMap <Relation_representation_function_seprep> ;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:relation_isRelatedTo_annotation;
@@ -51,4 +52,97 @@
 			rr:constant "SemRep";
 			rr:termType	rr:Literal; 
 		]
-	].			
+	].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<Relation_publication_annotation_function_seprep>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Semrep_Annotations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:concat6 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value1;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value2;
+            rr:objectMap [ 
+                rml:reference "subject_cui" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value3;
+            rr:objectMap [ 
+                rr:constant "_" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value4;
+            rr:objectMap <Relation_function_seprep>;
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value5;
+            rr:objectMap [ 
+                rr:constant "_" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value6;
+            rr:objectMap [ 
+                rml:reference "object_cui" 
+            ]
+        ];                        
+    ].
+
+<Relation_representation_function_seprep>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Semrep_Annotations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:concat2 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value1;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/vocab/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value2;
+            rr:objectMap <Relation_function_seprep>;
+        ];                      
+    ].
+
+<Relation_function_seprep>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Semrep_Annotations.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:toLower 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value1;
+            rr:objectMap [ 
+                rml:reference "predicate" 
+            ]
+        ];                        
+    ].
