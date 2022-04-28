@@ -54,13 +54,13 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_annotation;
+		rr:predicate clarify:relation_isRelatedTo_subject_annotation;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{subject}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_annotation;
+		rr:predicate clarify:relation_isRelatedTo_object_annotation;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{object}"
 		]
