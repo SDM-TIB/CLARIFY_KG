@@ -16,9 +16,6 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/Semrep_Annotations.csv";
 						rml:referenceFormulation ql:CSV 
 						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{subject_cui}_{predicate}_{object_cui}";
-	];
 	rr:subjectMap <Relation_publication_annotation_function_seprep> ;
 	rr:termType rr:IRI;
 
