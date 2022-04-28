@@ -27,13 +27,13 @@
 		rr:objectMap <Relation_representation_function_seprep> ;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_annotation;
+		rr:predicate clarify:relation_isRelatedTo_subject_annotation;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{subject_cui}"
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_annotation;
+		rr:predicate clarify:relation_isRelatedTo_object_annotation;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{object_cui}"
 		]
