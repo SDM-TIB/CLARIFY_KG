@@ -1,0 +1,296 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient_lc_clinical_notes_HUPHM_family_antecedents>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
+        rr:class clarify:LCPatient
+	];	
+    rr:predicateObjectMap [
+        rr:predicate clarify:has_familyWithCancer_OrNot;
+        rr:objectMap [
+            rr:parentTriplesMap <FamilyWithCancer_lc_clinical_notes_HUPHM_family_antecedents>
+        ]
+    ]; 
+    rr:predicateObjectMap [
+        rr:predicate clarify:has_parentWithCancer_OrNot;
+        rr:objectMap [
+            rr:parentTriplesMap <ParentWithCancer_lc_clinical_notes_HUPHM_family_antecedents>
+        ]
+    ];   	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasFamilyHistory;
+		rr:objectMap [ 
+			rr:parentTriplesMap <FamilyHistory_lc_clinical_notes_HUPHM_family_antecedents>
+		]
+	].	
+
+<FamilyWithCancer_lc_clinical_notes_HUPHM_family_antecedents>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <FamilyWithCancer_Function_lc_clinical_notes_HUPHM_family_antecedents> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/FamilyWithCancer";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "af";      
+        ]
+    ].
+
+<ParentWithCancer_lc_clinical_notes_HUPHM_family_antecedents>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <ParentWithCancer_Function_lc_clinical_notes_HUPHM_family_antecedents> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/ParentWithCancer";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "N1";      
+        ]
+    ].
+
+<FamilyHistory_lc_clinical_notes_HUPHM_family_antecedents>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_{family_member}";
+		rr:class clarify:FamilyHistory;
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:familyType;
+		rr:objectMap [
+			rr:parentTriplesMap <FamilyType_lc_clinical_notes_HUPHM_family_antecedents>
+		]
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:familyRelationDegree;
+        rr:objectMap [
+            rr:parentTriplesMap <FamilyDegree_lc_clinical_notes_HUPHM_family_antecedents>
+        ]
+    ].
+
+<FamilyType_lc_clinical_notes_HUPHM_family_antecedents>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+						rml:referenceFormulation ql:CSV;
+						];	
+    rr:subjectMap <FamilyType_Function_lc_clinical_notes_HUPHM_family_antecedents> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/FamilyType";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "family_member";      
+        ]
+    ].
+
+
+<FamilyDegree_lc_clinical_notes_HUPHM_family_antecedents>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];  
+    rr:subjectMap <family_degree_Function_lc_clinical_notes_HUPHM_family_antecedents> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/FamilyRelationDegree";       
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "family_member";      
+        ]
+    ].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<FamilyWithCancer_Function_lc_clinical_notes_HUPHM_family_antecedents>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "af" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "af" 
+            ]
+        ];                         
+    ].
+
+<ParentWithCancer_Function_lc_clinical_notes_HUPHM_family_antecedents>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "N1" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "N1" 
+            ]
+        ];                         
+    ].
+
+
+<FamilyType_Function_lc_clinical_notes_HUPHM_family_antecedents>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents_treatment_line" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "family_member" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "family_member" 
+            ]
+        ];                         
+    ].
+
+<family_degree_Function_lc_clinical_notes_HUPHM_family_antecedents>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findFamilyRelationDegree 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_antecedents" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "family_member" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "family_member" 
+            ]
+        ];                         
+    ].
+

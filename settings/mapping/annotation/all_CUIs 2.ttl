@@ -1,0 +1,165 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/>  .
+@base <http://clarify2020.eu/vocab/> .
+
+<AnnotationDefinitionClarify_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT CUI, definition, source  FROM cui_defintions""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{CUI}_{source}";
+    rr:class clarify:AnnotationDefinition;
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:hasCUI;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{CUI}"
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:definition;
+    rr:objectMap [
+      rml:reference "definition"
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate prov:has_provenance;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{source}"
+    ]
+  ].
+
+<CUITypeClarify_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT CUI, TypeId  FROM CUI_types""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{CUI}_{TypeId}";
+    rr:class clarify:AnnotationType;
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:hasCUI;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{CUI}"
+    ]
+  ]; 
+  rr:predicateObjectMap [
+    rr:predicate clarify:hasType;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{TypeId}"
+    ]
+  ].
+
+<SemanticTypesClarify_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT Id, Label, definition FROM Semantic_types""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{Id}";
+    rr:class clarify:SemanticType;
+  ]; 
+  rr:predicateObjectMap [
+    rr:predicate clarify:semanticTypeLabel;
+    rr:objectMap [
+      rml:reference "Label"
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:definition;
+    rr:objectMap [
+      rml:reference "definition"
+    ]
+  ].
+
+ <TypeGroupClarify_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT TypeId, CUI_Group  FROM CUI_types""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{TypeId}_{CUI_Group}";
+    rr:class clarify:SemanticTypeGroup;
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:hasType;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{TypeId}"
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:typeGroup;
+    rr:objectMap [
+      rml:reference "CUI_Group"
+    ]
+  ].
+   
+
+<AnnotationCUIClarify_freq_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT CUI, Label, freq  FROM oneLabel""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{CUI}";
+    rr:class clarify:Annotation;
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:annotationFrequency;
+    rr:objectMap [
+      rml:reference "freq";
+      rr:datatype xsd:int
+    ]
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:annLabel;
+    rr:objectMap [
+      rml:reference "Label"
+    ]
+  ].
+
+<AnnotationCUIClarify_CUI_label_all_CUIs>
+  rml:logicalSource [ 
+      rml:source <RDB_source_all_CUIs>;
+      rr:sqlVersion rr:SQL2008;
+      rml:query """Select DISTINCT CUI, Label FROM oneLabel""";
+    ];
+  rr:subjectMap [
+    rr:template "http://clarify2020.eu/entity/{Label}";
+  ];
+  rr:predicateObjectMap [
+    rr:predicate clarify:hasCUIAnnotation;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{CUI}"
+    ]
+  ].
+
+#########################################
+################ RDB ####################
+#########################################
+
+<RDB_source_all_CUIs> a d2rq:Database;
+  d2rq:jdbcDSN "UMLS_CLARIFY";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
+
