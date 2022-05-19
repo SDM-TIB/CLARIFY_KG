@@ -23,6 +23,12 @@
 		]
 	];
 	rr:predicateObjectMap [
+		rr:predicate clarify:drugLabel;
+		rr:objectMap [
+			rml:reference "ENG_CUI_Name";
+		]
+	];
+	rr:predicateObjectMap [
 		rr:predicate clarify:hasCUIAnnotation;
 		rr:objectMap [ 
 			rr:parentTriplesMap <Annotation_lc_clinical_notes_nonOncologicalDrugs_annotation>
