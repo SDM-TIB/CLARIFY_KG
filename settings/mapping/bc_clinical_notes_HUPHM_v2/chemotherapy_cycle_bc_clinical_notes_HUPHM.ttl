@@ -1,0 +1,129 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+###################### TreatmentLineNumber is missing so cannot integrate this dataset now!
+############################################################################################
+
+<BCPatient_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+		rr:class clarify:BCPatient
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOncologicalTreatmentLine;
+		rr:objectMap [ 
+			rr:parentTriplesMap <OncologicalTreatmentLine_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+		]
+	].
+
+<OncologicalTreatmentLine_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_OncologicalTL_{cycle_number}";
+		rr:class clarify:OncologicalTreatmentLine
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasDrug;
+		rr:objectMap [
+			rr:parentTriplesMap <schema_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+		]
+	];		
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineStartDate;
+		rr:objectMap [
+			rml:reference "date";
+			rr:datatype xsd:date
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTreatmentLineNumber;
+		rr:objectMap [
+			rr:parentTriplesMap <TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+		]
+	].
+
+<schema_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <schema_Function_bc_clinical_notes_HUPHM_chemotherapy_cycle> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/Drug";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "id_schema";		
+		]
+	].
+
+<TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/TL_{cycle_number}";
+		rr:class clarify:TreatmentLineNumber;
+	].	
+			
+#######################################
+############## Functions ##############
+#######################################
+
+<schema_Function_bc_clinical_notes_HUPHM_chemotherapy_cycle>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_cycle" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "id_schema" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "id_schema" 
+            ]
+        ];                         
+    ].

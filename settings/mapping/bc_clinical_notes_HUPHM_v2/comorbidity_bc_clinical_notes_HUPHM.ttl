@@ -49,7 +49,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "positive_negative";		
+			rml:reference "negated";		
 		]
 	].
 	
@@ -69,7 +69,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "name";		
+			rml:reference "comorbidity";		
 		]
 	].
 
@@ -85,7 +85,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
             ]
         ];   
         rr:predicateObjectMap [
@@ -97,7 +97,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "positive_negative" 
+                rr:constant "negated" 
             ]
         ]; 
         rr:predicateObjectMap [
@@ -109,7 +109,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "positive_negative" 
+                rml:reference "negated" 
             ]
         ];                         
     ].
@@ -122,7 +122,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_HUPHM 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
             ]
         ];   
         rr:predicateObjectMap [
@@ -146,7 +146,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "name" 
+                rml:reference "comorbidity" 
             ]
         ];                         
     ].

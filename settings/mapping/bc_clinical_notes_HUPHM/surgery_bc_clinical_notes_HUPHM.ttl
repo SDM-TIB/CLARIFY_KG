@@ -72,7 +72,7 @@
 		]
 	];		
 	rr:predicateObjectMap [
-		rr:predicate clarify:date;
+		rr:predicate clarify:surgeryDate;
 		rr:objectMap [
 			rml:reference "surgery_date";
 			rr:datatype xsd:date;

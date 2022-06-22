@@ -27,24 +27,6 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasCurrentCancerType;
-		rr:objectMap [
-			rr:parentTriplesMap <CancerType_bc_clinical_notes_HUPHM_patient>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:sex;
-		rr:objectMap [
-			rr:parentTriplesMap <Sex_bc_clinical_notes_HUPHM_patient>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasRace;
-		rr:objectMap [
-			rr:parentTriplesMap <Race_bc_clinical_notes_HUPHM_patient>
-		]
-	];	
-	rr:predicateObjectMap [
 		rr:predicate clarify:birthDate;
 		rr:objectMap [
 			rml:reference "birth_date";
@@ -53,43 +35,130 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:locatedInCity;
+		rr:predicate clarify:diagnosisDate;
 		rr:objectMap [
-			rr:parentTriplesMap <City_bc_clinical_notes_HUPHM_patient>
+			rml:reference "diagnosis_date";
+			rr:datatype xsd:date;
+		]
+	];	
+	rr:predicate clarify:diagnosisAge;
+		rr:objectMap [
+			rml:reference "age_at_diagnosis";
+		]
+	]; 
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOncologicalTreatmentLine;
+		rr:objectMap [
+			rr:parentTriplesMap <OncologicalTreatmentLine_bc_clinical_notes_HUPHM_patient>
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:locatedInHospital;
+		rr:predicate clarify:surgeryDate;
 		rr:objectMap [
-			rr:parentTriplesMap <Hospital_bc_clinical_notes_HUPHM_patient>
-		]
-	].
+			rml:reference "birth_date";
+			rr:datatype xsd:date;
 
-<CancerType_bc_clinical_notes_HUPHM_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <CancerType_Function_bc_clinical_notes_HUPHM_patient> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/CancerType";		
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
+		rr:predicate clarify:deathDate;
 		rr:objectMap [
-			rml:reference "type_patient";		
+			rml:reference "death_date";
+			rr:datatype xsd:date;
 		]
-	].
+	];
+	rr:predicate clarify:deathAge;
+		rr:objectMap [
+			rml:reference "age_at_death";
+		]
+	];
+	rr:predicate clarify:relapseYear;
+		rr:objectMap [
+			rml:reference "recurrence_year";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasNeoadjuvantTherapy;
+		rr:objectMap [
+			rr:parentTriplesMap <NeoadjuvantTherapy_bc_clinical_notes_HUPHM_patient>
+		]
+	];
+	rr:predicate clarify:estrogenPositive;
+		rr:objectMap [
+			rml:reference "er_positive";
+		]
+	];
+	rr:predicate clarify:progesteronePositive;
+		rr:objectMap [
+			rml:reference "pr_positive";
+		]
+	];
+	rr:predicate clarify:ki67;
+		rr:objectMap [
+			rml:reference "ki67_percent_max_simp";
+		]
+	];
+	rr:predicate clarify:hasMenarcheAge;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{menarche_age}";
+		]
+	];
+	rr:predicate clarify:hasMenopauseAge;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{menopause_age}";
+		]
+	];
+	rr:predicate clarify:hasMenopausePre??;
+		rr:objectMap [
+			rr:template "??";
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:gravidity;
+		rr:objectMap [
+			rml:reference "pregnancy"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:abortion;
+		rr:objectMap [
+			rml:reference "abort"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:parity;
+		rr:objectMap [
+			rml:reference "birth"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasRace;
+		rr:objectMap [
+			rr:parentTriplesMap <Race_bc_clinical_notes_HUPHM_patient>
+		]
+	].	
 
-<Sex_bc_clinical_notes_HUPHM_patient>
+<OncologicalTreatmentLine_bc_clinical_notes_HUPHM_patient>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <Sex_Function_bc_clinical_notes_HUPHM_patient> ;
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_OncologicalTL_1";
+		rr:class clarify:OncologicalTreatmentLine
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatementLineStartDate;
+		rr:objectMap [
+			rml:reference "first_treatment_date";
+			rr:datatype xsd:date
+		]
+	].
+
+<NeoadjuvantTherapy_bc_clinical_notes_HUPHM_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <NeoadjuvantTherapy_Function_bc_clinical_notes_HUPHM_patient> ;
 	rr:termType rr:IRI;
 
 	rr:predicateObjectMap [
@@ -101,7 +170,7 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "gender";		
+			rml:reference "neoadjuvant";		
 		]
 	].
 
@@ -115,39 +184,22 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Race";		
+			rr:template "http://clarify2020.eu/vocab/Sex";		
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "race";		
+			rml:reference "neoadjuvant";		
 		]
 	].
 
-<City_bc_clinical_notes_HUPHM_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/City/{cityID}";
-		rr:class clarify:City;
-	].
-
-<Hospital_bc_clinical_notes_HUPHM_patient>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Hospital/{organization_id}";
-		rr:class clarify:Hospital;
-	].
 
 #######################################
 ############## Functions ##############
 #######################################
 
-<CancerType_Function_bc_clinical_notes_HUPHM_patient>
+<NeoadjuvantTherapy_Function_bc_clinical_notes_HUPHM_patient>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
         rml:referenceFormulation ql:CSV 
@@ -155,7 +207,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
             ]
         ];   
         rr:predicateObjectMap [
@@ -167,7 +219,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "patient_type" 
+                rr:constant "neoadjuvant" 
             ]
         ];
         rr:predicateObjectMap [
@@ -179,47 +231,10 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "type_patient" 
+                rml:reference "neoadjuvant" 
             ]
         ];                         
     ].			
-
-<Sex_Function_bc_clinical_notes_HUPHM_patient>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "patient" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "gender" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "gender" 
-            ]
-        ];                         
-    ].	
 
 <Race_Function_bc_clinical_notes_HUPHM_patient>
     fnml:functionValue [
@@ -229,7 +244,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
             ]
         ];   
         rr:predicateObjectMap [
@@ -241,7 +256,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnName;
             rr:objectMap [ 
-                rr:constant "race" 
+                rr:constant "caesarean" 
             ]
         ];
         rr:predicateObjectMap [
@@ -253,7 +268,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rml:reference "race" 
+                rml:reference "caesarean" 
             ]
         ];                         
-    ].	
+    ].
