@@ -108,9 +108,9 @@
 			rr:template "http://clarify2020.eu/entity/{menopause_age}";
 		]
 	];
-	rr:predicate clarify:hasMenopausePre??;
+	rr:predicate clarify:hasEarlyMenopause;
 		rr:objectMap [
-			rr:template "??";
+			rr:template "menopause_pre";
 		]
 	];
 	rr:predicateObjectMap [
@@ -132,9 +132,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasRace;
+		rr:predicate clarify:cSection;
 		rr:objectMap [
-			rr:parentTriplesMap <Race_bc_clinical_notes_HUPHM_patient>
+			rml:reference "caesarean"
 		]
 	].	
 

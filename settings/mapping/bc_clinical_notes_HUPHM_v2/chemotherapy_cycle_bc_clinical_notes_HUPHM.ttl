@@ -16,7 +16,7 @@
 ############################################################################################
 
 <BCPatient_bc_clinical_notes_HUPHM_chemotherapy_cycle>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -31,7 +31,7 @@
 	].
 
 <OncologicalTreatmentLine_bc_clinical_notes_HUPHM_chemotherapy_cycle>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -59,7 +59,7 @@
 	].
 
 <schema_bc_clinical_notes_HUPHM_chemotherapy_cycle>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_schema.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -78,7 +78,7 @@
 	].
 
 <TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_cycle>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -92,7 +92,7 @@
 
 <schema_Function_bc_clinical_notes_HUPHM_chemotherapy_cycle>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
