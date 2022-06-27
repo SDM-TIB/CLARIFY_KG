@@ -34,7 +34,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_RadiotherapyTL_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_RadiotherapyTL_{n_radiotherapy}";
 		rr:class clarify:RadiotherapyTreatmentLine;
 	];
 	rr:predicateObjectMap [
@@ -44,35 +44,23 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:is_located_in;
-		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyLocation_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType; 
-		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyTreatmentLineType_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasIntention; 
-		rr:objectMap [
-			rr:parentTriplesMap <RadiotherapyIntention_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>		
-		]
-	];		
-	rr:predicateObjectMap [
 		rr:predicate clarify:treatementLineStartDate;
 		rr:objectMap [
-			rml:reference "start_date";
+			rml:reference "date_start";
 			rr:datatype xsd:date
 		]
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatementLineEndingDate;
 		rr:objectMap [
-			rml:reference "end_date";
+			rml:reference "date_end";
 			rr:datatype xsd:date
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:treatmentLineDosage;
+		rr:objectMap [
+			rml:reference "dose";
 		]
 	].
 
@@ -81,183 +69,6 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/TL_{n_radiotherapy}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
-
-<RadiotherapyLocation_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <RadiotherapyLocation_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyLocation";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "radiated_area";		
-		]
-	]. 
-
-
-<RadiotherapyTreatmentLineType_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <RadiotherapyTreatmentLineType_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyTreatmentLineType";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "type";		
-		]
-	]. 
-
-
-<RadiotherapyIntention_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <RadiotherapyIntention_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/RadiotherapyIntention";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "intention";		
-		]
-	].
-
-#######################################
-############## Functions ##############
-#######################################
-
-<RadiotherapyLocation_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "radiated_area" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "radiated_area" 
-            ]
-        ];                         
-    ].
-
-<RadiotherapyTreatmentLineType_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "type" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "type" 
-            ]
-        ];                         
-    ].
-
-<RadiotherapyIntention_Function_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "radiotherapy_treatment_line" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "intention" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "intention" 
-            ]
-        ];                         
-    ].    

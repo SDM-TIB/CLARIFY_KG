@@ -39,7 +39,7 @@
 		rr:class clarify:OncologicalTreatmentLine
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasDrug;
+		rr:predicate clarify:hasDrugSchema;
 		rr:objectMap [
 			rr:parentTriplesMap <schema_bc_clinical_notes_HUPHM_chemotherapy_cycle>
 		]
@@ -62,20 +62,19 @@
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
 						rml:referenceFormulation ql:CSV;
 						];
-	rr:subjectMap <schema_Function_bc_clinical_notes_HUPHM_chemotherapy_cycle> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/Drug";		
-		]
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{id_schema}";
+		rr:class clarify:DrugSchema
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOriginalValue;
 		rr:objectMap [
-			rml:reference "id_schema";		
+			rml:reference "name";		
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasDrug;
+		rr:objectMap <schema_Function_bc_clinical_notes_HUPHM_chemotherapy_cycle> ;
 	].
 
 <TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_cycle>

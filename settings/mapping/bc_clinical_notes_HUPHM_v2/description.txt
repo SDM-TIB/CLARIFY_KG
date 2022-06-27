@@ -1,0 +1,6 @@
+#############################################################################################
+########################################################################
+Tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemotherapy_schema" are included in "chemotherapy_cycle_bc_clinical_notes_HUPHM.ttl", function "findSemantic_HUPHM_BreastCancer.py", "HUPHM_BreastCancer_dictionary.csv".
+#############################################################################################
+#########################################################################
+
