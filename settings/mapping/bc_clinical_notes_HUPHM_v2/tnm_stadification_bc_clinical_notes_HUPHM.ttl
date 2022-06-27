@@ -12,8 +12,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-###################### Dictionary values are missing so cannot integrate this dataset now!
-############################################################################################
 
 <BCPatient_bc_clinical_notes_HUPHM_tnm_stadification>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
