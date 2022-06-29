@@ -45,6 +45,12 @@
         rr:objectMap [
             rml:reference "cancer_cui";      
         ]
+    ];
+    rr:predicateObjectMap [
+    rr:predicate clarify:hasCUIAnnotation;
+    rr:objectMap [
+      rr:template "http://clarify2020.eu/entity/{cancer_cui}"
+        ]
     ].
 
 #######################################

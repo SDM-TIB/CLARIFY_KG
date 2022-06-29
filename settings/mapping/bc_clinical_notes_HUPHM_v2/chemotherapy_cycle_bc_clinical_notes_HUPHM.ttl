@@ -35,7 +35,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_OncologicalTL_{cycle_number}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_OncologicalTL_{id_schema}_{date}";
 		rr:class clarify:OncologicalTreatmentLine
 	];
 	rr:predicateObjectMap [
