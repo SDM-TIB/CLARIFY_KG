@@ -31,7 +31,14 @@
 		rr:objectMap [ 
 			rr:parentTriplesMap <Disorder_bc_clinical_notes_HUPHM_comorbidity>
 		]
-	].
+	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSmokingHabit;
+        rr:objectMap [ 
+            rr:parentTriplesMap <smoking_habit_bc_clinical_notes_HUPHM_comorbidity>
+        ]
+    ].
+
 
 <positive_negative_bc_clinical_notes_HUPHM_comorbidity>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
@@ -72,6 +79,26 @@
 			rml:reference "comorbidity";		
 		]
 	].
+
+<smoking_habit_bc_clinical_notes_HUPHM_comorbidity>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/smoker_information.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <smoking_habit_Function_bc_clinical_notes_HUPHM_comorbidity> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SmokingHabit";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "comorbidity";      
+        ]
+    ].
 
 #######################################
 ############## Functions ##############
@@ -137,6 +164,31 @@
                 rr:constant "name" 
             ]
         ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "comorbidity" 
+            ]
+        ];                         
+    ].
+
+<smoking_habit_Function_bc_clinical_notes_HUPHM_comorbidity>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_smokinghabit_HUPHM_BreastCancer 
+            ]
+        ];   
         rr:predicateObjectMap [
             rr:predicate clarifyFun:resource;
             rr:objectMap [ 
