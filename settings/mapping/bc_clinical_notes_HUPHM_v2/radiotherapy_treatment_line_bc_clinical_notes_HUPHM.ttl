@@ -12,11 +12,9 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-###################### TreatmentLineNumber is missing so cannot integrate this dataset now!
-############################################################################################
 
 <BCPatient_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -30,7 +28,7 @@
 		]
 	].
 <RadiotherapyTreatmentLine_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -65,7 +63,7 @@
 	].
 
 <TreatmentLineNumber_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [

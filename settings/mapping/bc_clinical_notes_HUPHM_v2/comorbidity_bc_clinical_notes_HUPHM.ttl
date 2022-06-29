@@ -81,7 +81,7 @@
 	].
 
 <smoking_habit_bc_clinical_notes_HUPHM_comorbidity>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/smoker_information.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/comorbidity.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap <smoking_habit_Function_bc_clinical_notes_HUPHM_comorbidity> ;

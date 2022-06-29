@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <BCPatient_bc_clinical_notes_HUPHM_family_history>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -28,7 +28,7 @@
 	].	
 
 <FamilyCancerType_bc_clinical_notes_HUPHM_family_history>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
 						rml:referenceFormulation ql:CSV;
 						];	
     rr:subjectMap <FamilyCancerType_Function_bc_clinical_notes_HUPHM_family_history> ;
@@ -59,7 +59,7 @@
 
 <FamilyCancerType_Function_bc_clinical_notes_HUPHM_family_history>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_antecedents.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
         rr:class clarify:BCPatient
 	];
 	rr:predicateObjectMap [
@@ -32,15 +32,33 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_OncologicalSurgery_{n_surgery}_{surgery}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_OncologicalSurgery_{n_surgery}_{surgery}";
 		rr:class clarify:OncologicalSurgery
-	];		
+	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:date;
+		rr:predicate clarify:surgeryYear;
 		rr:objectMap [
-			rml:reference "surgery_date";
-			rr:datatype xsd:date;
+			rml:reference "date_year";
+			rr:datatype xsd:int;
 		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryMonth;
+		rr:objectMap [
+			rml:reference "date_month";
+			rr:datatype xsd:int;
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryDay;
+		rr:objectMap [
+			rml:reference "date_day";
+			rr:datatype xsd:int;
+		]
+	];			
+	rr:predicateObjectMap [
+		rr:predicate clarify:surgeryDate;
+		rr:objectMap <SurgeryDate_Function_bc_clinical_notes_HUPHM_surgery> ;
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasType;
@@ -109,4 +127,38 @@
                 rml:reference "surgery" 
             ]
         ];                         
+    ].
+
+<SurgeryDate_Function_bc_clinical_notes_HUPHM_surgery>
+	rr:termType rr:Literal;
+	rr:datatype xsd:date;
+
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:calculate_surgeryDate_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:year;
+            rr:objectMap [ 
+                rr:constant "date_year" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:month;
+            rr:objectMap [ 
+                rr:constant "date_month" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:day;
+            rr:objectMap [ 
+                rr:constant "date_day" 
+            ]
+        ];                           
     ].
