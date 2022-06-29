@@ -1,0 +1,261 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+
+<BCPatient_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+        rr:class clarify:BCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDiagnosis;
+        rr:objectMap [
+            rr:parentTriplesMap <Diagnosis_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasNeoadjuvantTherapy;
+        rr:objectMap [
+            rr:parentTriplesMap <NeoadjuvantTherapy_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ].
+
+<Diagnosis_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_Diagnosis";
+        rr:class clarify:Diagnosis
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_TumorSize;
+        rr:objectMap [
+            rr:parentTriplesMap <Diagnosis_TNM_TumorSize_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_LymphNodesInvolvement;
+        rr:objectMap [
+            rr:parentTriplesMap <Diagnosis_TNM_LymphNodesInvolvement_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_MetastatisStage;
+        rr:objectMap [
+            rr:parentTriplesMap <Diagnosis_TNM_MetastatisStage_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_combination;
+        rr:objectMap [
+            rml:reference "stage_diagnosis";      
+        ]
+    ].
+
+<NeoadjuvantTherapy_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_NeoadjuvantTherapy";
+        rr:class clarify:NeoadjuvantTherapy
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_TumorSize;
+        rr:objectMap [
+            rr:parentTriplesMap <NeoadjuvantTherapy_TNM_TumorSize_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_LymphNodesInvolvement;
+        rr:objectMap [
+            rr:parentTriplesMap <NeoadjuvantTherapy_TNM_LymphNodesInvolvement_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNM_MetastatisStage;
+        rr:objectMap [
+            rr:parentTriplesMap <NeoadjuvantTherapy_TNM_MetastatisStage_bc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_combination;
+        rr:objectMap [
+            rml:reference "stage_after_neo";      
+        ]
+    ].
+
+<Diagnosis_TNM_TumorSize_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <Diagnosis_TNM_TumorSize_Function_bc_clinical_notes_HUPHM_tnm_stadification> ;
+    rr:termType rr:IRI;
+
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+        rr:class clarify:TumorSize
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:tumorSize_staging_method; 
+        rr:objectMap <Diagnosis_tnm_staging_method_Function_bc_clinical_notes_HUPHM_tnm_stadification> ;     
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:cancerStageTNM_combination;
+        rr:objectMap [
+            rml:reference "t_category";      
+        ]
+    ];
+
+
+<NeoadjuvantTherapy_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}_NeoadjuvantTherapy";
+        rr:class clarify:NeoadjuvantTherapy
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "t";      
+        ]
+    ];
+
+
+<Diagnosis_TumorSize_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <Diagnosis_TumorSize_Function_bc_clinical_notes_HUPHM_tnm_stadification> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/TumorSize";        
+        ]
+    ].
+
+<LymphNodesInvolvement_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <LymphNodesInvolvement_Function_bc_clinical_notes_HUPHM_tnm_stadification> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/LymphNodesInvolvement";        
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "n";      
+        ]
+    ]. 
+
+<MetastatisStage_bc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <MetastatisStage_Function_bc_clinical_notes_HUPHM_tnm_stadification> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/MetastatisStage";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "m";      
+        ]
+    ].
+              
+
+#######################################
+############## Functions ##############
+#######################################
+
+<Diagnosis_TNM_TumorSize_Function_bc_clinical_notes_HUPHM_tnm_stadification>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_TNM_T_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "stage_diagnosis" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "stage_diagnosis" 
+            ]
+        ];  
+    ].  
+
+<Diagnosis_tnm_staging_method_Function_bc_clinical_notes_HUPHM_tnm_stadification>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/tnm_stadification.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_TNM_T_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "stage_diagnosis" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "stage_diagnosis" 
+            ]
+        ];  
+    ]. 
