@@ -23,9 +23,24 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionRelapse;
 		rr:objectMap [
-			rr:parentTriplesMap <ProgressionRelapse_lc_clinical_notes_SLCG_relapse_progression>
+			rr:parentTriplesMap <progressionRelapseObservation_lc_clinical_notes_SLCG_relapse_progression>
 		]
-	];
+	].
+
+<progressionRelapseObservation_lc_clinical_notes_SLCG_relapse_progression>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_{occurrence_date}";
+        rr:class clarify:ProgressionRelapseObservation
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:parentTriplesMap <Progression_or_Relapse_lc_clinical_notes_SLCG_relapse_progression>
+        ]
+    ];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasProgressionType;
 		rr:objectMap [
@@ -52,11 +67,11 @@
 		]
 	].		
 
-<ProgressionRelapse_lc_clinical_notes_SLCG_relapse_progression>
+<Progression_or_Relapse_lc_clinical_notes_SLCG_relapse_progression>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <ProgressionRelapse_Function_lc_clinical_notes_SLCG_relapse_progression> ;
+    rr:subjectMap <Progression_or_Relapse_Function_lc_clinical_notes_SLCG_relapse_progression> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -125,7 +140,7 @@
 ############## Functions ##############
 #######################################
 
-<ProgressionRelapse_Function_lc_clinical_notes_SLCG_relapse_progression>
+<Progression_or_Relapse_Function_lc_clinical_notes_SLCG_relapse_progression>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
         rml:referenceFormulation ql:CSV 
