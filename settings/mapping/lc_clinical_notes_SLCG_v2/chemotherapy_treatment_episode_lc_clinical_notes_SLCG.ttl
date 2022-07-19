@@ -88,6 +88,20 @@
         rr:class clarify:Chemotherapy
     ];
     rr:predicateObjectMap [
+        rr:predicate clarify:hasDrugSchema;
+        rr:objectMap [
+            rr:parentTriplesMap <chemotherapy_drug_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+        ]
+    ].
+
+<chemotherapy_drug_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
+                        rml:referenceFormulation ql:CSV 
+                        ];
+    rr:subjectMap <chemotherapy_drug_schema_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_f1_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
@@ -105,7 +119,6 @@
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_f3_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
     ].
-
 
 <Treatment_chemotherapy_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
@@ -239,6 +252,39 @@
 ############## Functions ##############
 #######################################
 
+
+<chemotherapy_drug_schema_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findDrugSchema 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:drug1;
+            rr:objectMap [ 
+                rml:reference "f1_schema" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:drug2;
+            rr:objectMap [ 
+                rml:reference "f2_schema" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:drug3;
+            rr:objectMap [ 
+                rml:reference "f3_schema" 
+            ]
+        ];                           
+    ].
+
+
 <Treatment_Episode_chemotherapy_episode_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
@@ -320,7 +366,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findDrug 
             ]
         ];   
         rr:predicateObjectMap [
@@ -357,7 +403,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findDrug 
             ]
         ];   
         rr:predicateObjectMap [
@@ -394,7 +440,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic 
+                rr:constant clarifyFun:findDrug 
             ]
         ];   
         rr:predicateObjectMap [
@@ -460,7 +506,6 @@
         ];                         
     ].
 
-
 #######################################
 ################# RDB #################
 #######################################
@@ -469,7 +514,8 @@
     rml:logicalSource [ 
         rml:source <RDB_source>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT `chemotherapy_drugs`.`EHR`,`chemotherapy_treatment_line`.`start_date`
+        rml:query """SELECT DISTINCT `chemotherapy_drugs`.`EHR`,
+        `chemotherapy_treatment_line`.`start_date`,`chemotherapy_drugs`.`cycle`
         FROM `chemotherapy_drugs`, `chemotherapy_treatment_line` 
         WHERE `chemotherapy_drugs`.`EHR`=`chemotherapy_treatment_line`.`EHR` 
         AND `chemotherapy_drugs`.`treatment_line`=`chemotherapy_treatment_line`.`treatment_line`""";
@@ -480,26 +526,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasEpisode;
         rr:objectMap [
-            rr:parentTriplesMap <Episode_Number_Of_Cycle_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-        ]
-    ].
-
-<Episode_Number_Of_Cycle_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ 
-        rml:source <RDB_source_lc_clinical_notes_chemotherapy_treatment_episode>;
-        rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT `chemotherapy_drugs`.`EHR`,`chemotherapy_drugs`.`cycle`
-        FROM `chemotherapy_drugs`, `chemotherapy_treatment_line` 
-        WHERE `chemotherapy_drugs`.`EHR`=`chemotherapy_treatment_line`.`EHR` 
-        AND `chemotherapy_drugs`.`treatment_line`=`chemotherapy_treatment_line`.`treatment_line`""";
-        ];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/Cycle_{`chemotherapy_drugs`.`cycle`}";
-    ];  
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/NumberOfTreatmentCycle";     
+            rr:template "http://clarify2020.eu/entity/Cycle_{`chemotherapy_drugs`.`cycle`}";
         ]
     ].
 
