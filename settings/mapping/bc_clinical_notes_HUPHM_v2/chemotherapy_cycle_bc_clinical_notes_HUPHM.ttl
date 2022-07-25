@@ -14,7 +14,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -28,13 +28,9 @@
         ]
     ].
 
-### TreatmentType: Chemotherapy, immunotherapy, ...
-### EpisodeType: Neoadjuvant or Adjuvant
-### Episode: treatment line number, cycle number, or number of cycles
-### Type: type of treatment based on the dictionary provided by upm: QT_chemotherapy,...
 
 <Treatment_Episode_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -48,18 +44,6 @@
         ]
     ]; 
     rr:predicateObjectMap [
-        rr:predicate clarify:hasEpisodeType;
-        rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_chemotherapy_episode_type_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-        ]
-    ]; 
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasBestResponse;
-        rr:objectMap [
-            rr:parentTriplesMap <TreatementLineBestResponse_bc_clinical_notes_HUPHM_chemotherapy_treatment_line>
-        ]
-    ];
-    rr:predicateObjectMap [
         rr:predicate clarify:treatementLineStartDate;
         rr:objectMap [
             rml:reference "start_date";
@@ -72,95 +56,15 @@
             rml:reference "end_date";
             rr:datatype xsd:date
         ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasEpisode;
-        rr:objectMap [
-            rr:parentTriplesMap <episode_TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasType;
-        rr:objectMap [
-            rr:parentTriplesMap <Treatment_UPM_type_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-        ]
-    ].   
-
-<Treatment_Episode_chemotherapy_episode_type_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_episode_type_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
-    rr:termType rr:IRI;
-
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/EpisodeType";       
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasOriginalValue;
-        rr:objectMap [
-            rml:reference "type";       
-        ]
-    ].
-
-<TreatementLineBestResponse_bc_clinical_notes_HUPHM_chemotherapy_treatment_line>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap <TreatementLineBestResponse_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_line> ;
-    rr:termType rr:IRI;
-
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/TreatementOutcome";        
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasOriginalValue;
-        rr:objectMap [
-            rml:reference "best_response";      
-        ]
-    ].
-
-<episode_TreatmentLineNumber_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
-        rr:class clarify:TreatmentLineNumber;
     ].  
 
-<Treatment_UPM_type_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap <Treatment_UPM_type_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
-    rr:termType rr:IRI;
-
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Type";     
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasOriginalValue;
-        rr:objectMap [
-            rml:reference "type";       
-        ]
-    ].
 
 <Treatment_Type_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_drugs.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_Chemotherapy_{treatment_line}";
+        rr:template "http://clarify2020.eu/entity/{EHR}_Chemotherapy_{cycle_number}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -176,7 +80,7 @@
     ].
 
 <chemotherapy_drug_schema_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV 
                         ];
     rr:subjectMap <chemotherapy_drug_schema_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
@@ -190,7 +94,7 @@
     ].
 
 <Treatment_Episode_chemotherapy_schema_drugs_bc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap <Treatment_Episode_chemotherapy_schema_drugs_Functions_bc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
@@ -204,11 +108,11 @@
     ].
 
 <TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
                         rml:referenceFormulation ql:CSV 
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{cycle}";
+        rr:template "http://clarify2020.eu/entity/{cycle_number}";
         rr:class clarify:TreatmentLineCycle
     ].
             
@@ -255,7 +159,7 @@
 
 <Treatment_Episode_chemotherapy_schema_drugs_Functions_bc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
