@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <OncologicalDrugs_lc_clinical_notes_oncologicalDrugs_annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated_revised.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -36,17 +36,17 @@
 	].
 
 <Annotation_lc_clinical_notes_oncologicalDrugs_annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated_revised.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI_ID}";
+		rr:template "http://clarify2020.eu/entity/{CUI}";
 		rr:class clarify:Annotation
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:annID;
 		rr:objectMap [ 
-			rml:reference "CUI_ID" 
+			rml:reference "CUI" 
 		]
 	];
 	rr:predicateObjectMap [
