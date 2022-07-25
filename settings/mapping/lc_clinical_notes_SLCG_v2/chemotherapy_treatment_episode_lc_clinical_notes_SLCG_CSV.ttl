@@ -45,7 +45,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasEpisodeType;
         rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_chemotherapy_episode_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+            rr:parentTriplesMap <Treatment_episode_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
     ];      
     rr:predicateObjectMap [
@@ -72,12 +72,6 @@
         rr:predicate clarify:hasEpisode;
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_TreatmentLineNumber_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasType;
-        rr:objectMap [
-            rr:parentTriplesMap <Treatment_chemotherapy_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
     ].
 
@@ -122,11 +116,11 @@
         ]
     ].
 
-<Treatment_chemotherapy_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<Treatment_episode_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
+    rr:subjectMap <Treatment_Episode_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -142,25 +136,6 @@
         ]
     ].
 
-<Treatment_Episode_chemotherapy_episode_type_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_episode_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
-    rr:termType rr:IRI;
-
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocab/EpisodeType";       
-        ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasOriginalValue;
-        rr:objectMap [
-            rml:reference "type";       
-        ]
-    ].
 <Treatment_Episode_chemotherapy_BestResponse_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
                         rml:referenceFormulation ql:CSV;
@@ -287,42 +262,6 @@
     ].
 
 
-<Treatment_Episode_chemotherapy_episode_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
-        rml:referenceFormulation ql:CSV 
-                            ];
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ 
-                rr:constant clarifyFun:findBiomarkerTestResult 
-            ]
-        ];   
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:tableName;
-            rr:objectMap [ 
-                rr:constant "chemotherapy_treatment_line" 
-            ]
-        ];
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnName;
-            rr:objectMap [ 
-                rr:constant "type" 
-            ]
-        ]; 
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:resource;
-            rr:objectMap [ 
-                rr:constant "http://clarify2020.eu/entity/" 
-            ]
-        ];  
-        rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
-            rr:objectMap [ 
-                rml:reference "type" 
-            ]
-        ];                         
-    ].
 <Treatment_Episode_chemotherapy_BestResponse_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
@@ -471,7 +410,7 @@
         ];                         
     ].
 
-<Treatment_Episode_chemotherapy_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<Treatment_Episode_type_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
         rml:referenceFormulation ql:CSV 
