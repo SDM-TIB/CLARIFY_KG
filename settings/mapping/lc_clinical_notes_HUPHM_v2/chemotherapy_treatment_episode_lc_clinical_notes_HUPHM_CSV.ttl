@@ -171,27 +171,27 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d1_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d1_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d2_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d2_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d3_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_d3_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
         ]
     ].
 
-<Treatment_Episode_chemotherapy_schema_d1_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+<Treatment_Episode_chemotherapy_schema_d1_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d1_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
+    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d1_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -207,11 +207,11 @@
         ]
     ].
 
-<Treatment_Episode_chemotherapy_schema_d2_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+<Treatment_Episode_chemotherapy_schema_d2_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d2_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
+    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d2_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -227,11 +227,11 @@
         ]
     ].
 
-<Treatment_Episode_chemotherapy_schema_d3_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+<Treatment_Episode_chemotherapy_schema_d3_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d3_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
+    rr:subjectMap <Treatment_Episode_chemotherapy_schema_d3_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -370,7 +370,7 @@
         ];                         
     ].
 
-<Treatment_Episode_chemotherapy_schema_d1_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<Treatment_Episode_chemotherapy_schema_d1_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
         rml:referenceFormulation ql:CSV 
@@ -407,7 +407,7 @@
         ];                         
     ].
 
-<Treatment_Episode_chemotherapy_schema_d2_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<Treatment_Episode_chemotherapy_schema_d2_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
         rml:referenceFormulation ql:CSV 
@@ -444,7 +444,7 @@
         ];                         
     ].
 
-<Treatment_Episode_chemotherapy_schema_d3_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<Treatment_Episode_chemotherapy_schema_d3_Function_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_drugs.csv";
         rml:referenceFormulation ql:CSV 
