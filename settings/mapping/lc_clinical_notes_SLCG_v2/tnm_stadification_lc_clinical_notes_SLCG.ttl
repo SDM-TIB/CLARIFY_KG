@@ -13,13 +13,57 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_lc_clinical_notes_SLCG_tnm_stadification>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}";
         rr:class clarify:LCPatient
 	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNMstageAssessment;
+        rr:objectMap [
+            rr:parentTriplesMap <TNM_Stage_assessment_lc_clinical_notes_SLCG_tnm_stadification>
+        ]
+    ]. 
+
+<TNM_Stage_assessment_lc_clinical_notes_SLCG_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_{date}_{t}_{n}_{m}";
+        rr:class clarify:TNMstageAssessment
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAssessedDuring;
+        rr:objectMap [
+            rr:constant "Diagnosis";  
+            rr:termType rr:Literal;      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAssessedOn;
+        rr:objectMap [
+            rml:reference "date";  
+            rr:datatype xsd:date ;     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTNMstage;
+        rr:objectMap [
+            rr:parentTriplesMap <TNM_Stage_lc_clinical_notes_SLCG_tnm_stadification>
+        ]
+    ]. 
+
+<TNM_Stage_lc_clinical_notes_SLCG_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{t}_{n}_{m}";
+        rr:class clarify:TNMstage
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:cancerStageTNM_TumorSize;
         rr:objectMap [
@@ -46,7 +90,7 @@
 	].	
 
 <TumorSize_lc_clinical_notes_SLCG_tnm_stadification>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <TumorSize_Function_lc_clinical_notes_SLCG_tnm_stadification> ;
@@ -66,7 +110,7 @@
 	]. 
 
 <LymphNodesInvolvement_lc_clinical_notes_SLCG_tnm_stadification>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <LymphNodesInvolvement_Function_lc_clinical_notes_SLCG_tnm_stadification> ;
@@ -86,7 +130,7 @@
 	]. 
 
 <MetastatisStage_lc_clinical_notes_SLCG_tnm_stadification>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <MetastatisStage_Function_lc_clinical_notes_SLCG_tnm_stadification> ;
@@ -106,7 +150,7 @@
 	].
 
 <TNM_version_lc_clinical_notes_SLCG_tnm_stadification>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <TNM_version_Function_lc_clinical_notes_SLCG_tnm_stadification> ;
@@ -131,7 +175,7 @@
 
 <TumorSize_Function_lc_clinical_notes_SLCG_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -168,7 +212,7 @@
 
 <LymphNodesInvolvement_Function_lc_clinical_notes_SLCG_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -205,7 +249,7 @@
 
 <MetastatisStage_Function_lc_clinical_notes_SLCG_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -242,7 +286,7 @@
 
 <TNM_version_Function_lc_clinical_notes_SLCG_tnm_stadification>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tnm_stadification_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

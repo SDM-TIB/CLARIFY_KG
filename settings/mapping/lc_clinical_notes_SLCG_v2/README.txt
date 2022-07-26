@@ -6,3 +6,10 @@
 2. other_metastasis_locations_progression_relapse
 3. other_mutations_treatment_line
 4. other_mutations -> (type and result are all NULL)
+
+########################################################################
+########### Additional csv generated from the SLCG RDB #################
+########################################################################
+
+SELECT `tnm_stadification`.*, `diagnosis`.`date`
+FROM `diagnosis`,`tnm_stadification`
