@@ -182,6 +182,19 @@
         ]
     ].
 
+<Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
+    ]; 
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/{TreatmentLineNumber}" ;     
+        ]
+    ].
 
 ######### tnm stage #################
 

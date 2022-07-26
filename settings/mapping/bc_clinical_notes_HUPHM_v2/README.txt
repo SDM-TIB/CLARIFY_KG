@@ -9,3 +9,9 @@ Tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemothera
 
 
 
+########################################################################
+########### Additional csv generated from the BC RDB #################
+########################################################################
+SELECT `surgery`.*, `patient`.`surgery_date`
+FROM `surgery`,`patient`
+

@@ -189,8 +189,12 @@
                         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
-        rr:class clarify:TreatmentLineNumber;
-    ]. 
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/{TreatmentLineNumber}" ;     
+        ]
+    ].
 
 ######### tnm stage #################
 
