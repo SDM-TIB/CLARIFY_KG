@@ -17,8 +17,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}_RadiotherapyTL_{treatment_line}";
-		rr:class clarify:RadiotherapyTreatmentLine
+		rr:template "http://clarify2020.eu/entity/{EHR}_Radiotherapy_{treatment_line}";
+		rr:class clarify:Radiotherapy
 	];	
 	rr:predicateObjectMap [
 		rr:predicate clarify:treatmentLineDosage;
