@@ -238,7 +238,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findDrugSchema_LC 
+                rr:constant clarifyFun:findDrugSchema_LC_SLCG 
             ]
         ];   
         rr:predicateObjectMap [

@@ -273,9 +273,9 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findDrugSchema_LC 
+                rr:constant clarifyFun:findDrugSchema_LC_HUPHM 
             ]
-        ];   
+        ];  
         rr:predicateObjectMap [
             rr:predicate clarifyFun:drug1;
             rr:objectMap [ 
