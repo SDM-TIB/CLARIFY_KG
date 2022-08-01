@@ -13,23 +13,51 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_lc_clinical_notes_HUPHM_tumor_histology>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology_join_diagnosis_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
 		rr:class clarify:LCPatient
 	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTumorHistology;
-		rr:objectMap [ 
-			rr:parentTriplesMap <TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTumorHistologyAssessment;
+        rr:objectMap [
+            rr:parentTriplesMap <TumorHistologyAssessment_lc_clinical_notes_HUPHM_tnm_stadification>
+        ]
+    ]. 
+<TumorHistologyAssessment_lc_clinical_notes_HUPHM_tnm_stadification>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/tumor_histology_join_diagnosis_date.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_{date}";
+        rr:class clarify:TumorHistologyAssessment
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAssessedDuring;
+        rr:objectMap [
+            rr:constant "Diagnosis";  
+            rr:termType rr:Literal;      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAssessedOn;
+        rr:objectMap [
+            rml:reference "date";  
+            rr:datatype xsd:date ;     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasHistology;
+        rr:objectMap [
+            rr:parentTriplesMap <TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
+        ]
+    ]. 
 
 
 <TumorHistology_lc_clinical_notes_HUPHM_tumor_histology>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology_join_diagnosis_date.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
 	rr:subjectMap <TumorTypeCategory_Function_lc_clinical_notes_HUPHM_tumor_histology> ;
@@ -62,15 +90,15 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasHistologyDegree;
         rr:objectMap [
-            rr:parentTriplesMap <HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>    
+            rr:parentTriplesMap <HistologyDegree_lc_clinical_notes_HUPHM_tumor_histology>    
         ]
     ].
 
-<HistologyDegree_lc_clinical_notes_SLCG_tumor_histology>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+<HistologyDegree_lc_clinical_notes_HUPHM_tumor_histology>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology_join_diagnosis_date.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology> ;
+    rr:subjectMap <HistologyDegree_Function_lc_clinical_notes_HUPHM_tumor_histology> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -92,7 +120,7 @@
 
 <TumorTypeCategory_Function_lc_clinical_notes_HUPHM_tumor_histology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [
@@ -127,9 +155,9 @@
         ];                         
     ].
 
-<HistologyDegree_Function_lc_clinical_notes_SLCG_tumor_histology>
+<HistologyDegree_Function_lc_clinical_notes_HUPHM_tumor_histology>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/tumor_histology_join_diagnosis_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

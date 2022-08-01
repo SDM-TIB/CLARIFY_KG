@@ -18,3 +18,12 @@ FROM `diagnosis`,`tnm_stadification`
 SELECT `tumor_histology`.*, `diagnosis`.`date`
 FROM `diagnosis`,`tumor_histology`
 -> tumor_histology_join_diagnosis_date
+
+########################################################################
+ ##### Additional csv generated from the HUPHM LC RDB #################
+########################################################################
+
+SELECT `tumor_histology`.*, `diagnosis`.`date`
+FROM `diagnosis`,`tumor_histology`
+-> tumor_histology_join_diagnosis_date
+
