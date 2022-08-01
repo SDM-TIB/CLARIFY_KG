@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <BCPatient_bc_clinical_notes_HUPHM_surgery>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -28,7 +28,7 @@
     ].
 
 <treatement_episode_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -50,7 +50,7 @@
 
 
 <Treatment_Episode_surgery_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -94,7 +94,7 @@
 		
 
 <SurgeryType_bc_clinical_notes_HUPHM_surgery>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery> ;
@@ -114,7 +114,7 @@
 	].
 
 <Treatment_Episode_surgery_TreatmentLineNumber_bc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -133,7 +133,7 @@
 
 <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery_join_patient_date.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

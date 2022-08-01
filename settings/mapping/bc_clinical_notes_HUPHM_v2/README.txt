@@ -17,4 +17,5 @@ SELECT `tumor_tnm`.`ehr` FROM `tumor_tnm`,`patient_temp` WHERE `tumor_tnm`.`ehr`
 ########################################################################
 SELECT `surgery`.*, `patient`.`surgery_date`
 FROM `surgery`,`patient`
-
+WHERE `surgery`.`ehr` = `patient`.`ehr`
+--> patient_join_surgery_date
