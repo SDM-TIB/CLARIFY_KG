@@ -21,19 +21,55 @@
 		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
 		rr:class clarify:BCPatient
 	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasRadiotherapyTreatmentLine;
-		rr:objectMap [ 
-			rr:parentTriplesMap <RadiotherapyTreatmentLine_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentEpisode;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Treatment_Episode_radiotherapy_bc_clinical_notes_HUPHM_radiotherapy_treatment_episode>
+        ]
+    ].
+
+<Treatment_Episode_radiotherapy_bc_clinical_notes_HUPHM_radiotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy_treatment_line.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_Radiotherapy_{date_start}";
+        rr:class clarify:TreatmentEpisode
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentType;
+        rr:objectMap [
+            rr:parentTriplesMap <RadiotherapyTreatmentLine_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+        ]
+    ];       
+    rr:predicateObjectMap [
+        rr:predicate clarify:treatementLineStartDate;
+        rr:objectMap [
+            rml:reference "date_start";
+            rr:datatype xsd:date
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:treatementLineEndingDate;
+        rr:objectMap [
+            rml:reference "date_end";
+            rr:datatype xsd:date
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasEpisode;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineNumber_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
+        ]
+    ].
+
 <RadiotherapyTreatmentLine_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/radiotherapy.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_RadiotherapyTL_{n_radiotherapy}";
-		rr:class clarify:RadiotherapyTreatmentLine;
+		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}_Radiotherapy_{n_radiotherapy}";
+		rr:class clarify:Radiotherapy;
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasTreatmentLineNumber;

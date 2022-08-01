@@ -4,7 +4,7 @@ Tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemothera
 
 
 ########################################################################
-  ########### Data cleaning performed directly on  #################
+  ########### Data cleaning performed directly on RDB ################
 ########################################################################
 
 UPDATE `patient` SET `neoadjuvant`="yes" 

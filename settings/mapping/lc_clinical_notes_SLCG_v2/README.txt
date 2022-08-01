@@ -13,3 +13,8 @@
 
 SELECT `tnm_stadification`.*, `diagnosis`.`date`
 FROM `diagnosis`,`tnm_stadification`
+-> tnm_stadification_join_diagnosis_date
+
+SELECT `tumor_histology`.*, `diagnosis`.`date`
+FROM `diagnosis`,`tumor_histology`
+-> tumor_histology_join_diagnosis_date

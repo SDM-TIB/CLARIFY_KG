@@ -20,31 +20,34 @@
 		rr:template "http://clarify2020.eu/entity/{EHR}";
         rr:class clarify:LCPatient
 	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionRelapse;
-		rr:objectMap [
-			rr:parentTriplesMap <ProgressionRelapse_lc_clinical_notes_HUPHM_relapse_progression>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasProgressionType;
-		rr:objectMap [
-			rr:parentTriplesMap <ProgressionType_lc_clinical_notes_HUPHM_relapse_progression>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTherapyType;
-		rr:objectMap [
-			rr:parentTriplesMap <TherapyType_lc_clinical_notes_HUPHM_relapse_progression>
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:date;
-		rr:objectMap [
-			rml:reference "occurrence_date";
-			rr:datatype xsd:date
-		]
-	].		
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasProgressionRelapseAssessment;
+        rr:objectMap [
+            rr:parentTriplesMap <progressionRelapseObservation_lc_clinical_notes_SLCG_relapse_progression>
+        ]
+    ].
+
+<progressionRelapseObservation_lc_clinical_notes_SLCG_relapse_progression>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_Progression_Relapse_{occurrence_date}";
+        rr:class clarify:ProgressionRelapseAssessment
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasProgressionOrRelapse;
+        rr:objectMap [
+            rr:parentTriplesMap <ProgressionRelapse_lc_clinical_notes_HUPHM_relapse_progression>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:isAssessedOn;
+        rr:objectMap [
+            rml:reference "occurrence_date";
+            rr:datatype xsd:date
+        ]
+    ].
 
 <ProgressionRelapse_lc_clinical_notes_HUPHM_relapse_progression>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/relapse_progression.csv";
@@ -56,7 +59,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/ProgressionRelapse";      
+            rr:constant "http://clarify2020.eu/vocab/ProgressionRelapse";      
         ]
     ];
     rr:predicateObjectMap [
@@ -64,7 +67,20 @@
         rr:objectMap [
             rml:reference "progression_or_relapse";       
         ]
-    ]. 
+    ]; 
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasProgressionType;
+		rr:objectMap [
+			rr:parentTriplesMap <ProgressionType_lc_clinical_notes_HUPHM_relapse_progression>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasTherapyType;
+		rr:objectMap [
+			rr:parentTriplesMap <TherapyType_lc_clinical_notes_HUPHM_relapse_progression>
+		]
+	].		
+
     
 <ProgressionType_lc_clinical_notes_HUPHM_relapse_progression>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/relapse_progression.csv";
@@ -76,7 +92,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/ProgressionType";		
+			rr:constant "http://clarify2020.eu/vocab/ProgressionType";		
 		]
 	];
 	rr:predicateObjectMap [
@@ -96,7 +112,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/TherapyType";		
+			rr:constant "http://clarify2020.eu/vocab/TherapyType";		
 		]
 	];
 	rr:predicateObjectMap [
