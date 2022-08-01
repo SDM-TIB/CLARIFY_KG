@@ -192,7 +192,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/{TreatmentLineNumber}" ;     
+            rr:constant "http://clarify2020.eu/vocab/TreatmentLineNumber" ;     
         ]
     ].
 

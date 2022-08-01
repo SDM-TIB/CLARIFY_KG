@@ -54,7 +54,7 @@
         rr:objectMap [
             rml:reference "stage";      
         ]
-    ]. 
+    ]; 
     rr:predicateObjectMap [
         rr:predicate clarify:hasTNMstage;
         rr:objectMap [

@@ -36,7 +36,7 @@
 ########## treatment episode (surgery) ###########
 
 <treatement_episode_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -48,12 +48,6 @@
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_surgery_lc_clinical_notes_HUPHM_surgery>
         ]
-    ];     
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasEpisode;
-        rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_HUPHM_surgery>
-        ]
     ].
 
 <Treatment_Episode_surgery_lc_clinical_notes_HUPHM_surgery>
@@ -61,7 +55,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalSurgery_{treatment_line}";
+        rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalSurgery_{surgery_date}"; # teatment_line is missing here
         rr:class clarify:OncologicalSurgery
     ];  
     rr:predicateObjectMap [
@@ -182,19 +176,6 @@
         ]
     ].
 
-<Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/surgery.csv";
-                        rml:referenceFormulation ql:CSV;
-                        ];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
-    ]; 
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/{TreatmentLineNumber}" ;     
-        ]
-    ].
 
 ######### tnm stage #################
 
