@@ -37,7 +37,7 @@
 ########## treatment episode (surgery) ###########
 
 <treatement_episode_lc_clinical_notes_SLCG_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
@@ -184,7 +184,7 @@
 
 
 <Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_SLCG_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/chemotherapy_treatment_line.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
