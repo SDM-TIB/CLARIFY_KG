@@ -189,6 +189,7 @@
                         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
+    ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
