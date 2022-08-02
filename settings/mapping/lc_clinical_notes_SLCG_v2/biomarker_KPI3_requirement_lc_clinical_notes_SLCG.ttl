@@ -1,0 +1,412 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+########################################################################
+############## SLCG LC patients  with ALK ####################
+########################################################################
+<SLCG_LCPatient_ALK>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR FROM `alk_mutation` WHERE `result_alk_ihq`=1.0 or `result_alk_fish`=1.0 or `result_alk_rna`=1.0 """;
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/ALK"
+		]
+	].
+
+#################### Negative ALK #######################
+
+<SLCG_LCPatient_Negative_ALK>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `alk_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `alk_mutation`
+			WHERE `result_alk_ihq`=1.0 or `result_alk_fish`=1.0 or `result_alk_rna`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ALKNegativePatient"
+		]
+	].
+
+
+########################################################################
+############## SLCG LC patients  with HER2 ####################
+########################################################################
+<SLCG_LCPatient_HER2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR from `her2_mutation` WHERE `result_her2_ihq`=1.0 or `result_her2_fish`=1.0 """;
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/HER2"
+		]
+	].
+
+#################### Negative HER2 #######################
+
+<SLCG_LCPatient_Negative_HER2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `her2_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR from `her2_mutation` 
+			WHERE `result_her2_ihq`=1.0 or `result_her2_fish`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/HER2NegativePatient"
+		]
+	].
+
+########################################################################
+############## SLCG LC patients  with EGFR ####################
+########################################################################
+<SLCG_LCPatient_EGFR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR FROM `egfr_mutation` WHERE `result_egfr_t790m`=1.0 or `result_egfr_t790`=1.0 or `result_egfr_exon19`=1.0 or `result_egfr_exon21`=1.0 or `result_egfr_nos`=1.0 or `result_egfr_others`=1.0 or `result_egfr_exon20`=1.0 or `specify_result_egfr_exon20`=1.0 or `specify_result_egfr_others`=1.0 """;
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/EGFR"
+		]
+	].
+
+#################### Negative EGFR #######################
+
+<SLCG_LCPatient_Negative_EGFR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `egfr_mutation` 
+			WHERE EHR NOT IN
+			(SELECT DISTINCT EHR from `egfr_mutation`
+			WHERE `result_egfr_t790m`=1.0 or `result_egfr_t790`=1.0 or `result_egfr_exon19`=1.0 or `result_egfr_exon21`=1.0 or `result_egfr_nos`=1.0 or `result_egfr_others`=1.0 or `result_egfr_exon20`=1.0 or `specify_result_egfr_exon20`=1.0 or `specify_result_egfr_others`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/EGFRNegativePatient"
+		]
+	].
+
+########################################################################
+############## SLCG LC patients  with PDL1 ####################
+########################################################################
+<SLCG_LCPatient_PDL1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR FROM `pdl1_expression` WHERE result=1.0""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/PDL1"
+		]
+	].
+
+#################### Negative PDL1 #######################
+
+<SLCG_LCPatient_Negative_PDL1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `pdl1_expression` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `pdl1_expression` 
+			WHERE result=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/PDL1NegativePatient"
+		]
+	].
+
+########################################################################
+############## SLCG LC patients  with ROS1 ####################
+########################################################################
+<SLCG_LCPatient_ROS1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR from `ros1_mutation` WHERE `result_ros1_ihq`=1.0 or `result_ros1_fish`=1.0 """;
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/ROS1"
+		]
+	].
+
+#################### Negative ROS1 #######################
+
+<SLCG_LCPatient_Negative_ROS1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `ros1_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR from `ros1_mutation` 
+			WHERE `result_ros1_ihq`=1.0 or `result_ros1_fish`=1.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ROS1NegativePatient"
+		]
+	].
+
+##########################################################################################
+############## SLCG LC patients with KRAS, HER2Muut, BRAF, RET, FGFR1 ####################
+##########################################################################################
+<SLCG_LCPatient_Bio1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR, study_performed FROM `biomarker_mutation` WHERE study_performed!="MET" and result!=0.0""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{study_performed}"
+		]
+	]. 
+
+#################### Negative KRAS, HER2Muut, BRAF, RET, FGFR1 #######################
+
+<SLCG_LCPatient_Negative_KRAS>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="KRAS" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/KRASNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_BRAF>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="BRAF" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/BRAFNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_HER2Mut>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="HER2Mut" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/HER2NegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_RET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="RET" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/RETNegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_FGFR1>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="FGFR1" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/FGFR1NegativePatient"
+		]
+	].
+
+<SLCG_LCPatient_Negative_NTKR>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="NTKR" and result!=0.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/NTKRNegativePatient"
+		]
+	].
+
+########################################################################
+############## SLCG LC patients with MET ####################
+########################################################################
+<SLCG_LCPatient_Bio2>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT distinct EHR FROM `biomarker_mutation` WHERE study_performed="MET" and result!=3.0""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:class clarify:LCPatient;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasBio;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/MET"
+		]
+	]. 
+
+#################### Negative MET #######################
+
+<SLCG_LCPatient_Negative_MET>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+	    rml:query """SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE EHR NOT IN
+			(SELECT distinct EHR FROM `biomarker_mutation` 
+			WHERE study_performed="MET" and result!=3.0)""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{EHR}";
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/METNegativePatient"
+		]
+	].
+
+#################################
+
+<RDB_source> a d2rq:Database;
+  d2rq:jdbcDSN "SLCG_UPM_v5.0";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
