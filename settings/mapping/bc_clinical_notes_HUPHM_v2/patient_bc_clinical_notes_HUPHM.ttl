@@ -17,7 +17,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
 		rr:class clarify:BCPatient
 	];
 	rr:predicateObjectMap [
@@ -31,7 +31,6 @@
 		rr:objectMap [
 			rml:reference "birth_date";
 			rr:datatype xsd:date;
-
 		]
 	];
 	rr:predicateObjectMap [
@@ -41,11 +40,12 @@
 			rr:datatype xsd:date;
 		]
 	];	
-	rr:predicate clarify:diagnosisAge;
+	rr:predicateObjectMap [
+		rr:predicate clarify:diagnosisAge;
 		rr:objectMap [
 			rml:reference "age_at_diagnosis";
 		]
-	]; 
+	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasOncologicalTreatmentLine;
 		rr:objectMap [
@@ -67,12 +67,14 @@
 			rr:datatype xsd:date;
 		]
 	];
-	rr:predicate clarify:deathAge;
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathAge;
 		rr:objectMap [
 			rml:reference "age_at_death";
 		]
 	];
-	rr:predicate clarify:relapseYear;
+	rr:predicateObjectMap [
+		rr:predicate clarify:relapseYear;
 		rr:objectMap [
 			rml:reference "recurrence_year";
 		]
@@ -83,34 +85,40 @@
 			rr:parentTriplesMap <NeoadjuvantTherapy_bc_clinical_notes_HUPHM_patient>
 		]
 	];
-	rr:predicate clarify:estrogenPositive;
+	rr:predicateObjectMap [
+		rr:predicate clarify:estrogenPositive;
 		rr:objectMap [
 			rml:reference "er_positive";
 		]
 	];
-	rr:predicate clarify:progesteronePositive;
+	rr:predicateObjectMap [
+		rr:predicate clarify:progesteronePositive;
 		rr:objectMap [
 			rml:reference "pr_positive";
 		]
 	];
-	rr:predicate clarify:ki67;
+	rr:predicateObjectMap [
+		rr:predicate clarify:ki67;
 		rr:objectMap [
 			rml:reference "ki67_percent_max_simp";
 		]
 	];
-	rr:predicate clarify:hasMenarcheAge;
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasMenarcheAge;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{menarche_age}";
 		]
 	];
-	rr:predicate clarify:hasMenopauseAge;
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasMenopauseAge;
 		rr:objectMap [
 			rr:template "http://clarify2020.eu/entity/{menopause_age}";
 		]
 	];
-	rr:predicate clarify:hasEarlyMenopause;
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasEarlyMenopause;
 		rr:objectMap [
-			rr:template "menopause_pre";
+			rml:reference "menopause_pre";
 		]
 	];
 	rr:predicateObjectMap [

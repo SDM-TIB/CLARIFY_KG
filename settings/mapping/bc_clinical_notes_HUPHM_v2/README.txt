@@ -12,10 +12,25 @@ WHERE `patient`.`ehr` in (
 SELECT `tumor_tnm`.`ehr` FROM `tumor_tnm`,`patient_temp` WHERE `tumor_tnm`.`ehr` = `patient_temp`.`ehr` AND `tumor_tnm`.`stage_after_neo` != "NULL" AND `patient_temp`.`neoadjuvant` LIKE "%no%"
 )
 
+
 ########################################################################
-########### Additional csv generated from the BC RDB #################
+ ########## Additional Table added to the HUPHM BC RDB ##############
 ########################################################################
-SELECT `surgery`.*, `patient`.`surgery_date`
-FROM `surgery`,`patient`
-WHERE `surgery`.`ehr` = `patient`.`ehr`
---> patient_join_surgery_date
+CREATE TABLE tumor_tnm_join_diagnosis_and_neoadjuvant_date
+AS
+SELECT `tumor_tnm`.*, `patient`.`diagnosis_date`,`patient`.`first_treatment_date`, `patient`.`neoadjuvant`
+FROM `patient`,`tumor_tnm`
+WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
+
+
+UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `first_treatment_date`="" 
+WHERE `neoadjuvant` LIKE "%no%"
+
+########################################################################
+ ######## Additional csv generated from the HUPHM BC RDB ##############
+########################################################################
+
+SELECT `tumor_tnm`.*, `patient`.`diagnosis_date`
+FROM `patient`,`tumor_tnm`
+WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
+-> tumor_tnm_join_diagnosis_date

@@ -13,117 +13,90 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <BCPatient_bc_clinical_notes_HUPHM_surgery>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
-        rr:class clarify:BCPatient
-	];
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasTreatmentEpisode;
-        rr:objectMap [ 
-            rr:parentTriplesMap <treatement_episode_lc_clinical_notes_HUPHM_surgery>
-        ]
-    ].
-
-<treatement_episode_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_Surgery_{surgery_date}";
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+        rr:class clarify:BCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentEpisode;
+        rr:objectMap [ 
+            rr:parentTriplesMap <treatement_episode_bc_clinical_notes_HUPHM_surgery>
+        ]
+    ].
+
+<treatement_episode_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}_Surgery_{date_year}";
         rr:class clarify:TreatmentEpisode
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasTreatmentType;
         rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_surgery_lc_clinical_notes_HUPHM_surgery>
-        ]
-    ];     
-    rr:predicateObjectMap [
-        rr:predicate clarify:hasEpisode;
-        rr:objectMap [
-            rr:parentTriplesMap <Treatment_Episode_surgery_TreatmentLineNumber_bc_clinical_notes_HUPHM_surgery>
+            rr:parentTriplesMap <Treatment_Episode_surgery_bc_clinical_notes_HUPHM_surgery>
         ]
     ].
 
 
-<Treatment_Episode_surgery_lc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
+<Treatment_Episode_surgery_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalSurgery_{treatment_line}";
+        rr:template "http://clarify2020.eu/entity/{ehr}_{surgery}_OncologicalSurgery_{n_surgery}";
         rr:class clarify:OncologicalSurgery
+    ];   
+    rr:predicateObjectMap [
+        rr:predicate clarify:surgeryYear;
+        rr:objectMap [
+            rml:reference "date_year";
+            rr:datatype xsd:int;
+        ]
     ];
     rr:predicateObjectMap [
-        rr:predicate clarify:date;
+        rr:predicate clarify:surgeryMonth;
         rr:objectMap [
-            rml:reference "surgery_date";
-            rr:datatype xsd:date;
+            rml:reference "date_month";
+            rr:datatype xsd:int;
         ]
-    ];    
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryYear;
-		rr:objectMap [
-			rml:reference "date_year";
-			rr:datatype xsd:int;
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryMonth;
-		rr:objectMap [
-			rml:reference "date_month";
-			rr:datatype xsd:int;
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryDay;
-		rr:objectMap [
-			rml:reference "date_day";
-			rr:datatype xsd:int;
-		]
-	];			
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasType;
-		rr:objectMap [
-			rr:parentTriplesMap <SurgeryType_bc_clinical_notes_HUPHM_surgery>
-		]
-	].
-		
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:surgeryDay;
+        rr:objectMap [
+            rml:reference "date_day";
+            rr:datatype xsd:int;
+        ]
+    ];          
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <SurgeryType_bc_clinical_notes_HUPHM_surgery>
+        ]
+    ].
+        
 
 <SurgeryType_bc_clinical_notes_HUPHM_surgery>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery> ;
-	rr:termType rr:IRI;
-
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SurgeryType";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "surgery_type";		
-		]
-	].
-
-<Treatment_Episode_surgery_TreatmentLineNumber_bc_clinical_notes_HUPHM_surgery>
-    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
-    ]; 
+    rr:subjectMap <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery> ;
+    rr:termType rr:IRI;
+
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/{TreatmentLineNumber}" ;     
+            rr:template "http://clarify2020.eu/vocab/SurgeryType";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "surgery";       
         ]
     ].
 
@@ -133,7 +106,7 @@
 
 <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery>
     fnml:functionValue [
-        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient_join_surgery_date.csv";
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
         rml:referenceFormulation ql:CSV 
                             ];
         rr:predicateObjectMap [

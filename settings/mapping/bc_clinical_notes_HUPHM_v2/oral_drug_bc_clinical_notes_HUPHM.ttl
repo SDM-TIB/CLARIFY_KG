@@ -90,9 +90,9 @@
             ]
         ];  
         rr:predicateObjectMap [
-            rr:predicate clarifyFun:columnValue;
+            rr:predicate clarifyFun:OralDrug;
             rr:objectMap [ 
-                rml:reference "OralDrug" 
+                rml:reference "drug" 
             ]
         ];                     
     ].
