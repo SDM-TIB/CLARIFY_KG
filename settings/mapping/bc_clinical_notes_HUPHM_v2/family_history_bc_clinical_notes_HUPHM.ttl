@@ -13,24 +13,24 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <BCPatient_bc_clinical_notes_HUPHM_family_history>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
         rr:class clarify:BCPatient
-	];		
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasFamilyCancerType;
-		rr:objectMap [ 
-			rr:parentTriplesMap <FamilyCancerType_bc_clinical_notes_HUPHM_family_history>
-		]
-	].	
+    ];      
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasFamilyCancerType;
+        rr:objectMap [ 
+            rr:parentTriplesMap <FamilyCancerType_bc_clinical_notes_HUPHM_family_history>
+        ]
+    ].  
 
 <FamilyCancerType_bc_clinical_notes_HUPHM_family_history>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
-						rml:referenceFormulation ql:CSV;
-						];	
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/family_history.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];  
     rr:subjectMap <FamilyCancerType_Function_bc_clinical_notes_HUPHM_family_history> ;
     rr:termType rr:IRI;
 
@@ -65,7 +65,13 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer_cui 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "family_history" 
             ]
         ];   
         rr:predicateObjectMap [

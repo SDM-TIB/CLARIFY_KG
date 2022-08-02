@@ -23,7 +23,7 @@ FROM `patient`,`tumor_tnm`
 WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
 
 
-UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `first_treatment_date`="" 
+UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `first_treatment_date`= NULL 
 WHERE `neoadjuvant` LIKE "%no%"
 
 ########################################################################
