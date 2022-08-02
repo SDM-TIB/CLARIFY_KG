@@ -13,23 +13,23 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<LCPatient_episode_cycle_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+<LCPatient_episode_cycle_lc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_lc_clinical_notes_chemotherapy_treatment_episode>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT `chemotherapy_drugs`.`EHR`,
-        `chemotherapy_treatment_line`.`start_date`,`chemotherapy_drugs`.`cycle`
+        rml:query """SELECT DISTINCT `chemotherapy_treatment_line`.`EHR` as e,
+        `chemotherapy_treatment_line`.`start_date` as d,`chemotherapy_drugs`.`cycle` as c
         FROM `chemotherapy_drugs`, `chemotherapy_treatment_line` 
         WHERE `chemotherapy_drugs`.`EHR`=`chemotherapy_treatment_line`.`EHR` 
         AND `chemotherapy_drugs`.`treatment_line`=`chemotherapy_treatment_line`.`treatment_line`""";
         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{`chemotherapy_drugs`.`EHR`}_Chemotherapy_{`chemotherapy_treatment_line`.`start_date`}";
+        rr:template "http://clarify2020.eu/entity/{e}_Chemotherapy_{d}";
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasEpisode;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/entity/Cycle_{`chemotherapy_drugs`.`cycle`}";
+            rr:template "http://clarify2020.eu/entity/Cycle_{c}";
         ]
     ].
 
@@ -39,4 +39,3 @@
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
   d2rq:password "" .
-

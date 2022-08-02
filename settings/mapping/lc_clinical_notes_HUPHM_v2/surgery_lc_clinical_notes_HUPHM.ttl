@@ -69,12 +69,7 @@
         rr:objectMap [
             rr:parentTriplesMap <SurgeryResectionDegree_lc_clinical_notes_HUPHM_surgery>
         ]
-    ];
-    rr:predicateObjectMap [
-        rr:predicate clarify:has_PerioperativeDeath_orNot;
-        rr:objectMap <PerioperativeDeath_Function_lc_clinical_notes_HUPHM_surgery> ;
-        rr:termType rr:Literal ;
-    ];   
+    ];  
     rr:predicateObjectMap [
         rr:predicate clarify:date;
         rr:objectMap [
@@ -83,7 +78,7 @@
         ]
     ];  
     rr:predicateObjectMap [
-        rr:predicate clarify:hasType;
+        rr:predicate clarify:has_PerioperativeDeath_orNot;
         rr:objectMap [
             rml:reference "perioperative_death"; #because all values are null
         ]
