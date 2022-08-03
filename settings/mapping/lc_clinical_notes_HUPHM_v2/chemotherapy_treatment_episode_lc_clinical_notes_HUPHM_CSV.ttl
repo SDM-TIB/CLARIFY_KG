@@ -203,7 +203,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocab/LungCancerDrug";     
+            rr:constant "http://clarify2020.eu/vocab/LungCancerOncologicalDrug";     
         ]
     ];
     rr:predicateObjectMap [
@@ -223,7 +223,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocab/LungCancerDrug";     
+            rr:constant "http://clarify2020.eu/vocab/LungCancerOncologicalDrug";     
         ]
     ];
     rr:predicateObjectMap [
@@ -243,7 +243,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocab/LungCancerDrug";     
+            rr:constant "http://clarify2020.eu/vocab/LungCancerOncologicalDrug";     
         ]
     ];
     rr:predicateObjectMap [
