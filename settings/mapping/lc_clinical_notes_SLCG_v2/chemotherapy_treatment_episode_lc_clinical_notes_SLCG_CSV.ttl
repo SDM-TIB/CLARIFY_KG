@@ -33,7 +33,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_Chemotherapy_{start_date}";
+        rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalTreatment_{start_date}";
         rr:class clarify:TreatmentEpisode
     ];
     rr:predicateObjectMap [
