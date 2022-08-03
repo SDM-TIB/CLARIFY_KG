@@ -88,6 +88,12 @@
         rr:objectMap [
             rr:parentTriplesMap <chemotherapy_drug_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentLineNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_TreatmentLineNumber_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
+        ]
     ].
 
 <chemotherapy_drug_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
@@ -97,6 +103,12 @@
     rr:subjectMap <chemotherapy_drug_schema_Function_lc_clinical_notes_SLCG_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/LungCancerDrugSchema";     
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
@@ -166,7 +178,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Drug";     
+            rr:template "http://clarify2020.eu/vocab/LungCancerDrug";     
         ]
     ];
     rr:predicateObjectMap [
@@ -186,7 +198,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Drug";     
+            rr:template "http://clarify2020.eu/vocab/LungCancerDrug";     
         ]
     ];
     rr:predicateObjectMap [
@@ -206,7 +218,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:constant "http://clarify2020.eu/vocab/Drug";     
+            rr:constant "http://clarify2020.eu/vocab/LungCancerDrug";     
         ]
     ];
     rr:predicateObjectMap [

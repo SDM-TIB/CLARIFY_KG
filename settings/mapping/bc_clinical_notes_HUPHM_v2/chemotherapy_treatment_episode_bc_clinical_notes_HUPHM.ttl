@@ -49,6 +49,12 @@
             rml:reference "date";
             rr:datatype xsd:date
         ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasEpisode;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
+        ]
     ].  
 
 
@@ -66,6 +72,12 @@
         ]
     ];
     rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentLineCycle;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
+        ]
+    ];  
+    rr:predicateObjectMap [
         rr:predicate clarify:hasDrugSchema;
         rr:objectMap [
             rr:parentTriplesMap <chemotherapy_drug_schema_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
@@ -79,6 +91,12 @@
     rr:subjectMap <chemotherapy_drug_schema_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
     rr:termType rr:IRI;
 
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerDrugSchema";     
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasDrug;
         rr:objectMap [
@@ -96,7 +114,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Drug";     
+            rr:template "http://clarify2020.eu/vocab/BreastCancerDrug";     
         ]
     ].
 

@@ -64,7 +64,13 @@
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{EHR}_OncologicalSurgery_{treatment_line}";
         rr:class clarify:OncologicalSurgery
-    ];  
+    ]; 
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentLineNumber;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_SLCG_surgery>
+        ]
+    ]. 
     rr:predicateObjectMap [
         rr:predicate clarify:hasPathologicalResponse;
         rr:objectMap [

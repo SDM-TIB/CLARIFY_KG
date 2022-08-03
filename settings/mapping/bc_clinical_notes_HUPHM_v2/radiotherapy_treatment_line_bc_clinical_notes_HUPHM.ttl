@@ -72,7 +72,7 @@
 		rr:class clarify:Radiotherapy;
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:hasTreatmentLineNumber;
+		rr:predicate clarify:hasRadiotherapyRound;
 		rr:objectMap [
 			rr:parentTriplesMap <TreatmentLineNumber_bc_clinical_notes_HUPHM_radiotherapy_treatment_line>
 		]
@@ -104,5 +104,5 @@
 						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/TL_{n_radiotherapy}";
-		rr:class clarify:TreatmentLineNumber;
+		rr:class clarify:RadiotherapyRound;
 	].	

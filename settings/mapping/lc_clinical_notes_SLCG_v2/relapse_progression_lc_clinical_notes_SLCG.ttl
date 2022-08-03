@@ -47,13 +47,20 @@
             rml:reference "occurrence_date";
             rr:datatype xsd:date
         ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasEpisode;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_relapse_progression>
+        ]
     ].
+ 
 
 <Progression_or_Relapse_lc_clinical_notes_SLCG_relapse_progression>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
                         rml:referenceFormulation ql:CSV;
                         ];
-    rr:subjectMap <Progression_or_Relapse_Function_lc_clinical_notes_SLCG_relapse_progression> ;
+    rr:subjectMap <Progression_or_Relapse_concat_treatmentLine_Function_lc_clinical_notes_SLCG_relapse_progression> ;
     rr:termType rr:IRI;
 
     rr:predicateObjectMap [
@@ -79,13 +86,7 @@
 		rr:objectMap [
 			rr:parentTriplesMap <TherapyType_lc_clinical_notes_SLCG_relapse_progression>
 		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasTreatmentLineNumber;
-		rr:objectMap [
-			rr:parentTriplesMap <TreatmentLineNumber_lc_clinical_notes_SLCG_relapse_progression>
-		]
-	].		
+	].	
 
 <ProgressionType_lc_clinical_notes_SLCG_relapse_progression>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
@@ -132,13 +133,43 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/TreatmentLineNumber/TL_{treatment_line}";
+		rr:template "http://clarify2020.eu/entity/TL_{treatment_line}";
 		rr:class clarify:TreatmentLineNumber;
 	].	
 
 #######################################
 ############## Functions ##############
 #######################################
+
+<Progression_or_Relapse_concat_treatmentLine_Function_lc_clinical_notes_SLCG_relapse_progression>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/relapse_progression.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:concat3 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value1;
+            rr:objectMap <Progression_or_Relapse_Function_lc_clinical_notes_SLCG_relapse_progression> ;
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value2;
+            rr:objectMap [ 
+                rr:constant "_" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:value3;
+            rr:objectMap [ 
+                rml:reference "treatment_line" 
+            ]
+        ];                     
+    ].
+
 
 <Progression_or_Relapse_Function_lc_clinical_notes_SLCG_relapse_progression>
     fnml:functionValue [
