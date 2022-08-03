@@ -70,7 +70,7 @@
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_surgery_TreatmentLineNumber_lc_clinical_notes_SLCG_surgery>
         ]
-    ]. 
+    ]; 
     rr:predicateObjectMap [
         rr:predicate clarify:hasPathologicalResponse;
         rr:objectMap [
