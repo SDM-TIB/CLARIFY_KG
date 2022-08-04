@@ -252,7 +252,13 @@
             rr:objectMap [ 
                 rr:constant clarifyFun:findDrugSchema_LC_SLCG 
             ]
-        ];   
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];     
         rr:predicateObjectMap [
             rr:predicate clarifyFun:drug1;
             rr:objectMap [ 
