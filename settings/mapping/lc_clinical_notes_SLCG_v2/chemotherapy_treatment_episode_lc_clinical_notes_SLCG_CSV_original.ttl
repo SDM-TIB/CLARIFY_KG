@@ -110,19 +110,19 @@
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate clarify:hasDrug1;
+        rr:predicate clarify:hasDrug;
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_f1_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate clarify:hasDrug2;
+        rr:predicate clarify:hasDrug;
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_f2_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
     ];
     rr:predicateObjectMap [
-        rr:predicate clarify:hasDrug3;
+        rr:predicate clarify:hasDrug;
         rr:objectMap [
             rr:parentTriplesMap <Treatment_Episode_chemotherapy_f3_schema_lc_clinical_notes_SLCG_chemotherapy_treatment_episode>
         ]
