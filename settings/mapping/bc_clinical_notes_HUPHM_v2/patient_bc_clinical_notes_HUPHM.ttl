@@ -53,9 +53,9 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:surgeryDate;
+		rr:predicate clarify:firstSurgeryDate;
 		rr:objectMap [
-			rml:reference "birth_date";
+			rml:reference "surgery_date";
 			rr:datatype xsd:date;
 
 		]
@@ -88,13 +88,19 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:estrogenPositive;
 		rr:objectMap [
-			rml:reference "er_positive";
+			rr:parentTriplesMap <estrogen_positive_bc_clinical_notes_HUPHM_patient>
 		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate clarify:progesteronePositive;
 		rr:objectMap [
-			rml:reference "pr_positive";
+			rr:parentTriplesMap <progesterone_positive_bc_clinical_notes_HUPHM_patient>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:her2Positive;
+		rr:objectMap [
+			rr:parentTriplesMap <her2_positive_bc_clinical_notes_HUPHM_patient>
 		]
 	];
 	rr:predicateObjectMap [
@@ -182,6 +188,65 @@
 		]
 	].
 
+<estrogen_positive_bc_clinical_notes_HUPHM_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <estrogen_positive_Function_bc_clinical_notes_HUPHM_patient> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/EstrogenPositive";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "er_positive";		
+		]
+	].
+
+<progesterone_positive_bc_clinical_notes_HUPHM_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <progesterone_positive_Function_bc_clinical_notes_HUPHM_patient> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/ProgesteronePositive";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "pr_positive";		
+		]
+	].
+
+<her2_positive_bc_clinical_notes_HUPHM_patient>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap <her2_positive_Function_bc_clinical_notes_HUPHM_patient> ;
+	rr:termType rr:IRI;
+
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/vocab/HER2Positive";		
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasOriginalValue;
+		rr:objectMap [
+			rml:reference "her2_overall_positive";		
+		]
+	].
 
 #######################################
 ############## Functions ##############
@@ -224,3 +289,113 @@
         ];                         
     ].			
 
+<estrogen_positive_Function_bc_clinical_notes_HUPHM_patient>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "patient" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "er_positive" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "er_positive" 
+            ]
+        ];                         
+    ].	
+
+<progesterone_positive_Function_bc_clinical_notes_HUPHM_patient>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "patient" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "pr_positive" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "pr_positive" 
+            ]
+        ];                         
+    ].	
+
+<her2_positive_Function_bc_clinical_notes_HUPHM_patient>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/patient.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "patient" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "her2_overall_positive" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "her2_overall_positive" 
+            ]
+        ];                         
+    ].	

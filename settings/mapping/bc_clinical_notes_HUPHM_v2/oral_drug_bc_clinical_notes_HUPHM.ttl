@@ -43,7 +43,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer ## translating the drugs
             ]
         ];   
         rr:predicateObjectMap [
@@ -80,7 +80,7 @@
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
             rr:objectMap [ 
-                rr:constant clarifyFun:findSemantic_OralDrugType_HUPHM_BreastCancer 
+                rr:constant clarifyFun:findSemantic_OralDrugType_HUPHM_BreastCancer ## defining the type of the therapy
             ]
         ]; 
         rr:predicateObjectMap [
