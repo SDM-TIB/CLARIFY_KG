@@ -145,13 +145,13 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasTreatmentMaintenance;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Drug/{maintenance_drug}";     
+            rr:template "http://clarify2020.eu/entity/{maintenance_drug}";     
         ]
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasMaintenanceCycles;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/vocab/Drug/{maintenance_cycles}";     
+            rr:template "http://clarify2020.eu/entity/{maintenance_cycles}";     
         ]
     ];
     rr:predicateObjectMap [
