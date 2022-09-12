@@ -57,7 +57,6 @@
 		rr:objectMap [
 			rml:reference "surgery_date";
 			rr:datatype xsd:date;
-
 		]
 	];
 	rr:predicateObjectMap [
