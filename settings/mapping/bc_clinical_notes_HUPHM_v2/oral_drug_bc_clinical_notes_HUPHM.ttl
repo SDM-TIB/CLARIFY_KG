@@ -21,16 +21,16 @@
 		rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
 		rr:class clarify:BCPatient
 	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOralDrug;
-		rr:objectMap <OralDrug_Function_bc_clinical_notes_HUPHM_oral_drug>;
-	];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOralDrug;
+        rr:objectMap <OralDrug_Function_bc_clinical_notes_HUPHM_oral_drug>
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasOralDrugType;
-        rr:objectMap <OralDrugType_Function_bc_clinical_notes_HUPHM_oral_drug>;
-    ].
+        rr:objectMap <OralDrugType_Function_bc_clinical_notes_HUPHM_oral_drug>
+    ];	
 
-			
+
 #######################################
 ############## Functions ##############
 #######################################
