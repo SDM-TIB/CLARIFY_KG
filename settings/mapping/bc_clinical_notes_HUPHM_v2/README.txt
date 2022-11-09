@@ -7,6 +7,8 @@ Tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemothera
   ########### Data cleaning performed directly on RDB ################
 ########################################################################
 
+
+########## this one is NOT needed anymore since UPM cleaned the data #############
 UPDATE `patient` SET `neoadjuvant`="yes" 
 WHERE `patient`.`ehr` in (
 SELECT `tumor_tnm`.`ehr` FROM `tumor_tnm`,`patient_temp` WHERE `tumor_tnm`.`ehr` = `patient_temp`.`ehr` AND `tumor_tnm`.`stage_after_neo` != "NULL" AND `patient_temp`.`neoadjuvant` LIKE "%no%"
