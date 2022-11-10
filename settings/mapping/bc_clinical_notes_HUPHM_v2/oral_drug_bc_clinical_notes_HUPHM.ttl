@@ -28,7 +28,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasOralDrugType;
         rr:objectMap <OralDrugType_Function_bc_clinical_notes_HUPHM_oral_drug>
-    ];	
+    ].	
 
 
 #######################################

@@ -13,13 +13,10 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-
 <LCPatient_lc_clinical_notes_SLCG_patient_age>
-	rml:logicalSource [ 
-	    rml:source <RDB_source_age>;
-	    rr:sqlVersion rr:SQL2008;
-    	rml:query """SELECT * FROM `PatientAge`""";
-		];
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/agePatient.csv";
+						rml:referenceFormulation ql:CSV;
+						];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{EHR}";
 	];
@@ -30,9 +27,3 @@
 			rr:datatype xsd:int;		
 		]
 	].
-
-<RDB_source_age> a d2rq:Database;
-  d2rq:jdbcDSN "SLCG_UPM_v5.0";
-  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
-  d2rq:username "";
-  d2rq:password "" .
