@@ -20,12 +20,12 @@ SELECT `tumor_tnm`.`ehr` FROM `tumor_tnm`,`patient_temp` WHERE `tumor_tnm`.`ehr`
 ########################################################################
 CREATE TABLE tumor_tnm_join_diagnosis_and_neoadjuvant_date
 AS
-SELECT `tumor_tnm`.*, `patient`.`diagnosis_date`,`patient`.`first_treatment_date`, `patient`.`neoadjuvant`
+SELECT `tumor_tnm`.*, `patient`.`diagnosis_date`,`patient`.`first_treatment_date` as `neoadjuvant_derived_date`, `patient`.`neoadjuvant`
 FROM `patient`,`tumor_tnm`
 WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
 
 
-UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `first_treatment_date`= NULL 
+UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `neoadjuvant_derived_date`= NULL 
 WHERE `neoadjuvant` LIKE "%no%"
 
 ########################################################################
