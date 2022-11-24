@@ -11,9 +11,11 @@
 @prefix clarifyFun: <http://clarify2020.eu/function/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudt-unit: <http://qudt.org/vocab/unit/> .
 
-<LCPatient_lc_wearable_patient_observation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/patient.csv";
+<LCPatient_lc_wearable_wearable_data_LightExposureObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
@@ -29,6 +31,116 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:hasObservation;
 		rr:objectMap [ 
-			rr:parentTriplesMap <LCPatient_lc_wearable_patient>
+			rr:parentTriplesMap <Observation_lc_wearable_wearable_data_LightExposureObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <LightExposureObservation_lightIndicator_lc_wearable_patient_observation>
+		]
+	];
+
+
+
+######## lightIndicator ##########
+
+<LightExposureObservation_lightIndicator_lc_wearable_wearable_data_LightExposureObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/LightExposureObservation_lightIndicator"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/LightIndicator" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <LightIndicator_value_unit_lc_wearable_wearable_data_LightExposureObservation>
+		]
+	].
+
+<LightIndicator_value_unit_lc_wearable_wearable_data_LightExposureObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{light_indicator}_boolean"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/boolean" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "light_indicator" ;
+			#rr:datatype xsd:boolean;
+		]
+	].
+
+######## darknessExposurePercentage ##########
+
+<LightExposureObservation_lightIndicator_lc_wearable_patient_observation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/LightExposureObservation_darknessExposurePercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/DarknessExposurePercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <DarknessExposurePercentage_value_unit_lc_wearable_wearable_data_LightExposureObservation>
+		]
+	].
+
+<DarknessExposurePercentage_value_unit_lc_wearable_wearable_data_LightExposureObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{darkness_exposure_percentage}_"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "darkness_exposure_percentage" ;
+			rr:datatype xsd:double;
 		]
 	].
