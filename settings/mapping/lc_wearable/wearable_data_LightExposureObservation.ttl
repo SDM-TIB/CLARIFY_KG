@@ -13,6 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix qudt-unit: <http://qudt.org/vocab/unit/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 
 <LCPatient_lc_wearable_wearable_data_LightExposureObservation>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_LightExposureObservation.csv";
@@ -87,14 +88,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{light_indicator}_UUU"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{light_indicator}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
-	];
-	rr:predicateObjectMap [
-		rr:predicate qudt:unit;
-		rr:objectMap [
-			rr:constant "UUU" ;
-		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
@@ -138,14 +133,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{darkness_exposure_percentage}_UUU"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{darkness_exposure_percentage}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
-	];
-	rr:predicateObjectMap [
-		rr:predicate qudt:unit;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UUU" ;
-		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
@@ -189,14 +178,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{indoor_light_exposure_percentage}_UUU"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{indoor_light_exposure_percentage}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
-	];
-	rr:predicateObjectMap [
-		rr:predicate qudt:unit;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UUU" ;
-		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
@@ -241,14 +224,8 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{outdoor_light_exposure_percentage}_UUU"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{outdoor_light_exposure_percentage}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
-	];
-	rr:predicateObjectMap [
-		rr:predicate qudt:unit;
-		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/UUU" ;
-		]
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
