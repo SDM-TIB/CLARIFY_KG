@@ -137,13 +137,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Average_activity}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{Average_activity_1}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "Average_activity" ;
+			rml:reference "Average_activity_1" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -182,7 +182,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{daily_activity_intensity_mean}_Gram"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{daily_activity_intensity_mean_7}_Gram"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -194,7 +194,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "daily_activity_intensity_mean" ;
+			rml:reference "daily_activity_intensity_mean_7" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -233,7 +233,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{wakefulness_intensity}_Gram"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{wakefulness_intensity_8}_Gram"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -245,7 +245,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "wakefulness_intensity" ;
+			rml:reference "wakefulness_intensity_8" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -284,7 +284,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{movement_mean_time}_Second"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{movement_mean_time_9}_Second"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -296,7 +296,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "movement_mean_time" ;
+			rml:reference "movement_mean_time_9" ;
 			rr:datatype xsd:int;
 		]
 	].
@@ -335,7 +335,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{wakefulness_duration}_Second"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{wakefulness_duration_10}_Second"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -347,7 +347,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "wakefulness_duration" ;
+			rml:reference "wakefulness_duration_10" ;
 			rr:datatype xsd:int;
 		]
 	].	
@@ -386,13 +386,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{movement_regularity}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{movement_regularity_12}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "movement_regularity" ;
+			rml:reference "movement_regularity_12" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -431,13 +431,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sedentary_indicator}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sedentary_indicator_14}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sedentary_indicator" ;
+			rml:reference "sedentary_indicator_14" ;
 			rr:datatype xsd:boolean;
 		]
 	].
@@ -476,13 +476,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{activity_indicator}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{activity_indicator_15}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "activity_indicator" ;
+			rml:reference "activity_indicator_15" ;
 			rr:datatype xsd:boolean;
 		]
 	].
@@ -521,13 +521,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sedentary_percentage}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sedentary_percentage_20}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sedentary_percentage" ;
+			rml:reference "sedentary_percentage_20" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -566,13 +566,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{light_activity_percentage}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{light_activity_percentage_21}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "light_activity_percentage" ;
+			rml:reference "light_activity_percentage_21" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -611,13 +611,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{moderate_activity_percentage}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{moderate_activity_percentage_22}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "moderate_activity_percentage" ;
+			rml:reference "moderate_activity_percentage_22" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -656,13 +656,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{vigorous_activity_percentage}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{vigorous_activity_percentage_23}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "vigorous_activity_percentage" ;
+			rml:reference "vigorous_activity_percentage_23" ;
 			rr:datatype xsd:double;
 		]
 	].

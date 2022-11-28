@@ -106,7 +106,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_duration}_Minute"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_duration_2}_Minute"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -118,7 +118,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_duration" ;
+			rml:reference "sleep_duration_2" ;
 			rr:datatype xsd:int;
 		]
 	].
@@ -157,13 +157,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_regularity}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_regularity_3}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_regularity" ;
+			rml:reference "sleep_regularity_3" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -202,13 +202,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_duration}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_fragmentation_4}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_duration" ;
+			rml:reference "sleep_fragmentation_4" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -247,13 +247,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_contrast}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_contrast_5}"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_contrast" ;
+			rml:reference "sleep_contrast_5" ;
 			rr:datatype xsd:double;
 		]
 	].
@@ -292,7 +292,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_average_duration}_Minute"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_average_duration_6}_Minute"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -304,7 +304,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_average_duration" ;
+			rml:reference "sleep_average_duration_6" ;
 			rr:datatype xsd:int;
 		]
 	].
@@ -343,7 +343,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{movement_while_sleeping}_Second"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{movement_while_sleeping_11}_Second"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -355,7 +355,7 @@
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "movement_while_sleeping" ;
+			rml:reference "movement_while_sleeping_11" ;
 			rr:datatype xsd:int;
 		]
 	].
@@ -394,13 +394,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_duration_percentage}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_duration_percentage_19}_percentage"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:numericValue;
 		rr:objectMap [
-			rml:reference "sleep_duration_percentage" ;
+			rml:reference "sleep_duration_percentage_19" ;
 			rr:datatype xsd:double;
 		]
 	].
