@@ -57,7 +57,8 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{ehr}_Diagnosis_{diagnosis_date}_{t_category}_{n_category}_{m_category}";
+    #   rr:template "http://clarify2020.eu/entity/{ehr}_Diagnosis_{diagnosis_date}_{t_category}_{n_category}_{m_category}";
+        rr:template "http://clarify2020.eu/entity/{ehr}_Diagnosis_{diagnosis_date}";
         rr:class clarify:TNMstageAssessment
     ];
     rr:predicateObjectMap [
@@ -196,7 +197,8 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{ehr}_AfterNeoadjuvantTherapy_{neoadjuvant_derived_date}_{t_category_after_neoadj}_{n_category_after_neoadj}_{m_category_after_neoadj}";
+    #   rr:template "http://clarify2020.eu/entity/{ehr}_AfterNeoadjuvantTherapy_{neoadjuvant_derived_date}_{t_category_after_neoadj}_{n_category_after_neoadj}_{m_category_after_neoadj}";
+        rr:template "http://clarify2020.eu/entity/{ehr}_AfterNeoadjuvantTherapy_{neoadjuvant_derived_date}";
         rr:class clarify:TNMstageAssessment
     ];
     rr:predicateObjectMap [
