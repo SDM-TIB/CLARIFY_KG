@@ -18,7 +18,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}";
+		rr:template "http://clarify2020.eu/entity/HUPHM_{EHR}";
         rr:class clarify:LCPatient
 	];
 	rr:predicateObjectMap [

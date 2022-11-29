@@ -180,7 +180,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_{surgery_date}_{stage_t}_{stage_n}_{stage_m}";
+        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_{surgery_date}";
         rr:class clarify:TNMstageAssessment
     ];
     rr:predicateObjectMap [
