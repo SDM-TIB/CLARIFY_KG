@@ -191,7 +191,9 @@
 	    rr:sqlVersion rr:SQL2008;
     	rml:query """SELECT DIstinct BC_HUPHM_EHR FROM `bc_huphm_patient_ids` 
 			WHERE BC_HUPHM_EHR NOT IN 
-			(SELECT DISTINCT LC_HUPHM_EHR FROM `lc_huphm_patient_ids`)""";
+			(SELECT DISTINCT LC_HUPHM_EHR FROM `lc_huphm_patient_ids`)
+            AND BC_HUPHM_EHR NOT IN
+            (SELECT DISTINCT LC_SLCG_EHR FROM `lc_slacg_patient_ids`)""";
 		];
 	rr:subjectMap [
 		rr:template "http://clarify2020.eu/entity/{BC_HUPHM_EHR}";
