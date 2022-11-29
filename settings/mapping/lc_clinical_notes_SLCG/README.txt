@@ -21,18 +21,23 @@ FROM `diagnosis`,`tumor_histology`
 WHERE `tumor_histology`.`EHR` = `diagnosis`.`EHR`
 -> tumor_histology_join_diagnosis_date
 
-########################################################################
- ##### Additional csv generated from the HUPHM LC RDB #################
-########################################################################
+#######################################################
+############ Pre-processing: on csv data ##############
+#######################################################
 
-SELECT `tumor_histology`.*, `diagnosis`.`date`
-FROM `diagnosis`,`tumor_histology`
--> tumor_histology_join_diagnosis_date
+1. For the two records in SLCG with family_member="Padre o hermano" and "Madre y tia", an extra record is added:
 
-########################################################################
- ##### Not considered attribute from the HUPHM LC RDB #################
-########################################################################
+> egrep "Padre o hermano" family_antecedents_treatment_line.csv > new_record_1.csv
+> egrep "Madre y tia" family_antecedents_treatment_line.csv > new_record_2.csv
+> sed 's/Padre o hermano/Hermano/g' new_record_1.csv > to_be_added_record_1.csv
+> sed 's/Madre y tia/Tia/g' new_record_2.csv > to_be_added_record_2.csv
+> sed 's/Padre o hermano/Padre/g' family_antecedents_treatment_line.csv > family_antecedents_treatment_line_modified_1.csv
+> sed 's/Madre y tia/Madre/g' family_antecedents_treatment_line_modified_1.csv > family_antecedents_treatment_line_modified_2.csv
+> rm family_antecedents_treatment_line.csv
+> cat family_antecedents_treatment_line_modified_2.csv to_be_added_record_1.csv to_be_added_record_2.csv > family_antecedents_treatment_line.csv
+> rm family_antecedents_treatment_line_modified_1.csv
+> rm family_antecedents_treatment_line_modified_2.csv
+> rm new_record_1.csv
+> rm new_record_2.csv
 
-In family_antecedents_treatment_line, we consider the multi-valued composite attribute
-of family history consisting of (patientId + familyRelation + cancertype).
-We are NOT considering the treatment line in family history. 
+So the four records' values for family_member are "Padre", "Hermano", "Madre", and "Tia" respectively
