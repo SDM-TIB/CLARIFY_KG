@@ -27,12 +27,3 @@ WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
 
 UPDATE `tumor_tnm_join_diagnosis_and_neoadjuvant_date` SET `neoadjuvant_derived_date`= NULL 
 WHERE `neoadjuvant` LIKE "%no%"
-
-########################################################################
- ######## Additional csv generated from the HUPHM BC RDB ##############
-########################################################################
-
-SELECT `tumor_tnm`.*, `patient`.`diagnosis_date`
-FROM `patient`,`tumor_tnm`
-WHERE `tumor_tnm`.`ehr` = `patient`.`ehr`
--> tumor_tnm_join_diagnosis_date
