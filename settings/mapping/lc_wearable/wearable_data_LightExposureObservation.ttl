@@ -67,7 +67,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/LightExposureObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -112,7 +112,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/LightExposureObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -157,7 +157,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/LightExposureObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -203,7 +203,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/LightExposureObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/LightExposureObservation" ;
 		]
 	];
 	rr:predicateObjectMap [

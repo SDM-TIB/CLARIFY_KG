@@ -116,7 +116,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -161,7 +161,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -212,7 +212,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -263,7 +263,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -314,7 +314,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -365,7 +365,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -410,7 +410,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -455,7 +455,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -500,7 +500,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -545,7 +545,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -590,7 +590,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -635,7 +635,7 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [
-			rr:constant "http://clarify2020.eu/entity/ActivityObservation" ;
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
 		]
 	];
 	rr:predicateObjectMap [
