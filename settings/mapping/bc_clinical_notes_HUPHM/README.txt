@@ -1,7 +1,11 @@
-#############################################################################################
-########################################################################
-Tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemotherapy_schema" are included in "chemotherapy_cycle_bc_clinical_notes_HUPHM.ttl", function "findSemantic_HUPHM_BreastCancer.py", "HUPHM_BreastCancer_dictionary.csv".
+####################################################################################
+######################### Data Pre-processing is performed: ########################
+####################################################################################
 
+First we create "chemotherapy_cycle_preprocessed" by preprocessing both tables "chemotherapy_cycle" and "chemotherapy_schema" using "bc_notes_drugs.py" script.
+
+####################################################################################
+The table "drug", and "drug_chemotherapy_schema" are already considered through the function "findSemantic_HUPHM_BreastCancer.py" via "HUPHM_BreastCancer_dictionary.csv" applied in mapping "chemotherapy_cycle_bc_clinical_notes_HUPHM.ttl", so only ONE mapping is needed for the four tables "chemotherapy_cycle", "chemotherapy_schema", "drug", and "drug_chemotherapy_schema".
 
 ########################################################################
   ########### Data cleaning performed directly on RDB ################
