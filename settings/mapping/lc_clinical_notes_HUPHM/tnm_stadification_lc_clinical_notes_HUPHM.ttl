@@ -32,7 +32,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_{date}";
+        rr:template "http://clarify2020.eu/entity/{EHR}_Diagnosis_StageAssessment";
         rr:class clarify:TNMstageAssessment
     ];
     rr:predicateObjectMap [
