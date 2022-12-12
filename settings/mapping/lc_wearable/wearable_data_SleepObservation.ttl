@@ -157,7 +157,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_regularity_3}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_regularity_3}_InterdailyStaibility"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -202,7 +202,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_fragmentation_4}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_fragmentation_4}_IntradailyVariability"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -247,7 +247,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_contrast_5}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_contrast_5}_RAN"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -394,7 +394,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sleep_duration_percentage_19}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sleep_duration_percentage_19}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [

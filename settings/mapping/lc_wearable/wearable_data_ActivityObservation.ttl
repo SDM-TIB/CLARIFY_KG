@@ -137,7 +137,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{Average_activity_1}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{Average_activity_1}_TAP"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -386,7 +386,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{movement_regularity_12}"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{movement_regularity_12}_InterdailyStaibility"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -521,7 +521,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{sedentary_percentage_20}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{sedentary_percentage_20}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -566,7 +566,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{light_activity_percentage_21}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{light_activity_percentage_21}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -611,7 +611,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{moderate_activity_percentage_22}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{moderate_activity_percentage_22}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -656,7 +656,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{vigorous_activity_percentage_23}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{vigorous_activity_percentage_23}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [

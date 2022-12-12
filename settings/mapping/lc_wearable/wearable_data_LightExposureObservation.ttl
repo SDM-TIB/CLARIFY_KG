@@ -133,7 +133,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{darkness_exposure_percentage_16}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{darkness_exposure_percentage_16}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -178,7 +178,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{indoor_light_exposure_percentage_17}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{indoor_light_exposure_percentage_17}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
@@ -224,7 +224,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{outdoor_light_exposure_percentage_18}_percentage"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{outdoor_light_exposure_percentage_18}_percentageOfTheDay"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
