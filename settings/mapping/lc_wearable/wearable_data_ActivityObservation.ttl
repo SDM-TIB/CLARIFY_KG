@@ -182,13 +182,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{daily_activity_intensity_mean_7}_Gram"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{daily_activity_intensity_mean_7}_Gravity"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:unit;
 		rr:objectMap [
-			rr:constant "http://qudt.org/vocab/unit/GM" ;
+			rr:constant "http://qudt.org/vocab/unit/G" ;
 		]
 	];
 	rr:predicateObjectMap [
@@ -233,13 +233,13 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{wakefulness_intensity_8}_Gram"; ## The identifier: the value and the unit
+		rr:template "http://clarify2020.eu/entity/{wakefulness_intensity_8}_Gravity"; ## The identifier: the value and the unit
 		rr:class qudt:QuantityValue
 	];
 	rr:predicateObjectMap [
 		rr:predicate qudt:unit;
 		rr:objectMap [
-			rr:constant "http://qudt.org/vocab/unit/GM" ;
+			rr:constant "http://qudt.org/vocab/unit/G" ;
 		]
 	];
 	rr:predicateObjectMap [
