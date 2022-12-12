@@ -93,7 +93,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{t_category}_{n_category}_{m_category}";
+        rr:template "http://clarify2020.eu/entity/{stage_diagnosis}";
         rr:class clarify:TNMstage
     ];
     rr:predicateObjectMap [
@@ -233,7 +233,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{t_category_after_neoadj}_{n_category_after_neoadj}_{m_category_after_neoadj}";
+        rr:template "http://clarify2020.eu/entity/{stage_after_neo}";
         rr:class clarify:TNMstage
     ];
     rr:predicateObjectMap [

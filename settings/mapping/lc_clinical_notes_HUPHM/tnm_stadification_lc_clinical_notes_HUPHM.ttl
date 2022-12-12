@@ -67,7 +67,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{t}_{n}_{m}";
+        rr:template "http://clarify2020.eu/entity/{stage}";
         rr:class clarify:TNMstage
     ];
     rr:predicateObjectMap [
