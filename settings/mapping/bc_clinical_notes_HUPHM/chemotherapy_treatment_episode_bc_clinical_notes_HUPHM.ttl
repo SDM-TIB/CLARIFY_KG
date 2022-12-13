@@ -63,7 +63,7 @@
                         rml:referenceFormulation ql:CSV;
                         ];
     rr:subjectMap [
-        rr:template "http://clarify2020.eu/entity/{ehr}_Chemotherapy_{cycle_number}";
+        rr:template "http://clarify2020.eu/entity/{ehr}_Chemotherapy_{cycle_number}_{id_schema}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
