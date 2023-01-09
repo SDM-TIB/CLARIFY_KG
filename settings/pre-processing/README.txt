@@ -27,3 +27,19 @@ So the four records' values for family_member are "Padre", "Hermano", "Madre", a
 The identifiers related to tables that are created based 
 on the provided data are required to be updated each time 
 that the data sources are updated by UPM.
+
+
+#######################################################
+############# Pre-processing: WP2 data ################
+#######################################################
+
+1) The first batch that they sent as json file was not 
+correct in terms of the json format and SDM-RDFizer 
+could not be run over. So the format is fixed.
+
+2) The second batch that they sent on December 2022 was
+in TSV so needed to be converted to csv using the script
+"wp2.py" in "pre-processing" directory on GitHub. Also
+the columns names were missing which is added based on 
+https://github.com/pminervini/clarify-wp2-relationships/blob/main/13122022/gold/README.md
+as mentioned by wp2.
