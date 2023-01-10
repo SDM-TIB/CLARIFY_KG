@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Relation_publication_annotation_seprep>
+<Subject_Relation_Object_CUI_relations_batch2>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/gold_triples_with_sources.csv";
 						rml:referenceFormulation ql:CSV 
 						];
@@ -22,7 +22,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:type;
         rr:objectMap [
-            rr:template "http://clarify2020.eu/entity/{relationship}"
+            rr:template "http://clarify2020.eu/vocab/{relationship}"
         ]
     ];
 	rr:predicateObjectMap [
