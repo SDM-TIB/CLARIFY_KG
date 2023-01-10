@@ -164,7 +164,7 @@
         rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rr:template "http://clarify2020.eu/entity/{lives_with_smokers}" 
+                rr:template "http://clarify2020.eu/entity/{cigarettes_day}" 
             ]
         ];                         
     ].
