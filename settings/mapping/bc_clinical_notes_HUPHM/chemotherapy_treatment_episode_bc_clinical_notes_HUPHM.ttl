@@ -13,6 +13,7 @@
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
+
 <BCPatient_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
                         rml:referenceFormulation ql:CSV;
