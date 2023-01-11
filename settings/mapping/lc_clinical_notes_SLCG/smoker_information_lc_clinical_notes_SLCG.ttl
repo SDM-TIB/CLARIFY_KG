@@ -13,58 +13,58 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <LCPatient_lc_clinical_notes_SLCG_smoker_information>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{EHR}";
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
         rr:class clarify:LCPatient
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:numberOfCigarettesPerYear;
-		rr:objectMap [
-			rml:reference "packs_year";
-			rr:datatype xsd:int;
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:numberOfCigarettesPerDay;
-		rr:objectMap [
-			rml:reference "cigarettes_day";
-			rr:datatype xsd:int;
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:numberOfYearsOfSmoking;
-		rr:objectMap [
-			rml:reference "years_active_smoker";
-			rr:datatype xsd:int;		
-		]
-	];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:numberOfCigarettesPerYear;
+        rr:objectMap [
+            rml:reference "packs_year";
+            rr:datatype xsd:int;
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:numberOfCigarettesPerDay;
+        rr:objectMap [
+            rml:reference "cigarettes_day";
+            rr:datatype xsd:int;
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:numberOfYearsOfSmoking;
+        rr:objectMap [
+            rml:reference "years_active_smoker";
+            rr:datatype xsd:int;        
+        ]
+    ];
     rr:predicateObjectMap [
         rr:predicate clarify:smokerType;
         rr:objectMap [
             rr:parentTriplesMap <smoker_type_lc_clinical_notes_SLCG_smoker_information>      
         ]
     ];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokeEnvironment;
-		rr:objectMap [
-			rr:parentTriplesMap <lives_with_smokers_lc_clinical_notes_SLCG_smoker_information>		
-		]
-	];	
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokeEnvironment;
-		rr:objectMap [
-			rr:parentTriplesMap <has_lived_with_smokers_lc_clinical_notes_SLCG_smoker_information>		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasSmokingHabit;
-		rr:objectMap [
-			rr:parentTriplesMap <smoking_habit_lc_clinical_notes_SLCG_smoker_information>		
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSmokeEnvironment;
+        rr:objectMap [
+            rr:parentTriplesMap <lives_with_smokers_lc_clinical_notes_SLCG_smoker_information>      
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSmokeEnvironment;
+        rr:objectMap [
+            rr:parentTriplesMap <has_lived_with_smokers_lc_clinical_notes_SLCG_smoker_information>      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasSmokingHabit;
+        rr:objectMap [
+            rr:parentTriplesMap <smoking_habit_lc_clinical_notes_SLCG_smoker_information>       
+        ]
+    ].
 
 <smoker_type_lc_clinical_notes_SLCG_smoker_information>
     rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
@@ -87,11 +87,11 @@
     ]. 
 
 <lives_with_smokers_lc_clinical_notes_SLCG_smoker_information>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <lives_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
-	rr:termType rr:IRI;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <lives_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
+    rr:termType rr:IRI;
 
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -99,19 +99,19 @@
             rr:template "http://clarify2020.eu/vocab/SmokeEnvironment";     
         ]
     ];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "lives_with_smokers";		
-		]
-	]. 
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "lives_with_smokers";     
+        ]
+    ]. 
 
 <has_lived_with_smokers_lc_clinical_notes_SLCG_smoker_information>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <has_lived_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
-	rr:termType rr:IRI;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <has_lived_with_smokers_Function_lc_clinical_notes_SLCG_smoker_information> ;
+    rr:termType rr:IRI;
 
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -119,38 +119,39 @@
             rr:template "http://clarify2020.eu/vocab/SmokeEnvironment";     
         ]
     ];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "has_lived_with_smokers";		
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "has_lived_with_smokers";     
+        ]
+    ].
 
 <smoking_habit_lc_clinical_notes_SLCG_smoker_information>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
-						rml:referenceFormulation ql:CSV;
-						];
-	rr:subjectMap <smoking_habit_lc_clinical_notes_SLCG_smoker_information> ;
-	rr:termType rr:IRI;
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <smoking_habit_lc_clinical_notes_SLCG_smoker_information> ;
+    rr:termType rr:IRI;
 
-	rr:predicateObjectMap [
-		rr:predicate rdf:type;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/vocab/SmokingHabit";		
-		]
-	];
-	rr:predicateObjectMap [
-		rr:predicate clarify:hasOriginalValue;
-		rr:objectMap [
-			rml:reference "smoking_habit";		
-		]
-	].
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SmokingHabit";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "smoking_habit";      
+        ]
+    ].
 
 #######################################
 ############## Functions ##############
 #######################################
 
 <smoker_type_Function_lc_clinical_notes_SLCG_smoker_information>
+
     fnml:functionValue [
         rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_clinical_notes_SLCG/smoker_information.csv";
         rml:referenceFormulation ql:CSV 
@@ -162,9 +163,15 @@
             ]
         ];   
         rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
             rr:predicate clarifyFun:columnValue;
             rr:objectMap [ 
-                rr:template "http://clarify2020.eu/entity/{cigarettes_day}" 
+                rml:reference "cigarettes_day" 
             ]
         ];                         
     ].
@@ -278,5 +285,5 @@
                 rml:reference "smoking_habit" 
             ]
         ];                         
-    ].	
-											
+    ].  
+                                            
