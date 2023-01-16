@@ -13,7 +13,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <Subject_Relation_Object_CUI_relations_batch2>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/gold_triples_with_sources.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/silver_triples.csv";
 						rml:referenceFormulation ql:CSV 
 						];
     rr:subjectMap [
@@ -38,20 +38,15 @@
 		]
 	];
 	rr:predicateObjectMap [
-		rr:predicate clarify:relation_isRelatedTo_id;
-		rr:objectMap [
-			rr:template "http://clarify2020.eu/entity/{relationship_id}"
-		]
-	];
-    rr:predicateObjectMap [
-        rr:predicate clarify:relation_isRelatedTo_source;
-        rr:objectMap [
-            rr:template "http://clarify2020.eu/entity/{relationship_source}"
-        ]
-    ];
-	rr:predicateObjectMap [
 		rr:predicate prov:has_provenance;
 		rr:objectMap [
 			rr:constant "http://clarify2020.eu/entity/WP2_UCL"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:predictionMethod;
+		rr:objectMap [ 
+			rr:constant "MedDistant19";
+			rr:termType	rr:Literal; 
 		]
 	].
