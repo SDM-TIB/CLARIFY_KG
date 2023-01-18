@@ -14,9 +14,10 @@ def handler():
     ##### First I convert "-1" float values in csv file to "40" manually ######
     schema_df = pd.read_csv("/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle.csv", low_memory=False)
     meanDict = dict()
-    mean_df = pd.read_csv("/mnt/e/Script/CLARIFY/drugs_bc_clinical_notes.csv", low_memory=False) ## This csv is exported from the table "chemotherapy_schema" by replacing the "+" with "_"    for i in range(0, len(mean_df)):
-    if mean_df['id_schema'][i] not in meanDict.keys():
-        meanDict.update({mean_df['id_schema'][i]:mean_df['drugs'][i]})
+    mean_df = pd.read_csv("/mnt/e/ToMove/LastMinutes/Script/CLARIFY/drugs_bc_clinical_notes.csv", low_memory=False) ## This csv is exported from the table "chemotherapy_schema" by replacing the "+" with "_"    for i in range(0, len(mean_df)):
+    for i in range(0,len(mean_df)):
+        if mean_df['id_schema'][i] not in meanDict.keys():
+            meanDict.update({mean_df['id_schema'][i]:mean_df['drugs'][i]})
 
     drug1 = schema_df['id_schema'].values.astype(str)
     drug1 = list(map(lambda x : str(meanDict.get(eval(x))).split("_")[0] if "_" in str(meanDict.get(eval(x))) else str(meanDict.get(eval(x))), drug1))
