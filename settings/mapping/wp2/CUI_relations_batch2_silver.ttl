@@ -12,7 +12,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
-<Subject_Relation_Object_CUI_relations_batch2>
+<Subject_Relation_Object_CUI_relations_batch2_silver>
 	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/silver_triples.csv";
 						rml:referenceFormulation ql:CSV 
 						];
