@@ -57,7 +57,7 @@
 	].		
 
 <Relation_Semantic_CUI_relations_batch2_gold>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/silver_triples.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/gold_triples_with_sources.csv";
 						rml:referenceFormulation ql:CSV 
 						];
     rr:subjectMap [
@@ -72,6 +72,6 @@
 	rr:predicateObjectMap [
 		rr:predicate clarify:relationLabel;
 		rr:objectMap [
-			rml:reference "relationship"
+			rml:reference "relationship_label"
 		]
 	].
