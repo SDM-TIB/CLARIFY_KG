@@ -1,0 +1,668 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudt-unit: <http://qudt.org/vocab/unit/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<LCPatient_lc_wearable_wearable_data_LightExposureObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{codigo}";
+		rr:class clarify:LCPatient
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/KH"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_AverageActivity_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_DailyActivityIntensityMean_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_WakefulnessIntensity_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_MeanMovementTime_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_WakefulnessDuration_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_MovementRegularity_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_SedentaryIndicator_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_ActivityIndicator_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_SedentaryPercentage_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_LightActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_ModerateActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityObservation_VigorousActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+
+######## Average Activity ##########
+
+<ActivityObservation_AverageActivity_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_AverageActivity"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/AverageActivity" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <AverageActivity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<AverageActivity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Average_activity_1}_AverageActivity"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "Average_activity_1" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Daily Activity Intensity Mean ##########
+
+<ActivityObservation_DailyActivityIntensityMean_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_DailyActivityIntensityMean"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/DailyActivityIntensityMean" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <DailyActivityIntensityMean_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<DailyActivityIntensityMean_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{daily_activity_intensity_mean_7}_Gravity"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "http://qudt.org/vocab/unit/G" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "daily_activity_intensity_mean_7" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Wakefulness Intensity ##########
+
+<ActivityObservation_WakefulnessIntensity_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_WakefulnessIntensity"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/WakefulnessIntensity" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <WakefulnessIntensity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<WakefulnessIntensity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{wakefulness_intensity_8}_Gravity"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "http://qudt.org/vocab/unit/G" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "wakefulness_intensity_8" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Mean Movement time ##########
+
+<ActivityObservation_MeanMovementTime_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_MeanMovementTime"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/MeanMovementTime" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <MeanMovementTime_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<MeanMovementTime_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{movement_mean_time_9}_Second"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "https://qudt.org/vocab/unit/SEC" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "movement_mean_time_9" ;
+			rr:datatype xsd:int;
+		]
+	].
+
+######## Wakefulness Duration ##########
+
+<ActivityObservation_WakefulnessDuration_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_WakefulnessDuration"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/WakefulnessDuration" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <WakefulnessDuration_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<WakefulnessDuration_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{wakefulness_duration_10}_Second"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "https://qudt.org/vocab/unit/SEC" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "wakefulness_duration_10" ;
+			rr:datatype xsd:int;
+		]
+	].	
+
+######## Movement Regularity ##########
+
+<ActivityObservation_MovementRegularity_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_MovementRegularity"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/MovementRegularity" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <MovementRegularity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<MovementRegularity_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{movement_regularity_12}_MovementRegularity"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "movement_regularity_12" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Sedentary Indicator ##########
+
+<ActivityObservation_SedentaryIndicator_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SedentaryIndicator"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SedentaryIndicator" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SedentaryIndicator_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<SedentaryIndicator_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sedentary_indicator_14}_SedentaryIndicator"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sedentary_indicator_14" ;
+			rr:datatype xsd:boolean;
+		]
+	].
+
+######## Activity Indicator ##########
+
+<ActivityObservation_ActivityIndicator_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_ActivityIndicator"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/ActivityIndicator" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ActivityIndicator_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<ActivityIndicator_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{activity_indicator_15}_ActivityIndicator"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "activity_indicator_15" ;
+			rr:datatype xsd:boolean;
+		]
+	].
+
+######## Sedentary Percentage ##########
+
+<ActivityObservation_SedentaryPercentage_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SedentaryPercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SedentaryPercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SedentaryPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<SedentaryPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sedentary_percentage_20}_SedentaryPercentage"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sedentary_percentage_20" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Light Activity Percentage ##########
+
+<ActivityObservation_LightActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_LightActivityPercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/LightActivityPercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <LightActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<LightActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{light_activity_percentage_21}_LightActivityPercentage"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "light_activity_percentage_21" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Moderate Activity Percentage ##########
+
+<ActivityObservation_ModerateActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_ModerateActivityPercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/ModerateActivityPercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <ModerateActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<ModerateActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{moderate_activity_percentage_22}_ModerateActivityPercentage"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "moderate_activity_percentage_22" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Vigorous Activity Percentage ##########
+
+<ActivityObservation_VigorousActivityPercentage_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_VigorousActivityPercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/ActivityObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/VigorousActivityPercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <VigorousActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+		]
+	].
+
+<VigorousActivityPercentage_value_unit_lc_wearable_wearable_data_ActivityObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_ActivityObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{vigorous_activity_percentage_23}_VigorousActivityPercentage"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "vigorous_activity_percentage_23" ;
+			rr:datatype xsd:double;
+		]
+	].
