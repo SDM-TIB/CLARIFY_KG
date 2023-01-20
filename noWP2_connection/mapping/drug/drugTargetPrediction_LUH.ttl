@@ -1,0 +1,50 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<DrugTargetPrediction_drug_drugTargetPrediction_LUH>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/drug/DrugTarget_prediction_LUH.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{Drug}_interactsWith_{Target}";
+		rr:class clarify:DrugTargetPrediction
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:interactor1;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/entity/{Drug}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:interactor2;
+		rr:objectMap [ 
+			rr:template "http://clarify2020.eu/entity/{Target}" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:confidence;
+		rr:objectMap [ 
+			rml:reference "Prob" 
+		]
+	];	
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/DrugBank"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:predictionMethod;
+		rr:objectMap [ 
+			rml:reference "Method" 
+		]
+	].	
+		

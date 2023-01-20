@@ -1,0 +1,144 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<BCPatient_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+        rr:class clarify:BCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentEpisode;
+        rr:objectMap [ 
+            rr:parentTriplesMap <treatement_episode_bc_clinical_notes_HUPHM_surgery>
+        ]
+    ].
+
+<treatement_episode_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}_Surgery_{date_year}";
+        rr:class clarify:TreatmentEpisode
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentType;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_surgery_bc_clinical_notes_HUPHM_surgery>
+        ]
+    ].
+
+
+<Treatment_Episode_surgery_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}_{surgery}_OncologicalSurgery_{n_surgery}";
+        rr:class clarify:OncologicalSurgery
+    ];   
+    rr:predicateObjectMap [
+        rr:predicate clarify:surgeryYear;
+        rr:objectMap [
+            rml:reference "date_year";
+            rr:datatype xsd:int;
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:surgeryMonth;
+        rr:objectMap [
+            rml:reference "date_month";
+            rr:datatype xsd:int;
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:surgeryDay;
+        rr:objectMap [
+            rml:reference "date_day";
+            rr:datatype xsd:int;
+        ]
+    ];          
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasType;
+        rr:objectMap [
+            rr:parentTriplesMap <SurgeryType_bc_clinical_notes_HUPHM_surgery>
+        ]
+    ].
+        
+
+<SurgeryType_bc_clinical_notes_HUPHM_surgery>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap <SurgeryType_Function_bc_clinical_notes_HUPHM_surgery> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/SurgeryType";      
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasOriginalValue;
+        rr:objectMap [
+            rml:reference "surgery";       
+        ]
+    ].
+
+#######################################
+############## Functions ##############
+#######################################
+
+<SurgeryType_Function_bc_clinical_notes_HUPHM_surgery>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/surgery.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findSemantic_HUPHM_BreastCancer 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "surgery" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "surgery" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "surgery" 
+            ]
+        ];                         
+    ].
+
+

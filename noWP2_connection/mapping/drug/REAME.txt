@@ -1,0 +1,31 @@
+
+################################################################################################
+### Create a table of oncological LC drugs that are included in drug-protein-interactions ######
+################################################################################################
+
+CREATE TABLE lc_oncological_drug_protein_interactions
+AS
+SELECT `clarify_drugs`.`oncologicaldrugs_curated_revised`.`ENG_CUI_Name`,`CLARIFY_drug-protein`.`proteins`.`drugbank_id`,`CLARIFY_drug-protein`.`proteins`.`category`,`CLARIFY_drug-protein`.`proteins`.`uniprot_id`
+FROM `clarify_drugs`.`oncologicaldrugs_curated_revised`,`CLARIFY_drug-protein`.`drugbank_id_name`,`CLARIFY_drug-protein`.`proteins`
+WHERE `clarify_drugs`.`oncologicaldrugs_curated_revised`.`ENG_CUI_Name`=`CLARIFY_drug-protein`.`drugbank_id_name`.`DrugName` AND `CLARIFY_drug-protein`.`drugbank_id_name`.`DrugBankID`= `CLARIFY_drug-protein`.`proteins`.`drugbank_id`
+
+####################################################################################################
+### Create a table of non-oncological LC drugs that are included in drug-protein-interactions ######
+####################################################################################################
+
+CREATE TABLE lc_non_oncological_drug_protein_interactions
+AS
+SELECT `clarify_drugs`.`nononcologicaldrugs_curated`.`ENG_CUI_Name`,`CLARIFY_drug-protein`.`proteins`.`drugbank_id`,`CLARIFY_drug-protein`.`proteins`.`category`,`CLARIFY_drug-protein`.`proteins`.`uniprot_id`
+FROM `clarify_drugs`.`nononcologicaldrugs_curated`,`CLARIFY_drug-protein`.`drugbank_id_name`,`CLARIFY_drug-protein`.`proteins`
+WHERE `clarify_drugs`.`nononcologicaldrugs_curated`.`ENG_CUI_Name`=`CLARIFY_drug-protein`.`drugbank_id_name`.`DrugName` AND `CLARIFY_drug-protein`.`drugbank_id_name`.`DrugBankID`= `CLARIFY_drug-protein`.`proteins`.`drugbank_id`
+
+
+######################################################################################################
+############ Create a table of BC drugs that are included in drug-protein-interactions ###############
+######################################################################################################
+
+CREATE TABLE bc_drug_protein_interactions
+AS
+SELECT `CLARIFY_Breast_Sep22`.`drug`.`name`,`CLARIFY_drug-protein`.`proteins`.`drugbank_id`,`CLARIFY_drug-protein`.`proteins`.`category`,`CLARIFY_drug-protein`.`proteins`.`uniprot_id`
+FROM `CLARIFY_Breast_Sep22`.`drug`,`CLARIFY_drug-protein`.`drugbank_id_name`,`CLARIFY_drug-protein`.`proteins`
+WHERE `CLARIFY_Breast_Sep22`.`drug`.`name`=`CLARIFY_drug-protein`.`drugbank_id_name`.`DrugName` AND `CLARIFY_drug-protein`.`drugbank_id_name`.`DrugBankID`= `CLARIFY_drug-protein`.`proteins`.`drugbank_id`

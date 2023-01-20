@@ -1,0 +1,230 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+
+<BCPatient_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/HUPHM_{ehr}";
+        rr:class clarify:BCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentEpisode;
+        rr:objectMap [ 
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ].
+
+
+<Treatment_Episode_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}_Chemotherapy_{date}";
+        rr:class clarify:TreatmentEpisode
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentType;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Type_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ]; 
+    rr:predicateObjectMap [
+        rr:predicate clarify:treatementLineDate;
+        rr:objectMap [
+            rml:reference "date";
+            rr:datatype xsd:date
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasEpisode;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
+        ]
+    ].  
+
+
+<Treatment_Type_chemotherapy_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{ehr}_Chemotherapy_{cycle_number}_{id_schema}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/Chemotherapy";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasTreatmentLineCycle;
+        rr:objectMap [
+            rr:parentTriplesMap <TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrugSchema;
+        rr:objectMap [
+            rr:parentTriplesMap <chemotherapy_drug_schema_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ].
+
+<chemotherapy_drug_schema_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV 
+                        ];
+    rr:subjectMap <chemotherapy_drug_schema_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode> ;
+    rr:termType rr:IRI;
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerDrugSchema";     
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug1;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_drug_1_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug2;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_drug_2_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug3;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_drug_3_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasDrug4;
+        rr:objectMap [
+            rr:parentTriplesMap <Treatment_Episode_chemotherapy_schema_drug_4_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+        ]
+    ].
+
+<Treatment_Episode_chemotherapy_schema_drug_1_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug1}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerOncologicalDrug";     
+        ]
+    ].
+
+<Treatment_Episode_chemotherapy_schema_drug_2_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug2}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerOncologicalDrug";     
+        ]
+    ].
+
+<Treatment_Episode_chemotherapy_schema_drug_3_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug3}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerOncologicalDrug";     
+        ]
+    ].
+
+<Treatment_Episode_chemotherapy_schema_drug_4_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV;
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{drug4}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/vocab/BreastCancerOncologicalDrug";     
+        ]
+    ].
+
+<TreatmentLineCycle_bc_clinical_notes_HUPHM_chemotherapy_drugs>
+    rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+                        rml:referenceFormulation ql:CSV 
+                        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{cycle_number}";
+        rr:class clarify:TreatmentLineCycle
+    ].
+            
+#######################################
+############## Functions ##############
+#######################################
+
+<chemotherapy_drug_schema_Function_bc_clinical_notes_HUPHM_chemotherapy_treatment_episode>
+    fnml:functionValue [
+        rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/bc_clinical_notes_HUPHM/chemoterapy_cycle_preprocessed.csv";
+        rml:referenceFormulation ql:CSV 
+                            ];
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ 
+                rr:constant clarifyFun:findDrugSchema_BC 
+            ]
+        ];   
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:tableName;
+            rr:objectMap [ 
+                rr:constant "chemotherapy_drugs" 
+            ]
+        ];
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnName;
+            rr:objectMap [ 
+                rr:constant "id_schema" 
+            ]
+        ]; 
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:resource;
+            rr:objectMap [ 
+                rr:constant "http://clarify2020.eu/entity/" 
+            ]
+        ];  
+        rr:predicateObjectMap [
+            rr:predicate clarifyFun:columnValue;
+            rr:objectMap [ 
+                rml:reference "id_schema" 
+            ]
+        ];                         
+    ].

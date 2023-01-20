@@ -1,0 +1,406 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudt-unit: <http://qudt.org/vocab/unit/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<LCPatient_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{codigo}";
+		rr:class clarify:LCPatient
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/KH"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepDuration_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepRegularity_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepFragmentation_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepRegularity_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepAverageDuration_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_MovementWhileSleeping_lc_wearable_wearable_data_SleepObservation>
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:hasObservation;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepObservation_SleepDurationPercentage_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+######## Sleep Duration ##########
+
+<SleepObservation_SleepDuration_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepDuration"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepDuration" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepDuration_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepDuration_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_duration_2}_Minute"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "https://qudt.org/vocab/unit/MIN" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_duration_2" ;
+			rr:datatype xsd:int;
+		]
+	].
+
+######## Sleep Regularity ##########
+
+<SleepObservation_SleepRegularity_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepRegularity"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepRegularity" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepRegularity_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepRegularity_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_regularity_3}_SleepRegularity"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_regularity_3" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Sleep Fragmentation ##########
+
+<SleepObservation_SleepFragmentation_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepFragmentation"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepFragmentation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepFragmentation_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepFragmentation_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_fragmentation_4}_SleepFragmentation"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_fragmentation_4" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Sleep Contrast ##########
+
+<SleepObservation_SleepRegularity_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepContrast"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepContrast" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepContrast_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepContrast_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_contrast_5}_SleepContrast"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_contrast_5" ;
+			rr:datatype xsd:double;
+		]
+	].
+
+######## Sleep Average Duration ##########
+
+<SleepObservation_SleepAverageDuration_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepAverageDuration"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepAverageDuration" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepAverageDuration_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepAverageDuration_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_average_duration_6}_Minute"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "https://qudt.org/vocab/unit/MIN" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_average_duration_6" ;
+			rr:datatype xsd:int;
+		]
+	].
+
+######## Movement While Sleeping ##########
+
+<SleepObservation_MovementWhileSleeping_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_MovementWhileSleeping"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/MovementWhileSleeping" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <MovementWhileSleeping_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<MovementWhileSleeping_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{movement_while_sleeping_11}_Second"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:unit;
+		rr:objectMap [
+			rr:constant "https://qudt.org/vocab/unit/SEC" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "movement_while_sleeping_11" ;
+			rr:datatype xsd:int;
+		]
+	].
+
+######## Sleep Duration Percentage ##########
+
+<SleepObservation_SleepDurationPercentage_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/ActivityObservation_SleepDurationPercentage"; ## The identifier: the type and the property of the observation
+		rr:class sosa:Observation
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/SleepObservation" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:observedProperty;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/SleepDurationPercentage" ;
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sosa:hasResult;
+		rr:objectMap [ 
+			rr:parentTriplesMap <SleepDurationPercentage_value_unit_lc_wearable_wearable_data_SleepObservation>
+		]
+	].
+
+<SleepDurationPercentage_value_unit_lc_wearable_wearable_data_SleepObservation>
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/lc_wearable/wearable_data_SleepObservation.csv";
+						rml:referenceFormulation ql:CSV;
+						];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{sleep_duration_percentage_19}_SleepDurationPercentage"; ## The identifier: the value and the unit
+		rr:class qudt:QuantityValue
+	];
+	rr:predicateObjectMap [
+		rr:predicate qudt:numericValue;
+		rr:objectMap [
+			rml:reference "sleep_duration_percentage_19" ;
+			rr:datatype xsd:double;
+		]
+	].
