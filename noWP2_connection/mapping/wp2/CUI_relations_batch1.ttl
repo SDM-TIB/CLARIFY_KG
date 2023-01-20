@@ -11,7 +11,7 @@
 
 <Relations_Publication_wp2>
 
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/publication/wp4_tuples_0.50.15032022.json";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/wp2/wp4_tuples_0.50.15032022.json";
 						rml:referenceFormulation ql:JSONPath;
 						rml:iterator "$.relations.source" 
 						];
