@@ -19,7 +19,13 @@
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
 		rr:objectMap [ 
-			rr:template "http://clarify2020.eu/vocab/OncologicalDrug"
+			rr:template "http://clarify2020.eu/vocab/LungCancerOncologicalDrug"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:drugLabel;
+		rr:objectMap [
+			rml:reference "ENG_CUI_Name";
 		]
 	].
 
@@ -28,6 +34,30 @@
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/entity/{CUI_ID}";
+		rr:template "http://clarify2020.eu/entity/{CUI}";
 		rr:class clarify:Annotation
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annID;
+		rr:objectMap [ 
+			rml:reference "CUI" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annLabel;
+		rr:objectMap [ 
+			rml:reference "ENG_CUI_Name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:annLabel_SPA;
+		rr:objectMap [ 
+			rml:reference "provided_name" 
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/entity/UMLS"
+		]
 	].
