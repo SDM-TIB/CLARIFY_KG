@@ -120,6 +120,51 @@
 	].
 
 ########################################################################
+############### LC patients that belong to HUPHM and KH ################
+########################################################################
+<CPatient_annotation_LC_patient_ids_KH_and_SLCG_and_HUPHM_patient>
+	rml:logicalSource [ 
+	    rml:source <RDB_source>;
+	    rr:sqlVersion rr:SQL2008;
+    	rml:query """SELECT * FROM `lungcancerids`
+					WHERE id_KH is not Null and id_HUPHM is not null and id_SLCG=""""";
+		];
+	rr:subjectMap [
+		rr:template "http://clarify2020.eu/entity/{id_KH}_{id_HUPHM}";
+		rr:class clarify:LCPatient;
+	];
+	rr:predicateObjectMap [
+		rr:predicate rdf:type;
+		rr:objectMap [
+			rr:constant "http://clarify2020.eu/vocab/CPatient"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_KH_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{id_KH}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:has_LC_HUPHM_ID;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/HUPHM_{id_HUPHM}"
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:belongsTo;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{category}";
+		] 
+	];
+	rr:predicateObjectMap [
+		rr:predicate clarify:deathDate;
+		rr:objectMap [
+			rr:template "http://clarify2020.eu/entity/{Date of death}"
+		]
+	].
+
+########################################################################
 ################ LC patients category descriptions #####################
 ########################################################################
 <LCPatient_annotation_LC_patient_ids_lc_category>
