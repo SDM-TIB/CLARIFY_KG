@@ -10,7 +10,7 @@
 @prefix clarify: <http://clarify2020.eu/vocab/> .
 
 <OncologicalDrugs_lc_clinical_notes_oncologicalDrugs_annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated_revised.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -24,7 +24,7 @@
 	].
 
 <Annotation_lc_clinical_notes_oncologicalDrugs_annotation>
-	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated.csv";
+	rml:logicalSource [ rml:source "/mnt/e/CLARIFY-KG-pipeline/data/annotation/oncologicaldrugs_curated_revised.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
