@@ -18,7 +18,7 @@
   rml:logicalSource [ 
       rml:source <RDB_source_all_CUIs>;
       rr:sqlVersion rr:SQL2008;
-      rml:query """Select DISTINCT CUI, definition, source  FROM cui_defintions""";
+      rml:query """Select DISTINCT CUI, definition, source  FROM cui_definitions""";
     ];
   rr:subjectMap [
     rr:template "http://clarify2020.eu/entity/{CUI}_{source}";
