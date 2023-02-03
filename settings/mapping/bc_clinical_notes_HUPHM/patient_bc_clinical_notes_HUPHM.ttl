@@ -41,7 +41,7 @@
 		]
 	];	
 	rr:predicateObjectMap [
-		rr:predicate clarify:diagnosisAge;
+		rr:predicate clarify:age;
 		rr:objectMap [
 			rml:reference "age_at_diagnosis";
 		]
