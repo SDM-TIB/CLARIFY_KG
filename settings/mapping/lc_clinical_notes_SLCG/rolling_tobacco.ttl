@@ -26,7 +26,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasRollingTobacco;
         rr:objectMap [
-        rml:reference "rolling_tobacco_use_translated"
+        rr:template "http://clarify2020.eu/entity/{rolling_tobacco_use_translated}";
         ]
     ];
     rr:predicateObjectMap [
