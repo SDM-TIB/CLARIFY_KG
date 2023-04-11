@@ -1,1 +1,59 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
+<LCPatient_electronic_cigarettes>
+    rml:logicalSource [ 
+        rml:source <RDB_source_electronic_cigarettes>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT DISTINCT t1.EHR, t2.use_electronic_cigarettes_translated, t1.start_date, t1.end_date, t1.number_electronic_cigarettes_day FROM `electronic_cigarettes` AS t1, `electronic_cigarettes_translated` AS t2 WHERE t1.use_electronic_cigarettes=t2.use_electronic_cigarettes""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasElectronicCigarettes;
+        rr:objectMap [
+        rml:reference "use_electronic_cigarettes_translated"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:electronicCigarettesPerDay;
+        rr:objectMap [
+        rml:reference "number_electronic_cigarettes_day"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:electronicCigaretteStartDate;
+        rr:objectMap [
+            rml:reference "start_date";
+            rr:datatype xsd:date
+        ]
+    ];  
+    rr:predicateObjectMap [
+        rr:predicate clarify:electronicCigaretteEndingDate;
+        rr:objectMap [
+            rml:reference "end_date";
+            rr:datatype xsd:date
+        ]
+    ].
+
+
+################ RDB information #####################
+<RDB_source_electronic_cigarettes> a d2rq:Database;
+  d2rq:jdbcDSN "clarify_lung_v2.0";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
