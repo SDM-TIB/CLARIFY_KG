@@ -1,1 +1,90 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
 
+<LCPatient_carcinogen>
+    rml:logicalSource [ 
+        rml:source <RDB_source_carcinogen>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, REPLACE(t2.probable_carcinogen_translated, ' ',  '_' ) as probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogen;
+        rr:objectMap [
+            rr:parentTriplesMap <Carcinogen_lcPatient>
+        ]
+    ].
+
+<Carcinogen_lcPatient>
+    rml:logicalSource [ 
+        rml:source <RDB_source_carcinogen>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, REPLACE(t2.probable_carcinogen_translated, ' ',  '_' ) as probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_{probable_carcinogen}";
+        rr:class clarify:Carcinogen
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogenYears;
+        rr:objectMap [
+        rml:reference "number_years"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogenCityContact;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/entity/{municipality_contact}";
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogenType;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/entity/{probable_carcinogen_translated}";
+        ]
+    ].
+
+<LCPatient_carcinogen_asbestos>
+    rml:logicalSource [ 
+        rml:source <RDB_source_carcinogen>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT t1.EHR, t2.exposure_contact_absentos_translated, t3.absentos_exposure_type_translated from carcinogen t1, carcinogen_translated t2,  carcinogen_translated t3  where t1.exposure_contact_asbestos=t2.exposure_contact_absentos and t1.asbestos_exposure_type=t3.absentos_exposure_type""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogenExposure;
+        rr:objectMap [
+        rml:reference "exposure_contact_absentos_translated"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasCarcinogenAsbestos;
+        rr:objectMap [
+        rml:reference "absentos_exposure_type_translated"
+        ]
+    ].
+    
+################ RDB information #####################
+<RDB_source_carcinogen> a d2rq:Database;
+  d2rq:jdbcDSN "clarify_lung_v2.0";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
