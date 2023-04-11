@@ -17,7 +17,7 @@
     rml:logicalSource [ 
         rml:source <RDB_source_registration>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT t1.EHR, t2.occupation_translated, t1.date, t1.signature_consent FROM `registration` AS t1, `registration_translated` AS t2 WHERE t1.occupation=t2.occupation""";
+        rml:query """SELECT DISTINCT t1.EHR, REPLACE(t2.occupation_translated, ' ',  '_' ) as occupation_translated, t1.date, t1.signature_consent FROM `registration` AS t1, `registration_translated` AS t2 WHERE t1.occupation=t2.occupation""";
         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{EHR}";
@@ -26,7 +26,7 @@
     rr:predicateObjectMap [
         rr:predicate clarify:hasOccupation;
         rr:objectMap [
-        rml:reference "occupation_translated"
+        rr:template "http://clarify2020.eu/entity/{occupation_translated}";
         ]
     ];
     rr:predicateObjectMap [
