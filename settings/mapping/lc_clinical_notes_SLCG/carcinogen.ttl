@@ -17,7 +17,7 @@
     rml:logicalSource [ 
         rml:source <RDB_source_carcinogen>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, REPLACE(t2.probable_carcinogen_translated, ' ',  '_' ) as probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
+        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, t2.probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{EHR}";
@@ -34,7 +34,7 @@
     rml:logicalSource [ 
         rml:source <RDB_source_carcinogen>;
         rr:sqlVersion rr:SQL2008;
-        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, REPLACE(t2.probable_carcinogen_translated, ' ',  '_' ) as probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
+        rml:query """SELECT DISTINCT t1.EHR, t1.number_years, t1.municipality_contact, t1.probable_carcinogen, t2.probable_carcinogen_translated FROM `carcinogen` AS t1, `carcinogen_translated` AS t2 WHERE t1.probable_carcinogen=t2.probable_carcinogen""";
         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{EHR}_{probable_carcinogen}";
