@@ -1,0 +1,144 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix clarifyFun: <http://clarify2020.eu/function/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix clarify: <http://clarify2020.eu/vocab/> .
+
+<LCPatient_ptnm_diagnosis>
+    rml:logicalSource [ 
+        rml:source <RDB_source_carcinogen>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT t1.EHR, t1.type, t2.type_translated from ptnm_diagnosis AS t1, ptnm_diagnosis_translated AS t2 where t1.type=t2.type""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasPTNMdiagnosisType;
+        rr:objectMap [
+            rr:parentTriplesMap <ptnm_diagnosis_type_lcPatient>
+        ]
+    ].
+
+<ptnm_diagnosis_type_lcPatient>
+    rml:logicalSource [ 
+        rml:source <RDB_source_carcinogen>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT t1.EHR, t1.type, t2.type_translated from ptnm_diagnosis AS t1, ptnm_diagnosis_translated AS t2 where t1.type=t2.type""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}_{type}";
+        rr:class clarify:PTNMdiagnosis
+    ];
+    rr:predicateObjectMap [
+        rr:predicate clarify:ptnmDiagnosisType;
+        rr:objectMap [
+            rr:template "http://clarify2020.eu/entity/{type_translated}";
+        ]
+    ].
+
+<LCPatient_ptnm_biopsy>
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `biopsy`=1.0""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasBiopsy;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/Biopsy"
+        ]
+    ].
+
+<LCPatient_ptnm_bronchoscopy>
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `bronchoscopy`=1.0""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasBronchoscopy;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/Bronchoscopy"
+        ]
+    ].
+
+<LCPatient_ptnm_EBUS>
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `EBUS`=1.0""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasEBUS;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/EBUS"
+        ]
+    ].
+
+<LCPatient_ptnm_laparoscopy>
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `laparoscopy`=1.0""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasLaparoscopy;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/Laparoscopy"
+        ]
+    ].  
+
+<LCPatient_ptnm_mediastinoscopy>
+    rml:logicalSource [ 
+        rml:source <RDB_source>;
+        rr:sqlVersion rr:SQL2008;
+        rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `mediastinoscopy`=1.0""";
+        ];
+    rr:subjectMap [
+        rr:template "http://clarify2020.eu/entity/{EHR}";
+        rr:class clarify:LCPatient;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate clarify:hasMediastinoscopy;
+        rr:objectMap [
+            rr:constant "http://clarify2020.eu/entity/Mediastinoscopy"
+        ]
+    ].                
+################ RDB information #####################
+<RDB_source_carcinogen> a d2rq:Database;
+  d2rq:jdbcDSN "SLCG_UPM_v6.1";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
+  d2rq:username "";
+  d2rq:password "" .
