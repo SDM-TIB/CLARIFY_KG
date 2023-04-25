@@ -139,7 +139,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/Hospital/{organization_id}";
+		rr:template "http://clarify2020.eu/entity/{organization_id}";
 		rr:class clarify:Hospital;
 	].
 
