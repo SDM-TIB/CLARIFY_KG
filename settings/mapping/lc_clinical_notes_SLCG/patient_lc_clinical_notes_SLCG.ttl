@@ -130,7 +130,7 @@
 						rml:referenceFormulation ql:CSV;
 						];
 	rr:subjectMap [
-		rr:template "http://clarify2020.eu/City/{cityID}";
+		rr:template "http://clarify2020.eu/entity/{cityID}";
 		rr:class clarify:City;
 	].
 
