@@ -21,6 +21,7 @@
         ];
     rr:subjectMap [
         rr:template "http://clarify2020.eu/entity/{name}";
+		    rr:class clarify:Comorbidity;
     ];
     rr:predicateObjectMap [
         rr:predicate clarify:hasCUIAnnotation;
