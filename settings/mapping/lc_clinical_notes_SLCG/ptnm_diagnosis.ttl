@@ -15,7 +15,7 @@
 
 <LCPatient_ptnm_diagnosis>
     rml:logicalSource [ 
-        rml:source <RDB_source_carcinogen>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT t1.EHR, t1.type, t2.type_translated from ptnm_diagnosis AS t1, ptnm_diagnosis_translated AS t2 where t1.type=t2.type""";
         ];
@@ -32,7 +32,7 @@
 
 <ptnm_diagnosis_type_lcPatient>
     rml:logicalSource [ 
-        rml:source <RDB_source_carcinogen>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT t1.EHR, t1.type, t2.type_translated from ptnm_diagnosis AS t1, ptnm_diagnosis_translated AS t2 where t1.type=t2.type""";
         ];
@@ -49,7 +49,7 @@
 
 <LCPatient_ptnm_biopsy>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `biopsy`=1.0""";
         ];
@@ -67,7 +67,7 @@
 
 <LCPatient_ptnm_bronchoscopy>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `bronchoscopy`=1.0""";
         ];
@@ -85,7 +85,7 @@
 
 <LCPatient_ptnm_EBUS>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `EBUS`=1.0""";
         ];
@@ -103,7 +103,7 @@
 
 <LCPatient_ptnm_laparoscopy>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `laparoscopy`=1.0""";
         ];
@@ -121,7 +121,7 @@
 
 <LCPatient_ptnm_mediastinoscopy>
     rml:logicalSource [ 
-        rml:source <RDB_source>;
+        rml:source <RDB_source_ptnm_diagnosis>;
         rr:sqlVersion rr:SQL2008;
         rml:query """SELECT distinct EHR FROM `ptnm_diagnosis` WHERE `mediastinoscopy`=1.0""";
         ];
@@ -137,7 +137,7 @@
         ]
     ].                
 ################ RDB information #####################
-<RDB_source_carcinogen> a d2rq:Database;
+<RDB_source_ptnm_diagnosis> a d2rq:Database;
   d2rq:jdbcDSN "SLCG_UPM_v6.1";
   d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver"; 
   d2rq:username "";
